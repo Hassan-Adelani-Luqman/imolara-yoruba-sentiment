@@ -74,5 +74,5 @@ License: CC BY-SA 3.0. Plan: use `cc.yo.300.vec.gz` (small). The `.bin` version 
 
 - [ ] Video length (7–10 vs 10–15 min): ask the instructor.
 - [ ] HF account age (≥ 30 days needed for a ZeroGPU Space).
-- [ ] Kaggle `transformers`/`torch` versions: from the smoke run's `env.txt`.
+- [x] Kaggle environment (smoke run, 4 Oct): Tesla T4, torch 2.11.0+cu128, transformers 5.16.1, datasets 4.8.5, peft 0.20.0, scikit-learn 1.6.1. torch ≥ 2.6, so AfriBERTa's `.bin` weights load. The full pipeline (install → train → 3-way diacritic eval → download → collect) took 88 s. Smoke macro-F1 0.198 = always predicting the majority class after 13 steps on 200 tweets: expected, not a bug.
 - [ ] Confirm the SemEval-2023 Task 12 author list and page numbers on the ACL Anthology page.
