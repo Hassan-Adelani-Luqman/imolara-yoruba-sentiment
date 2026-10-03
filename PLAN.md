@@ -7,7 +7,7 @@ Repo / Space / Kaggle slug: `imolara-yoruba-sentiment` (no diacritics in URLs). 
 
 **Course:** Summative Project (NLP) — Option 3: Text Classification for an African Language
 **Due:** 18 Oct 2026, 23:59 (hard cutoff 20 Oct)
-**Deliverables:** PDF report · GitHub repo · deployed web app · demo video (the brief says 7–10 min in one place and 10–15 min in another, so confirm with the instructor)
+**Deliverables:** PDF report · GitHub repo · deployed web app · demo video, **7–10 min** (confirmed with the instructor)
 
 ---
 
@@ -22,7 +22,7 @@ Repo / Space / Kaggle slug: `imolara-yoruba-sentiment` (no diacritics in URLs). 
 | Main models | BiLSTM/BiGRU + attention on fastText embeddings; mBERT, XLM-R, AfriBERTa, AfroXLMR (full fine-tune and LoRA) |
 | Headline research questions | RQ1: Do Africa-centric pre-trained models beat general multilingual ones and classical baselines on Yoruba sentiment? RQ2: How robust are models to tweets written with vs. without tone marks? RQ3: Does training data from related Nigerian languages (Hausa, Igbo, Pidgin) help? |
 | Primary metric | Macro-F1 (plus weighted-F1, accuracy, per-class P/R/F1) |
-| Deployment | Gradio app on Hugging Face Spaces (fallback: Streamlit Community Cloud) |
+| Deployment | Gradio app on a Hugging Face **ZeroGPU** Space (free; the account is >30 days old). Fallback: Streamlit Community Cloud |
 | Compute | Local CPU (16 GB RAM, no GPU) for data and baselines; Kaggle GPU (T4) for all GPU training, launched from the CLI with the Kaggle API (see [docs/KAGGLE_GUIDE.md](docs/KAGGLE_GUIDE.md)) |
 
 **Why Yoruba sentiment (for the report's motivation):**
@@ -66,8 +66,8 @@ The schedule keeps 2 buffer days (19–20 Oct) after the deadline, for emergenci
    - [ ] AfroXLMR and AfriBERTa language lists (both expected to include Yoruba).
    - [ ] SemEval-2023 Task 12 Yoruba leaderboard: top weighted-F1 and the winning approach.
    - [ ] fastText Yoruba vectors (`cc.yo.300.bin` / `wiki.yo.vec`) can be downloaded.
-   - [ ] HF Spaces free-tier rules for Gradio apps (CPU vs ZeroGPU).
-   - [ ] Video length (7–10 vs 10–15 min): ask the instructor.
+   - [x] HF Spaces free-tier rules: CPU Gradio needs PRO; free accounts get up to 2 ZeroGPU Spaces → use ZeroGPU.
+   - [x] Video length: 7–10 min.
 
 **Done when:** the repo skeleton is committed, the env installs cleanly, and `docs/verification.md` is filled in.
 
@@ -236,7 +236,7 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
    - Output: predicted label with class probabilities as a bar chart.
    - Example buttons: positive, negative and neutral tweets, the same tweet with and without tone marks, a code-switched tweet, and a known failure case.
    - "About" panel: model, data, test macro-F1 and limitations.
-3. **Hosting:** HF Space (CPU, or ZeroGPU if CPU Gradio requires PRO). If the large model is too slow on CPU, use dynamic int8 quantisation or fall back to the AfroXLMR-base checkpoint, and state this in the report.
+3. **Hosting:** Gradio on a HF **ZeroGPU** Space. Wrap inference in `@spaces.GPU` (short duration; one prediction takes well under 1 s). Free visitors get about 5 min of GPU a day, which is plenty for a demo. Load the model once at start-up. If ZeroGPU misbehaves, fall back to Streamlit Community Cloud on CPU with the AfroXLMR-base checkpoint (int8-quantised if needed), and state this in the report.
 4. Check latency (under 2 s per query is the target) and the cold start, and confirm the app works from an incognito window and on a phone.
 
 **Done when:** a public URL works and the app's predictions match the offline predictions on 10 test tweets.
@@ -300,17 +300,17 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ## Phase 10 — Demo video (17 Oct)
 
-Plan for about 10 min; adjust once the instructor confirms the length. Each segment maps to a rubric criterion.
+Target **9:15** (hard limit 7–10 min). Each segment maps to a rubric criterion. Rehearse with a timer, because the model and experiments segments overrun most easily.
 
 | Time | Segment | Rubric criterion |
 |---|---|---|
-| 0:00–1:00 | Problem, Yoruba, motivation, users | Problem definition |
-| 1:00–2:15 | Dataset, EDA, preprocessing, tone-mark issue | Problem definition |
-| 2:15–4:15 | Models: baseline → BiLSTM + attention → transformers + LoRA; architecture, inputs/outputs, hyperparameters, *why*; show key code | Model development |
-| 4:15–6:00 | Experiments table: why each one was run, what changed, what was learned | Baseline & experimentation |
-| 6:00–7:45 | Metrics (why macro-F1), results with CIs, error examples and categories | Evaluation & error analysis |
-| 7:45–9:30 | Live app: how it connects to the model, good / tone-stripped / code-switched / failure inputs | Deployment |
-| 9:30–10:00 | Limitations, lessons, future work | Technical understanding |
+| 0:00–0:45 | Problem, Yoruba, motivation, users | Problem definition |
+| 0:45–1:45 | Dataset, EDA, preprocessing, tone-mark issue | Problem definition |
+| 1:45–3:30 | Models: baseline → BiLSTM + attention → transformers + LoRA; architecture, inputs/outputs, hyperparameters, *why*; show key code | Model development |
+| 3:30–5:00 | Experiments table: why each one was run, what changed, what was learned | Baseline & experimentation |
+| 5:00–6:30 | Metrics (why macro-F1), results with CIs, error examples and categories | Evaluation & error analysis |
+| 6:30–8:30 | Live app: how it connects to the model, good / tone-stripped / code-switched / failure inputs | Deployment |
+| 8:30–9:15 | Limitations, lessons, future work | Technical understanding |
 
 **Format:** screen recording with face cam (OBS), uploaded unlisted to YouTube or Drive. Check the link opens without signing in.
 
@@ -330,11 +330,11 @@ Plan for about 10 min; adjust once the instructor confirms the length. Each segm
 | Criterion (pts) | Where it's earned |
 |---|---|
 | Problem, language & dataset (8) | Phase 1 + report §1, §3; gap evidence from SemEval/AfriSenti plus robustness |
-| Model development (10) | Phases 3–4 + video 2:15–4:15 |
-| Baseline & experiments (8) | Phases 2, 5 + `experiments.csv` + video 4:15–6:00 |
-| Evaluation & error analysis (7) | Phase 6 + video 6:00–7:45 |
+| Model development (10) | Phases 3–4 + video 1:45–3:30 |
+| Baseline & experiments (8) | Phases 2, 5 + `experiments.csv` + video 3:30–5:00 |
+| Evaluation & error analysis (7) | Phase 6 + video 5:00–6:30 |
 | Report (10) | Phase 8 |
-| Deployment (7) | Phase 7 + video 7:45–9:30 |
+| Deployment (7) | Phase 7 + video 6:30–8:30 |
 | Code & GitHub (5) | Phase 9 |
 | Individual understanding (5) | Writing the code myself, viva notes, explaining *why* throughout the video |
 
@@ -344,7 +344,7 @@ Plan for about 10 min; adjust once the instructor confirms the length. Each segm
 |---|---|
 | Kaggle GPU quota runs out | Smoke-test first; base models before large; LoRA for large; run seeds in one session; track hours after each run. The code is platform-agnostic, so Colab is an emergency fallback |
 | AfroXLMR-large runs out of memory on a T4 | fp16 + gradient accumulation + max length 128; otherwise LoRA only |
-| HF Space free tier blocked or slow | ZeroGPU Space or Streamlit Cloud; quantised base model |
+| ZeroGPU Space fails or its quota is exhausted during marking | Streamlit Community Cloud (CPU) with a quantised base model; keep a recorded demo in the video as evidence |
 | Label noise limits scores | Measure and discuss it in error analysis; it is a finding, not a failure |
 | Complex model doesn't beat baseline | Explain it (data size, domain, noise); the rubric explicitly allows this |
 | Schedule slips | E9 and the extra E7 variants are optional; core path is E0, E1, E2a, E3b, E5a, E5c, E6 |
