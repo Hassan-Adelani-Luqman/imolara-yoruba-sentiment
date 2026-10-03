@@ -1,0 +1,2 @@
+# E2e: randomly initialised embeddings, i.e. no pretraining (isolates the value of pretrained vectors)
+embeddings: random

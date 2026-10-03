@@ -57,7 +57,7 @@ def bundle_code() -> str:
 
 
 def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str,
-                 seeds: list[int], extra_args: list[str], commit: str):
+                 seeds: list[int], extra_args: list[str], commit: str, datasets: list[str]):
     build_dir.mkdir(parents=True, exist_ok=True)
     script = (ROOT / "kaggle" / "run_template.py").read_text()
     for key, value in {"__MODULE__": module, "__CONFIG__": config, "__SEEDS__": repr(seeds),
@@ -75,7 +75,7 @@ def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str
         "enable_gpu": True,
         "machine_shape": "NvidiaTeslaT4",
         "enable_internet": True,          # needed for HF Hub models, AfriSenti TSVs and pip
-        "dataset_sources": [], "competition_sources": [],
+        "dataset_sources": datasets, "competition_sources": [],
         "kernel_sources": [], "model_sources": [],
     }, indent=2))
 
@@ -110,6 +110,8 @@ def main():
     p.add_argument("--wait", action="store_true", help="poll until finished, then download and collect")
     p.add_argument("--fetch-only", action="store_true", help="only download outputs of a finished run")
     p.add_argument("--with-model", action="store_true", help="also download model weights")
+    p.add_argument("--datasets", nargs="*", default=None,
+                   help="Kaggle datasets to attach (default: <user>/imolara-embeddings for --module src.rnn)")
     a = p.parse_args()
 
     user = os.environ.get("KAGGLE_USERNAME")
@@ -120,13 +122,15 @@ def main():
     kernel = f"{user}/{slug}"
     dest = ROOT / "results" / "kaggle" / exp
 
+    datasets = a.datasets if a.datasets is not None else (
+        [f"{user}/imolara-embeddings"] if a.module == "src.rnn" else [])
     if not a.fetch_only:
         commit = git_commit()
         if commit.endswith("-dirty") or commit == "no-commit":
             print(f"warning: launching from uncommitted code ({commit})", file=sys.stderr)
         build_dir = ROOT / "kaggle" / "_build" / exp
         build_kernel(build_dir, slug, user, a.module, Path(a.config).resolve().relative_to(ROOT).as_posix(), a.seeds,
-                     ["--final"] if a.final else [], commit)
+                     ["--final"] if a.final else [], commit, datasets)
         print(kaggle("kernels", "push", "-p", str(build_dir)).strip())
         print(f"Live log: https://www.kaggle.com/code/{kernel}")
         if not a.wait:

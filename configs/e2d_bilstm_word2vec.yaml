@@ -1,0 +1,2 @@
+# E2d: our own skip-gram Word2Vec (Yoruba Wikipedia + training tweets), fine-tuned
+embeddings: word2vec

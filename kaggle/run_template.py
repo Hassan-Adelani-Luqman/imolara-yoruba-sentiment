@@ -22,6 +22,11 @@ with open(f"{OUT}/env.txt", "w") as f:  # exact package versions, for the report
     subprocess.run([sys.executable, "-m", "pip", "freeze"], stdout=f, check=True)
 
 env = {**os.environ, "IMOLARA_GIT_COMMIT": GIT_COMMIT, "PYTHONUNBUFFERED": "1"}
+import glob
+emb = glob.glob("/kaggle/input/**/w2v_yo_300.kv", recursive=True)
+if emb:  # attached imolara-embeddings dataset (scripts/kaggle_dataset.py)
+    env["IMOLARA_EMB_DIR"] = os.path.dirname(emb[0])
+    print("embeddings:", env["IMOLARA_EMB_DIR"], os.listdir(env["IMOLARA_EMB_DIR"]), flush=True)
 for seed in SEEDS:
     print(f"=== {CONFIG} seed {seed} ===", flush=True)
     subprocess.run([sys.executable, "-m", MODULE, "--config", CONFIG, "--seed", str(seed),
