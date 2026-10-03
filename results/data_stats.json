@@ -1,0 +1,574 @@
+{
+  "source": "AfriSenti-SemEval 2023, yor, raw TSVs at commit 5aec3cf (see src/data.py)",
+  "sizes": {
+    "train": 8522,
+    "dev": 2090,
+    "test": 4515
+  },
+  "labels": {
+    "train": {
+      "negative": {
+        "count": 1872,
+        "share": 0.2197
+      },
+      "neutral": {
+        "count": 3108,
+        "share": 0.3647
+      },
+      "positive": {
+        "count": 3542,
+        "share": 0.4156
+      }
+    },
+    "dev": {
+      "negative": {
+        "count": 443,
+        "share": 0.212
+      },
+      "neutral": {
+        "count": 763,
+        "share": 0.3651
+      },
+      "positive": {
+        "count": 884,
+        "share": 0.423
+      }
+    },
+    "test": {
+      "negative": {
+        "count": 981,
+        "share": 0.2173
+      },
+      "neutral": {
+        "count": 1616,
+        "share": 0.3579
+      },
+      "positive": {
+        "count": 1918,
+        "share": 0.4248
+      }
+    }
+  },
+  "length_tokens_normalised": {
+    "train": {
+      "mean": 19.4,
+      "median": 18.0,
+      "p95": 45.0,
+      "max": 70,
+      "by_label_median": {
+        "negative": 20.0,
+        "neutral": 17.0,
+        "positive": 18.0
+      }
+    },
+    "dev": {
+      "mean": 19.3,
+      "median": 18.0,
+      "p95": 46.0,
+      "max": 62,
+      "by_label_median": {
+        "negative": 20.0,
+        "neutral": 17.0,
+        "positive": 17.0
+      }
+    },
+    "test": {
+      "mean": 19.2,
+      "median": 18.0,
+      "p95": 43.0,
+      "max": 69,
+      "by_label_median": {
+        "negative": 20.0,
+        "neutral": 16.0,
+        "positive": 18.0
+      }
+    }
+  },
+  "surface_features_raw": {
+    "train": {
+      "uppercase": 0.9887,
+      "punctuation": 0.9676,
+      "mention": 0.4375,
+      "hashtag": 0.569,
+      "url": 0.2122,
+      "retweet": 0.2198,
+      "emoji": 0.0827,
+      "digit": 0.2745
+    },
+    "dev": {
+      "uppercase": 0.988,
+      "punctuation": 0.9684,
+      "mention": 0.4474,
+      "hashtag": 0.5593,
+      "url": 0.2139,
+      "retweet": 0.2292,
+      "emoji": 0.0842,
+      "digit": 0.2837
+    },
+    "test": {
+      "uppercase": 0.0,
+      "punctuation": 0.0,
+      "mention": 0.0,
+      "hashtag": 0.0,
+      "url": 0.0031,
+      "retweet": 0.0,
+      "emoji": 0.0053,
+      "digit": 0.0
+    }
+  },
+  "diacritics": {
+    "train": {
+      "tone_marks": 0.7725,
+      "underdots": 0.7293,
+      "no_diacritics": 0.2179,
+      "tone_marks_by_label": {
+        "negative": 0.7137,
+        "neutral": 0.8533,
+        "positive": 0.7326
+      }
+    },
+    "dev": {
+      "tone_marks": 0.7775,
+      "underdots": 0.7301,
+      "no_diacritics": 0.2158,
+      "tone_marks_by_label": {
+        "negative": 0.7178,
+        "neutral": 0.8611,
+        "positive": 0.7353
+      }
+    },
+    "test": {
+      "tone_marks": 0.7845,
+      "underdots": 0.7386,
+      "no_diacritics": 0.2066,
+      "tone_marks_by_label": {
+        "negative": 0.7013,
+        "neutral": 0.8725,
+        "positive": 0.7529
+      }
+    }
+  },
+  "vocabulary": {
+    "dev": {
+      "with_diacritics": {
+        "train_vocab_size": 20052,
+        "oov_token_rate": 0.0657,
+        "oov_type_rate": 0.2896
+      },
+      "without_diacritics": {
+        "train_vocab_size": 14164,
+        "oov_token_rate": 0.0419,
+        "oov_type_rate": 0.2496
+      }
+    },
+    "test": {
+      "with_diacritics": {
+        "train_vocab_size": 20052,
+        "oov_token_rate": 0.0776,
+        "oov_type_rate": 0.4056
+      },
+      "without_diacritics": {
+        "train_vocab_size": 14164,
+        "oov_token_rate": 0.0521,
+        "oov_type_rate": 0.3709
+      }
+    }
+  },
+  "overlap": {
+    "dev": {
+      "overlapping": 273,
+      "share": 0.1306,
+      "same_label_as_train": 262,
+      "different_label": 11
+    },
+    "test": {
+      "overlapping": 386,
+      "share": 0.0855,
+      "same_label_as_train": 371,
+      "different_label": 15
+    },
+    "test_vs_dev": 98,
+    "train_internal_duplicates": 15
+  },
+  "code_switching": {
+    "available": true,
+    "min_english_tokens": 2,
+    "train": {
+      "share_code_switched": 0.1434,
+      "by_label": {
+        "negative": 0.1485,
+        "neutral": 0.156,
+        "positive": 0.1296
+      }
+    },
+    "top_english_tokens_train": [
+      [
+        "that",
+        87
+      ],
+      [
+        "with",
+        80
+      ],
+      [
+        "will",
+        77
+      ],
+      [
+        "this",
+        68
+      ],
+      [
+        "what",
+        56
+      ],
+      [
+        "have",
+        52
+      ],
+      [
+        "your",
+        52
+      ],
+      [
+        "nigeria",
+        47
+      ],
+      [
+        "people",
+        45
+      ],
+      [
+        "good",
+        44
+      ],
+      [
+        "translation",
+        39
+      ],
+      [
+        "from",
+        35
+      ],
+      [
+        "happy",
+        32
+      ],
+      [
+        "proverb",
+        30
+      ],
+      [
+        "does",
+        29
+      ],
+      [
+        "whoever",
+        29
+      ],
+      [
+        "like",
+        28
+      ],
+      [
+        "person",
+        27
+      ],
+      [
+        "twitter",
+        27
+      ],
+      [
+        "know",
+        26
+      ],
+      [
+        "jonathan",
+        25
+      ],
+      [
+        "words",
+        25
+      ],
+      [
+        "they",
+        23
+      ],
+      [
+        "word",
+        23
+      ],
+      [
+        "language",
+        23
+      ]
+    ],
+    "examples_train": [
+      "yorùbá adage for the week àdánìkànrìn ejò ló ń jẹ ọmọ ejò níyà translation the lone movement of a snake exposes it to danger what is this òwe telling you",
+      "ó ti wà bẹ́ẹ̀ lọ́jọ́ tó ti pẹ́ olóògbé bàbá alfredo darrington bowman tí àwọn èèyàn mọ̀ sí dr sebi ti ilé iṣẹ́ ìwádìí usha ní america ṣe àfihàn àwọn oúnjẹ ikú wọ̀nyí kódà ọ̀ràn náà só síni lẹ́nu ó tún buyọ̀ sí i nítorí owó",
+      "àmodi illness ọdún méjì ni àmodi fi ṣe é s he was ill for years",
+      "ede gesi yin gan o gbadun ewo ni right write ni sir eti fi owo awan obi yin jona",
+      "ẹranko tó bá ṣiyèméjì lọde ńpa it is the indecisive animal that gets killed by the hunter proverb",
+      "àwọn gómìnà ń ṣe ìgbéyàwó fọ́mọ wọn nígbà tí boko haram ń ko àwa lọmọ lọ olóòtú sahara reporters tí fọgba yángan htt",
+      "òròmọadìyẹ ńbá àṣá ṣeré ó rò pé ẹyẹ oko lásán ni the chick gullibly plays with the hawk believing it to be an ord",
+      "the environment erupted with joy and a signal to the opposition with popular e re gbe wa bi x eyin te se gbe yin basu basu e re gbe wa bi"
+    ],
+    "dev": {
+      "share_code_switched": 0.134,
+      "by_label": {
+        "negative": 0.1625,
+        "neutral": 0.1468,
+        "positive": 0.1086
+      }
+    },
+    "test": {
+      "share_code_switched": 0.1371,
+      "by_label": {
+        "negative": 0.1488,
+        "neutral": 0.1516,
+        "positive": 0.1189
+      }
+    }
+  },
+  "distinctive_words_train": {
+    "negative": [
+      [
+        "pa",
+        11.02
+      ],
+      [
+        "wọ́n",
+        10.42
+      ],
+      [
+        "ti",
+        10.17
+      ],
+      [
+        "awon",
+        9.93
+      ],
+      [
+        "won",
+        9.85
+      ],
+      [
+        "ò",
+        9.51
+      ],
+      [
+        "wọn",
+        8.15
+      ],
+      [
+        "ba",
+        7.76
+      ],
+      [
+        "wan",
+        7.39
+      ],
+      [
+        "ikú",
+        7.04
+      ],
+      [
+        "egbe",
+        6.8
+      ],
+      [
+        "iya",
+        6.23
+      ],
+      [
+        "kò",
+        6.22
+      ],
+      [
+        "ìjọba",
+        6.2
+      ],
+      [
+        "nijeria",
+        6.07
+      ]
+    ],
+    "neutral": [
+      [
+        "tí",
+        12.26
+      ],
+      [
+        "ń",
+        11.61
+      ],
+      [
+        "ní",
+        10.84
+      ],
+      [
+        "yorùbá",
+        10.42
+      ],
+      [
+        "orúkọ",
+        9.8
+      ],
+      [
+        "mọ̀",
+        9.52
+      ],
+      [
+        "sí",
+        9.43
+      ],
+      [
+        "ǹjẹ́",
+        9.3
+      ],
+      [
+        "ni",
+        9.17
+      ],
+      [
+        "wípé",
+        9.06
+      ],
+      [
+        "àti",
+        8.88
+      ],
+      [
+        "àwọn",
+        8.4
+      ],
+      [
+        "pè",
+        8.24
+      ],
+      [
+        "kíni",
+        7.96
+      ],
+      [
+        "nínú",
+        7.93
+      ]
+    ],
+    "positive": [
+      [
+        "o",
+        25.0
+      ],
+      [
+        "wa",
+        19.62
+      ],
+      [
+        "ẹ",
+        19.39
+      ],
+      [
+        "ire",
+        16.89
+      ],
+      [
+        "mi",
+        16.59
+      ],
+      [
+        "kú",
+        15.38
+      ],
+      [
+        "mo",
+        12.95
+      ],
+      [
+        "gbogbo",
+        11.69
+      ],
+      [
+        "ki",
+        11.25
+      ],
+      [
+        "ọlọ́run",
+        11.24
+      ],
+      [
+        "e",
+        10.56
+      ],
+      [
+        "ẹ̀yin",
+        9.12
+      ],
+      [
+        "rere",
+        8.88
+      ],
+      [
+        "yín",
+        8.3
+      ],
+      [
+        "ajé",
+        8.24
+      ]
+    ]
+  },
+  "aux_languages": {
+    "hau": {
+      "train_size": 14172,
+      "labels": {
+        "negative": {
+          "count": 4573,
+          "share": 0.3227
+        },
+        "neutral": {
+          "count": 4912,
+          "share": 0.3466
+        },
+        "positive": {
+          "count": 4687,
+          "share": 0.3307
+        }
+      }
+    },
+    "ibo": {
+      "train_size": 10192,
+      "labels": {
+        "negative": {
+          "count": 2600,
+          "share": 0.2551
+        },
+        "neutral": {
+          "count": 4508,
+          "share": 0.4423
+        },
+        "positive": {
+          "count": 3084,
+          "share": 0.3026
+        }
+      }
+    },
+    "pcm": {
+      "train_size": 5121,
+      "labels": {
+        "negative": {
+          "count": 3241,
+          "share": 0.6329
+        },
+        "neutral": {
+          "count": 72,
+          "share": 0.0141
+        },
+        "positive": {
+          "count": 1808,
+          "share": 0.3531
+        }
+      }
+    }
+  }
+}

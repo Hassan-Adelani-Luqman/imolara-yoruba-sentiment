@@ -73,32 +73,29 @@ The schedule keeps 2 buffer days (19–20 Oct) after the deadline, for emergenci
 
 ---
 
-## Phase 1 — Data acquisition, EDA and preprocessing (4 Oct)
+## Phase 1 — Data acquisition, EDA and preprocessing (4 Oct) ✅ done
 
-**Tasks**
-1. Load `shmuhammad/AfriSenti-twitter-sentiment` (config `yor`), keeping the **official splits**. The test set is used only once, in Phase 6.
-2. **Integrity checks:**
-   - Exact and near-duplicates (after normalisation) within each split and across splits.
-   - Empty or very short tweets.
-   - Label consistency for duplicated texts.
-3. **EDA** (`notebooks/01_eda.ipynb`):
-   - Label distribution per split.
-   - Tweet length (tokens and characters).
-   - Most frequent tokens per class.
-   - % of tweets containing **tone marks** (combining U+0300 grave, U+0301 acute, U+0304 macron) and **under-dots** (ẹ, ọ, ṣ / U+0323).
-   - % with English or Pidgin words (estimated with an English wordlist), emojis, hashtags, URLs and @mentions.
-   - Vocabulary overlap between train and test (OOV rate).
-4. **Preprocessing** (`src/data.py`), all as configurable functions:
-   - Unicode **NFC** normalisation (essential: the same Yoruba character can be stored precomposed or decomposed).
-   - Replace @mentions with `@user` and URLs with `http`; collapse repeated characters (more than 3) and extra whitespace.
-   - Keep emojis (they carry sentiment) and lowercase only for classical models.
-   - `strip_tones(text)`: NFD, remove U+0300/0301/0304, NFC. Under-dots are kept.
-   - `strip_all_diacritics(text)`: also removes under-dots (ẹ→e, ọ→o, ṣ→s).
-5. **Auxiliary data:** load AfriSenti `hau`, `ibo` and `pcm` train splits for E7 (no test usage).
+**What was done**
+1. Loaded the **raw AfriSenti TSVs pinned to commit `5aec3cf`** (`src/data.py`). The HF copy relies on a loading script that current `datasets` can't run. Official splits kept: **8,522 / 2,090 / 4,515**.
+2. **Integrity:** no empty tweets, 15 near-duplicates inside train, no conflicting duplicate labels. **13% of dev and 8.5% of test duplicate a training tweet** (about 96% with the same label).
+3. **EDA:** `src/eda.py` (CLI, writes `results/data_stats.json` and `results/figures/eda_*.png`) and `notebooks/01_eda.ipynb` (executed, with narrative).
+4. **Preprocessing** (`src/data.py`, 8 unit tests):
+   - NFC.
+   - **`normalize_semeval`**: the organisers' test normalisation, reconstructed and validated (76/79 pairs exact). It is applied to all splits and is the default style.
+   - `style="raw"` (mask mentions and URLs, keep emojis) is kept for an ablation.
+   - `strip_tones` and `strip_all_diacritics`.
+   - `dedup_key`, `overlaps_with` and `load_eval_split` (adds an `overlap_train` flag).
+5. Auxiliary hau/ibo/pcm train splits load; sizes and labels are in the stats file.
 
-**Outputs:** `src/data.py`, `notebooks/01_eda.ipynb`, `results/figures/label_dist.png`, `results/data_stats.json`, and a dataset table for report section 4.
-
-**Done when:** the data loads in one call, the stats are reproducible and the preprocessing has unit tests (`tests/test_data.py`: NFC, tone stripping and masking).
+**Key findings that change the plan**
+| Finding | Consequence |
+|---|---|
+| **Test was pre-normalised by the organisers** (0% uppercase, punctuation, hashtags, emojis); train/dev are raw | All splits get `normalize_semeval`; **emojis are no longer kept** (they never appear in test). New ablation **E1-style**: train raw vs normalised, scored on normalised dev |
+| Dev/test duplicate train (13% / 8.5%) | Every result is reported on **all** and **clean** subsets (`evaluate.score_subsets`); model selection uses **clean dev** (1,817 tweets) |
+| 77% of tweets carry tone marks, but **presence correlates with label** (neutral 85%, negative 71%) | E6 also tests whether models rely on "has diacritics" as a shortcut |
+| Test OOV much higher than dev (41% vs 29% of word types) | Favours subword/char models; check the dev→test drop in Phase 6 |
+| About 14% English code-switching (heuristic) | Error-analysis category; mBERT/XLM-R English knowledge may help |
+| Pidgin is 1.4% neutral | E7 runs with and without pcm |
 
 ---
 
@@ -121,7 +118,10 @@ Run locally on CPU.
   - Append one row to `results/experiments.csv`: `id, model, config, seed, split, acc, macro_f1, weighted_f1, notes`.
 - Save the top features per class (interpretability material for the report and video).
 
-**Done when:** E0–E1 dev scores are logged and the best baseline is chosen on dev macro-F1.
+- **E1-style ablation:** the best E1 configuration trained on `raw` vs `semeval` text, both scored on normalised dev (measures the cost of the train/test format mismatch).
+- All baselines are tuned on **clean dev** and reported on all + clean dev.
+
+**Done when:** E0–E1 dev scores are logged and the best baseline is chosen on clean-dev macro-F1.
 
 ---
 
@@ -194,7 +194,7 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 |---|---|---|
 | E6 | Tone-mark robustness (RQ2) | Train on {original, tones stripped, all diacritics stripped, mixed-augmentation (each training tweet seen in both forms)} × evaluate on dev in each form. Present as a heatmap matrix |
 | E6′ | Same question for the baseline | Repeat on TF-IDF + LR to compare: are char n-grams naturally more robust? |
-| E7 | Cross-lingual transfer (RQ3) | Train on yor + {hau, ibo, pcm} (all together and one at a time if time allows); evaluate on yor dev |
+| E7 | Cross-lingual transfer (RQ3) | Train on yor + {hau, ibo, pcm} and yor + {hau, ibo} (pcm is only 1.4% neutral); evaluate on yor dev |
 | E8 | Class imbalance | Weighted cross-entropy (inverse frequency) vs standard |
 | E9 (optional) | Learning curve | Train on 10/25/50/100% of yor data; plot macro-F1 vs size for TF-IDF vs the best transformer |
 
@@ -348,4 +348,4 @@ Target **9:15** (hard limit 7–10 min). Each segment maps to a rubric criterion
 | Label noise limits scores | Measure and discuss it in error analysis; it is a finding, not a failure |
 | Complex model doesn't beat baseline | Explain it (data size, domain, noise); the rubric explicitly allows this |
 | Schedule slips | E9 and the extra E7 variants are optional; core path is E0, E1, E2a, E3b, E5a, E5c, E6 |
-| Accidental test-set tuning | Test is used only in Phase 6, enforced by the evaluation script flag `--split test` |
+| Accidental test-set tuning | Test is loaded only with `--final` (Phase 6); selection uses clean dev |

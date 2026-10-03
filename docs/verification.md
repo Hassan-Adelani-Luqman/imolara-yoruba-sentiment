@@ -18,6 +18,21 @@ Checked 4 Oct 2026. "Own check" means computed from the data in this repo; other
 
 **Finding to discuss in the report:** most AfriSenti Yoruba tweets *do* carry diacritics (about 77%), which goes against the usual claim that diacritics are dropped online (Orife 2018). The likely reason is that the tweets were collected with keyword lists that included diacritised words. This makes the tone-mark ablation (E6) a robustness test for users who type *without* diacritics, as most phone keyboards do.
 
+## Test-set normalisation (found in Phase 1)
+
+The released **test split is pre-normalised**, while train/dev are raw:
+
+| Feature | train | dev | test |
+|---|---|---|---|
+| Uppercase | 98.9% | 98.8% | 0.0% |
+| Punctuation | 96.8% | 96.8% | 0.0% |
+| Hashtag | 56.9% | 55.9% | 0.0% |
+| Emoji | 8.3% | 8.4% | 0.5% |
+
+The same holds for hau and ibo; pcm is normalised in every split. The AfriSenti paper only says that the Nigerian test sets were lower-cased. `normalize_semeval` reproduces the format: 76/79 conservative train/test pairs exact, hashtags removed with their word (`#tweetinyoruba`: 251 in train, 0 in test).
+
+**Correction:** the HF parquet *train* split contains the **raw** tweets. An early probe merged on the wrong column and wrongly suggested it was normalised.
+
 ## Auxiliary languages (E7), train sizes
 
 hau 14,172 · ibo 10,192 · pcm 5,121. Pidgin has only 72 neutral examples (1.4%), so watch the class balance in E7.
