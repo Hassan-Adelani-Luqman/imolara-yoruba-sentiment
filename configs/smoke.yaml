@@ -1,0 +1,8 @@
+# Pipeline check on Kaggle: real model, tiny data, 1 epoch. Not an experiment.
+exp_id: smoke
+model_name: FacebookAI/xlm-roberta-base
+train_subset: 200
+epochs: 1
+batch_size: 16
+eval_diacritics: [original, no_tones, no_diacritics]
+notes: pipeline smoke test

@@ -1,0 +1,21 @@
+# environments
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# secrets
+kaggle.json
+access_token
+.env
+
+# data, models, generated artefacts
+data/
+models/
+outputs/
+*.ckpt
+*.safetensors
+*.bin
+wandb/
+kaggle/_build/
+results/kaggle/*/seed*/model/

@@ -1,0 +1,4 @@
+# Extra packages installed inside Kaggle kernels. Kaggle already provides torch, transformers,
+# datasets, scikit-learn, pandas and pyyaml. Do NOT pin torch/transformers here: replacing
+# Kaggle's CUDA builds breaks the GPU.
+peft
