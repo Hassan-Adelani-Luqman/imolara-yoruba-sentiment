@@ -104,29 +104,79 @@ DIACRITIC_MODES = {
 
 USER_RE = re.compile(r"@\w+")
 URL_RE = re.compile(r"https?://\S+|www\.\S+")
+RT_RE = re.compile(r"\bRT\b")
+HASHTAG_RE = re.compile(r"#\w+")
+APOSTROPHE_RE = re.compile(r"['’`]")
 REPEAT_RE = re.compile(r"(.)\1{3,}")
 SPACE_RE = re.compile(r"\s+")
+VARIATION_SELECTORS = {"\ufe0e", "\ufe0f"}
 
 
 def clean_tweet(text: str) -> str:
-    """Mask user handles and URLs, cap character repeats at 3, collapse whitespace. Emojis are kept."""
+    """'raw' style: mask user handles and URLs, cap character repeats at 3, collapse whitespace.
+    Case, punctuation, hashtags and emojis are kept."""
     text = USER_RE.sub("@user", text)
     text = URL_RE.sub("http", text)
     text = REPEAT_RE.sub(r"\1\1\1", text)
     return SPACE_RE.sub(" ", text).strip()
 
 
-def preprocess(text: str, diacritics: str = "original", lowercase: bool = False) -> str:
+def normalize_semeval(text: str) -> str:
+    """'semeval' style: reproduce the normalisation the AfriSenti organisers applied to the test split.
+
+    The released Yoruba test set is lower-cased and has mentions, URLs, RT markers, hashtags,
+    punctuation, digits and emojis removed, while train/dev are raw tweets. Applying this to every
+    split removes the train/test format mismatch. Reconstructed from the 79 train/test near-duplicate
+    pairs (76/79 reproduced exactly; the 3 misses differ in the underlying tweet) and the observation
+    that hashtag words such as #tweetinyoruba (251 train tweets) never occur in test (docs/verification.md).
+    """
+    text = URL_RE.sub(" ", text)
+    text = USER_RE.sub(" ", text)
+    text = RT_RE.sub(" ", text)
+    text = HASHTAG_RE.sub(" ", text)
+    text = APOSTROPHE_RE.sub("", text.lower())          # d'óró -> dóró
+    # keep letters and combining marks (Yoruba tones/under-dots); everything else becomes a space
+    text = "".join(ch if unicodedata.category(ch)[0] in "LM" and ch not in VARIATION_SELECTORS else " "
+                   for ch in text)
+    text = REPEAT_RE.sub(r"\1\1\1", text)
+    return SPACE_RE.sub(" ", text).strip()
+
+
+TEXT_STYLES = {"semeval": normalize_semeval, "raw": clean_tweet}
+
+
+def preprocess(text: str, diacritics: str = "original", style: str = "semeval") -> str:
     """Full preprocessing used identically in training, evaluation and the web app."""
     if diacritics not in DIACRITIC_MODES:
         raise ValueError(f"diacritics must be one of {list(DIACRITIC_MODES)}, got {diacritics!r}")
-    text = clean_tweet(nfc(text))
-    text = DIACRITIC_MODES[diacritics](text)
-    return text.lower() if lowercase else text
+    if style not in TEXT_STYLES:
+        raise ValueError(f"style must be one of {list(TEXT_STYLES)}, got {style!r}")
+    text = TEXT_STYLES[style](nfc(text))
+    return DIACRITIC_MODES[diacritics](text)
 
 
-def preprocess_frame(df: pd.DataFrame, diacritics: str = "original", lowercase: bool = False) -> pd.DataFrame:
+def preprocess_frame(df: pd.DataFrame, diacritics: str = "original", style: str = "semeval") -> pd.DataFrame:
     """Return a copy of df with the text column preprocessed."""
     out = df.copy()
-    out["text"] = [preprocess(t, diacritics, lowercase) for t in out["text"]]
+    out["text"] = [preprocess(t, diacritics, style) for t in out["text"]]
     return out
+
+
+# --------------------------------------------------------------------------- overlap / leakage
+
+def dedup_key(text: str) -> str:
+    """Aggressive normal form for duplicate detection: semeval style without any diacritics."""
+    return strip_all_diacritics(normalize_semeval(nfc(text)))
+
+
+def overlaps_with(df: pd.DataFrame, reference: pd.DataFrame) -> pd.Series:
+    """Boolean mask: rows of df whose dedup_key also occurs in reference (e.g. dev/test tweets seen in train)."""
+    ref_keys = set(reference["text"].map(dedup_key))
+    return df["text"].map(dedup_key).isin(ref_keys)
+
+
+def load_eval_split(lang: str = "yor", split: str = "dev") -> pd.DataFrame:
+    """Load dev/test with an overlap_train column marking tweets that duplicate a training tweet."""
+    df = load_split(lang, split)
+    df["overlap_train"] = overlaps_with(df, load_split(lang, "train"))
+    return df

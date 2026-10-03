@@ -25,15 +25,17 @@ from datasets import Dataset, disable_progress_bars
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding,
                           EarlyStoppingCallback, Trainer, TrainingArguments, set_seed)
 
-from src.data import ID2LABEL, LABEL2ID, LABELS, load_split, preprocess_frame
-from src.evaluate import compute_metrics, evaluate_predictions, save_run
+from src.data import ID2LABEL, LABEL2ID, LABELS, load_eval_split, load_split, preprocess_frame
+from src.evaluate import compute_metrics, save_run, score_subsets
 
 DEFAULTS = {
     "lang": "yor",
     "aux_langs": [],                 # E7: extra AfriSenti languages added to training, e.g. [hau, ibo, pcm]
     "train_diacritics": "original",  # original | no_tones | no_diacritics | mixed (original + no_diacritics)
     "eval_diacritics": ["original"],  # dev/test are scored once per listed form (E6)
-    "lowercase": False,
+    "train_style": "semeval",        # semeval (organisers' test format) | raw: text style used for training
+    "eval_style": "semeval",         # dev/test are always scored in the test format unless overridden
+    "select_on_clean_dev": True,     # pick the best epoch on dev tweets that do not duplicate train
     "max_length": 128,
     "learning_rate": 2e-5,
     "epochs": 5,
@@ -62,10 +64,10 @@ def build_train_frame(cfg: dict, seed: int) -> pd.DataFrame:
     if cfg["train_subset"]:
         train = train.sample(n=min(cfg["train_subset"], len(train)), random_state=seed)
     if cfg["train_diacritics"] == "mixed":
-        train = pd.concat([preprocess_frame(train, "original", cfg["lowercase"]),
-                           preprocess_frame(train, "no_diacritics", cfg["lowercase"])], ignore_index=True)
+        train = pd.concat([preprocess_frame(train, "original", cfg["train_style"]),
+                           preprocess_frame(train, "no_diacritics", cfg["train_style"])], ignore_index=True)
         return train.drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
-    return preprocess_frame(train, cfg["train_diacritics"], cfg["lowercase"])
+    return preprocess_frame(train, cfg["train_diacritics"], cfg["train_style"])
 
 
 class WeightedTrainer(Trainer):
@@ -121,9 +123,10 @@ def main(argv=None):
     start = time.time()
 
     train_df = build_train_frame(cfg, args.seed)
-    dev_raw = load_split(cfg["lang"], "dev")
+    dev_raw = load_eval_split(cfg["lang"], "dev")
     select_mode = "original" if cfg["train_diacritics"] == "mixed" else cfg["train_diacritics"]
-    dev_select = preprocess_frame(dev_raw, select_mode, cfg["lowercase"])
+    select_rows = ~dev_raw["overlap_train"] if cfg["select_on_clean_dev"] else slice(None)
+    dev_select = preprocess_frame(dev_raw[select_rows], select_mode, cfg["eval_style"])
 
     tokenizer = AutoTokenizer.from_pretrained(cfg["model_name"])
 
@@ -188,21 +191,22 @@ def main(argv=None):
 
     # Score the selected model on dev (and test with --final) in every requested diacritic form.
     base = {"exp_id": cfg["exp_id"], "model": cfg["model_name"], "seed": args.seed,
-            "train_diacritics": cfg["train_diacritics"], "aux_langs": "+".join(cfg["aux_langs"]),
+            "train_diacritics": cfg["train_diacritics"], "train_style": cfg["train_style"], "aux_langs": "+".join(cfg["aux_langs"]),
             "lora": bool(cfg["lora"]), "class_weights": cfg["class_weights"],
             "trainable_params": trainable, "total_params": total,
             "git_commit": os.environ.get("IMOLARA_GIT_COMMIT", ""), "notes": cfg["notes"]}
     records, predictions = [], {}
     splits = ["dev", "test"] if args.final else ["dev"]
     for split in splits:
-        raw = dev_raw if split == "dev" else load_split(cfg["lang"], "test")
+        raw = dev_raw if split == "dev" else load_eval_split(cfg["lang"], "test")
         for mode in cfg["eval_diacritics"]:
-            df = preprocess_frame(raw, mode, cfg["lowercase"])
+            df = preprocess_frame(raw, mode, cfg["eval_style"])
             df["pred_id"], probs = predict(trainer, to_dataset(df))
-            record, preds = evaluate_predictions(df, probs, **base, split=split, eval_diacritics=mode)
-            records.append(record)
+            recs, preds = score_subsets(df, probs, **base, split=split, eval_diacritics=mode)
+            records.extend(recs)
             predictions[f"{split}_{mode}"] = preds
-            print(f"[{split}/{mode}] macro-F1 {record['macro_f1']:.4f}  weighted-F1 {record['weighted_f1']:.4f}")
+            for r in recs:
+                print(f"[{split}/{mode}/{r['subset']}] macro-F1 {r['macro_f1']:.4f}  weighted-F1 {r['weighted_f1']:.4f}")
 
     runtime = round(time.time() - start, 1)
     for record in records:

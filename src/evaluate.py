@@ -21,7 +21,7 @@ from src.data import LABELS
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPERIMENTS_CSV = ROOT / "results" / "experiments.csv"
-RUN_KEY = ["exp_id", "seed", "split", "eval_diacritics"]
+RUN_KEY = ["exp_id", "seed", "split", "subset", "eval_diacritics"]
 
 
 def compute_metrics(y_true, y_pred) -> dict:
@@ -82,6 +82,19 @@ def evaluate_predictions(df: pd.DataFrame, probs: np.ndarray | None = None, **re
     return record, preds
 
 
+def score_subsets(df: pd.DataFrame, probs: np.ndarray | None = None, **record) -> tuple[list[dict], pd.DataFrame]:
+    """Score a split twice: all rows, and the 'clean' rows that do not duplicate a training tweet.
+
+    df needs id, text, label_id, pred_id and overlap_train (see data.load_eval_split). About 13% of dev
+    and 8.5% of test tweets duplicate a training tweet, which inflates scores on the full split.
+    """
+    rec_all, preds = evaluate_predictions(df, probs, **record, subset="all")
+    clean = ~df["overlap_train"].to_numpy(dtype=bool)
+    rec_clean, _ = evaluate_predictions(df[clean], None if probs is None else probs[clean], **record, subset="clean")
+    preds["overlap_train"] = df["overlap_train"].to_numpy(dtype=bool)
+    return [rec_all, rec_clean], preds
+
+
 def save_run(output_dir: Path, records: list[dict], predictions: dict[str, pd.DataFrame], extra: dict | None = None):
     """Write metrics.json (list of records) and predictions_<name>.csv files into output_dir."""
     output_dir = Path(output_dir)
@@ -98,7 +111,7 @@ def append_records(records: list[dict], csv_path: Path = EXPERIMENTS_CSV) -> pd.
     new = pd.DataFrame(records)
     for col in RUN_KEY:
         if col not in new:
-            new[col] = "original" if col == "eval_diacritics" else None
+            new[col] = {"eval_diacritics": "original", "subset": "all"}.get(col)
     if csv_path.exists():
         old = pd.read_csv(csv_path)
         merged = pd.concat([old, new], ignore_index=True)

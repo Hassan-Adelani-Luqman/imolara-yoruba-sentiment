@@ -1,6 +1,6 @@
 import unicodedata
 
-from src.data import (clean_tweet, has_tone_marks, has_underdots, nfc, preprocess,
+from src.data import (clean_tweet, has_tone_marks, has_underdots, nfc, normalize_semeval, preprocess,
                       strip_all_diacritics, strip_tones)
 
 
@@ -30,6 +30,18 @@ def test_clean_tweet_masks_users_urls_and_repeats():
     assert clean_tweet(text) == "@user wo http ẹ kú iṣẹ́ ooo!!! 😂😂😂"
 
 
-def test_preprocess_modes_and_lowercase():
-    assert preprocess("Ẹ KÚ ÀBỌ̀", "no_tones", lowercase=True) == "ẹ ku abọ"
-    assert preprocess("Ẹ KÚ ÀBỌ̀", "no_diacritics") == "E KU ABO"
+def test_normalize_semeval_matches_organiser_test_format():
+    # real train tweet and its near-duplicate in the released test split
+    raw = "@user kòlè yé e yín. Àmọ́ mo mọ̀ wípé á á dára. E lè dá 'promo' dúró fún 'gbà díẹ̀. Ẹ dákun, ẹ mọ́ bínú, ó kú díẹ̀ :)"
+    test = "kòlè yé e yín àmọ́ mo mọ̀ wípé á á dára e lè dá promo dúró fún gbà díẹ̀ ẹ dákun ẹ mọ́ bínú ó kú díẹ̀"
+    assert normalize_semeval(nfc(raw)) == nfc(test)
+
+
+def test_normalize_semeval_drops_hashtags_urls_rt_digits_emoji():
+    raw = "RT @user: Ẹ KÚ ỌDÚN 2024 🎄❤️ #TweetInYoruba http://t.co/x"
+    assert normalize_semeval(nfc(raw)) == nfc("ẹ kú ọdún")
+
+
+def test_preprocess_styles_and_diacritic_modes():
+    assert preprocess("Ẹ KÚ ÀBỌ̀!", "no_tones") == "ẹ ku abọ"
+    assert preprocess("Ẹ KÚ ÀBỌ̀!", "no_diacritics", style="raw") == "E KU ABO!"
