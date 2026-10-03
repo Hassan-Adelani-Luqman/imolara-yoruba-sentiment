@@ -39,29 +39,73 @@ def compute_metrics(y_true, y_pred) -> dict:
     return {k: round(float(v), 4) for k, v in metrics.items()}
 
 
+def _fast_score(y_true: np.ndarray, y_pred: np.ndarray, metric: str) -> float:
+    """macro_f1 / weighted_f1 / accuracy from a confusion matrix; equal to compute_metrics but ~100x faster,
+    which matters inside bootstrap loops."""
+    k = len(LABELS)
+    cm = np.bincount(y_true * k + y_pred, minlength=k * k).reshape(k, k)
+    if metric == "accuracy":
+        return float(np.trace(cm) / cm.sum())
+    tp, gold, pred = np.diag(cm), cm.sum(1), cm.sum(0)
+    denom = gold + pred
+    f1 = np.divide(2 * tp, denom, out=np.zeros(k), where=denom > 0)
+    if metric == "macro_f1":
+        return float(f1.mean())
+    if metric == "weighted_f1":
+        return float((f1 * gold).sum() / gold.sum())
+    raise ValueError(f"unsupported bootstrap metric {metric!r}")
+
+
 def bootstrap_ci(y_true, y_pred, metric: str = "macro_f1", n: int = 1000, seed: int = 0, alpha: float = 0.05):
     """Percentile bootstrap confidence interval for one metric (resampling test items with replacement)."""
-    y_true, y_pred = np.asarray(y_true), np.asarray(y_pred)
+    y_true, y_pred = np.asarray(y_true, dtype=int), np.asarray(y_pred, dtype=int)
     rng = np.random.default_rng(seed)
-    scores = [compute_metrics(y_true[idx], y_pred[idx])[metric]
+    scores = [_fast_score(y_true[idx], y_pred[idx], metric)
               for idx in (rng.integers(0, len(y_true), len(y_true)) for _ in range(n))]
     return float(np.quantile(scores, alpha / 2)), float(np.quantile(scores, 1 - alpha / 2))
 
 
 def paired_bootstrap(y_true, pred_a, pred_b, metric: str = "macro_f1", n: int = 1000, seed: int = 0) -> float:
     """Share of bootstrap samples in which system A does NOT beat system B (an approximate p-value)."""
-    y_true, pred_a, pred_b = map(np.asarray, (y_true, pred_a, pred_b))
+    y_true, pred_a, pred_b = (np.asarray(a, dtype=int) for a in (y_true, pred_a, pred_b))
     rng = np.random.default_rng(seed)
     losses = 0
     for _ in range(n):
         idx = rng.integers(0, len(y_true), len(y_true))
-        losses += compute_metrics(y_true[idx], pred_a[idx])[metric] <= compute_metrics(y_true[idx], pred_b[idx])[metric]
+        losses += _fast_score(y_true[idx], pred_a[idx], metric) <= _fast_score(y_true[idx], pred_b[idx], metric)
     return losses / n
 
 
 def confusion(y_true, y_pred) -> pd.DataFrame:
     cm = confusion_matrix(y_true, y_pred, labels=list(range(len(LABELS))))
     return pd.DataFrame(cm, index=[f"gold_{l}" for l in LABELS], columns=[f"pred_{l}" for l in LABELS])
+
+
+def plot_confusion(y_true, y_pred, path: Path, title: str):
+    """Row-normalised confusion matrix (recall per gold class), single-hue sequential blue, counts annotated."""
+    import matplotlib.pyplot as plt
+    from matplotlib.colors import LinearSegmentedColormap
+    cm = confusion_matrix(y_true, y_pred, labels=list(range(len(LABELS))))
+    share = cm / cm.sum(axis=1, keepdims=True)
+    cmap = LinearSegmentedColormap.from_list("blue", ["#f4f8fd", "#86b6ef", "#2a78d6", "#104281"])
+    fig, ax = plt.subplots(figsize=(4.2, 3.6), dpi=200)
+    ax.imshow(share, cmap=cmap, vmin=0, vmax=1)
+    for i in range(len(LABELS)):
+        for j in range(len(LABELS)):
+            ax.text(j, i, f"{share[i, j]:.0%}\n({cm[i, j]})", ha="center", va="center", fontsize=8,
+                    color="white" if share[i, j] > 0.55 else "#0b0b0b")
+    ax.set_xticks(range(len(LABELS)), LABELS, fontsize=8, color="#52514e")
+    ax.set_yticks(range(len(LABELS)), LABELS, fontsize=8, color="#52514e")
+    ax.set_xlabel("predicted", fontsize=8, color="#52514e")
+    ax.set_ylabel("gold", fontsize=8, color="#52514e")
+    ax.tick_params(length=0)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    ax.set_title(title, loc="left", fontsize=9, color="#0b0b0b")
+    fig.tight_layout()
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(path, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
 
 
 def evaluate_predictions(df: pd.DataFrame, probs: np.ndarray | None = None, **record) -> tuple[dict, pd.DataFrame]:

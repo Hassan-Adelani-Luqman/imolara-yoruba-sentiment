@@ -99,7 +99,31 @@ The schedule keeps 2 buffer days (19–20 Oct) after the deadline, for emergenci
 
 ---
 
-## Phase 2 — Baselines (4–5 Oct)
+## Phase 2 — Baselines (4–5 Oct) ✅ done
+
+**Results** (`results/summary.md`; selection on clean dev, n = 1,817)
+
+| ID | Model | macro-F1 clean dev | macro-F1 all dev | F1 neg / neu / pos |
+|---|---|---|---|---|
+| E0 | Majority class | 0.198 | 0.198 | 0.00 / 0.00 / 0.59 |
+| E1a | Word 1–2-gram TF-IDF + LR (C=30, balanced) | 0.706 | 0.738 | 0.63 / 0.72 / 0.77 |
+| E1b | Char 2–5-gram TF-IDF + LinearSVC (C=0.1, balanced) | 0.714 | 0.733 | 0.62 / 0.74 / 0.78 |
+| **E1c** | **Word + char TF-IDF + LR (C=3)** (main baseline) | **0.722** [0.701, 0.744] | 0.753 | 0.61 / 0.76 / 0.80 |
+| E1d | E1c trained on **raw** text | 0.684 | 0.706 | 0.60 / 0.68 / 0.78 |
+
+**What we learned**
+1. **Word + character features are complementary:** E1c beats words alone (+1.7) and characters alone (+0.8).
+2. **Matching the test format matters:** training on raw tweets costs **3.9 macro-F1 points** (E1d vs E1c). This confirms the Phase 1 decision.
+3. **Duplicates inflate dev by about 3 points** (all dev 0.753 vs clean 0.722), so selecting on clean dev was the right call.
+4. **Tone-mark sensitivity is large:** with tone marks stripped at test time, every baseline loses **8–13 points**. Character n-grams lose least on tone stripping (−8.3), but no less when under-dots are removed too. The models trained on diacritised text treat diacritics as part of word identity, which motivates the E6 training-side variants.
+5. **Negative is the hard class** (recall 56%; confused with both neutral and positive), as expected for the 22% minority.
+6. **Tokenisation pitfall:** scikit-learn's default token pattern drops one-letter words (*o*, *ẹ*) and splits words at combining tone marks (*ọ̀rẹ́* → *rẹ*). We tokenise on whitespace.
+7. The top features are linguistically sensible (negative: *ò* 'not', *pa* 'kill', *ikú* 'death', *olè* 'thief'; positive: *ire*, *ẹ kú*, *rere*, *ìfẹ́*; neutral: *kí ni*, *ǹjẹ́*, *Ifá*), which is useful material for the video.
+
+**Bar for the neural models:** clean-dev macro-F1 **0.722**.
+
+<details><summary>Original Phase 2 plan</summary>
+
 
 Run locally on CPU.
 
@@ -122,6 +146,8 @@ Run locally on CPU.
 - All baselines are tuned on **clean dev** and reported on all + clean dev.
 
 **Done when:** E0–E1 dev scores are logged and the best baseline is chosen on clean-dev macro-F1.
+
+</details>
 
 ---
 

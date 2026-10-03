@@ -1,0 +1,325 @@
+{
+  "spec": {
+    "model": "logreg",
+    "features": "word+char",
+    "train_style": "raw",
+    "grid": {
+      "C": [
+        0.1,
+        0.3,
+        1,
+        3,
+        10
+      ],
+      "class_weight": [
+        null,
+        "balanced"
+      ]
+    }
+  },
+  "best_params": {
+    "C": 1,
+    "class_weight": null
+  },
+  "grid": [
+    {
+      "C": "0.1",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.6051
+    },
+    {
+      "C": "0.1",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.6284
+    },
+    {
+      "C": "0.3",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.6664
+    },
+    {
+      "C": "0.3",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.6462
+    },
+    {
+      "C": "1",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.6838
+    },
+    {
+      "C": "1",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.6645
+    },
+    {
+      "C": "3",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.6837
+    },
+    {
+      "C": "3",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.6753
+    },
+    {
+      "C": "10",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.6823
+    },
+    {
+      "C": "10",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.6761
+    }
+  ],
+  "n_train": 8522,
+  "top_features": {
+    "negative": [
+      [
+        "word__ò",
+        2.123
+      ],
+      [
+        "word__pa",
+        1.983
+      ],
+      [
+        "word__ti",
+        1.5
+      ],
+      [
+        "word__ba",
+        1.238
+      ],
+      [
+        "word__ń",
+        1.189
+      ],
+      [
+        "word__kò",
+        1.172
+      ],
+      [
+        "word__:(",
+        1.144
+      ],
+      [
+        "word__fa",
+        1.122
+      ],
+      [
+        "word__ikú",
+        1.107
+      ],
+      [
+        "word__iya",
+        1.051
+      ],
+      [
+        "word__ja",
+        0.973
+      ],
+      [
+        "word__olè",
+        0.955
+      ],
+      [
+        "word__wo",
+        0.943
+      ],
+      [
+        "char__u ",
+        0.935
+      ],
+      [
+        "word__ló",
+        0.917
+      ],
+      [
+        "word__sun",
+        0.903
+      ],
+      [
+        "word__Ole",
+        0.891
+      ],
+      [
+        "word__fẹ́",
+        0.887
+      ],
+      [
+        "char__nu",
+        0.886
+      ],
+      [
+        "word__ko",
+        0.877
+      ]
+    ],
+    "neutral": [
+      [
+        "char__? ",
+        1.869
+      ],
+      [
+        "word__ma ń",
+        1.271
+      ],
+      [
+        "word__ni",
+        1.21
+      ],
+      [
+        "word__ni a",
+        1.19
+      ],
+      [
+        "word__jọ",
+        1.188
+      ],
+      [
+        "char__ (",
+        1.154
+      ],
+      [
+        "word__tí a",
+        1.101
+      ],
+      [
+        "word__sí",
+        1.031
+      ],
+      [
+        "word__lati",
+        1.019
+      ],
+      [
+        "word__Ǹjẹ́",
+        0.979
+      ],
+      [
+        "word__mọ̀",
+        0.976
+      ],
+      [
+        "word__-",
+        0.962
+      ],
+      [
+        "word__lè",
+        0.961
+      ],
+      [
+        "word__#Ibeere",
+        0.959
+      ],
+      [
+        "char__ Ò",
+        0.919
+      ],
+      [
+        "word__#Ibeere #Yoruba",
+        0.876
+      ],
+      [
+        "word__#ibeere",
+        0.866
+      ],
+      [
+        "word__lọ",
+        0.808
+      ],
+      [
+        "word__. .",
+        0.798
+      ],
+      [
+        "word__pẹ̀lú",
+        0.754
+      ]
+    ],
+    "positive": [
+      [
+        "word__Ẹ",
+        2.132
+      ],
+      [
+        "word__kú",
+        1.971
+      ],
+      [
+        "word__ire",
+        1.881
+      ],
+      [
+        "word__o.",
+        1.792
+      ],
+      [
+        "char__re",
+        1.763
+      ],
+      [
+        "word__ò ní",
+        1.669
+      ],
+      [
+        "word__Ire",
+        1.655
+      ],
+      [
+        "char__re ",
+        1.491
+      ],
+      [
+        "word__Ẹ kú",
+        1.431
+      ],
+      [
+        "char__wa ",
+        1.41
+      ],
+      [
+        "word__wa",
+        1.392
+      ],
+      [
+        "char__du",
+        1.386
+      ],
+      [
+        "char__wa",
+        1.331
+      ],
+      [
+        "word__ki",
+        1.227
+      ],
+      [
+        "char__ire",
+        1.19
+      ],
+      [
+        "char__pẹ́",
+        1.136
+      ],
+      [
+        "word__E",
+        1.132
+      ],
+      [
+        "word__kí",
+        1.129
+      ],
+      [
+        "word__mi",
+        1.112
+      ],
+      [
+        "char__dù",
+        1.102
+      ]
+    ]
+  }
+}
