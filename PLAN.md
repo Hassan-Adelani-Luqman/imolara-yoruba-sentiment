@@ -307,7 +307,7 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 6 — Final test evaluation and error analysis (11 Oct) 🔄 test done (4 Oct); manual error tagging pending
+## Phase 6 — Final test evaluation and error analysis (11 Oct) ✅ done (4 Oct); optional native-speaker verification open
 
 **Test results** (`results/test_results.md`; each model re-trained with its dev-selected configuration and scored once on test)
 
@@ -334,7 +334,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
    - Confusions are spread out; positive → neutral is the most common (219).
    - **Meaning-based tags** (`errors_tagged.csv`, 100 errors): model-assisted by Claude, with confidence and gloss per row; **unverified**. Top categories: proverb/idiom 28, news/factual 24, missing diacritics 22, too short 20, neutral-negative boundary 19, likely label noise 16, religious/greeting 11, code-switching 8, sarcasm 7.
    - **Reliability plan:** (a) native-speaker verification of 50 rows (`verification_sheet.csv` + `CODEBOOK.md`; `python -m src.tag_agreement` gives per-category Cohen's κ); (b) **statistical label-noise estimate by confident learning** (Northcutt et al., 2021; `src/label_noise.py`): **10.8% of training tweets** (negative 14.0%, neutral 10.6%, positive 9.3%), 10.0% of dev and 9.4% of test are flagged as likely label issues. That fits κ = 0.65 and implies an accuracy ceiling of roughly 90%. Reading-based "label noise" tags did **not** match the statistical flags (31% vs 31%), so noise claims rest on the statistical estimate.
-   - **Pending:** native-speaker verification (50 rows), then `notebooks/03_error_analysis.ipynb`.
+   - **Reviewer-free evidence** (no Yoruba reader available): **duplicate-label conflicts**: 15 of 386 test tweets that duplicate a training tweet have a different gold label, and AfriBERTa predicts the training copy's label in all 15. **Keyword traps**: religious/greeting words → 49% of slice errors are false positives; negative-content words → 77% of slice errors follow the negative word; negation (*kò/kì í*) costs 6–9 accuracy points.
+   - **Notebook:** `notebooks/03_error_analysis.ipynb` (executed). Quantitative claims rest only on objective evidence; meaning-based tags appear as 8 clearly labelled illustrative examples. Native-speaker verification (`verification_sheet.csv`) stays available as an optional improvement.
 
 <details><summary>Original Phase 6 plan</summary>
 

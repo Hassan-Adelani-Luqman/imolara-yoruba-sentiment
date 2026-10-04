@@ -53,3 +53,25 @@ _AfriBERTa-large seed 42 (`e4_afriberta_large_final`) vs TF-IDF E1c. Generated b
 | neutral → positive  |      172 |
 | positive → negative |      138 |
 | negative → positive |      124 |
+
+## Duplicate-label conflicts (all test tweets that duplicate a training tweet)
+
+_Same tweet after normalisation (ignoring diacritics), different gold label: objective evidence of annotation inconsistency._
+
+|                                                          |   value |
+|:---------------------------------------------------------|--------:|
+| test tweets duplicating a training tweet                 | 386     |
+| same gold label as the training copy                     | 371     |
+| different gold label                                     |  15     |
+| AfriBERTa predicts the training copy's label (conflicts) |  15     |
+| AfriBERTa accuracy on duplicates                         |   0.956 |
+
+## Keyword traps (clean test)
+
+_'Errors following the word's polarity': AfriBERTa errors where it predicted the keyword's usual polarity but the gold label differs (e.g. predicted positive because of 'Ọlọ́run' on a neutral Bible verse)._
+
+| keyword group                                                       |   tweets | gold neg/neu/pos   | AfriBERTa acc.     |   TF-IDF acc. | errors following the word's polarity   |
+|:--------------------------------------------------------------------|---------:|:-------------------|:-------------------|--------------:|:---------------------------------------|
+| religious / greeting words                                          |      463 | 6% / 10% / 84%     | 0.911 (all: 0.753) |         0.909 | 20/41 (49%)                            |
+| negative-content words (death, disease, thief, wickedness, killing) |       86 | 44% / 19% / 37%    | 0.744 (all: 0.753) |         0.744 | 17/22 (77%)                            |
+| negation (kò / kì í, diacritised forms only)                        |      439 | 28% / 32% / 40%    | 0.692 (all: 0.753) |         0.663 | –                                      |

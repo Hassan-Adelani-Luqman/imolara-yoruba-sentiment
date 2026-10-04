@@ -5,7 +5,11 @@
 1. Sliced performance by objective, automatically measured properties of each tweet (code-switching, diacritics,
    length, duplicate of a training tweet, model confidence).
 2. Error overlap between the two models (which errors are shared, which are fixed by the transformer).
-3. A stratified sample of 100 misclassified tweets for manual tagging. Objective flags are filled in; the
+3. Duplicate-label conflicts: test tweets that duplicate a training tweet but carry a different gold label
+   (objective evidence of annotation inconsistency, no reader needed).
+4. Keyword traps: performance on tweets containing religious/greeting words, negative-content words or negation,
+   and how often errors follow the word's usual polarity against the gold label.
+5. A stratified sample of 100 misclassified tweets for manual tagging. Objective flags are filled in; the
    `suggested_category` column is a heuristic hint ONLY. The meaning-based categories (sarcasm/irony, proverb,
    slang, likely label noise, ...) go in `category` and are assigned by a human reader of Yoruba.
 """
@@ -17,7 +21,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from src.data import LABELS, has_tone_marks, has_underdots, load_split, nfc, strip_all_diacritics
+from src.data import LABELS, dedup_key, has_tone_marks, has_underdots, load_split, nfc, strip_all_diacritics
 from src.eda import ENGLISH_WORDLIST, english_tokens, load_all
 from src.evaluate import compute_metrics, plot_confusion
 
@@ -100,6 +104,69 @@ def sample_errors(df: pd.DataFrame, n: int = 100, seed: int = 0) -> pd.DataFrame
     return out[cols].rename(columns={"pred_model_label": "pred_afriberta", "text": "normalised_text"})
 
 
+# Keyword groups. Undiacritised spellings are included only where they are unambiguous; e.g. 'ko' (for kò, "not")
+# is excluded because it also spells kọ ("write", "refuse").
+KEYWORDS = {
+    "religious / greeting words": ("positive", {"ọlọ́run", "olorun", "ọlọrun", "olúwa", "oluwa", "olódùmarè",
+                                                "olodumare", "elédùmarè", "jésù", "jesu", "àmín", "amin", "ìbùkún",
+                                                "ibukun", "àdúrà", "adura", "àṣẹ"}, ("ẹ kú", "e ku")),
+    "negative-content words (death, disease, thief, wickedness, killing)": (
+        "negative", {"ikú", "iku", "àrùn", "arun", "olè", "ìkà", "ìpànìyàn", "ìjàmbá", "bokoharam", "boko"}, ()),
+    "negation (kò / kì í, diacritised forms only)": (None, {"kò", "kì", "kìí", "kòsí"}, ()),
+}
+
+
+def keyword_slice(df: pd.DataFrame, words: set[str], phrases: tuple[str, ...]) -> pd.Series:
+    def hit(text: str) -> bool:
+        tokens = set(text.split())
+        return bool(tokens & words) or any(f" {p} " in f" {text} " for p in phrases)
+    return df["text"].map(hit)
+
+
+def keyword_traps(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    overall_acc = df["model_correct"].mean()
+    for name, (polarity, words, phrases) in KEYWORDS.items():
+        g = df[keyword_slice(df, words, phrases)]
+        errors = g[~g["model_correct"]]
+        row = {"keyword group": name, "tweets": len(g), "gold " + "/".join(l[:3] for l in LABELS):
+               " / ".join(f"{(g['label_id'] == i).mean():.0%}" for i in range(len(LABELS))),
+               "AfriBERTa acc.": f"{g['model_correct'].mean():.3f} (all: {overall_acc:.3f})",
+               "TF-IDF acc.": f"{g['base_correct'].mean():.3f}"}
+        if polarity:
+            k = LABELS.index(polarity)
+            trap = errors[(errors["pred_model"] == k) & (errors["label_id"] != k)]
+            row["errors following the word's polarity"] = f"{len(trap)}/{len(errors)} ({len(trap) / max(1, len(errors)):.0%})"
+        else:
+            row["errors following the word's polarity"] = "–"
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
+def duplicate_conflicts(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Test tweets whose normalised, undiacritised text equals a training tweet's, with a different gold label."""
+    train = load_split("yor", "train")
+    train["key"] = train["text"].map(dedup_key)
+    train_labels = train.groupby("key")["label"].agg(lambda s: "/".join(sorted(set(s))))
+    train_text = train.groupby("key")["text"].first()
+    dup = df[df["overlap_train"]].copy()
+    dup["key"] = dup["raw_text"].map(dedup_key)
+    dup["train_label"] = dup["key"].map(train_labels)
+    dup["train_text"] = dup["key"].map(train_text)
+    conflicts = dup[dup["train_label"] != dup["gold"]]
+    summary = pd.DataFrame([{
+        "test tweets duplicating a training tweet": len(dup),
+        "same gold label as the training copy": int((dup["train_label"] == dup["gold"]).sum()),
+        "different gold label": len(conflicts),
+        "AfriBERTa predicts the training copy's label (conflicts)": int(
+            (conflicts["pred_model_label"] == conflicts["train_label"]).sum()),
+        "AfriBERTa accuracy on duplicates": round(dup["model_correct"].mean(), 3),
+    }]).T.rename(columns={0: "value"})
+    examples = conflicts[["train_text", "train_label", "raw_text", "gold", "pred_model_label"]].rename(
+        columns={"raw_text": "test_text", "gold": "test_label", "pred_model_label": "AfriBERTa"})
+    return summary, examples
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     df = add_features(load_predictions())
@@ -118,6 +185,15 @@ def main():
     errors = clean[~clean["model_correct"]]
     pair_counts = (errors["gold"] + " → " + errors["pred_model_label"]).value_counts()
     parts += ["## Most frequent confusions (AfriBERTa errors)", "", pair_counts.rename("errors").to_markdown(), ""]
+    dup_summary, dup_examples = duplicate_conflicts(df)
+    parts += ["## Duplicate-label conflicts (all test tweets that duplicate a training tweet)", "",
+              "_Same tweet after normalisation (ignoring diacritics), different gold label: objective evidence of "
+              "annotation inconsistency._", "", dup_summary.to_markdown(), ""]
+    dup_examples.to_csv(OUT / "duplicate_conflicts.csv", index=False)
+    parts += ["## Keyword traps (clean test)", "",
+              "_'Errors following the word's polarity': AfriBERTa errors where it predicted the keyword's usual "
+              "polarity but the gold label differs (e.g. predicted positive because of 'Ọlọ́run' on a neutral Bible verse)._",
+              "", keyword_traps(clean).to_markdown(index=False), ""]
     (OUT / "slices.md").write_text("\n".join(parts))
 
     sample = sample_errors(df)
