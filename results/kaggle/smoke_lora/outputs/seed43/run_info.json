@@ -1,0 +1,75 @@
+{
+  "config": {
+    "lang": "yor",
+    "aux_langs": [],
+    "train_diacritics": "original",
+    "eval_diacritics": [
+      "original"
+    ],
+    "train_style": "semeval",
+    "eval_style": "semeval",
+    "select_on_clean_dev": true,
+    "max_length": 128,
+    "learning_rate": 0.0003,
+    "epochs": 1,
+    "batch_size": 16,
+    "grad_accum": 1,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01,
+    "early_stopping_patience": 2,
+    "class_weights": false,
+    "lora": {
+      "r": 16,
+      "alpha": 32,
+      "dropout": 0.1,
+      "target_modules": [
+        "query",
+        "value"
+      ]
+    },
+    "train_subset": 200,
+    "save_model": false,
+    "notes": "pipeline smoke test (fp32 load, LoRA, 2 GPUs)",
+    "exp_id": "smoke_lora",
+    "model_name": "Davlan/afro-xlmr-large"
+  },
+  "seed": 43,
+  "n_train": 200,
+  "runtime_s": 43.1,
+  "train_runtime_s": 8.9379,
+  "best_checkpoint_dev_macro_f1": 0.2918,
+  "device": "Tesla T4",
+  "n_gpu_used": 1,
+  "effective_batch": 16,
+  "log_history": [
+    {
+      "eval_loss": 1.1099265813827515,
+      "eval_accuracy": 0.4375,
+      "eval_macro_f1": 0.2918,
+      "eval_weighted_f1": 0.3281,
+      "eval_precision_negative": 0.3032,
+      "eval_recall_negative": 0.1208,
+      "eval_f1_negative": 0.1728,
+      "eval_precision_neutral": 0.4865,
+      "eval_recall_neutral": 0.0545,
+      "eval_f1_neutral": 0.0981,
+      "eval_precision_positive": 0.4484,
+      "eval_recall_positive": 0.9271,
+      "eval_f1_positive": 0.6044,
+      "eval_runtime": 4.2687,
+      "eval_samples_per_second": 425.656,
+      "eval_steps_per_second": 13.353,
+      "epoch": 1.0,
+      "step": 13
+    },
+    {
+      "train_runtime": 8.9379,
+      "train_samples_per_second": 22.377,
+      "train_steps_per_second": 1.454,
+      "total_flos": 26349379707456.0,
+      "train_loss": 1.1762454693134015,
+      "epoch": 1.0,
+      "step": 13
+    }
+  ]
+}

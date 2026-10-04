@@ -12,7 +12,7 @@ access_token
 # data, models, generated artefacts
 data/
 models/
-outputs/
+/outputs/
 *.ckpt
 *.safetensors
 *.bin
@@ -20,3 +20,4 @@ wandb/
 kaggle/_build/
 results/kaggle/*/seed*/model/
 results/kaggle/*/outputs/seed*/model/
+results/kaggle_*/*/outputs/seed*/model/

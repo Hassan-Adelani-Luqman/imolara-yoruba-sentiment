@@ -1,0 +1,77 @@
+{
+  "config": {
+    "lang": "yor",
+    "embeddings": "word2vec",
+    "emb_dim": 300,
+    "freeze_embeddings": true,
+    "rnn": "lstm",
+    "hidden": 128,
+    "layers": 1,
+    "attention": true,
+    "dropout": 0.3,
+    "max_tokens": 64,
+    "min_freq": 1,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 15,
+    "patience": 3,
+    "grad_clip": 1.0,
+    "class_weights": false,
+    "train_style": "semeval",
+    "train_diacritics": "original",
+    "eval_style": "semeval",
+    "eval_diacritics": [
+      "original",
+      "no_tones",
+      "no_diacritics"
+    ],
+    "select_on_clean_dev": true,
+    "notes": "",
+    "exp_id": "e2h_bilstm_word2vec_frozen"
+  },
+  "seed": 42,
+  "vocab_size": 20054,
+  "embedding_coverage": {
+    "exact": 0.6893,
+    "no_tones": 0.038,
+    "no_diacritics": 0.0205,
+    "missing": 0.2522
+  },
+  "best_epoch": 3,
+  "best_clean_dev_macro_f1": 0.6464,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9007,
+      "dev_macro_f1": 0.604
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.7796,
+      "dev_macro_f1": 0.549
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7437,
+      "dev_macro_f1": 0.6464
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.722,
+      "dev_macro_f1": 0.6453
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.7051,
+      "dev_macro_f1": 0.6431
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6747,
+      "dev_macro_f1": 0.646
+    }
+  ],
+  "device": "cuda",
+  "runtime_s": 42.2
+}

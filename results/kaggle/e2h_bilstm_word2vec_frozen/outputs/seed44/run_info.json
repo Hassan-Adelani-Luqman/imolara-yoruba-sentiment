@@ -1,0 +1,102 @@
+{
+  "config": {
+    "lang": "yor",
+    "embeddings": "word2vec",
+    "emb_dim": 300,
+    "freeze_embeddings": true,
+    "rnn": "lstm",
+    "hidden": 128,
+    "layers": 1,
+    "attention": true,
+    "dropout": 0.3,
+    "max_tokens": 64,
+    "min_freq": 1,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 15,
+    "patience": 3,
+    "grad_clip": 1.0,
+    "class_weights": false,
+    "train_style": "semeval",
+    "train_diacritics": "original",
+    "eval_style": "semeval",
+    "eval_diacritics": [
+      "original",
+      "no_tones",
+      "no_diacritics"
+    ],
+    "select_on_clean_dev": true,
+    "notes": "",
+    "exp_id": "e2h_bilstm_word2vec_frozen"
+  },
+  "seed": 44,
+  "vocab_size": 20054,
+  "embedding_coverage": {
+    "exact": 0.6893,
+    "no_tones": 0.038,
+    "no_diacritics": 0.0205,
+    "missing": 0.2522
+  },
+  "best_epoch": 8,
+  "best_clean_dev_macro_f1": 0.6655,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.8838,
+      "dev_macro_f1": 0.6105
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.7852,
+      "dev_macro_f1": 0.6142
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7459,
+      "dev_macro_f1": 0.6283
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.7162,
+      "dev_macro_f1": 0.6424
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6961,
+      "dev_macro_f1": 0.6544
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6757,
+      "dev_macro_f1": 0.634
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.6447,
+      "dev_macro_f1": 0.6418
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.6343,
+      "dev_macro_f1": 0.6655
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.6094,
+      "dev_macro_f1": 0.6649
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5861,
+      "dev_macro_f1": 0.6601
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.5618,
+      "dev_macro_f1": 0.6483
+    }
+  ],
+  "device": "cuda",
+  "runtime_s": 32.9
+}

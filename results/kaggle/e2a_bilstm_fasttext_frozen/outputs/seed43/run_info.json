@@ -1,0 +1,122 @@
+{
+  "config": {
+    "lang": "yor",
+    "embeddings": "fasttext",
+    "emb_dim": 300,
+    "freeze_embeddings": true,
+    "rnn": "lstm",
+    "hidden": 128,
+    "layers": 1,
+    "attention": true,
+    "dropout": 0.3,
+    "max_tokens": 64,
+    "min_freq": 1,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0,
+    "epochs": 15,
+    "patience": 3,
+    "grad_clip": 1.0,
+    "class_weights": false,
+    "train_style": "semeval",
+    "train_diacritics": "original",
+    "eval_style": "semeval",
+    "eval_diacritics": [
+      "original",
+      "no_tones",
+      "no_diacritics"
+    ],
+    "select_on_clean_dev": true,
+    "notes": "",
+    "exp_id": "e2a_bilstm_fasttext_frozen"
+  },
+  "seed": 43,
+  "vocab_size": 20054,
+  "embedding_coverage": {
+    "exact": 0.4397,
+    "no_tones": 0.0821,
+    "no_diacritics": 0.0732,
+    "missing": 0.4051
+  },
+  "best_epoch": 14,
+  "best_clean_dev_macro_f1": 0.5911,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9942,
+      "dev_macro_f1": 0.4052
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.921,
+      "dev_macro_f1": 0.4637
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8754,
+      "dev_macro_f1": 0.5052
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.856,
+      "dev_macro_f1": 0.5264
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8331,
+      "dev_macro_f1": 0.5302
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.8196,
+      "dev_macro_f1": 0.5224
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.8046,
+      "dev_macro_f1": 0.5344
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.7939,
+      "dev_macro_f1": 0.5605
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.785,
+      "dev_macro_f1": 0.5656
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.7654,
+      "dev_macro_f1": 0.5685
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.7583,
+      "dev_macro_f1": 0.5404
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.7458,
+      "dev_macro_f1": 0.5662
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.7265,
+      "dev_macro_f1": 0.5701
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.7127,
+      "dev_macro_f1": 0.5911
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.7026,
+      "dev_macro_f1": 0.5867
+    }
+  ],
+  "device": "cuda",
+  "runtime_s": 41.2
+}
