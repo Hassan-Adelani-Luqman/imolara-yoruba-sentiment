@@ -12,6 +12,9 @@ CODE, OUT = "/tmp/imolara", "/kaggle/working/outputs"
 tarfile.open(fileobj=io.BytesIO(base64.b64decode(BUNDLE))).extractall(CODE)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r",
                 f"{CODE}/requirements-kaggle.txt"], check=True)
+# Kaggle's image ships torchao 0.10, which peft >= 0.20 rejects at import time ("only versions above
+# 0.16.0 are supported"). We don't use torchao, so remove it; a no-op when it is absent.
+subprocess.run([sys.executable, "-m", "pip", "uninstall", "-y", "-q", "torchao"], check=False)
 
 import torch
 assert torch.cuda.is_available(), "No GPU: check accelerator / phone verification"
