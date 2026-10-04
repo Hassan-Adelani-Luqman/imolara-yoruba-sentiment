@@ -158,6 +158,8 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     cfg = load_config(args.config)
+    if args.final:  # Phase 6 re-run scored on test: keep its rows apart from the original dev-only run
+        cfg["exp_id"] += "_final"
     disable_progress_bars()
     set_seed(args.seed)
     output_dir = Path(args.output_dir)

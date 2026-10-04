@@ -140,7 +140,7 @@ def main(argv=None):
     for exp_id, spec in cfg["experiments"].items():
         if args.only and exp_id not in args.only:
             continue
-        run_experiment(exp_id, spec, cfg["eval_diacritics"], final=args.final)
+        run_experiment(exp_id + ("_final" if args.final else ""), spec, cfg["eval_diacritics"], final=args.final)
 
 
 if __name__ == "__main__":
