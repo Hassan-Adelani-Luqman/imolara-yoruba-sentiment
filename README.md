@@ -184,3 +184,5 @@ and most are guarded by a test or an automatic check:
 - **Compute:** Kaggle Notebooks (NVIDIA T4).
 
 Full references are in the report.
+
+**Licence:** code in this repository is released under the [MIT licence](LICENSE). Data and pre-trained models keep their own licences (above).
