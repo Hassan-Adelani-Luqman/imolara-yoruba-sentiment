@@ -1,0 +1,88 @@
+[{"stream_name":"stderr","time":8.036327149,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.03641368,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.036425408,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.036428487,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.729868496,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.729902748,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.729909432,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.729913997,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":150.815988853,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stdout","time":150.816047314,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stdout","time":150.816054271,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stdout","time":150.81606002,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stdout","time":150.816065542,"data":"[NbConvertApp] Converting notebook /tmp/e2g_bilstm_word2vec_reg_final.ipynb to notebook\n"}
+,{"stream_name":"stdout","time":150.81607064,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stdout","time":150.816075686,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stdout","time":150.816082726,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stdout","time":150.816091228,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":150.816094602,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stdout","time":150.816098446,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stdout","time":150.816118002,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stdout","time":150.816124019,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":150.81612991,"data":"[NbConvertApp] Writing 25006 bytes to /kaggle/working/e2g_bilstm_word2vec_reg_final.ipynb\n"}
+,{"stream_name":"stdout","time":150.816135723,"data":"\n"}
+,{"stream_name":"stdout","time":150.816140767,"data":"2 GPU(s) -\u003e up to 2 seeds in parallel\n"}
+,{"stream_name":"stdout","time":150.816146196,"data":"[seed 42 | gpu 0] epoch  1  loss 0.9088  clean-dev macro-F1 0.6253\n"}
+,{"stream_name":"stdout","time":150.816151165,"data":"[seed 43 | gpu 1] epoch  1  loss 0.9040  clean-dev macro-F1 0.5396\n"}
+,{"stream_name":"stdout","time":150.81615622,"data":"[seed 42 | gpu 0] epoch  2  loss 0.7033  clean-dev macro-F1 0.6360\n"}
+,{"stream_name":"stdout","time":150.816161135,"data":"[seed 43 | gpu 1] epoch  2  loss 0.7086  clean-dev macro-F1 0.6657\n"}
+,{"stream_name":"stdout","time":150.816166063,"data":"[seed 42 | gpu 0] epoch  3  loss 0.5468  clean-dev macro-F1 0.6858\n"}
+,{"stream_name":"stdout","time":150.816181725,"data":"[seed 43 | gpu 1] epoch  3  loss 0.5436  clean-dev macro-F1 0.6936\n"}
+,{"stream_name":"stdout","time":150.816185866,"data":"[seed 42 | gpu 0] epoch  4  loss 0.3799  clean-dev macro-F1 0.6774\n"}
+,{"stream_name":"stdout","time":150.81618998,"data":"[seed 43 | gpu 1] epoch  4  loss 0.3942  clean-dev macro-F1 0.7016\n"}
+,{"stream_name":"stdout","time":150.816199907,"data":"[seed 42 | gpu 0] epoch  5  loss 0.2401  clean-dev macro-F1 0.6801\n"}
+,{"stream_name":"stdout","time":150.81621781,"data":"[seed 43 | gpu 1] epoch  5  loss 0.2575  clean-dev macro-F1 0.6939\n"}
+,{"stream_name":"stdout","time":150.816222971,"data":"[seed 42 | gpu 0] epoch  6  loss 0.1340  clean-dev macro-F1 0.6851\n"}
+,{"stream_name":"stdout","time":150.816227287,"data":"[seed 43 | gpu 1] epoch  6  loss 0.1586  clean-dev macro-F1 0.6878\n"}
+,{"stream_name":"stdout","time":150.816232086,"data":"[seed 42 | gpu 0] [dev/original/all] macro-F1 0.7058\n"}
+,{"stream_name":"stdout","time":150.816239145,"data":"[seed 42 | gpu 0] [dev/original/clean] macro-F1 0.6858\n"}
+,{"stream_name":"stdout","time":150.816243737,"data":"[seed 42 | gpu 0] [dev/no_tones/all] macro-F1 0.6326\n"}
+,{"stream_name":"stdout","time":150.816247897,"data":"[seed 42 | gpu 0] [dev/no_tones/clean] macro-F1 0.6137\n"}
+,{"stream_name":"stdout","time":150.816251857,"data":"[seed 42 | gpu 0] [dev/no_diacritics/all] macro-F1 0.6282\n"}
+,{"stream_name":"stdout","time":150.816255761,"data":"[seed 42 | gpu 0] [dev/no_diacritics/clean] macro-F1 0.6128\n"}
+,{"stream_name":"stdout","time":150.816259779,"data":"[seed 43 | gpu 1] epoch  7  loss 0.1003  clean-dev macro-F1 0.6967\n"}
+,{"stream_name":"stdout","time":150.816263728,"data":"[seed 43 | gpu 1] [dev/original/all] macro-F1 0.7269\n"}
+,{"stream_name":"stdout","time":150.816267752,"data":"[seed 43 | gpu 1] [dev/original/clean] macro-F1 0.7016\n"}
+,{"stream_name":"stdout","time":150.81627168,"data":"[seed 43 | gpu 1] [dev/no_tones/all] macro-F1 0.6421\n"}
+,{"stream_name":"stdout","time":150.816275563,"data":"[seed 43 | gpu 1] [dev/no_tones/clean] macro-F1 0.6244\n"}
+,{"stream_name":"stdout","time":150.816279405,"data":"[seed 42 | gpu 0] [test/original/all] macro-F1 0.7219\n"}
+,{"stream_name":"stdout","time":150.816283311,"data":"[seed 42 | gpu 0] [test/original/clean] macro-F1 0.7059\n"}
+,{"stream_name":"stdout","time":150.816287263,"data":"[seed 43 | gpu 1] [dev/no_diacritics/all] macro-F1 0.6221\n"}
+,{"stream_name":"stdout","time":150.816291263,"data":"[seed 43 | gpu 1] [dev/no_diacritics/clean] macro-F1 0.6044\n"}
+,{"stream_name":"stdout","time":150.816295163,"data":"[seed 42 | gpu 0] [test/no_tones/all] macro-F1 0.6562\n"}
+,{"stream_name":"stdout","time":150.816299158,"data":"[seed 42 | gpu 0] [test/no_tones/clean] macro-F1 0.6406\n"}
+,{"stream_name":"stdout","time":150.816305121,"data":"[seed 42 | gpu 0] [test/no_diacritics/all] macro-F1 0.6454\n"}
+,{"stream_name":"stdout","time":150.816324268,"data":"[seed 42 | gpu 0] [test/no_diacritics/clean] macro-F1 0.6316\n"}
+,{"stream_name":"stdout","time":150.816329119,"data":"[seed 43 | gpu 1] [test/original/all] macro-F1 0.7266\n"}
+,{"stream_name":"stdout","time":150.816333948,"data":"[seed 43 | gpu 1] [test/original/clean] macro-F1 0.7092\n"}
+,{"stream_name":"stdout","time":150.816338617,"data":"[seed 43 | gpu 1] [test/no_tones/all] macro-F1 0.6488\n"}
+,{"stream_name":"stdout","time":150.816342595,"data":"[seed 43 | gpu 1] [test/no_tones/clean] macro-F1 0.6324\n"}
+,{"stream_name":"stdout","time":150.816346458,"data":"[seed 43 | gpu 1] [test/no_diacritics/all] macro-F1 0.6244\n"}
+,{"stream_name":"stdout","time":150.81635034,"data":"[seed 43 | gpu 1] [test/no_diacritics/clean] macro-F1 0.6109\n"}
+,{"stream_name":"stdout","time":150.81635898,"data":"[seed 44 | gpu 1] epoch  1  loss 0.9168  clean-dev macro-F1 0.5933\n"}
+,{"stream_name":"stdout","time":150.816362959,"data":"[seed 44 | gpu 1] epoch  2  loss 0.7101  clean-dev macro-F1 0.6772\n"}
+,{"stream_name":"stdout","time":150.816366928,"data":"[seed 44 | gpu 1] epoch  3  loss 0.5512  clean-dev macro-F1 0.7027\n"}
+,{"stream_name":"stdout","time":150.816370931,"data":"[seed 44 | gpu 1] epoch  4  loss 0.3899  clean-dev macro-F1 0.6880\n"}
+,{"stream_name":"stdout","time":150.816374877,"data":"[seed 44 | gpu 1] epoch  5  loss 0.2504  clean-dev macro-F1 0.7017\n"}
+,{"stream_name":"stdout","time":150.816378871,"data":"[seed 44 | gpu 1] epoch  6  loss 0.1426  clean-dev macro-F1 0.7088\n"}
+,{"stream_name":"stdout","time":150.816382774,"data":"[seed 44 | gpu 1] epoch  7  loss 0.0855  clean-dev macro-F1 0.6935\n"}
+,{"stream_name":"stdout","time":150.816386757,"data":"[seed 44 | gpu 1] epoch  8  loss 0.0555  clean-dev macro-F1 0.7023\n"}
+,{"stream_name":"stdout","time":150.816390774,"data":"[seed 44 | gpu 1] epoch  9  loss 0.0392  clean-dev macro-F1 0.6960\n"}
+,{"stream_name":"stdout","time":150.81639658,"data":"[seed 44 | gpu 1] [dev/original/all] macro-F1 0.7389\n"}
+,{"stream_name":"stdout","time":150.816404287,"data":"[seed 44 | gpu 1] [dev/original/clean] macro-F1 0.7088\n"}
+,{"stream_name":"stdout","time":150.816422362,"data":"[seed 44 | gpu 1] [dev/no_tones/all] macro-F1 0.6376\n"}
+,{"stream_name":"stdout","time":150.816427209,"data":"[seed 44 | gpu 1] [dev/no_tones/clean] macro-F1 0.6173\n"}
+,{"stream_name":"stdout","time":150.816432059,"data":"[seed 44 | gpu 1] [dev/no_diacritics/all] macro-F1 0.6526\n"}
+,{"stream_name":"stdout","time":150.816436825,"data":"[seed 44 | gpu 1] [dev/no_diacritics/clean] macro-F1 0.6346\n"}
+,{"stream_name":"stdout","time":150.816440872,"data":"[seed 44 | gpu 1] [test/original/all] macro-F1 0.7359\n"}
+,{"stream_name":"stdout","time":150.81644476,"data":"[seed 44 | gpu 1] [test/original/clean] macro-F1 0.7162\n"}
+,{"stream_name":"stdout","time":150.816448621,"data":"[seed 44 | gpu 1] [test/no_tones/all] macro-F1 0.6527\n"}
+,{"stream_name":"stdout","time":150.816452489,"data":"[seed 44 | gpu 1] [test/no_tones/clean] macro-F1 0.6335\n"}
+,{"stream_name":"stdout","time":150.816456403,"data":"[seed 44 | gpu 1] [test/no_diacritics/all] macro-F1 0.6518\n"}
+,{"stream_name":"stdout","time":150.816460306,"data":"[seed 44 | gpu 1] [test/no_diacritics/clean] macro-F1 0.6351\n"}
+,{"stream_name":"stdout","time":150.816464233,"data":"\n"}
+,{"stream_name":"stderr","time":154.590728652,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":154.675412955,"data":"[NbConvertApp] Writing 18754 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":157.469886269,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":158.041383172,"data":"[NbConvertApp] Writing 294220 bytes to __results__.html\n"}
+]
