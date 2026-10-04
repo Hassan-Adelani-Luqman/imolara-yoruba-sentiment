@@ -1,0 +1,8 @@
+# E9 learning curve: AfriBERTa (E4 settings) trained on a random 50% of the training tweets (4261); a different subset per seed
+model_name: castorini/afriberta_large
+learning_rate: 3.0e-5
+batch_size: 32
+epochs: 10
+early_stopping_patience: 3
+train_subset: 4261
+eval_diacritics: [original]
