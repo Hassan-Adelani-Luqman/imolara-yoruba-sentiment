@@ -9,7 +9,7 @@ without its tone marks and under-dots**, and models trained on diacritised text 
 | **Live app** | **https://imolara-yoruba-sentiment-oafn6nuzsde8db6a9fdahs.streamlit.app/** (Streamlit; may take ~1 min to wake up) |
 | **Model** | [Hassanadelani1/imolara-afriberta-mixed3](https://huggingface.co/Hassanadelani1/imolara-afriberta-mixed3) (Hugging Face Hub) |
 | **Report** | [`report/main.pdf`](report/main.pdf) (ACL-style LaTeX source in [`report/`](report/)) |
-| **Demo video** | *(link to be added)* |
+| **Demo video** | https://youtu.be/bsjjJIeKi5s |
 | **Course** | NLP Summative Project: Option 3, Text Classification for an African Language |
 
 ---
