@@ -207,7 +207,32 @@ Run on CPU if feasible, otherwise on Kaggle (`python scripts/kaggle_run.py confi
 
 ---
 
-## Phase 4 — Transformer fine-tuning (7–9 Oct)
+## Phase 4 — Transformer fine-tuning (7–9 Oct) ✅ done (4 Oct)
+
+**Results** (clean-dev macro-F1, mean ± std over 3 seeds; executed Kaggle notebooks in `notebooks/kaggle/`)
+
+| ID | Model | Yoruba in pre-training | macro-F1 | Δ no tones | Δ no diacritics |
+|---|---|---|---|---|---|
+| E3b | XLM-R-base (278M) | **no** | 0.650 ± 0.006 | −0.067 | −0.101 |
+| E3a | mBERT (178M) | yes (Wikipedia) | 0.674 ± 0.006 | −0.078 | −0.092 |
+| E5a | AfroXLMR-base (278M) | yes | 0.687 ± 0.004 | −0.013 | −0.062 |
+| E5c | AfroXLMR-large + **LoRA** r=16 (2.6M trainable, 0.47%) | yes | 0.708 ± 0.004 | **−0.006** | −0.041 |
+| E5b | AfroXLMR-large full FT (560M) | yes | 0.714 ± **0.029** | −0.014 | −0.041 |
+| **E4** | **AfriBERTa-large (126M)** | yes | **0.731 ± 0.006** | −0.062 | −0.073 |
+| E1c | TF-IDF word+char + LR (baseline) | – | 0.722 | −0.103 | −0.102 |
+
+**What we learned**
+1. **RQ1 (pre-training coverage):** the clean comparison is XLM-R-base vs AfroXLMR-base: identical architecture and tokenizer, with AfroXLMR additionally adapted on African languages incl. Yoruba. That adaptation is worth **+3.7 points** (0.650 → 0.687). mBERT (saw Yoruba Wikipedia) also beats XLM-R (no Yoruba).
+2. **Smaller, Africa-only AfriBERTa (126M) is the best model**, ahead of AfroXLMR-base/large. This matches the AfriSenti paper's ranking for Yoruba. Africa-specific tokenisation and pre-training data matter more than size.
+3. **Transformers vs TF-IDF: no significant difference.** Paired bootstrap on clean dev, AfriBERTa vs E1c, gives p = 0.10–0.36 per seed. With 8.5k noisy tweets (κ = 0.65), a strong n-gram model is hard to beat.
+4. **AfroXLMR models are far more robust to missing tone marks** (−0.6 to −1.4 points) than TF-IDF, the RNNs, mBERT, XLM-R or AfriBERTa (−6 to −13). Removing under-dots as well still costs them 4–6 points.
+5. **LoRA vs full fine-tuning (AfroXLMR-large):** similar mean (0.708 vs 0.714), but LoRA is about **7× more stable** (std 0.004 vs 0.029; one full-FT seed nearly collapsed, 0.198 at epoch 2), trains 0.47% of the parameters and is about twice as fast per epoch.
+6. **Engineering lessons (see `docs/verification.md`):** Kaggle T4 machines have 2 GPUs (silent DataParallel); transformers 5 loads checkpoints in their stored dtype (afro-xlmr-large is fp16); length-grouped sampling also reorders evaluation, which scrambled predictions; LoRA at lr 3e-4 collapsed. All were fixed, regression-tested, and guarded by the per-run `selection_consistent` check.
+
+**Phase 5 base model:** AfriBERTa-large (best and fast, about 4 min/seed, but the least diacritic-robust transformer, so it has the most to gain from E6).
+
+<details><summary>Original Phase 4 plan</summary>
+
 
 Run on a Kaggle T4: one Kaggle kernel per experiment, launched with `python scripts/kaggle_run.py configs/<exp>.yaml --wait`.
 
@@ -234,6 +259,8 @@ Run on a Kaggle T4: one Kaggle kernel per experiment, launched with `python scri
 **Time budget:** a base model takes about 5–10 min per run and a large one about 20–40 min, so about 25 runs in total, about 12–15 GPU-hours, within one week of Kaggle's free GPU quota (about 30 h/week; check the quota on your Kaggle profile).
 
 **Done when:** E3–E5 are logged with mean ± std, and the **best model is selected on dev only**.
+
+</details>
 
 ---
 
