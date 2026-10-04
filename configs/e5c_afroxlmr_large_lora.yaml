@@ -1,9 +1,9 @@
 # E5c: AfroXLMR large with LoRA (Hu et al., 2022): frozen backbone, rank-16 adapters on attention
-# query/value projections + trainable classification head
+# query/value projections + trainable classification head. lr 1e-4 (3e-4 collapsed 2 of 3 seeds), up to 15 epochs
 model_name: Davlan/afro-xlmr-large
-learning_rate: 3.0e-4
+learning_rate: 1.0e-4
 batch_size: 32
 lora: {r: 16, alpha: 32, dropout: 0.1, target_modules: [query, value]}
-epochs: 10
+epochs: 15
 early_stopping_patience: 3
 eval_diacritics: [original, no_tones, no_diacritics]

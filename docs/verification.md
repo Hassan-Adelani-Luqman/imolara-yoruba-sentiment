@@ -93,6 +93,7 @@ License: CC BY-SA 3.0. Plan: use `cc.yo.300.vec.gz` (small). The `.bin` version 
 | transformers 5 loads weights in their **stored dtype** by default (`dtype="auto"`); `Davlan/afro-xlmr-large` is stored in **float16** | `config.json` `torch_dtype: float16`; LoRA run failed | `from_pretrained(..., dtype=torch.float32)`; AMP still trains in fp16 |
 | Kaggle's image ships `torchao` 0.10, which `peft` ≥ 0.20 rejects | ImportError in the first LoRA run | Uninstalled before training |
 | Parallel seeds raced on the uncached AfriSenti download | `UnicodeDecodeError` reading a half-written TSV | Atomic writes (temp file + `os.replace`) |
+| With PEFT/LoRA, the Trainer's `load_best_model_at_end` does **not restore the classification head** | LoRA seed 44: best clean-dev macro-F1 0.707 during training, 0.342 after reload; seeds 42/43 also collapsed to one class at lr 3e-4 | `KeepBestTrainable` callback snapshots the trainable weights (adapters + head) at the best epoch and restores them; lr 3e-4 → 1e-4, 15 epochs; every run now records `selection_consistent` (final re-score == best seen) |
 | `kaggle kernels pull` returns notebooks **without outputs** | Pulled notebook had 0 outputs | A launcher kernel executes the experiment notebook with nbconvert and saves the executed copy as an output file |
 | Free tier: at most **2 concurrent GPU sessions**; refused pushes still exit 0 | "Maximum batch GPU session count of 2 reached" | Runner checks push output and retries every 2 min |
 

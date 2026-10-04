@@ -32,7 +32,7 @@ import torch
 import yaml
 from datasets import Dataset, disable_progress_bars
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding,
-                          EarlyStoppingCallback, Trainer, TrainingArguments, set_seed)
+                          EarlyStoppingCallback, Trainer, TrainerCallback, TrainingArguments, set_seed)
 
 from src.data import ID2LABEL, LABEL2ID, LABELS, load_eval_split, load_split, preprocess_frame
 from src.evaluate import compute_metrics, save_run, score_subsets
@@ -77,6 +77,32 @@ def build_train_frame(cfg: dict, seed: int) -> pd.DataFrame:
                            preprocess_frame(train, "no_diacritics", cfg["train_style"])], ignore_index=True)
         return train.drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
     return preprocess_frame(train, cfg["train_diacritics"], cfg["train_style"])
+
+
+class KeepBestTrainable(TrainerCallback):
+    """Keep an in-memory copy of the trainable weights from the best evaluation so far.
+
+    With PEFT/LoRA models the Trainer's load_best_model_at_end does not restore the classification head
+    (observed: best clean-dev macro-F1 0.707 during training, 0.342 after the 'best' model was reloaded),
+    so after training we load this copy instead. For LoRA it holds only the adapters + head (~2.6M values).
+    """
+
+    def __init__(self, metric: str = "eval_macro_f1"):
+        self.metric, self.best, self.state = metric, float("-inf"), None
+
+    def on_evaluate(self, args, state, control, metrics=None, model=None, **kwargs):
+        if metrics and model is not None and metrics.get(self.metric, float("-inf")) > self.best:
+            self.best = metrics[self.metric]
+            self.state = {n: p.detach().to("cpu", copy=True) for n, p in model.named_parameters() if p.requires_grad}
+
+    def restore(self, model):
+        if self.state is not None:
+            missing = set(self.state) - {n for n, _ in model.named_parameters()}
+            assert not missing, f"cannot restore {len(missing)} parameters"
+            with torch.no_grad():
+                for n, p in model.named_parameters():
+                    if n in self.state:
+                        p.copy_(self.state[n].to(p.device))
 
 
 class WeightedTrainer(Trainer):
@@ -194,6 +220,7 @@ def main(argv=None):
         seed=args.seed,
         **length_grouping,
     )
+    keep_best = KeepBestTrainable()
     trainer = WeightedTrainer(
         model=model,
         args=training_args,
@@ -202,10 +229,12 @@ def main(argv=None):
         processing_class=tokenizer,
         data_collator=DataCollatorWithPadding(tokenizer),
         compute_metrics=hf_metrics,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=cfg["early_stopping_patience"])],
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=cfg["early_stopping_patience"]), keep_best],
         class_weights=class_weights,
     )
     train_result = trainer.train()
+    if cfg["lora"]:          # see KeepBestTrainable: restore adapters + head from the best epoch ourselves
+        keep_best.restore(trainer.model)
 
     # Score the selected model on dev (and test with --final) in every requested diacritic form.
     base = {"exp_id": cfg["exp_id"], "model": cfg["model_name"], "seed": args.seed,
@@ -226,12 +255,23 @@ def main(argv=None):
             for r in recs:
                 print(f"[{split}/{mode}/{r['subset']}] macro-F1 {r['macro_f1']:.4f}  weighted-F1 {r['weighted_f1']:.4f}")
 
+    # Sanity check: the selected model, re-scored on clean dev, must reproduce the best score seen in training.
+    best_seen = keep_best.best if cfg["lora"] else trainer.state.best_metric
+    final_select = next(r["macro_f1"] for r in records
+                        if r["split"] == "dev" and r["subset"] == ("clean" if cfg["select_on_clean_dev"] else "all")
+                        and r["eval_diacritics"] == select_mode)
+    selection_consistent = best_seen is None or abs(final_select - best_seen) < 0.005
+    if not selection_consistent:
+        print(f"WARNING: best model not restored correctly (best during training {best_seen:.4f}, "
+              f"final {final_select:.4f})", flush=True)
+
     runtime = round(time.time() - start, 1)
     for record in records:
         record["runtime_s"] = runtime
     info = {"config": cfg, "seed": args.seed, "n_train": len(train_df), "runtime_s": runtime,
             "train_runtime_s": train_result.metrics.get("train_runtime"),
             "best_checkpoint_dev_macro_f1": trainer.state.best_metric,
+            "best_seen_dev_macro_f1": best_seen, "selection_consistent": selection_consistent,
             "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
             "n_gpu_used": training_args.n_gpu,
             "effective_batch": cfg["batch_size"] * cfg["grad_accum"] * max(1, training_args.n_gpu),
