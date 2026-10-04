@@ -1,0 +1,5 @@
+# E2g: E2d with stronger regularisation (all E2 runs peak at epoch 2-3, then overfit)
+embeddings: word2vec
+dropout: 0.5
+hidden: 64
+weight_decay: 1.0e-5

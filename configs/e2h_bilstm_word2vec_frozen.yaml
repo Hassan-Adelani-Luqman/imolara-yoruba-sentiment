@@ -1,0 +1,4 @@
+# E2h: frozen Word2Vec. Contrast with E2a (frozen fastText, 0.590): is the frozen failure due to
+# freezing itself, or to fastText's orthography mismatch (no tone marks on under-dotted vowels)?
+embeddings: word2vec
+freeze_embeddings: true
