@@ -264,7 +264,31 @@ Run on a Kaggle T4: one Kaggle kernel per experiment, launched with `python scri
 
 ---
 
-## Phase 5 — Ablations (10 Oct)
+## Phase 5 — Ablations (10 Oct) ✅ done (4 Oct)
+
+**E6: tone-mark robustness** (clean-dev macro-F1 by training form × evaluation form; figure `results/figures/e6_diacritic_matrix.png`)
+
+| Trained on → evaluated on | TF-IDF: original | no tones | no diacritics | AfriBERTa: original | no tones | no diacritics |
+|---|---|---|---|---|---|---|
+| original (E1c / E4) | 0.722 | 0.620 | 0.620 | 0.731 | 0.669 | 0.658 |
+| no tones | 0.643 | 0.716 | 0.678 | 0.667 | 0.721 | 0.691 |
+| no diacritics | 0.597 | 0.680 | 0.717 | 0.626 | 0.681 | 0.713 |
+| mixed (original + no diacritics) | **0.733** | 0.686 | 0.718 | **0.732** | 0.696 | 0.708 |
+| **mixed3** (all three forms) | 0.732 | **0.720** | 0.717 | 0.723 | 0.716 | 0.713 |
+
+**E7: cross-lingual** (AfriBERTa, Yoruba clean dev): + hau/ibo/pcm **0.716 ± 0.003**; + hau/ibo **0.715 ± 0.009**; Yoruba only 0.731 ± 0.006.
+**E8: class weights** (AfriBERTa): 0.729 ± 0.012 vs 0.731 ± 0.006; negative recall 0.686 vs 0.684.
+
+**What we learned**
+1. **RQ2: models trained on diacritised text are brittle to how users actually type** (−6 to −13 points). Each "specialist" (trained on one form) is best only on that form. **Augmenting training with every written form (mixed3) gives near-uniform performance** (worst-case drop −1.5 for TF-IDF, −1.0 for AfriBERTa) at no meaningful cost on original text. This is the project's main practical finding, and it drives the deployed model.
+2. With mixed3, **TF-IDF matches or edges AfriBERTa in every form** (0.732/0.720/0.717 vs 0.723/0.716/0.713). Character n-grams over all spellings are a very strong, cheap solution.
+3. **RQ3: adding Hausa/Igbo/Pidgin hurts Yoruba** (−1.5). Removing Pidgin (skewed labels) makes no difference, so the cause is diluting Yoruba (about 30% of the training mix) with other languages and domains, not the label prior.
+4. **Class weighting does nothing:** the imbalance is mild, and negative-class errors come from ambiguity (see Phase 6 error analysis).
+
+**Candidates for final test evaluation (Phase 6, chosen on dev only):** E1c (main baseline), E6b mixed3 TF-IDF, E2g (best RNN), E4 AfriBERTa (best on original text), E6a mixed3 AfriBERTa (most robust transformer), E5c AfroXLMR-large LoRA.
+
+<details><summary>Original Phase 5 plan</summary>
+
 
 All ablations use the best model from Phase 4. If GPU time is short, run them on AfroXLMR-base so the comparison stays like-for-like.
 
@@ -277,6 +301,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 | E9 (optional) | Learning curve | Train on 10/25/50/100% of yor data; plot macro-F1 vs size for TF-IDF vs the best transformer |
 
 **Done when:** all ablation rows are logged, and each one has a one-sentence answer for the report.
+
+</details>
 
 ---
 
