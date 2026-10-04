@@ -1,0 +1,10 @@
+# Pipeline check on Kaggle: AfroXLMR-large (stored in fp16) + LoRA, tiny data, 1 epoch. Not an experiment.
+exp_id: smoke_lora
+model_name: Davlan/afro-xlmr-large
+train_subset: 200
+epochs: 1
+batch_size: 16
+learning_rate: 3.0e-4
+lora: {r: 16, alpha: 32, dropout: 0.1, target_modules: [query, value]}
+eval_diacritics: [original]
+notes: pipeline smoke test (fp32 load, LoRA, 2 GPUs)

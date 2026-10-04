@@ -154,7 +154,7 @@ outputs, as an output file. The executed notebook is in the repo at
 [{web.split("github.com/")[-1]}]({web}) at commit [`{commit[:7]}`]({web}/tree/{commit}).
 
 To reproduce: *Copy & Edit*, set Accelerator = GPU T4 and Internet = on{" and attach `imolara-embeddings`" if uses_embeddings else ""}, then *Run all*."""),
-        code(f"""import subprocess, sys
+        code(f"""import json, subprocess, sys
 LAUNCH = "/tmp/imolara_launcher"
 subprocess.run(["git", "clone", "-q", "{repo_url}", LAUNCH], check=True)
 subprocess.run(["git", "-C", LAUNCH, "checkout", "-q", "{commit}"], check=True)
@@ -162,12 +162,22 @@ subprocess.run([sys.executable, f"{{LAUNCH}}/scripts/kaggle_notebook.py", "--exp
                 "--module", "{module}", "--seeds", *map(str, {seeds!r}), "--repo", "{repo_url}", "--commit", "{commit}",
                 *"{flags}".split(), "--out", "/tmp/{exp}.ipynb"], check=True)"""),
         code(f"""# Execute the experiment notebook here; the executed copy is saved to /kaggle/working/{exp}.ipynb
+# --allow-errors: the executed copy is saved even if a cell fails, so failures are visible in the repo too
 result = subprocess.run(["jupyter", "nbconvert", "--to", "notebook", "--execute", "/tmp/{exp}.ipynb",
-                         "--ExecutePreprocessor.timeout=-1", "--ExecutePreprocessor.kernel_name=python3",
+                         "--allow-errors", "--ExecutePreprocessor.timeout=-1",
+                         "--ExecutePreprocessor.kernel_name=python3",
                          "--output-dir", "/kaggle/working", "--output", "{exp}.ipynb"],
                         capture_output=True, text=True)
-print(result.stderr[-3000:])
-assert result.returncode == 0, "experiment notebook failed; see the executed copy in the outputs"
+print(result.stderr[-2000:])
+executed = json.load(open("/kaggle/working/{exp}.ipynb"))
+errors = [o for c in executed["cells"] for o in c.get("outputs", []) if o.get("output_type") == "error"]
+for c in executed["cells"]:                       # show the tail of the training log (incl. any traceback)
+    for o in c.get("outputs", []):
+        if o.get("output_type") == "stream" and "seed" in "".join(o.get("text", "")):
+            print("".join(o["text"])[-4000:])
+for e in errors:
+    print("ERROR:", e["ename"], e["evalue"][:500])
+assert result.returncode == 0 and not errors, "experiment notebook failed; see the executed copy in the outputs"
 """),
         code("""import json, glob, pandas as pd
 rows = [r for f in sorted(glob.glob("/kaggle/working/outputs/seed*/metrics.json")) for r in json.load(open(f))]
