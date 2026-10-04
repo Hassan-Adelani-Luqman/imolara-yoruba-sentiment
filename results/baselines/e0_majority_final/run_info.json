@@ -1,0 +1,13 @@
+{
+  "spec": {
+    "model": "majority"
+  },
+  "best_params": {},
+  "grid": [
+    {
+      "clean_dev_macro_f1": 0.1981
+    }
+  ],
+  "n_train": 8522,
+  "top_features": {}
+}

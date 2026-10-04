@@ -1,0 +1,121 @@
+"""Phase 6: final test-set results (run once, after model selection on dev).
+
+  python -m src.final_eval        # writes results/test_results.md
+
+Reads the *_final rows of results/experiments.csv (models re-trained with their selected configuration and
+scored on dev + test via --final) and the matching prediction files, and reports:
+  * test macro-F1 (all / clean), weighted-F1 (the official SemEval-2023 metric) and robustness to diacritic removal;
+  * dev -> test change per model;
+  * paired bootstrap tests against the main baseline (E1c) on the same test tweets;
+  * published reference scores for Yoruba (AfriSenti / SemEval-2023, weighted-F1 on the same test set).
+"""
+from __future__ import annotations
+
+import glob
+from pathlib import Path
+
+import pandas as pd
+
+from src.evaluate import EXPERIMENTS_CSV, compute_metrics, paired_bootstrap
+
+ROOT = Path(__file__).resolve().parents[1]
+OUT_MD = ROOT / "results" / "test_results.md"
+
+FINAL = {  # exp_id (without _final) -> (display name, where its prediction files live)
+    "e0_majority": ("Majority class", "results/baselines/e0_majority_final"),
+    "e1c_wordchar_lr": ("TF-IDF word+char + LR (E1c)", "results/baselines/e1c_wordchar_lr_final"),
+    "e6b_wordchar_lr_mixed3": ("TF-IDF word+char + LR, mixed3 (E6b)", "results/baselines/e6b_wordchar_lr_mixed3_final"),
+    "e2g_bilstm_word2vec_reg": ("BiLSTM + attention, Word2Vec (E2g)", "results/kaggle/e2g_bilstm_word2vec_reg_final/outputs"),
+    "e5c_afroxlmr_large_lora": ("AfroXLMR-large + LoRA (E5c)", "results/kaggle/e5c_afroxlmr_large_lora_final/outputs"),
+    "e4_afriberta_large": ("AfriBERTa-large (E4)", "results/kaggle/e4_afriberta_large_final/outputs"),
+    "e6a_afriberta_mixed3": ("AfriBERTa-large, mixed3 (E6a)", "results/kaggle/e6a_afriberta_mixed3_final/outputs"),
+}
+BASELINE = "e1c_wordchar_lr"
+PUBLISHED = [  # Yoruba test set, weighted-F1 (x100)
+    ("XLM-R-base (AfriSenti paper, Table 7)", 62.7),
+    ("AfroXLMR-base (AfriSenti paper)", 70.0),
+    ("AfriBERTa-large (AfriSenti paper)", 72.9),
+    ("AfroXLMR-large (AfriSenti paper)", 74.1),
+    ("NLNDE, SemEval-2023 (AfroXLMR-large + LAPT/TAPT)", 79.95),
+    ("king001, SemEval-2023 best Yoruba (no system paper)", 80.16),
+]
+
+
+def fmt(v: pd.Series) -> str:
+    return f"{v.mean():.3f}" if len(v) == 1 else f"{v.mean():.3f} ± {v.std(ddof=1):.3f}"
+
+
+def results_table(df: pd.DataFrame) -> pd.DataFrame:
+    rows = []
+    for exp, (name, _) in FINAL.items():
+        g = df[df["exp_id"] == f"{exp}_final"]
+        if g.empty:
+            continue
+        test = g[g["split"] == "test"]
+        t = lambda subset, form: test[(test["subset"] == subset) & (test["eval_diacritics"] == form)]
+        dev_clean = g[(g["split"] == "dev") & (g["subset"] == "clean") & (g["eval_diacritics"] == "original")]
+        orig, no_t, no_d = (t("clean", f)["macro_f1"] for f in ("original", "no_tones", "no_diacritics"))
+        rows.append({
+            "model": name, "seeds": test["seed"].nunique(),
+            "test macro-F1 (clean)": fmt(orig),
+            "test macro-F1 (all)": fmt(t("all", "original")["macro_f1"]),
+            "test weighted-F1 (all) ×100": f"{100 * t('all', 'original')['weighted_f1'].mean():.1f}",
+            "Δ no tones": f"{(no_t.mean() - orig.mean()):+.3f}" if len(no_t) else "–",
+            "Δ no diacritics": f"{(no_d.mean() - orig.mean()):+.3f}" if len(no_d) else "–",
+            "dev→test (clean)": f"{(orig.mean() - dev_clean['macro_f1'].mean()):+.3f}",
+        })
+    return pd.DataFrame(rows)
+
+
+def predictions(exp: str, subset: str = "clean") -> dict[int, pd.DataFrame]:
+    """seed -> test predictions (original diacritics) for one final model."""
+    _, where = FINAL[exp]
+    files = sorted(glob.glob(str(ROOT / where / "**" / "predictions_test_original.csv"), recursive=True))
+    out = {}
+    for f in files:
+        seed = int(Path(f).parent.name.removeprefix("seed")) if Path(f).parent.name.startswith("seed") else 0
+        p = pd.read_csv(f)
+        out[seed] = (p[~p["overlap_train"]] if subset == "clean" else p).set_index("id")
+    return out
+
+
+def significance_table() -> pd.DataFrame:
+    base = next(iter(predictions(BASELINE).values()))
+    rows = []
+    for exp, (name, _) in FINAL.items():
+        if exp in (BASELINE, "e0_majority"):
+            continue
+        for seed, p in predictions(exp).items():
+            p = p.loc[base.index]
+            rows.append({"model": name, "seed": seed,
+                         "macro-F1": round(compute_metrics(base["label_id"], p["pred_id"])["macro_f1"], 4),
+                         "baseline macro-F1": round(compute_metrics(base["label_id"], base["pred_id"])["macro_f1"], 4),
+                         "p (model ≤ baseline)": paired_bootstrap(base["label_id"], p["pred_id"], base["pred_id"])})
+    return pd.DataFrame(rows)
+
+
+def main():
+    df = pd.read_csv(EXPERIMENTS_CSV)
+    table = results_table(df)
+    sig = significance_table()
+    parts = [
+        "# Test-set results (Phase 6)", "",
+        "_Generated by `python -m src.final_eval`. Each model was re-trained with the configuration selected on dev "
+        "(same seeds) and scored once on the AfriSenti Yoruba test split (4,515 tweets; clean = 4,129 that do not "
+        "duplicate a training tweet). Diacritic columns: change in clean-test macro-F1 when the same tweets are "
+        "scored with tone marks / all diacritics removed._", "",
+        table.to_markdown(index=False), "",
+        "## Paired bootstrap vs the TF-IDF baseline (clean test, 1,000 resamples)", "",
+        "_p = share of resamples in which the model does **not** beat E1c; p < 0.05 means a significant improvement._", "",
+        sig.to_markdown(index=False), "",
+        "## Published Yoruba results on the same test set (weighted-F1 ×100)", "",
+        pd.DataFrame(PUBLISHED, columns=["system", "weighted-F1"]).to_markdown(index=False), "",
+        "_Our weighted-F1 column above is directly comparable. SemEval systems used extra pre-training and/or "
+        "ensembles; the AfriSenti paper baselines are single fine-tuned models like ours._", "",
+    ]
+    OUT_MD.write_text("\n".join(parts))
+    print(OUT_MD.read_text())
+
+
+if __name__ == "__main__":
+    main()
