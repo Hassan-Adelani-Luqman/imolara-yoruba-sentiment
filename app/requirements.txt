@@ -1,0 +1,7 @@
+# The TF-IDF pickle was written with scikit-learn 1.9.1, so that exact version must be used to load it.
+scikit-learn==1.9.1
+transformers==5.18.0
+torch
+joblib
+pandas
+huggingface_hub

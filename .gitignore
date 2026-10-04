@@ -19,3 +19,4 @@ outputs/
 wandb/
 kaggle/_build/
 results/kaggle/*/seed*/model/
+results/kaggle/*/outputs/seed*/model/
