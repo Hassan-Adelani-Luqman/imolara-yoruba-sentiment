@@ -1,0 +1,11 @@
+code-switching
+missing diacritics / ambiguity
+sarcasm or irony
+proverb / idiom
+slang / new word
+religious or greeting formula
+news / factual (neutral vs other)
+neutral-negative boundary
+likely label noise
+too short / no context
+other

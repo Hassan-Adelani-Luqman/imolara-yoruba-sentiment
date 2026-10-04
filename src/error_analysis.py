@@ -77,7 +77,7 @@ def suggest(row) -> str:
     if not row.has_diacritics:
         return "missing diacritics / ambiguity"
     if not row.base_correct and row.pred_base == row.pred_model and row.confidence > 0.9:
-        return "likely label noise (both models confident and agree)"
+        return "both models confidently disagree with gold: label noise OR idiom/proverb? (check)"
     if pair == {"neutral", "negative"}:
         return "neutral-negative boundary"
     return ""
