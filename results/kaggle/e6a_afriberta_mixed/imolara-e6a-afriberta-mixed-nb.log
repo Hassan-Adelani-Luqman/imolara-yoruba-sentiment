@@ -1,0 +1,61 @@
+[{"stream_name":"stderr","time":7.226228313,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.226261087,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.226265003,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.226267526,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.829644104,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.829674668,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.829677772,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.829680173,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":713.306593263,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stdout","time":713.306643417,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stdout","time":713.30664799,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stdout","time":713.306651224,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stdout","time":713.306654386,"data":"[NbConvertApp] Converting notebook /tmp/e6a_afriberta_mixed.ipynb to notebook\n"}
+,{"stream_name":"stdout","time":713.306657167,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stdout","time":713.306660007,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stdout","time":713.306662844,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stdout","time":713.306666275,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":713.306682471,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stdout","time":713.306687534,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stdout","time":713.306692454,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stdout","time":713.30669734,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":713.306701928,"data":"[NbConvertApp] Writing 64299 bytes to /kaggle/working/e6a_afriberta_mixed.ipynb\n"}
+,{"stream_name":"stdout","time":713.306706249,"data":"\n"}
+,{"stream_name":"stdout","time":713.306710334,"data":"0.7885', 'eval_recall_positive': '0.8398', 'eval_f1_positive': '0.8134', 'eval_runtime': '1.936', 'eval_samples_per_second': '938.6', 'eval_steps_per_second': '14.98', 'epoch': '8'}\n"}
+,{"stream_name":"stdout","time":713.306715053,"data":"[seed 44 | gpu 0] \n"}
+,{"stream_name":"stdout","time":713.306719181,"data":"[seed 44 | gpu 0] {'loss': '0.003342', 'grad_norm': '6.705', 'learning_rate': '6.323e-06', 'epoch': '8.105'}\n"}
+,{"stream_name":"stdout","time":713.306723429,"data":"[seed 44 | gpu 0] {'loss': '0.00164', 'grad_norm': '0.01452', 'learning_rate': '5.972e-06', 'epoch': '8.211'}\n"}
+,{"stream_name":"stdout","time":713.306727684,"data":"[seed 44 | gpu 0] {'loss': '0.007511', 'grad_norm': '0.00632', 'learning_rate': '5.621e-06', 'epoch': '8.316'}\n"}
+,{"stream_name":"stdout","time":713.30674151,"data":"[seed 44 | gpu 0] {'loss': '0.0055', 'grad_norm': '0.003562', 'learning_rate': '5.27e-06', 'epoch': '8.421'}\n"}
+,{"stream_name":"stdout","time":713.306749354,"data":"[seed 44 | gpu 0] {'loss': '0.01891', 'grad_norm': '0.3425', 'learning_rate': '4.919e-06', 'epoch': '8.526'}\n"}
+,{"stream_name":"stdout","time":713.306751919,"data":"[seed 44 | gpu 0] {'loss': '0.01438', 'grad_norm': '0.006551', 'learning_rate': '4.568e-06', 'epoch': '8.632'}\n"}
+,{"stream_name":"stdout","time":713.306758522,"data":"[seed 44 | gpu 0] {'loss': '0.004979', 'grad_norm': '0.003399', 'learning_rate': '4.218e-06', 'epoch': '8.737'}\n"}
+,{"stream_name":"stdout","time":713.306760914,"data":"[seed 44 | gpu 0] {'loss': '0.01774', 'grad_norm': '5.716', 'learning_rate': '3.867e-06', 'epoch': '8.842'}\n"}
+,{"stream_name":"stdout","time":713.306763509,"data":"[seed 44 | gpu 0] {'loss': '0.007362', 'grad_norm': '0.008296', 'learning_rate': '3.516e-06', 'epoch': '8.947'}\n"}
+,{"stream_name":"stdout","time":713.306778005,"data":"[seed 44 | gpu 0] {'eval_loss': '1.91', 'eval_accuracy': '0.7501', 'eval_macro_f1': '0.7299', 'eval_weighted_f1': '0.748', 'eval_precision_negative': '0.6782', 'eval_recall_negative': '0.6067', 'eval_f1_negative': '0.6404', 'eval_precision_neutral': '0.7477', 'eval_recall_neutral': '0.7318', 'eval_f1_neutral': '0.7397', 'eval_precision_positive': '0.7825', 'eval_recall_positive': '0.8385', 'eval_f1_positive': '0.8096', 'eval_runtime': '1.938', 'eval_samples_per_second': '937.6', 'eval_steps_per_second': '14.96', 'epoch': '9'}\n"}
+,{"stream_name":"stdout","time":713.306788142,"data":"[seed 44 | gpu 0] \n"}
+,{"stream_name":"stdout","time":713.306792105,"data":"[seed 44 | gpu 0] {'loss': '0.01076', 'grad_norm': '1.511', 'learning_rate': '3.165e-06', 'epoch': '9.053'}\n"}
+,{"stream_name":"stdout","time":713.306795767,"data":"[seed 44 | gpu 0] {'loss': '0.01174', 'grad_norm': '0.002516', 'learning_rate': '2.814e-06', 'epoch': '9.158'}\n"}
+,{"stream_name":"stdout","time":713.306799229,"data":"[seed 44 | gpu 0] {'loss': '0.007265', 'grad_norm': '0.001647', 'learning_rate': '2.463e-06', 'epoch': '9.263'}\n"}
+,{"stream_name":"stdout","time":713.306802811,"data":"[seed 44 | gpu 0] {'loss': '0.01179', 'grad_norm': '0.002489', 'learning_rate': '2.112e-06', 'epoch': '9.368'}\n"}
+,{"stream_name":"stdout","time":713.306806309,"data":"[seed 44 | gpu 0] {'loss': '0.008728', 'grad_norm': '25.99', 'learning_rate': '1.761e-06', 'epoch': '9.474'}\n"}
+,{"stream_name":"stdout","time":713.306809774,"data":"[seed 44 | gpu 0] {'loss': '0.007794', 'grad_norm': '4.107', 'learning_rate': '1.411e-06', 'epoch': '9.579'}\n"}
+,{"stream_name":"stdout","time":713.306813291,"data":"[seed 44 | gpu 0] {'loss': '0.00621', 'grad_norm': '2.595', 'learning_rate': '1.06e-06', 'epoch': '9.684'}\n"}
+,{"stream_name":"stdout","time":713.306816721,"data":"[seed 44 | gpu 0] {'loss': '0.003354', 'grad_norm': '0.01998', 'learning_rate': '7.088e-07', 'epoch': '9.789'}\n"}
+,{"stream_name":"stdout","time":713.306820209,"data":"[seed 44 | gpu 0] {'loss': '0.01034', 'grad_norm': '0.006083', 'learning_rate': '3.579e-07', 'epoch': '9.895'}\n"}
+,{"stream_name":"stdout","time":713.306823686,"data":"[seed 44 | gpu 0] {'loss': '0.005455', 'grad_norm': '0.8996', 'learning_rate': '7.018e-09', 'epoch': '10'}\n"}
+,{"stream_name":"stdout","time":713.306827868,"data":"[seed 44 | gpu 0] {'eval_loss': '1.903', 'eval_accuracy': '0.7518', 'eval_macro_f1': '0.7334', 'eval_weighted_f1': '0.7504', 'eval_precision_negative': '0.6779', 'eval_recall_negative': '0.6221', 'eval_f1_negative': '0.6488', 'eval_precision_neutral': '0.7428', 'eval_recall_neutral': '0.7439', 'eval_f1_neutral': '0.7434', 'eval_precision_positive': '0.7922', 'eval_recall_positive': '0.8242', 'eval_f1_positive': '0.8079', 'eval_runtime': '1.94', 'eval_samples_per_second': '936.4', 'eval_steps_per_second': '14.95', 'epoch': '10'}\n"}
+,{"stream_name":"stdout","time":713.306836385,"data":"[seed 44 | gpu 0] \n"}
+,{"stream_name":"stdout","time":713.306839745,"data":"[seed 44 | gpu 0] {'train_runtime': '393.1', 'train_samples_per_second': '386', 'train_steps_per_second': '12.08', 'train_loss': '0.2135', 'epoch': '10'}\n"}
+,{"stream_name":"stdout","time":713.306843374,"data":"[seed 44 | gpu 0] [dev/original/all] macro-F1 0.7676  weighted-F1 0.7840\n"}
+,{"stream_name":"stdout","time":713.30684696,"data":"[seed 44 | gpu 0] [dev/original/clean] macro-F1 0.7409  weighted-F1 0.7584\n"}
+,{"stream_name":"stdout","time":713.306853793,"data":"[seed 44 | gpu 0] [dev/no_tones/all] macro-F1 0.7361  weighted-F1 0.7548\n"}
+,{"stream_name":"stdout","time":713.306856287,"data":"[seed 44 | gpu 0] [dev/no_tones/clean] macro-F1 0.7067  weighted-F1 0.7265\n"}
+,{"stream_name":"stdout","time":713.306867834,"data":"[seed 44 | gpu 0] [dev/no_diacritics/all] macro-F1 0.7602  weighted-F1 0.7778\n"}
+,{"stream_name":"stdout","time":713.30687209,"data":"[seed 44 | gpu 0] [dev/no_diacritics/clean] macro-F1 0.7324  weighted-F1 0.7514\n"}
+,{"stream_name":"stdout","time":713.306876167,"data":"\n"}
+,{"stream_name":"stderr","time":716.497654574,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":716.569868843,"data":"[NbConvertApp] Writing 16757 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":718.949196724,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":719.445983823,"data":"[NbConvertApp] Writing 295430 bytes to __results__.html\n"}
+]
