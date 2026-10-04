@@ -114,8 +114,9 @@ with gr.Blocks(title="Ìmọ̀lára: Yoruba sentiment") as demo:
     with gr.Row():
         out_a = gr.Label(label="AfriBERTa-large (fine-tuned, mixed3)", num_top_classes=3)
         out_t = gr.Label(label="TF-IDF + logistic regression (mixed3)", num_top_classes=3)
-    gr.Examples(EXAMPLES, inputs=[text, form], label="Examples (the last two are known failure cases: a Bible verse "
-                "labelled neutral, and the idiom 'the bean cake has dissolved in the oil', i.e. things fell apart)")
+    gr.Examples(EXAMPLES, inputs=[text, form], label="Examples: the last three are hard cases (a code-switched Pidgin "
+                "complaint, a Bible verse that the dataset labels neutral, and the idiom 'the bean cake has dissolved in "
+                "the oil', i.e. things fell apart)")
     with gr.Accordion("About the models, results and limitations", open=False):
         gr.Markdown(ABOUT)
     go.click(classify, [text, form], [out_a, out_t, seen, verdict])
