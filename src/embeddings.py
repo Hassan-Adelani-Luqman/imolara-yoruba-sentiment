@@ -35,7 +35,9 @@ def download(url: str, path: Path) -> Path:
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
         print(f"downloading {url}")
-        urllib.request.urlretrieve(url, path)
+        tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")   # atomic: safe for parallel runs
+        urllib.request.urlretrieve(url, tmp)
+        os.replace(tmp, path)
     return path
 
 

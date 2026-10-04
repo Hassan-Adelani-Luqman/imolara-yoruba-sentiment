@@ -8,6 +8,7 @@ preprocessing is part of our own documented pipeline.
 from __future__ import annotations
 
 import csv
+import os
 import re
 import unicodedata
 from pathlib import Path
@@ -40,8 +41,12 @@ def load_split(lang: str = "yor", split: str = "train", cache_dir: Path = DATA_D
     if not path.exists():
         path.parent.mkdir(parents=True, exist_ok=True)
         url = AFRISENTI_URL.format(commit=AFRISENTI_COMMIT, lang=lang, split=split)
+        # write to a private temp file, then rename atomically: parallel runs (one seed per GPU) may
+        # download the same split at once, and must never read a half-written file
+        tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
         pd.read_csv(url, sep="\t", quoting=csv.QUOTE_NONE, keep_default_na=False, dtype=str) \
-          .to_csv(path, sep="\t", index=False, quoting=csv.QUOTE_NONE, escapechar="\\")
+          .to_csv(tmp, sep="\t", index=False, quoting=csv.QUOTE_NONE, escapechar="\\")
+        os.replace(tmp, path)
     # keep_default_na=False: tweets such as "NA" or "null" must stay text, not become NaN
     df = pd.read_csv(path, sep="\t", quoting=csv.QUOTE_NONE, escapechar="\\",
                      keep_default_na=False, dtype=str)
