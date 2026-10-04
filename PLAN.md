@@ -307,7 +307,35 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 6 — Final test evaluation and error analysis (11 Oct)
+## Phase 6 — Final test evaluation and error analysis (11 Oct) 🔄 test done (4 Oct); manual error tagging pending
+
+**Test results** (`results/test_results.md`; each model re-trained with its dev-selected configuration and scored once on test)
+
+| Model | clean-test macro-F1 | test weighted-F1 (×100) | Δ no tones | Δ no diacritics |
+|---|---|---|---|---|
+| **TF-IDF mixed3 (E6b)** | **0.745** | **77.8** | +0.001 | −0.006 |
+| **AfriBERTa mixed3 (E6a)** | **0.741 ± 0.007** | 77.5 | −0.002 | −0.012 |
+| TF-IDF (E1c) | 0.737 | 77.2 | −0.081 | −0.084 |
+| AfriBERTa (E4) | 0.732 ± 0.005 | 76.7 | −0.038 | −0.070 |
+| BiLSTM + attention, Word2Vec (E2g) | 0.710 ± 0.005 | 74.7 | −0.075 | −0.085 |
+| AfroXLMR-large + LoRA (E5c) | 0.702 ± 0.001 | 73.2 | −0.001 | −0.034 |
+| *AfriSenti paper: AfroXLMR-large / AfriBERTa-large* | – | *74.1 / 72.9* | | |
+| *SemEval-2023 best Yoruba (king001 / NLNDE)* | – | *80.2 / 80.0* | | |
+
+**What we learned**
+1. **Dev-based selection generalised:** model ranking on test matches dev, and dev → test changes are small (−0.5 to +1.5 points).
+2. **No model significantly beats the TF-IDF baseline on test** (paired bootstrap: best p = 0.055 for TF-IDF mixed3; AfriBERTa seeds p = 0.13–0.87).
+3. **mixed3 augmentation transfers to test:** both mixed3 models lose ≤ 1.2 points on undiacritised input (vs 7–8 without augmentation) and are the two best models overall.
+4. **Our single models beat the AfriSenti paper's single-model baselines by 3–5 weighted-F1 points** (AfriBERTa 76.7 vs 72.9; TF-IDF 77.2 vs AfroXLMR-large 74.1). A plausible contributor is matching the organisers' test normalisation in training (E1d shows raw-text training costs 3.9 points on dev). The SemEval winners (about 80) used extra pre-training and/or ensembles.
+5. **Error analysis** (`results/error_analysis/slices.md`; AfriBERTa vs TF-IDF on clean test):
+   - Code-switched tweets cost about 5 points; undiacritised tweets about 5 (AfriBERTa) to 6 (TF-IDF).
+   - **64% of AfriBERTa's errors are shared with TF-IDF** (a hard core of 651 tweets); each model fixes about 360 of the other's errors, so the two are complementary.
+   - AfriBERTa is **over-confident**: 94% of its predictions have p > 0.9, but those are 77% accurate.
+   - Confusions are spread out; positive → neutral is the most common (219).
+   - **Pending:** manual tagging of 100 sampled errors (`results/error_analysis/errors_to_tag.csv`) by a Yoruba reader, then `notebooks/03_error_analysis.ipynb`.
+
+<details><summary>Original Phase 6 plan</summary>
+
 
 1. **Freeze choices.** Run the selected configs (best baseline, best RNN and best transformer, plus any ablation winners) on the **test set once**.
 2. **Quantitative evaluation**
@@ -330,6 +358,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 4. **Successful examples:** pick 5 correct predictions that show what each model gets right.
 
 **Outputs:** `notebooks/03_error_analysis.ipynb`, `results/errors_tagged.csv`, `results/figures/*`.
+
+</details>
 
 ---
 
