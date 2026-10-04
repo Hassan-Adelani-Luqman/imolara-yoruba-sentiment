@@ -80,6 +80,21 @@ def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str
     }, indent=2))
 
 
+def push(build_dir: Path, retry_every: int = 120, max_wait_h: float = 6) -> str:
+    """Push a kernel version. The CLI exits 0 even when the push is refused, so check its output. When
+    both free-tier GPU slots are busy ("Maximum batch GPU session count of 2 reached"), wait and retry."""
+    deadline = time.time() + max_wait_h * 3600
+    while True:
+        out = kaggle("kernels", "push", "-p", str(build_dir)).strip()
+        if "successfully pushed" in out.lower():
+            return out
+        if "session count" in out.lower() and time.time() < deadline:
+            print(time.strftime("%H:%M:%S"), "GPU slots busy; retrying in", retry_every, "s", flush=True)
+            time.sleep(retry_every)
+            continue
+        raise SystemExit(f"kernel push failed: {out}")
+
+
 def wait(kernel: str, poll: int = 60) -> str:
     while True:
         status = kaggle("kernels", "status", kernel).lower()
@@ -131,7 +146,7 @@ def main():
         build_dir = ROOT / "kaggle" / "_build" / exp
         build_kernel(build_dir, slug, user, a.module, Path(a.config).resolve().relative_to(ROOT).as_posix(), a.seeds,
                      ["--final"] if a.final else [], commit, datasets)
-        print(kaggle("kernels", "push", "-p", str(build_dir)).strip())
+        print(push(build_dir))
         print(f"Live log: https://www.kaggle.com/code/{kernel}")
         if not a.wait:
             return

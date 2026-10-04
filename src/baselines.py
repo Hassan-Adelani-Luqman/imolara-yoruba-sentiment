@@ -79,10 +79,19 @@ def top_features(model, k: int = 20) -> dict[str, list]:
             for i, label in enumerate(LABELS)}
 
 
+def build_train(diacritics: str, style: str) -> pd.DataFrame:
+    """Training frame in one diacritic form, or 'mixed' = original + fully undiacritised copies (E6)."""
+    raw = load_split("yor", "train")
+    if diacritics != "mixed":
+        return preprocess_frame(raw, diacritics, style)
+    both = pd.concat([preprocess_frame(raw, "original", style), preprocess_frame(raw, "no_diacritics", style)])
+    return both.drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
+
+
 def run_experiment(exp_id: str, spec: dict, eval_diacritics: list[str], final: bool = False) -> list[dict]:
     start = time.time()
     style = spec.get("train_style", "semeval")
-    train = preprocess_frame(load_split("yor", "train"), spec.get("train_diacritics", "original"), style)
+    train = build_train(spec.get("train_diacritics", "original"), style)
     dev_raw = load_eval_split("yor", "dev")
     dev = preprocess_frame(dev_raw, "original", "semeval")          # always scored in the test format
     clean = ~dev["overlap_train"].to_numpy(dtype=bool)
