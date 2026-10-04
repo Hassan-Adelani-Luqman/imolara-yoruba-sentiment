@@ -28,6 +28,8 @@ def _fmt(values: pd.Series) -> str:
 
 def main_table(df: pd.DataFrame, split: str = "dev") -> pd.DataFrame:
     df = df[(df["split"] == split) & (df["eval_diacritics"] == "original")]
+    if split == "dev":   # *_final rows are Phase 6 re-runs (their dev scores reproduce the originals; see README)
+        df = df[~df["exp_id"].str.endswith("_final")]
     rows = []
     for exp_id, g in df.groupby("exp_id", sort=False):
         clean, full = g[g["subset"] == "clean"], g[g["subset"] == "all"]
@@ -43,6 +45,8 @@ def main_table(df: pd.DataFrame, split: str = "dev") -> pd.DataFrame:
 
 def robustness_table(df: pd.DataFrame, split: str = "dev") -> pd.DataFrame:
     df = df[(df["split"] == split) & (df["subset"] == "clean")]
+    if split == "dev":
+        df = df[~df["exp_id"].str.endswith("_final")]
     table = df.pivot_table(index="exp_id", columns="eval_diacritics", values="macro_f1", aggfunc="mean")
     table = table.reindex(columns=[c for c in ("original", "no_tones", "no_diacritics") if c in table])
     if "original" in table:
