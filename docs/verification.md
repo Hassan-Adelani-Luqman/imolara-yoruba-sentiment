@@ -85,6 +85,19 @@ License: CC BY-SA 3.0. Plan: use `cc.yo.300.vec.gz` (small). The `.bin` version 
 - Diacritics: Orife, I. (2018). Attentive Sequence-to-Sequence Learning for Diacritic Restoration of Yorùbá Language Text. *Interspeech 2018*, 2848–2852. doi:10.21437/Interspeech.2018-42
 - Adelani, D. I., et al. (2021). The Effect of Domain and Diacritics in Yoruba–English Neural Machine Translation. *MT Summit XVIII*, 61–75.
 
+## Kaggle / training-pipeline issues found in Phase 4 (and fixed)
+
+| Issue | Evidence | Fix |
+|---|---|---|
+| Kaggle's `NvidiaTeslaT4` machine has **2 GPUs**; the HF Trainer silently used DataParallel → effective batch 64, half the configured updates, doubled logged loss | AfroXLMR-base script run: 134 optimiser steps/epoch = 8,522/64; first logged loss 2.16 (≈ 2 × ln 3) | Each training process is pinned to one GPU (`CUDA_VISIBLE_DEVICES`); notebooks run seeds in parallel, one per GPU; `run_info.json` records `n_gpu_used` and `effective_batch` |
+| transformers 5 loads weights in their **stored dtype** by default (`dtype="auto"`); `Davlan/afro-xlmr-large` is stored in **float16** | `config.json` `torch_dtype: float16`; LoRA run failed | `from_pretrained(..., dtype=torch.float32)`; AMP still trains in fp16 |
+| Kaggle's image ships `torchao` 0.10, which `peft` ≥ 0.20 rejects | ImportError in the first LoRA run | Uninstalled before training |
+| Parallel seeds raced on the uncached AfriSenti download | `UnicodeDecodeError` reading a half-written TSV | Atomic writes (temp file + `os.replace`) |
+| `kaggle kernels pull` returns notebooks **without outputs** | Pulled notebook had 0 outputs | A launcher kernel executes the experiment notebook with nbconvert and saves the executed copy as an output file |
+| Free tier: at most **2 concurrent GPU sessions**; refused pushes still exit 0 | "Maximum batch GPU session count of 2 reached" | Runner checks push output and retries every 2 min |
+
+Consequence: the first AfroXLMR-base (0.687) and mBERT (0.663) results came from the DataParallel setup. They are kept in `results/kaggle_script_check/` for reference only and excluded from the experiments table. All reported Phase 4 numbers come from the corrected notebook runs.
+
 ## Still open
 
 - [x] Video length: **7–10 min** (instructor).
