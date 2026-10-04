@@ -1,0 +1,314 @@
+{
+  "spec": {
+    "model": "logreg",
+    "features": "word+char",
+    "train_diacritics": "mixed3",
+    "grid": {
+      "C": [
+        1,
+        3,
+        10,
+        30
+      ],
+      "class_weight": [
+        null,
+        "balanced"
+      ]
+    }
+  },
+  "best_params": {
+    "C": 3,
+    "class_weight": "balanced"
+  },
+  "grid": [
+    {
+      "C": "1",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.7236
+    },
+    {
+      "C": "1",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.7287
+    },
+    {
+      "C": "3",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.7314
+    },
+    {
+      "C": "3",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.7318
+    },
+    {
+      "C": "10",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.7307
+    },
+    {
+      "C": "10",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.7275
+    },
+    {
+      "C": "30",
+      "class_weight": "None",
+      "clean_dev_macro_f1": 0.7274
+    },
+    {
+      "C": "30",
+      "class_weight": "balanced",
+      "clean_dev_macro_f1": 0.7238
+    }
+  ],
+  "n_train": 21326,
+  "top_features": {
+    "negative": [
+      [
+        "word__pa",
+        2.916
+      ],
+      [
+        "word__ole",
+        2.815
+      ],
+      [
+        "word__iku",
+        2.384
+      ],
+      [
+        "word__ò",
+        2.368
+      ],
+      [
+        "word__ko",
+        2.289
+      ],
+      [
+        "word__ariwo",
+        2.284
+      ],
+      [
+        "word__ti",
+        2.212
+      ],
+      [
+        "word__dun ni",
+        2.201
+      ],
+      [
+        "word__ma wa",
+        2.198
+      ],
+      [
+        "char__ja",
+        2.098
+      ],
+      [
+        "word__ikú",
+        2.062
+      ],
+      [
+        "word__were",
+        1.921
+      ],
+      [
+        "word__ti pa",
+        1.872
+      ],
+      [
+        "word__iwa",
+        1.853
+      ],
+      [
+        "word__olè",
+        1.818
+      ],
+      [
+        "word__gbe",
+        1.816
+      ],
+      [
+        "char__ij",
+        1.774
+      ],
+      [
+        "char__an",
+        1.756
+      ],
+      [
+        "word__kò",
+        1.753
+      ],
+      [
+        "word__won",
+        1.731
+      ]
+    ],
+    "neutral": [
+      [
+        "word__ki ni",
+        4.02
+      ],
+      [
+        "word__ni a",
+        2.797
+      ],
+      [
+        "word__kí ni",
+        2.564
+      ],
+      [
+        "word__ti a",
+        2.325
+      ],
+      [
+        "word__ma n",
+        2.313
+      ],
+      [
+        "word__b",
+        2.307
+      ],
+      [
+        "word__re e",
+        2.066
+      ],
+      [
+        "word__wa la",
+        1.995
+      ],
+      [
+        "word__a oo",
+        1.913
+      ],
+      [
+        "word__jọ",
+        1.87
+      ],
+      [
+        "word__o wa",
+        1.856
+      ],
+      [
+        "word__idi",
+        1.825
+      ],
+      [
+        "word__ma ń",
+        1.722
+      ],
+      [
+        "word__a fi",
+        1.717
+      ],
+      [
+        "word__ba ni",
+        1.679
+      ],
+      [
+        "word__d",
+        1.571
+      ],
+      [
+        "word__wa ni",
+        1.567
+      ],
+      [
+        "word__ta ni",
+        1.559
+      ],
+      [
+        "word__gbogbo wa",
+        1.546
+      ],
+      [
+        "word__ifa",
+        1.542
+      ]
+    ],
+    "positive": [
+      [
+        "word__e ku",
+        3.49
+      ],
+      [
+        "word__ire",
+        3.287
+      ],
+      [
+        "word__ẹ",
+        3.079
+      ],
+      [
+        "char__ire",
+        3.008
+      ],
+      [
+        "char__ire ",
+        2.973
+      ],
+      [
+        "word__rere",
+        2.961
+      ],
+      [
+        "char__re",
+        2.807
+      ],
+      [
+        "char__re ",
+        2.65
+      ],
+      [
+        "word__ẹ ku",
+        2.61
+      ],
+      [
+        "word__ẹ kú",
+        2.582
+      ],
+      [
+        "char__du",
+        2.458
+      ],
+      [
+        "word__o",
+        2.452
+      ],
+      [
+        "word__wa",
+        2.347
+      ],
+      [
+        "word__ki a",
+        2.273
+      ],
+      [
+        "char__ ire",
+        2.258
+      ],
+      [
+        "word__ò ní",
+        2.248
+      ],
+      [
+        "char__ ire ",
+        2.243
+      ],
+      [
+        "word__o ni",
+        2.23
+      ],
+      [
+        "word__ku",
+        2.218
+      ],
+      [
+        "word__dara",
+        2.204
+      ]
+    ]
+  }
+}
