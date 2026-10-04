@@ -225,7 +225,7 @@ def main():
     fetch(kernel, dest, a.with_model)
     if notebook:
         fetch_notebook(dest, exp)
-    if not exp.startswith("smoke"):            # pipeline checks are not experiments
+    if not exp.startswith(("smoke", "deploy")):   # pipeline checks and deployment builds are not experiments
         subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
 
 

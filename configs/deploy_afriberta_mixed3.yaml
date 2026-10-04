@@ -1,0 +1,10 @@
+# Deployment model: AfriBERTa-large trained on mixed3 (original + no tones + no diacritics), the E6a configuration,
+# one seed (42), weights saved for the Hugging Face Hub / web app. Trained on the training split only.
+model_name: castorini/afriberta_large
+learning_rate: 3.0e-5
+batch_size: 32
+epochs: 10
+early_stopping_patience: 3
+train_diacritics: mixed3
+eval_diacritics: [original, no_tones, no_diacritics]
+save_model: true
