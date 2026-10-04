@@ -83,7 +83,7 @@ if emb:                                            # attached imolara-embeddings
            "--output_dir", f"{{OUT}}/seed{{seed}}", *{extra_args!r}]
     proc = subprocess.Popen(cmd, cwd=CODE, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     for line in proc.stdout:
-        if "Warning" not in line and "warn(" not in line:
+        if not any(noise in line for noise in ("Warning", "warn(", "it/s]", "Loading weights")):
             print(line, end="")
     assert proc.wait() == 0, f"seed {{seed}} failed\""""),
     ]
