@@ -1,0 +1,11 @@
+# Streamlit Community Cloud installs this file (it sits next to streamlit_app.py). No PyTorch: the model runs with onnxruntime.
+# scikit-learn must match the version that wrote tfidf_mixed3.joblib.
+streamlit==1.65.0
+onnxruntime==1.30.0
+tokenizers==0.23.2
+scikit-learn==1.9.1
+joblib
+huggingface_hub
+numpy
+pandas
+altair

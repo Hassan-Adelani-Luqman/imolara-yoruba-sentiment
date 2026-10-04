@@ -79,6 +79,8 @@ License: CC BY-SA 3.0. Plan: use `cc.yo.300.vec.gz` (small). The `.bin` version 
 - ZeroGPU: Gradio only; functions decorated with `@spaces.GPU`; free visitors get about 5 min/day of GPU (anonymous visitors about 2 min). A sentiment model needs well under 1 s per query.
 - **Action:** check the HF account age. Fallbacks: Streamlit Community Cloud (CPU), or a Static Space running an ONNX model in the browser.
 
+**Update (Phase 7, 4 Oct):** creating the Space actually failed for this account. Hugging Face answered *"You must be subscribed to PRO to host Spaces with ZeroGPU … or request a community grant"*, and for CPU *"hosting Gradio and Docker Spaces on free cpu-basic requires a PRO subscription"*. Only static Spaces are free. **Decision:** deploy on **Streamlit Community Cloud** (free, about 1 GB RAM) with an int8 ONNX model (`docs/DEPLOYMENT.md`).
+
 ## Language facts (for the report)
 
 - Speakers: about 48M L1, about 50M total. Source: Ethnologue 28th ed. (2025), cited via Wikipedia; I could not open Ethnologue itself (paywall).

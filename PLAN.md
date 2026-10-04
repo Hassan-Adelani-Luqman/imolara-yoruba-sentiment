@@ -366,7 +366,17 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 7 — Deployment (12 Oct)
+## Phase 7 — Deployment (12 Oct) 🔄 built and tested (4 Oct); Streamlit Cloud deploy pending (user sign-in)
+
+**What was built**
+- **Model repo:** [`Hassanadelani1/imolara-afriberta-mixed3`](https://huggingface.co/Hassanadelani1/imolara-afriberta-mixed3). Contains AfriBERTa-large mixed3 (seed 42; clean dev 0.723/0.716/0.708, consistent with E6a), the per-channel **int8 ONNX** export (127 MB), the TF-IDF mixed3 model (7.5 MB) and a model card.
+- **Hosting change:** Hugging Face refused free Gradio Spaces (ZeroGPU and CPU both need PRO), so the app is deployed on **Streamlit Community Cloud** (`streamlit_app/`). The Gradio version (`app/`) is kept for PRO or local use.
+- **ONNX validation** (`results/onnx_validation.md`): tokenizer ids identical; ONNX fp32 equals PyTorch (max |Δlogit| 3e-5); per-channel int8 agrees on 96.3–96.6% of clean-dev tweets, with macro-F1 within ±0.3 points (per-tensor int8: 94–95%, −1.1 points, rejected).
+- **App tests** (Streamlit `AppTest`, models fetched from the Hub): all examples work, no exceptions, cold start 54 s, **peak memory about 550 MB** (limit about 1 GB), about 0.05 s per prediction.
+- **Deploy steps:** `docs/DEPLOYMENT.md`. Sign in at share.streamlit.io with GitHub, set main file `streamlit_app/streamlit_app.py`, choose Python 3.12, deploy.
+
+<details><summary>Original Phase 7 plan</summary>
+
 
 1. Push the best model, tokenizer and model card to the HF Hub (`<user>/yoruba-sentiment-afroxlmr`). The model card covers data, metrics, limitations and the license.
 2. **`app/app.py` (Gradio)**
@@ -378,6 +388,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 4. Check latency (under 2 s per query is the target) and the cold start, and confirm the app works from an incognito window and on a phone.
 
 **Done when:** a public URL works and the app's predictions match the offline predictions on 10 test tweets.
+
+</details>
 
 ---
 

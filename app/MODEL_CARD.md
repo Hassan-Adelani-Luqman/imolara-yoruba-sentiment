@@ -21,8 +21,10 @@ Fine-tuned [`castorini/afriberta_large`](https://huggingface.co/castorini/afribe
 on the Yoruba part of **AfriSenti-SemEval 2023** (Muhammad et al., 2023). The model is trained on every tweet in three written forms
 (original, tone marks removed, all diacritics removed: "mixed3"), which makes it robust to Yoruba typed without diacritics.
 
+**Files:** `model.safetensors` + tokenizer (PyTorch / transformers); `onnx/model_int8.onnx`, a per-channel int8 dynamic-quantised ONNX export (127 MB, used by the web app with onnxruntime; on clean dev it agrees with the PyTorch model on 96.3–96.6% of tweets, and macro-F1 is within ±0.3 points in all three diacritic forms).
+
 This repository also contains `tfidf_mixed3.joblib`: the word + character TF-IDF + logistic regression model trained the same way
-(scikit-learn 1.9.1). Both models power the demo Space [Hassanadelani1/imolara](https://huggingface.co/spaces/Hassanadelani1/imolara).
+(scikit-learn 1.9.1). Both models power the demo web app (Streamlit Community Cloud; link in the GitHub repository).
 
 ## Usage
 
