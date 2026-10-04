@@ -77,17 +77,48 @@ if emb:                                            # attached imolara-embeddings
     print("embeddings:", env["IMOLARA_EMB_DIR"])"""),
         md("## 2 · Experiment configuration"),
         code("print(open(f\"{CODE}/{CONFIG}\").read())"),
-        md("## 3 · Training: one cell per seed\n\nThe best epoch is chosen on *clean* dev macro-F1 (dev tweets that do not duplicate a training tweet)."),
-        code(f"""def run(seed):
+        md("## 3 · Training: one process per seed, one GPU per process\n\n"
+           "Kaggle's T4 machine has two GPUs. Each seed trains in its own process pinned to one GPU "
+           "(`CUDA_VISIBLE_DEVICES`), so two seeds run at once and `batch_size` in the config is the real batch "
+           "(no DataParallel). Log lines are prefixed with their seed. The best epoch is chosen on *clean* dev "
+           "macro-F1 (dev tweets that do not duplicate a training tweet)."),
+        code(f"""import queue, threading
+
+N_GPU = max(1, torch.cuda.device_count())
+print(f"{{N_GPU}} GPU(s) -> up to {{N_GPU}} seeds in parallel", flush=True)
+NOISE = ("Warning", "warn(", "it/s]", "Loading weights")
+
+def run(seed, gpu):
     cmd = [sys.executable, "-m", "{module}", "--config", CONFIG, "--seed", str(seed),
            "--output_dir", f"{{OUT}}/seed{{seed}}", *{extra_args!r}]
-    proc = subprocess.Popen(cmd, cwd=CODE, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    proc = subprocess.Popen(cmd, cwd=CODE, env={{**env, "CUDA_VISIBLE_DEVICES": str(gpu)}},
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
     for line in proc.stdout:
-        if not any(noise in line for noise in ("Warning", "warn(", "it/s]", "Loading weights")):
-            print(line, end="")
-    assert proc.wait() == 0, f"seed {{seed}} failed\""""),
+        if not any(n in line for n in NOISE):
+            print(f"[seed {{seed}} | gpu {{gpu}}] {{line}}", end="", flush=True)
+    return proc.wait()
+
+def run_all(seeds):
+    todo, codes = queue.Queue(), {{}}
+    for s in seeds:
+        todo.put(s)
+    def worker(gpu):
+        while True:
+            try:
+                seed = todo.get_nowait()
+            except queue.Empty:
+                return
+            codes[seed] = run(seed, gpu)
+    threads = [threading.Thread(target=worker, args=(g,)) for g in range(N_GPU)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    failed = [s for s, rc in codes.items() if rc != 0]
+    assert not failed, f"seeds failed: {{failed}}"
+
+run_all(SEEDS)"""),
     ]
-    cells += [code(f"run({seed})") for seed in seeds]
     cells += [
         md("## 4 · Results across seeds\n\nMacro-F1 is the primary metric; weighted-F1 is the official SemEval-2023 metric. "
            "`clean` excludes tweets that duplicate a training tweet; `no_tones` / `no_diacritics` score the same "

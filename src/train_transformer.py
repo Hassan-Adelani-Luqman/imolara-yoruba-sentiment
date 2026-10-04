@@ -6,13 +6,21 @@ Runs on any CUDA machine (we use Kaggle T4s via scripts/kaggle_run.py) or, slowl
   python -m src.train_transformer --config ... --final     # Phase 6 only: also score the test split
 
 The model is selected on dev macro-F1. The test split is never loaded unless --final is given.
+
+One process = one GPU: Kaggle's T4 machines have two GPUs, and with both visible the HF Trainer silently
+wraps the model in DataParallel, doubling the effective batch (and halving the number of updates). We pin
+the process to a single GPU before torch initialises CUDA, so `batch_size` in the config is the real batch.
+To use both GPUs, run two seeds in parallel with CUDA_VISIBLE_DEVICES=0 / 1 (the Kaggle notebooks do this).
 """
 from __future__ import annotations
+
+import os
+
+os.environ.setdefault("CUDA_VISIBLE_DEVICES", "0")  # must happen before torch touches CUDA
 
 import argparse
 import inspect
 import math
-import os
 import shutil
 import tempfile
 import time
@@ -89,8 +97,10 @@ class WeightedTrainer(Trainer):
 
 
 def build_model(cfg: dict):
+    # dtype=float32: transformers 5 loads weights in their stored dtype by default ("auto"), and
+    # Davlan/afro-xlmr-large is stored in float16. Master weights must be fp32; AMP (fp16=True) handles speed.
     model = AutoModelForSequenceClassification.from_pretrained(
-        cfg["model_name"], num_labels=len(LABELS), id2label=ID2LABEL, label2id=LABEL2ID)
+        cfg["model_name"], num_labels=len(LABELS), id2label=ID2LABEL, label2id=LABEL2ID, dtype=torch.float32)
     if cfg["lora"]:
         from peft import LoraConfig, TaskType, get_peft_model
         lora = cfg["lora"]
@@ -223,6 +233,8 @@ def main(argv=None):
             "train_runtime_s": train_result.metrics.get("train_runtime"),
             "best_checkpoint_dev_macro_f1": trainer.state.best_metric,
             "device": torch.cuda.get_device_name(0) if torch.cuda.is_available() else "cpu",
+            "n_gpu_used": training_args.n_gpu,
+            "effective_batch": cfg["batch_size"] * cfg["grad_accum"] * max(1, training_args.n_gpu),
             "log_history": trainer.state.log_history}
     save_run(output_dir, records, predictions, extra=info)
 
