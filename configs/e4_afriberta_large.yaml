@@ -1,0 +1,7 @@
+# E4: AfriBERTa large (126M), pre-trained from scratch on <1 GB of 11 African languages incl. Yoruba
+model_name: castorini/afriberta_large
+learning_rate: 3.0e-5
+batch_size: 32
+epochs: 10
+early_stopping_patience: 3
+eval_diacritics: [original, no_tones, no_diacritics]

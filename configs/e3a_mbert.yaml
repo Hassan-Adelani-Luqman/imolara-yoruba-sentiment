@@ -1,0 +1,7 @@
+# E3a: multilingual BERT (104 languages incl. Yoruba Wikipedia; WordPiece)
+model_name: google-bert/bert-base-multilingual-cased
+learning_rate: 3.0e-5
+batch_size: 32
+epochs: 10
+early_stopping_patience: 3
+eval_diacritics: [original, no_tones, no_diacritics]

@@ -1,0 +1,8 @@
+# E5b: AfroXLMR large (560M), full fine-tuning; effective batch 32
+model_name: Davlan/afro-xlmr-large
+learning_rate: 1.0e-5
+batch_size: 16
+grad_accum: 2
+epochs: 10
+early_stopping_patience: 3
+eval_diacritics: [original, no_tones, no_diacritics]
