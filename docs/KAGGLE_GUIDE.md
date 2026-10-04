@@ -1,294 +1,95 @@
-# Running Ìmọ̀lára GPU Experiments on Kaggle
+# Running Ìmọ̀lára GPU experiments on Kaggle
 
-You write and commit the code locally. A single command then packs the code, starts a Kaggle GPU job, waits for it to finish and downloads the results into the repo. You never edit code in the Kaggle web editor.
+All neural experiments (E2–E9, the Phase 6 test runs and the deployment model) were trained on **Kaggle T4 GPUs**. One local command
+launches a run. It waits for a free GPU, trains, and downloads both the results and the **executed notebook** into the repository. Nothing
+is edited in the Kaggle web editor, and the training code itself is platform-agnostic: `python -m src.train_transformer --config …` runs
+on any CUDA machine. Kaggle is only the launcher.
 
 ```
-local repo ──scripts/kaggle_run.py──▶ Kaggle kernel "imolara-<exp>" (T4 GPU, internet on)
-   ▲                                     │ pip install extras → train (3 seeds) → /kaggle/working/outputs
-   └──── kaggle kernels output ◀─────────┘
-results/kaggle/<exp>/  ──▶  results/experiments.csv
+git commit + push ──▶ scripts/kaggle_run.py configs/<exp>.yaml --wait
+                        │ builds a small launcher notebook (scripts/kaggle_notebook.py) and pushes it as kernel imolara-<exp>-nb
+                        ▼
+  Kaggle (T4 ×2, internet on)
+    launcher:  git clone <this repo> @ <commit>  →  build experiment notebook  →  jupyter nbconvert --execute
+    experiment notebook:  setup (clone, pip, GPU check) → config → seeds trained in parallel, one GPU each → results table
+                        │ /kaggle/working/outputs/seed*/{metrics.json, predictions_*.csv, run_info.json}, <exp>.ipynb (executed)
+                        ▼
+  results/kaggle/<exp>/ (outputs)    notebooks/kaggle/<exp>.ipynb (executed copy)    results/experiments.csv (collected)
 ```
-
-**Rules**
-- Kaggle only runs the code; the repo is the single source of truth.
-- Training code is platform-agnostic. `python -m src.train_transformer --config ...` must run on any CUDA machine. Kaggle is only the launcher.
-- One kernel per experiment (`imolara-e5a-afroxlmr-base`, …), so runs don't overwrite each other and each output can be fetched separately.
-- No secrets are needed: the data (AfriSenti) and all planned models are public on the HF Hub. The final model is pushed to HF **from your machine**, not from Kaggle.
 
 ---
 
 ## 1. One-time account setup (about 10 min)
 
 1. **Verify your phone number:** kaggle.com → *Settings* → *Phone verification*. Without it, kernels cannot use a **GPU** or the **internet**.
-2. **Check your GPU quota:** open any notebook in the web editor; the quota panel on the right shows the weekly GPU hours (about 30 h/week on the free tier). Each session has a maximum runtime of about 12 h.
-3. **Create an API token:** kaggle.com/settings/api → *Generate New Token*.
+2. **GPU quota:** about 30 GPU-hours per week on the free tier (see the quota panel in any notebook editor). A session can run for up to about 12 h.
+3. **API token:** kaggle.com/settings/api → *Generate New Token*.
 
-## 2. Local CLI setup
+## 2. Local setup
 
 ```bash
-# inside the project venv
-pip install kaggle
-
-# Authenticate using ONE of these methods:
-kaggle auth login                         # (a) OAuth in the browser (recommended by Kaggle)
-# (b) token file
+pip install kaggle                       # in the project venv (pinned in requirements.txt)
 mkdir -p ~/.kaggle && echo "<TOKEN>" > ~/.kaggle/access_token && chmod 600 ~/.kaggle/access_token
-# (c) env var (e.g. in ~/.bashrc)
-export KAGGLE_API_TOKEN="<TOKEN>"
-# (d) legacy: "Create Legacy API Key" → ~/.kaggle/kaggle.json, chmod 600
-
-# The runner script needs your username to build kernel ids:
 echo 'export KAGGLE_USERNAME="<your-kaggle-username>"' >> ~/.bashrc && source ~/.bashrc
-
-# Test the connection: this should list your kernels (or an empty table), not show a 401
-kaggle kernels list -m
+kaggle kernels list -m                   # should list your kernels, not show a 401
 ```
+- Other ways to log in: `kaggle auth login` (browser), the `KAGGLE_API_TOKEN` environment variable, or the legacy `~/.kaggle/kaggle.json`.
+- **GitHub push access (SSH key):** Kaggle clones the public repo at the commit you launch from, so `scripts/kaggle_run.py` pushes HEAD
+  first and refuses to launch with uncommitted changes in `src/`, `configs/` or `scripts/`.
+- **RNN runs** need the embeddings dataset once: `python scripts/kaggle_dataset.py` uploads `cc.yo.300.vec.gz` and our Word2Vec as the
+  private dataset `<user>/imolara-embeddings`. It is attached automatically when `--module src.rnn` is used.
 
-Never commit tokens. `.gitignore` must include `kaggle.json`, `access_token` and `kaggle/_build/`.
-
-## 3. Files in the repo
-
-| File | Purpose |
-|---|---|
-| `kaggle/run_template.py` | The script Kaggle executes. Placeholders are filled in by the runner. |
-| `scripts/kaggle_run.py` | Packs the code, writes `kernel-metadata.json`, pushes, polls status and downloads outputs. |
-| `requirements-kaggle.txt` | **Extra** packages only (e.g. `peft`, `evaluate`, `gensim`). Do **not** pin `torch` or `transformers`; replacing Kaggle's preinstalled CUDA builds breaks the GPU. |
-| `configs/*.yaml` | One config per experiment; the file name becomes the kernel name. |
-
-### How code reaches Kaggle
-
-`src/`, `configs/` and `requirements-kaggle.txt` are packed into a gzip tarball, base64-encoded and **embedded inside the kernel script**. The kernel unpacks it to `/tmp/imolara` at start-up. The code is under 1 MB, so this is simpler than the alternatives:
-- It needs no dataset uploads and avoids version-processing delays.
-- It works while the GitHub repo is still private.
-- Each Kaggle kernel version records exactly which code it ran.
-
-### Contract every training entry point must follow
-
-```
-python -m <module> --config configs/<exp>.yaml --seed <int> --output_dir <dir>
-```
-Each run writes to `<output_dir>`:
-- `metrics.json`: one record with `exp_id, model, seed, split, acc, macro_f1, weighted_f1, ...`
-- `predictions_dev.csv`: id, text, gold, pred, probabilities
-- `train_log.json`: Trainer log history
-- `model/`: best checkpoint, **only** if the config sets `save_model: true`
-
-Checkpoints are always deleted from `<output_dir>` (`save_total_limit=1`, then remove `checkpoint-*`). This keeps downloads small.
-
-Training scripts select the **dev** split. The test split is only evaluated in Phase 6, by `src/evaluate.py --split test`.
-
-## 4. `kaggle/run_template.py`
-
-```python
-# Generated by scripts/kaggle_run.py. Edit the repo, not this file.
-import base64, io, os, subprocess, sys, tarfile
-
-MODULE = "__MODULE__"
-CONFIG = "__CONFIG__"
-SEEDS = __SEEDS__
-BUNDLE = "__BUNDLE__"
-
-CODE, OUT = "/tmp/imolara", "/kaggle/working/outputs"
-tarfile.open(fileobj=io.BytesIO(base64.b64decode(BUNDLE))).extractall(CODE)
-subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-r",
-                f"{CODE}/requirements-kaggle.txt"], check=True)
-
-import torch
-assert torch.cuda.is_available(), "No GPU: check accelerator / phone verification"
-print("GPU:", torch.cuda.get_device_name(0))
-
-os.makedirs(OUT, exist_ok=True)
-with open(f"{OUT}/env.txt", "w") as f:  # exact package versions, for the report
-    subprocess.run([sys.executable, "-m", "pip", "freeze"], stdout=f, check=True)
-
-for seed in SEEDS:
-    subprocess.run([sys.executable, "-m", MODULE, "--config", CONFIG, "--seed", str(seed),
-                    "--output_dir", f"{OUT}/seed{seed}"], cwd=CODE, check=True)
-```
-
-## 5. `scripts/kaggle_run.py`
-
-```python
-"""Run one experiment on a Kaggle T4 and download its results.
-
-Usage:
-  python scripts/kaggle_run.py configs/e5a_afroxlmr_base.yaml --wait
-  python scripts/kaggle_run.py configs/e2a_bilstm_fasttext.yaml --module src.rnn --seeds 42
-  python scripts/kaggle_run.py configs/e5c_afroxlmr_large_lora.yaml --fetch-only --with-model
-"""
-import argparse, base64, io, json, os, subprocess, tarfile, time
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[1]
-BUNDLE_PATHS = ["src", "configs", "requirements-kaggle.txt"]
-
-
-def kaggle(*args: str) -> str:
-    return subprocess.run(["kaggle", *args], check=True, capture_output=True, text=True).stdout
-
-
-def bundle_code() -> str:
-    buf = io.BytesIO()
-    with tarfile.open(fileobj=buf, mode="w:gz") as tar:
-        for name in BUNDLE_PATHS:
-            tar.add(ROOT / name, arcname=name,
-                    filter=lambda t: None if "__pycache__" in t.name else t)
-    return base64.b64encode(buf.getvalue()).decode()
-
-
-def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str, seeds: list[int]):
-    build_dir.mkdir(parents=True, exist_ok=True)
-    script = (ROOT / "kaggle" / "run_template.py").read_text()
-    for key, value in {"__MODULE__": module, "__CONFIG__": config,
-                       "__SEEDS__": repr(seeds), "__BUNDLE__": bundle_code()}.items():
-        script = script.replace(key, value)
-    (build_dir / "run.py").write_text(script)
-    (build_dir / "kernel-metadata.json").write_text(json.dumps({
-        "id": f"{user}/{slug}",
-        "title": slug,                    # Kaggle derives the slug from the title, so keep them identical
-        "code_file": "run.py",
-        "language": "python",
-        "kernel_type": "script",
-        "is_private": True,
-        "enable_gpu": True,
-        "machine_shape": "NvidiaTeslaT4",
-        "enable_internet": True,          # needed for HF Hub models/data and pip
-        "dataset_sources": [], "competition_sources": [],
-        "kernel_sources": [], "model_sources": [],
-    }, indent=2))
-
-
-def wait(kernel: str, poll: int = 60) -> str:
-    while True:
-        status = kaggle("kernels", "status", kernel).lower()
-        print(time.strftime("%H:%M:%S"), status.strip())
-        for state in ("complete", "error", "cancel"):
-            if state in status:
-                return state
-        time.sleep(poll)
-
-
-def fetch(kernel: str, dest: Path, with_model: bool):
-    dest.mkdir(parents=True, exist_ok=True)
-    args = ["kernels", "output", kernel, "-p", str(dest), "-o"]
-    if not with_model:  # skip weights; metrics, predictions, logs only
-        args += ["--file-pattern", r".*\.(json|csv|txt|log|png)$"]
-    kaggle(*args)
-    print(f"Outputs in {dest}. The kernel log is {kernel.split('/')[1]}.log")
-
-
-def main():
-    p = argparse.ArgumentParser()
-    p.add_argument("config")
-    p.add_argument("--module", default="src.train_transformer")
-    p.add_argument("--seeds", nargs="+", type=int, default=[42, 43, 44])
-    p.add_argument("--wait", action="store_true", help="poll until finished, then download")
-    p.add_argument("--fetch-only", action="store_true", help="only download outputs of a finished run")
-    p.add_argument("--with-model", action="store_true", help="also download model weights")
-    a = p.parse_args()
-
-    exp = Path(a.config).stem                                   # e.g. e5a_afroxlmr_base
-    slug = "imolara-" + exp.replace("_", "-")
-    user = os.environ["KAGGLE_USERNAME"]
-    kernel = f"{user}/{slug}"
-    dest = ROOT / "results" / "kaggle" / exp
-
-    if not a.fetch_only:
-        build_dir = ROOT / "kaggle" / "_build" / exp
-        build_kernel(build_dir, slug, user, a.module, a.config, a.seeds)
-        print(kaggle("kernels", "push", "-p", str(build_dir)))
-        print(f"Live log: https://www.kaggle.com/code/{kernel}")
-        if not a.wait:
-            return
-        if wait(kernel) != "complete":
-            fetch(kernel, dest, with_model=False)              # fetch the log to debug
-            raise SystemExit(f"Run failed; see {dest}/{slug}.log")
-    fetch(kernel, dest, a.with_model)
-    subprocess.run(["python", "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
-
-
-if __name__ == "__main__":
-    main()
-```
-
-`src.evaluate collect <dir>` (written in Phase 2) reads every `seed*/metrics.json` in the folder and appends the rows to `results/experiments.csv`, with mean ± std computed at report time.
-
-## 5b. Notebook mode (the default from Phase 4 onwards)
-
-`python scripts/kaggle_run.py configs/<exp>.yaml --wait` builds a **readable Kaggle notebook** (`scripts/kaggle_notebook.py`) instead of the packed script (still available with `--script`; Phase 0–3 runs used it). Notebook kernels are named `imolara-<exp>-nb`. Its cells:
-1. Description (from the config's comment) with links to the GitHub commit.
-2. Setup: `git clone` the public repo, `git checkout <commit>`, install extras, check the GPU.
-3. The experiment config.
-4. One training cell per seed, with the epoch-by-epoch log.
-5. A results table across seeds.
-
-Requirements and behaviour:
-- `src/`, `configs/` and `scripts/` must be **committed**, and HEAD must be **on GitHub**. The runner checks this and runs `git push` if needed, so the machine needs push access (SSH key).
-- After the run, the **executed notebook with Kaggle's real outputs** is saved to `notebooks/kaggle/<exp>.ipynb` (via `kaggle kernels pull`), next to the usual downloaded outputs in `results/kaggle/<exp>/`.
-- Anyone can reproduce a run on Kaggle: *Copy & Edit* → GPU T4 + Internet on (attach `imolara-embeddings` for RNN runs) → *Run all*.
-
-The free tier allows **2 concurrent GPU sessions**. The runner detects a refused push ("Maximum batch GPU session count of 2 reached"; the CLI still exits 0) and retries every 2 minutes, so several launches simply queue.
-
-Two Kaggle quirks the code already handles:
-- The image ships `torchao` 0.10, which `peft` ≥ 0.20 rejects; it is uninstalled before training.
-- Attached datasets mount under `/kaggle/input/datasets/<user>/<slug>/`, and `.gz` files may arrive decompressed. The code searches for the files rather than hard-coding paths.
-
-## 6. Day-to-day workflow
+## 3. Commands
 
 ```bash
-# 0. Smoke test (about 3–5 min of GPU): XLM-R-base, 200 training tweets, 1 epoch, 1 seed.
-python scripts/kaggle_run.py configs/smoke.yaml --seeds 42 --wait
-
-# 1. Launch an experiment and keep working (open the printed URL to watch the live log)
-python scripts/kaggle_run.py configs/e5a_afroxlmr_base.yaml
-
-# 2. Later: download its results and add them to experiments.csv
-python scripts/kaggle_run.py configs/e5a_afroxlmr_base.yaml --fetch-only
-
-# 3. Final chosen model: download the weights too, then push to the HF Hub from your machine
-python scripts/kaggle_run.py configs/e5c_afroxlmr_large_lora.yaml --fetch-only --with-model
-
-# Useful raw commands
-kaggle kernels status  $KAGGLE_USERNAME/imolara-e5a-afroxlmr-base
-kaggle kernels files   $KAGGLE_USERNAME/imolara-e5a-afroxlmr-base
-kaggle kernels list -m -s imolara
+python scripts/kaggle_run.py configs/e4_afriberta_large.yaml --wait                    # 3 seeds (42 43 44), dev scores
+python scripts/kaggle_run.py configs/e2g_bilstm_word2vec_reg.yaml --module src.rnn --wait
+python scripts/kaggle_run.py configs/e4_afriberta_large.yaml --final --wait            # Phase 6: re-train + score test
+python scripts/kaggle_run.py configs/deploy_afriberta_mixed3.yaml --seeds 42 --wait --with-model   # keep the weights
+python scripts/kaggle_run.py configs/e4_afriberta_large.yaml --fetch-only              # re-download a finished run
 ```
+- Without `--wait`, the command returns after the push; use `--fetch-only` later.
+- `--final` runs record under `<exp>_final` so they never overwrite the original dev rows.
+- Runs whose names start with `smoke` or `deploy` are not collected into `experiments.csv`.
+- **Contract for any training module:** `python -m <module> --config <yaml> --seed <int> --output_dir <dir> [--final]`, writing `metrics.json`
+  (a list of records), `predictions_<split>_<form>.csv`, `run_info.json` and, if `save_model: true`, `model/`.
 
-- Commit the code **before** each launch and note the commit hash in the config's `notes`. Every result is then traceable to the exact code that produced it.
-- Launch several experiments in a row. Kaggle limits concurrent GPU sessions, and extra runs wait in the queue.
-- After each run, check your remaining GPU hours. The planned 25 or so runs need about 12–15 GPU-hours.
+## 4. Behaviour you can rely on
 
-## 7. Suggested launch order (GPU budget)
-
-| Order | Config | Approx. GPU time (3 seeds) |
-|---|---|---|
-| 1 | `smoke.yaml` (1 seed) | 5 min |
-| 2 | `e3b_xlmr_base.yaml`, `e3a_mbert.yaml` | 2 × 25 min |
-| 3 | `e4_afriberta_large.yaml` | 25 min |
-| 4 | `e5a_afroxlmr_base.yaml` | 25 min |
-| 5 | `e5c_afroxlmr_large_lora.yaml` | 60–90 min |
-| 6 | `e5b_afroxlmr_large.yaml` (full FT; batch 8 × grad-accum 2, fp16) | 90–120 min |
-| 7 | `e2*` RNN configs (only if the CPU is too slow) | 4 × 10 min |
-| 8 | E6 tone-mark, E7 cross-lingual and E8 class-weight configs on the chosen model | 3–5 h |
-
-These timings are estimates. Replace them with real numbers from the first runs. The `train_log.json` runtime goes in the report's compute section.
-
-## 8. Troubleshooting
-
-| Symptom | Fix |
+| What | How |
 |---|---|
-| `401 Unauthorized` | Token missing, expired or in the wrong place. Re-run `kaggle auth login`, or check `~/.kaggle/access_token` and its `chmod 600` |
-| Run fails immediately with "No GPU" | Phone not verified, or the GPU quota is used up. Check the quota panel |
-| `pip`/HF download fails in the kernel | Internet is disabled because the phone isn't verified, or `enable_internet` was turned off |
-| Warning that the title/slug doesn't match | Keep `title == slug` (already handled by the runner). Don't rename kernels in the web UI |
-| `CUDA out of memory` (large model) | `per_device_train_batch_size: 8`, `gradient_accumulation_steps: 2–4`, `fp16: true`, `max_length: 128`; otherwise use LoRA |
-| Status `error` | Read `results/kaggle/<exp>/<slug>.log`. The runner downloads it on failure |
-| Import errors after `pip install` | Something in `requirements-kaggle.txt` upgraded torch/transformers. Remove the pin and let Kaggle's versions stand |
-| Downloads are slow or huge | Checkpoints weren't cleaned up. Check `save_total_limit` and the post-training cleanup |
-| Quota runs out mid-project | Base-model runs and the core path first (see the PLAN risks table). Classical models run locally. The same command works on Colab as an emergency fallback |
+| Free tier allows **2 concurrent GPU sessions** | A refused push still exits 0, so the runner checks the push output and retries every 2 min (up to 6 h). Launches simply queue |
+| Each Kaggle T4 machine has **2 GPUs** | Each seed is a separate process pinned to one GPU (`CUDA_VISIBLE_DEVICES`); two seeds run at once. Batch size in the config is the real batch (no DataParallel) |
+| Code provenance | The notebook clones the repo at the full commit hash and prints it; every record stores `git_commit` |
+| Downloads time out occasionally | `kernels output` is retried 4 times |
+| Failed runs | `nbconvert --allow-errors`: the executed notebook (with the traceback) is still saved, and the runner downloads the log |
+| Model selection sanity | Each run records `selection_consistent` (the final model re-scores to its best dev epoch) |
 
-## 9. For the report and README (reproducibility)
+## 5. Measured training time (mean per seed; seeds run two at a time)
 
-- State the hardware: "Kaggle Notebooks, 1× NVIDIA T4 (16 GB), packages listed in `env.txt`".
-- Give both reproduction paths: Kaggle (`scripts/kaggle_run.py`) and any CUDA machine (`python -m src.train_transformer --config configs/<exp>.yaml --seed 42 --output_dir out/`).
-- Make the kernels public at submission time if you want examiners to see the run logs, and link one from the README.
+| Experiment | min/seed | | Experiment | min/seed |
+|---|---|---|---|---|
+| BiLSTM/BiGRU (E2) | 0.4–0.9 | | AfroXLMR-base (E5a) | 8.0 |
+| AfriBERTa-large (E4) | 3.8 | | AfroXLMR-large + LoRA (E5c) | 12.5 |
+| AfriBERTa mixed3 (E6a, 3× data) | 7.3 | | AfroXLMR-large full FT (E5b) | 23.6 |
+| mBERT / XLM-R-base (E3) | 5.5 / 8.4 | | AfriBERTa + hau/ibo(/pcm) (E7) | 7.4–7.8 |
+
+Add about 3–5 min per run for kernel start, package installation and model download. The whole project used roughly 10 GPU-hours,
+including the failed and re-run attempts listed in `docs/verification.md`.
+
+## 6. Troubleshooting
+
+| Symptom | Cause / fix |
+|---|---|
+| `401 Unauthorized` | Token missing or expired: recreate it and check `chmod 600` |
+| "Commit your changes first" | Uncommitted changes in `src/`, `configs/` or `scripts/`: commit (the runner pushes) |
+| Run fails with "No GPU" | Phone not verified, or the weekly quota is used up |
+| `ImportError: … torchao` (LoRA) | Kaggle ships an old torchao that peft rejects; the notebook uninstalls it (already handled) |
+| `CUDA out of memory` | Lower `batch_size`, raise `grad_accum`, or use LoRA |
+| Final scores near chance but per-epoch scores fine | Evaluation order scrambled; `WeightedTrainer` uses a sequential eval sampler (regression test `tests/test_prediction_order.py`) |
+| `selection_consistent: false` | The best checkpoint was not restored or scored correctly. Investigate before using the run |
+
+## 7. Legacy script mode
+
+`--script` builds a packed Python kernel (code embedded as base64; template `kaggle/run_template.py`) instead of a notebook. It was used for
+the Phase 3 RNN runs and the first Phase 4 attempt. Kept for reference; notebook mode is the default.
