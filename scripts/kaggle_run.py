@@ -5,12 +5,15 @@ Usage:
   python scripts/kaggle_run.py configs/e2a_bilstm_fasttext.yaml --module src.rnn --seeds 42
   python scripts/kaggle_run.py configs/e5a_afroxlmr_base.yaml --final --wait      # Phase 6: adds test scores
   python scripts/kaggle_run.py configs/e5c_afroxlmr_large_lora.yaml --fetch-only --with-model
+  python scripts/kaggle_run.py configs/e2b_bilstm_fasttext.yaml --module src.rnn --script --fetch-only   # legacy run
 
 Two kernel formats:
-  --notebook (preferred): a readable Kaggle notebook that clones the public GitHub repo at the current
+  notebook (default): a readable Kaggle notebook that clones the public GitHub repo at the current
       commit (which must be committed and pushed). The executed notebook, with Kaggle's outputs, is saved
       to notebooks/kaggle/<exp>.ipynb. See scripts/kaggle_notebook.py.
-  default (script): src/, configs/ and requirements-kaggle.txt are packed into the kernel script itself.
+  --script (legacy, used up to the first Phase 4 runs): src/, configs/ and requirements-kaggle.txt are packed
+      into the kernel script itself.
+Notebook kernels are named imolara-<exp>-nb, script kernels imolara-<exp>.
 """
 from __future__ import annotations
 
@@ -181,7 +184,7 @@ def main():
     p.add_argument("--wait", action="store_true", help="poll until finished, then download and collect")
     p.add_argument("--fetch-only", action="store_true", help="only download outputs of a finished run")
     p.add_argument("--with-model", action="store_true", help="also download model weights")
-    p.add_argument("--notebook", action="store_true", help="run as a readable notebook cloned from GitHub")
+    p.add_argument("--script", action="store_true", help="legacy packed-script kernel instead of a notebook")
     p.add_argument("--datasets", nargs="*", default=None,
                    help="Kaggle datasets to attach (default: <user>/imolara-embeddings for --module src.rnn)")
     a = p.parse_args()
@@ -190,14 +193,15 @@ def main():
     if not user:
         raise SystemExit("Set KAGGLE_USERNAME (see docs/KAGGLE_GUIDE.md)")
     exp = Path(a.config).stem + ("_final" if a.final else "")
-    slug = "imolara-" + exp.replace("_", "-")
+    notebook = not a.script
+    slug = "imolara-" + exp.replace("_", "-") + ("-nb" if notebook else "")
     kernel = f"{user}/{slug}"
     dest = ROOT / "results" / "kaggle" / exp
 
     datasets = a.datasets if a.datasets is not None else (
         [f"{user}/imolara-embeddings"] if a.module == "src.rnn" else [])
     if not a.fetch_only:
-        if a.notebook:
+        if notebook:
             commit = ensure_pushed()
         else:
             commit = git_commit()
@@ -205,7 +209,7 @@ def main():
                 print(f"warning: launching from uncommitted code ({commit})", file=sys.stderr)
         build_dir = ROOT / "kaggle" / "_build" / exp
         build_kernel(build_dir, slug, user, a.module, Path(a.config).resolve().relative_to(ROOT).as_posix(), a.seeds,
-                     ["--final"] if a.final else [], commit, datasets, notebook=a.notebook, exp=exp)
+                     ["--final"] if a.final else [], commit, datasets, notebook=notebook, exp=exp)
         print(push(build_dir))
         print(f"Live log: https://www.kaggle.com/code/{kernel}")
         if not a.wait:
@@ -215,7 +219,7 @@ def main():
             fetch(kernel, dest, with_model=False)  # fetch the log to debug
             raise SystemExit(f"Run failed; see {dest.relative_to(ROOT)}/{slug}.log")
     fetch(kernel, dest, a.with_model)
-    if a.notebook:
+    if notebook:
         fetch_notebook(kernel, exp)
     subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
 

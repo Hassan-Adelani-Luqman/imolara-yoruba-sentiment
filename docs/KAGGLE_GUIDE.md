@@ -213,9 +213,9 @@ if __name__ == "__main__":
 
 `src.evaluate collect <dir>` (written in Phase 2) reads every `seed*/metrics.json` in the folder and appends the rows to `results/experiments.csv`, with mean ± std computed at report time.
 
-## 5b. Notebook mode (preferred from Phase 4 onwards)
+## 5b. Notebook mode (the default from Phase 4 onwards)
 
-`python scripts/kaggle_run.py configs/<exp>.yaml --notebook --wait` builds a **readable Kaggle notebook** (`scripts/kaggle_notebook.py`) instead of the packed script. Its cells:
+`python scripts/kaggle_run.py configs/<exp>.yaml --wait` builds a **readable Kaggle notebook** (`scripts/kaggle_notebook.py`) instead of the packed script (still available with `--script`; Phase 0–3 runs used it). Notebook kernels are named `imolara-<exp>-nb`. Its cells:
 1. Description (from the config's comment) with links to the GitHub commit.
 2. Setup: `git clone` the public repo, `git checkout <commit>`, install extras, check the GPU.
 3. The experiment config.
