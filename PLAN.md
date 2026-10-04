@@ -417,7 +417,16 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 9 — Repository polish and reproducibility (16 Oct)
+## Phase 9 — Repository polish and reproducibility (16 Oct) ✅ done (4 Oct)
+
+- **README.md:** links (live app, HF model; report and video to add), key results (test and dev), findings, method summary, repo layout, reproduction commands for every phase, engineering notes, credits and licences.
+- **docs/KAGGLE_GUIDE.md** rewritten for the notebook/launcher pipeline, with measured per-seed training times; `docs/DEPLOYMENT.md` added in Phase 7.
+- **Repo fix:** an `outputs/` ignore rule had kept all 509 Kaggle result files off GitHub. Fixed (`/outputs/` = repo root only) and committed; model weights still excluded.
+- **Fresh-clone check** (clone from GitHub, run only what the README says): 12/12 tests pass; EDA regenerates with identical `data_stats.json`; the E1c baseline reproduces **exactly** (0.7224; only `runtime_s` differs); `test_results.md` and the error-analysis slices regenerate unchanged.
+- Neural re-runs (Phase 6) reproduce the original dev scores to within ±0.003.
+
+<details><summary>Original Phase 9 plan</summary>
+
 
 **Final layout**
 ```
@@ -445,6 +454,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 ```
 - **README:** overview, links (app, video, model, report), quick start, how to reproduce each phase (exact commands), results table, credits and licenses.
 - **Reproducibility check:** fresh clone, then run the baseline locally and one transformer config on Kaggle (and once on any CUDA machine with `python -m src.train_transformer`), following only the README.
+
+</details>
 
 ---
 
