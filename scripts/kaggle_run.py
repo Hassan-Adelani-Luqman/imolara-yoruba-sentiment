@@ -6,8 +6,11 @@ Usage:
   python scripts/kaggle_run.py configs/e5a_afroxlmr_base.yaml --final --wait      # Phase 6: adds test scores
   python scripts/kaggle_run.py configs/e5c_afroxlmr_large_lora.yaml --fetch-only --with-model
 
-The code (src/, configs/, requirements-kaggle.txt) is packed into the kernel script itself, so
-the kernel runs exactly the local working tree. Commit before launching so results are traceable.
+Two kernel formats:
+  --notebook (preferred): a readable Kaggle notebook that clones the public GitHub repo at the current
+      commit (which must be committed and pushed). The executed notebook, with Kaggle's outputs, is saved
+      to notebooks/kaggle/<exp>.ipynb. See scripts/kaggle_notebook.py.
+  default (script): src/, configs/ and requirements-kaggle.txt are packed into the kernel script itself.
 """
 from __future__ import annotations
 
@@ -56,21 +59,57 @@ def bundle_code() -> str:
     return base64.b64encode(buf.getvalue()).decode()
 
 
+def git(*args: str) -> str:
+    return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+
+
+def repo_clone_url() -> str:
+    """https clone URL of the origin remote (works for both https and ssh remotes)."""
+    url = git("remote", "get-url", "origin")
+    if url.startswith("git@github.com:"):
+        url = "https://github.com/" + url.removeprefix("git@github.com:")
+    return url if url.endswith(".git") else url + ".git"
+
+
+def ensure_pushed() -> str:
+    """Full commit hash of HEAD, after checking the bundled paths are committed and HEAD is on GitHub
+    (pushing if needed), because notebook kernels clone the repo at this commit."""
+    if git("status", "--porcelain", "--", *BUNDLE_PATHS, "scripts"):
+        raise SystemExit("Commit your changes first: notebook kernels run the committed code from GitHub.")
+    sha = git("rev-parse", "HEAD")
+    subprocess.run(["git", "fetch", "-q", "origin"], cwd=ROOT, check=False)
+    if not git("branch", "-r", "--contains", sha):
+        result = subprocess.run(["git", "push", "origin", "HEAD"], cwd=ROOT, capture_output=True, text=True,
+                                env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+        if result.returncode != 0:
+            raise SystemExit(f"HEAD {sha[:7]} is not on GitHub and pushing failed:\n{result.stderr}")
+    return sha
+
+
 def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str,
-                 seeds: list[int], extra_args: list[str], commit: str, datasets: list[str]):
+                 seeds: list[int], extra_args: list[str], commit: str, datasets: list[str],
+                 notebook: bool = False, exp: str = ""):
     build_dir.mkdir(parents=True, exist_ok=True)
-    script = (ROOT / "kaggle" / "run_template.py").read_text()
-    for key, value in {"__MODULE__": module, "__CONFIG__": config, "__SEEDS__": repr(seeds),
-                       "__EXTRA_ARGS__": repr(extra_args), "__GIT_COMMIT__": commit,
-                       "__BUNDLE__": bundle_code()}.items():
-        script = script.replace(key, value)
-    (build_dir / "run.py").write_text(script)
+    if notebook:
+        from kaggle_notebook import build_notebook  # scripts/ is on sys.path when run as a script
+        import nbformat
+        code_file = f"{slug}.ipynb"
+        nbformat.write(build_notebook(exp, config, ROOT / config, module, seeds, extra_args, repo_clone_url(),
+                                      commit, uses_embeddings=bool(datasets)), build_dir / code_file)
+    else:
+        code_file = "run.py"
+        script = (ROOT / "kaggle" / "run_template.py").read_text()
+        for key, value in {"__MODULE__": module, "__CONFIG__": config, "__SEEDS__": repr(seeds),
+                           "__EXTRA_ARGS__": repr(extra_args), "__GIT_COMMIT__": commit,
+                           "__BUNDLE__": bundle_code()}.items():
+            script = script.replace(key, value)
+        (build_dir / code_file).write_text(script)
     (build_dir / "kernel-metadata.json").write_text(json.dumps({
         "id": f"{user}/{slug}",
         "title": slug,                    # Kaggle derives the slug from the title, so keep them identical
-        "code_file": "run.py",
+        "code_file": code_file,
         "language": "python",
-        "kernel_type": "script",
+        "kernel_type": "notebook" if notebook else "script",
         "is_private": True,
         "enable_gpu": True,
         "machine_shape": "NvidiaTeslaT4",
@@ -116,6 +155,23 @@ def fetch(kernel: str, dest: Path, with_model: bool):
     print(f"Outputs in {dest.relative_to(ROOT)} (kernel log: {kernel.split('/')[1]}.log)")
 
 
+def fetch_notebook(kernel: str, exp: str) -> Path | None:
+    """Save the executed notebook (with Kaggle's outputs) to notebooks/kaggle/<exp>.ipynb."""
+    tmp = ROOT / "kaggle" / "_build" / "_pull" / exp
+    shutil.rmtree(tmp, ignore_errors=True)
+    tmp.mkdir(parents=True)
+    kaggle("kernels", "pull", kernel, "-p", str(tmp))
+    found = sorted(tmp.glob("*.ipynb"))
+    if not found:
+        print("warning: no notebook returned by `kaggle kernels pull`", file=sys.stderr)
+        return None
+    dest = ROOT / "notebooks" / "kaggle" / f"{exp}.ipynb"
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy(found[0], dest)
+    print(f"Executed notebook in {dest.relative_to(ROOT)}")
+    return dest
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("config")
@@ -125,6 +181,7 @@ def main():
     p.add_argument("--wait", action="store_true", help="poll until finished, then download and collect")
     p.add_argument("--fetch-only", action="store_true", help="only download outputs of a finished run")
     p.add_argument("--with-model", action="store_true", help="also download model weights")
+    p.add_argument("--notebook", action="store_true", help="run as a readable notebook cloned from GitHub")
     p.add_argument("--datasets", nargs="*", default=None,
                    help="Kaggle datasets to attach (default: <user>/imolara-embeddings for --module src.rnn)")
     a = p.parse_args()
@@ -140,12 +197,15 @@ def main():
     datasets = a.datasets if a.datasets is not None else (
         [f"{user}/imolara-embeddings"] if a.module == "src.rnn" else [])
     if not a.fetch_only:
-        commit = git_commit()
-        if commit.endswith("-dirty") or commit == "no-commit":
-            print(f"warning: launching from uncommitted code ({commit})", file=sys.stderr)
+        if a.notebook:
+            commit = ensure_pushed()
+        else:
+            commit = git_commit()
+            if commit.endswith("-dirty") or commit == "no-commit":
+                print(f"warning: launching from uncommitted code ({commit})", file=sys.stderr)
         build_dir = ROOT / "kaggle" / "_build" / exp
         build_kernel(build_dir, slug, user, a.module, Path(a.config).resolve().relative_to(ROOT).as_posix(), a.seeds,
-                     ["--final"] if a.final else [], commit, datasets)
+                     ["--final"] if a.final else [], commit, datasets, notebook=a.notebook, exp=exp)
         print(push(build_dir))
         print(f"Live log: https://www.kaggle.com/code/{kernel}")
         if not a.wait:
@@ -155,6 +215,8 @@ def main():
             fetch(kernel, dest, with_model=False)  # fetch the log to debug
             raise SystemExit(f"Run failed; see {dest.relative_to(ROOT)}/{slug}.log")
     fetch(kernel, dest, a.with_model)
+    if a.notebook:
+        fetch_notebook(kernel, exp)
     subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
 
 
