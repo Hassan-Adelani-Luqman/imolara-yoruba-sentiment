@@ -1,11 +1,21 @@
-"""Build the Kaggle notebook for one experiment (used by `scripts/kaggle_run.py --notebook`).
+"""Kaggle notebooks for one experiment (used by `scripts/kaggle_run.py`).
 
-The notebook clones the public GitHub repo at the exact commit, so the code it runs can be checked
-against the repo, and anyone can re-run it on Kaggle (Copy & Edit -> GPU T4 + Internet -> Run all).
-After the run, the executed notebook (with Kaggle's real outputs) is saved to notebooks/kaggle/<exp>.ipynb.
+Two notebooks per experiment:
+  * the experiment notebook (build_notebook): readable cells that clone the public GitHub repo at the exact
+    commit, show the config, train one seed per cell and tabulate the results;
+  * the launcher (build_launcher): the kernel Kaggle actually runs. It clones the repo, builds the experiment
+    notebook with this script and executes it with nbconvert on the same GPU, so the executed copy, with
+    every cell's real outputs, is written to /kaggle/working/<exp>.ipynb. Kaggle's API does not return
+    executed notebooks (`kernels pull` gives the source only), so this is how the outputs reach the repo:
+    kaggle_run.py downloads the file to notebooks/kaggle/<exp>.ipynb.
+
+CLI (used inside the launcher):
+  python scripts/kaggle_notebook.py --exp e5a_afroxlmr_base --config configs/e5a_afroxlmr_base.yaml \
+      --module src.train_transformer --seeds 42 43 44 --repo <url> --commit <sha> --out e5a_afroxlmr_base.ipynb
 """
 from __future__ import annotations
 
+import argparse
 from pathlib import Path
 
 import nbformat as nbf
@@ -97,3 +107,64 @@ per_seed"""),
     nb["cells"] = cells
     nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
     return nb
+
+
+def build_launcher(exp: str, config: str, module: str, seeds: list[int], extra_args: list[str], repo_url: str,
+                   commit: str, uses_embeddings: bool) -> nbf.NotebookNode:
+    md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
+    web = repo_url.removesuffix(".git")
+    flags = " ".join([f"--extra={a}" for a in extra_args] + (["--embeddings"] if uses_embeddings else []))
+    cells = [
+        md(f"""# Ìmọ̀lára · `{exp}` (launcher)
+
+This kernel executes the experiment notebook **`{exp}.ipynb`** on this GPU and saves the executed copy, with all its
+outputs, as an output file. The executed notebook is in the repo at
+[`notebooks/kaggle/{exp}.ipynb`]({web}/blob/main/notebooks/kaggle/{exp}.ipynb); code is
+[{web.split("github.com/")[-1]}]({web}) at commit [`{commit[:7]}`]({web}/tree/{commit}).
+
+To reproduce: *Copy & Edit*, set Accelerator = GPU T4 and Internet = on{" and attach `imolara-embeddings`" if uses_embeddings else ""}, then *Run all*."""),
+        code(f"""import subprocess, sys
+LAUNCH = "/tmp/imolara_launcher"
+subprocess.run(["git", "clone", "-q", "{repo_url}", LAUNCH], check=True)
+subprocess.run(["git", "-C", LAUNCH, "checkout", "-q", "{commit}"], check=True)
+subprocess.run([sys.executable, f"{{LAUNCH}}/scripts/kaggle_notebook.py", "--exp", "{exp}", "--config", "{config}",
+                "--module", "{module}", "--seeds", *map(str, {seeds!r}), "--repo", "{repo_url}", "--commit", "{commit}",
+                *"{flags}".split(), "--out", "/tmp/{exp}.ipynb"], check=True)"""),
+        code(f"""# Execute the experiment notebook here; the executed copy is saved to /kaggle/working/{exp}.ipynb
+result = subprocess.run(["jupyter", "nbconvert", "--to", "notebook", "--execute", "/tmp/{exp}.ipynb",
+                         "--ExecutePreprocessor.timeout=-1", "--ExecutePreprocessor.kernel_name=python3",
+                         "--output-dir", "/kaggle/working", "--output", "{exp}.ipynb"],
+                        capture_output=True, text=True)
+print(result.stderr[-3000:])
+assert result.returncode == 0, "experiment notebook failed; see the executed copy in the outputs"
+"""),
+        code("""import json, glob, pandas as pd
+rows = [r for f in sorted(glob.glob("/kaggle/working/outputs/seed*/metrics.json")) for r in json.load(open(f))]
+df = pd.DataFrame(rows)
+df.groupby(["split", "subset", "eval_diacritics"])[["macro_f1", "weighted_f1"]].agg(["mean", "std"]).round(4)"""),
+    ]
+    nb = nbf.v4.new_notebook()
+    nb["cells"] = cells
+    nb["metadata"]["kernelspec"] = {"name": "python3", "display_name": "Python 3", "language": "python"}
+    return nb
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    p.add_argument("--exp", required=True)
+    p.add_argument("--config", required=True)
+    p.add_argument("--module", required=True)
+    p.add_argument("--seeds", nargs="+", type=int, required=True)
+    p.add_argument("--extra", action="append", default=[], help="extra argument for the training module")
+    p.add_argument("--repo", required=True)
+    p.add_argument("--commit", required=True)
+    p.add_argument("--embeddings", action="store_true")
+    p.add_argument("--out", required=True)
+    a = p.parse_args()
+    root = Path(__file__).resolve().parents[1]
+    nb = build_notebook(a.exp, a.config, root / a.config, a.module, a.seeds, a.extra, a.repo, a.commit, a.embeddings)
+    nbf.write(nb, a.out)
+
+
+if __name__ == "__main__":
+    main()

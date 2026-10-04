@@ -94,11 +94,11 @@ def build_kernel(build_dir: Path, slug: str, user: str, module: str, config: str
                  notebook: bool = False, exp: str = ""):
     build_dir.mkdir(parents=True, exist_ok=True)
     if notebook:
-        from kaggle_notebook import build_notebook  # scripts/ is on sys.path when run as a script
+        from kaggle_notebook import build_launcher  # scripts/ is on sys.path when run as a script
         import nbformat
         code_file = f"{slug}.ipynb"
-        nbformat.write(build_notebook(exp, config, ROOT / config, module, seeds, extra_args, repo_clone_url(),
-                                      commit, uses_embeddings=bool(datasets)), build_dir / code_file)
+        nbformat.write(build_launcher(exp, config, module, seeds, extra_args, repo_clone_url(), commit,
+                                      uses_embeddings=bool(datasets)), build_dir / code_file)
     else:
         code_file = "run.py"
         script = (ROOT / "kaggle" / "run_template.py").read_text()
@@ -147,30 +147,34 @@ def wait(kernel: str, poll: int = 60) -> str:
         time.sleep(poll)
 
 
-def fetch(kernel: str, dest: Path, with_model: bool):
+def fetch(kernel: str, dest: Path, with_model: bool, attempts: int = 4):
     if dest.exists():
         shutil.rmtree(dest)  # a re-run replaces the previous download
     dest.mkdir(parents=True)
     args = ["kernels", "output", kernel, "-p", str(dest), "-o"]
-    if not with_model:  # skip weights; metrics, predictions, logs only
-        args += ["--file-pattern", r".*\.(json|csv|txt|log|png)$"]
-    kaggle(*args)
+    if not with_model:  # skip weights; metrics, predictions, logs, executed notebook only
+        args += ["--file-pattern", r".*\.(json|csv|txt|log|png|ipynb)$"]
+    for attempt in range(1, attempts + 1):    # downloads from kaggleusercontent.com occasionally time out
+        try:
+            kaggle(*args)
+            break
+        except SystemExit as err:
+            if attempt == attempts:
+                raise
+            print(f"download attempt {attempt} failed ({str(err)[:120]}...); retrying in 30 s", flush=True)
+            time.sleep(30)
     print(f"Outputs in {dest.relative_to(ROOT)} (kernel log: {kernel.split('/')[1]}.log)")
 
 
-def fetch_notebook(kernel: str, exp: str) -> Path | None:
-    """Save the executed notebook (with Kaggle's outputs) to notebooks/kaggle/<exp>.ipynb."""
-    tmp = ROOT / "kaggle" / "_build" / "_pull" / exp
-    shutil.rmtree(tmp, ignore_errors=True)
-    tmp.mkdir(parents=True)
-    kaggle("kernels", "pull", kernel, "-p", str(tmp))
-    found = sorted(tmp.glob("*.ipynb"))
+def fetch_notebook(run_dir: Path, exp: str) -> Path | None:
+    """Move the executed experiment notebook (written by the launcher on Kaggle) to notebooks/kaggle/<exp>.ipynb."""
+    found = sorted(run_dir.rglob(f"{exp}.ipynb"))
     if not found:
-        print("warning: no notebook returned by `kaggle kernels pull`", file=sys.stderr)
+        print(f"warning: no executed notebook {exp}.ipynb in the kernel outputs", file=sys.stderr)
         return None
     dest = ROOT / "notebooks" / "kaggle" / f"{exp}.ipynb"
     dest.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy(found[0], dest)
+    shutil.move(str(found[0]), dest)
     print(f"Executed notebook in {dest.relative_to(ROOT)}")
     return dest
 
@@ -220,7 +224,7 @@ def main():
             raise SystemExit(f"Run failed; see {dest.relative_to(ROOT)}/{slug}.log")
     fetch(kernel, dest, a.with_model)
     if notebook:
-        fetch_notebook(kernel, exp)
+        fetch_notebook(dest, exp)
     subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
 
 
