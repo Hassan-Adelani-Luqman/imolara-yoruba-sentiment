@@ -1,6 +1,6 @@
 """Report figures built from results/experiments.csv.
 
-  python -m src.figures        # writes results/figures/e6_diacritic_matrix.png and results/figures/model_comparison.png
+  python -m src.figures        # e6_diacritic_matrix.png, model_comparison.png, e9_learning_curve.png in results/figures/
 """
 from __future__ import annotations
 
@@ -112,12 +112,64 @@ def plot_model_comparison(path: Path = FIG_DIR / "model_comparison.png"):
     plt.close(fig)
 
 
+CURVES = {  # series name -> (colour, {fraction: exp_id})
+    "TF-IDF word+char + LR": ("#2a78d6", {0.10: "e9_tfidf_010", 0.25: "e9_tfidf_025", 0.50: "e9_tfidf_050",
+                                          1.00: "e1c_wordchar_lr"}),
+    "AfriBERTa-large": ("#eb6834", {0.10: "e9_afriberta_010", 0.25: "e9_afriberta_025", 0.50: "e9_afriberta_050",
+                                    1.00: "e4_afriberta_large"}),
+}
+N_TRAIN = 8522
+
+
+def plot_learning_curve(path: Path = FIG_DIR / "e9_learning_curve.png"):
+    """E9: clean-dev macro-F1 vs training-set size (log x), mean with min-max band over seeds."""
+    df = load()
+    df = df[df["eval_diacritics"] == "original"]
+    fig, ax = plt.subplots(figsize=(7.0, 3.8), dpi=200)
+    ends = []                                   # (x, y, colour) of each series' last point, labelled below
+    for name, (colour, points) in CURVES.items():
+        xs, means, los, his = [], [], [], []
+        for frac, exp_id in points.items():
+            v = df.loc[df["exp_id"] == exp_id, "macro_f1"]
+            if v.empty:
+                continue
+            xs.append(round(frac * N_TRAIN)); means.append(v.mean()); los.append(v.min()); his.append(v.max())
+        if not xs:
+            continue
+        ax.fill_between(xs, los, his, color=colour, alpha=0.15, linewidth=0)
+        ax.plot(xs, means, color=colour, linewidth=2, marker="o", markersize=5, label=name)
+        ends.append([xs[-1], means[-1], colour, means[-1]])   # x, label y (may be nudged), colour, true value
+    ends.sort(key=lambda e: e[1])
+    for lower, upper in zip(ends, ends[1:]):    # keep end labels at least 0.012 apart vertically
+        upper[1] = max(upper[1], lower[1] + 0.012)
+    for x, y, colour, value in ends:
+        ax.text(x * 1.08, y, f"{value:.3f}", va="center", fontsize=8, color=INK, fontweight="bold")
+        ax.plot([x * 1.02, x * 1.07], [value, y], color=colour, linewidth=1)
+    ax.set_xscale("log")
+    ax.set_xticks([852, 2130, 4261, 8522], ["852\n(10%)", "2,130\n(25%)", "4,261\n(50%)", "8,522\n(100%)"],
+                  fontsize=8, color=INK_MUTED)
+    ax.minorticks_off()
+    ax.set_xlim(700, 8522 * 1.6)
+    ax.set_xlabel("training tweets (log scale)", fontsize=8, color=INK_MUTED)
+    ax.set_ylabel("clean-dev macro-F1", fontsize=8, color=INK_MUTED)
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.spines[["left", "bottom"]].set_color(GRID)
+    ax.tick_params(length=0, colors=INK_MUTED, labelsize=8)
+    ax.grid(axis="y", color=GRID, linewidth=0.8)
+    ax.legend(frameon=False, fontsize=8, loc="lower left", bbox_to_anchor=(0, 1.0), ncol=2, labelcolor=INK_MUTED)
+    ax.set_title("E9: learning curve (mean over 3 seeds, band = min-max)", loc="left", fontsize=10, color=INK, pad=22)
+    fig.tight_layout()
+    fig.savefig(path, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
 def main():
     FIG_DIR.mkdir(parents=True, exist_ok=True)
     for name, m in plot_diacritic_matrix().items():
         print(name); print(m.round(3).to_string()); print()
     plot_model_comparison()
-    print("wrote results/figures/e6_diacritic_matrix.png, results/figures/model_comparison.png")
+    plot_learning_curve()
+    print("wrote results/figures/e6_diacritic_matrix.png, model_comparison.png, e9_learning_curve.png")
 
 
 if __name__ == "__main__":
