@@ -284,6 +284,7 @@ Run on a Kaggle T4: one Kaggle kernel per experiment, launched with `python scri
 2. With mixed3, **TF-IDF matches or edges AfriBERTa in every form** (0.732/0.720/0.717 vs 0.723/0.716/0.713). Character n-grams over all spellings are a very strong, cheap solution.
 3. **RQ3: adding Hausa/Igbo/Pidgin hurts Yoruba** (−1.5). Removing Pidgin (skewed labels) makes no difference, so the cause is diluting Yoruba (about 30% of the training mix) with other languages and domains, not the label prior.
 4. **Class weighting does nothing:** the imbalance is mild, and negative-class errors come from ambiguity (see Phase 6 error analysis).
+5. **E9: learning curve** (`results/figures/e9_learning_curve.png`; clean-dev macro-F1 at 10/25/50/100% of training data, 3 seeds): TF-IDF 0.594 / 0.644 / 0.676 / 0.722; AfriBERTa 0.642 / 0.666 / 0.688 / 0.731. **Pre-training helps most when labelled data is scarce** (+4.8 at 852 tweets, +0.9 at 8,522). As data grows, character n-grams catch up, which explains why transformers do not clearly beat TF-IDF on the full set. Neither curve has plateaued, so more labelled Yoruba data would still help.
 
 **Candidates for final test evaluation (Phase 6, chosen on dev only):** E1c (main baseline), E6b mixed3 TF-IDF, E2g (best RNN), E4 AfriBERTa (best on original text), E6a mixed3 AfriBERTa (most robust transformer), E5c AfroXLMR-large LoRA.
 
