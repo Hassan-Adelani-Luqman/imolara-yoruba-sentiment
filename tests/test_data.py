@@ -45,3 +45,13 @@ def test_normalize_semeval_drops_hashtags_urls_rt_digits_emoji():
 def test_preprocess_styles_and_diacritic_modes():
     assert preprocess("Ẹ KÚ ÀBỌ̀!", "no_tones") == "ẹ ku abọ"
     assert preprocess("Ẹ KÚ ÀBỌ̀!", "no_diacritics", style="raw") == "E KU ABO!"
+
+
+def test_training_frame_augmentation_dedupes_identical_forms():
+    import pandas as pd
+    from src.data import training_frame
+    df = pd.DataFrame({"id": ["a", "b"], "text": ["Ẹ kú àbọ̀", "e ku abo"], "label_id": [2, 2]})
+    assert len(training_frame(df, "original")) == 2
+    # 'a' gives 3 distinct forms; 'b' is already undiacritised, so its copies collapse into one
+    # (and 'a' without diacritics equals 'b'): {ẹ kú àbọ̀, ẹ ku abọ, e ku abo}
+    assert sorted(training_frame(df, "mixed3")["text"]) == sorted(["ẹ kú àbọ̀", "ẹ ku abọ", "e ku abo"])

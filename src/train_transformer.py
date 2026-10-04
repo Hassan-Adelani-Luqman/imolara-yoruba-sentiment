@@ -34,13 +34,14 @@ from datasets import Dataset, disable_progress_bars
 from transformers import (AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding,
                           EarlyStoppingCallback, Trainer, TrainerCallback, TrainingArguments, set_seed)
 
-from src.data import ID2LABEL, LABEL2ID, LABELS, load_eval_split, load_split, preprocess_frame
+from src.data import (ID2LABEL, LABEL2ID, LABELS, load_eval_split, load_split, preprocess_frame,
+                      selection_form, training_frame)
 from src.evaluate import compute_metrics, save_run, score_subsets
 
 DEFAULTS = {
     "lang": "yor",
     "aux_langs": [],                 # E7: extra AfriSenti languages added to training, e.g. [hau, ibo, pcm]
-    "train_diacritics": "original",  # original | no_tones | no_diacritics | mixed (original + no_diacritics)
+    "train_diacritics": "original",  # original | no_tones | no_diacritics | mixed | mixed3 (see data.AUGMENTED_MODES)
     "eval_diacritics": ["original"],  # dev/test are scored once per listed form (E6)
     "train_style": "semeval",        # semeval (organisers' test format) | raw: text style used for training
     "eval_style": "semeval",         # dev/test are always scored in the test format unless overridden
@@ -72,11 +73,7 @@ def build_train_frame(cfg: dict, seed: int) -> pd.DataFrame:
     train = pd.concat(frames, ignore_index=True)
     if cfg["train_subset"]:
         train = train.sample(n=min(cfg["train_subset"], len(train)), random_state=seed)
-    if cfg["train_diacritics"] == "mixed":
-        train = pd.concat([preprocess_frame(train, "original", cfg["train_style"]),
-                           preprocess_frame(train, "no_diacritics", cfg["train_style"])], ignore_index=True)
-        return train.drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
-    return preprocess_frame(train, cfg["train_diacritics"], cfg["train_style"])
+    return training_frame(train, cfg["train_diacritics"], cfg["train_style"])
 
 
 class KeepBestTrainable(TrainerCallback):
@@ -168,7 +165,7 @@ def main(argv=None):
 
     train_df = build_train_frame(cfg, args.seed)
     dev_raw = load_eval_split(cfg["lang"], "dev")
-    select_mode = "original" if cfg["train_diacritics"] == "mixed" else cfg["train_diacritics"]
+    select_mode = selection_form(cfg["train_diacritics"])
     select_rows = ~dev_raw["overlap_train"] if cfg["select_on_clean_dev"] else slice(None)
     dev_select = preprocess_frame(dev_raw[select_rows], select_mode, cfg["eval_style"])
 

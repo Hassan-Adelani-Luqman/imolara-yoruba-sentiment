@@ -160,6 +160,27 @@ def preprocess(text: str, diacritics: str = "original", style: str = "semeval") 
     return DIACRITIC_MODES[diacritics](text)
 
 
+# Training-time diacritic augmentation (E6): each training tweet appears in several written forms.
+AUGMENTED_MODES = {
+    "mixed": ("original", "no_diacritics"),
+    "mixed3": ("original", "no_tones", "no_diacritics"),
+}
+
+
+def training_frame(df: pd.DataFrame, diacritics: str = "original", style: str = "semeval") -> pd.DataFrame:
+    """Preprocess training data in one diacritic form, or in several (AUGMENTED_MODES), dropping copies that end
+    up identical (e.g. tweets typed without diacritics in the first place)."""
+    if diacritics not in AUGMENTED_MODES:
+        return preprocess_frame(df, diacritics, style)
+    forms = [preprocess_frame(df, mode, style) for mode in AUGMENTED_MODES[diacritics]]
+    return pd.concat(forms, ignore_index=True).drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
+
+
+def selection_form(diacritics: str) -> str:
+    """Diacritic form of the dev tweets used for model selection: augmented models are selected on original text."""
+    return "original" if diacritics in AUGMENTED_MODES else diacritics
+
+
 def preprocess_frame(df: pd.DataFrame, diacritics: str = "original", style: str = "semeval") -> pd.DataFrame:
     """Return a copy of df with the text column preprocessed."""
     out = df.copy()

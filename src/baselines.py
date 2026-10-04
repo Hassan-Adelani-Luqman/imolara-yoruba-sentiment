@@ -24,7 +24,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import FeatureUnion, Pipeline
 from sklearn.svm import LinearSVC
 
-from src.data import LABELS, load_eval_split, load_split, preprocess_frame
+from src.data import LABELS, load_eval_split, load_split, preprocess_frame, training_frame
 from src.evaluate import append_records, compute_metrics, save_run, score_subsets
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,12 +80,8 @@ def top_features(model, k: int = 20) -> dict[str, list]:
 
 
 def build_train(diacritics: str, style: str) -> pd.DataFrame:
-    """Training frame in one diacritic form, or 'mixed' = original + fully undiacritised copies (E6)."""
-    raw = load_split("yor", "train")
-    if diacritics != "mixed":
-        return preprocess_frame(raw, diacritics, style)
-    both = pd.concat([preprocess_frame(raw, "original", style), preprocess_frame(raw, "no_diacritics", style)])
-    return both.drop_duplicates(subset=["text", "label_id"]).reset_index(drop=True)
+    """Training frame in one diacritic form, or augmented with several forms ('mixed', 'mixed3'; E6)."""
+    return training_frame(load_split("yor", "train"), diacritics, style)
 
 
 def run_experiment(exp_id: str, spec: dict, eval_diacritics: list[str], final: bool = False) -> list[dict]:
