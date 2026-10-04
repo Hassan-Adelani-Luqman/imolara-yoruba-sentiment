@@ -10,6 +10,7 @@ The model is selected on dev macro-F1. The test split is never loaded unless --f
 from __future__ import annotations
 
 import argparse
+import inspect
 import math
 import os
 import shutil
@@ -153,6 +154,12 @@ def main(argv=None):
     steps_per_epoch = math.ceil(len(train_df) / (cfg["batch_size"] * cfg["grad_accum"]))
     warmup_steps = int(cfg["warmup_ratio"] * steps_per_epoch * cfg["epochs"])
 
+    # Batch tweets of similar length together to cut padding (~2x faster). The option was renamed in
+    # transformers 5 (group_by_length -> train_sampling_strategy), so use whichever this version has.
+    params = inspect.signature(TrainingArguments.__init__).parameters
+    length_grouping = ({"train_sampling_strategy": "group_by_length"} if "train_sampling_strategy" in params
+                       else {"group_by_length": True})
+
     # Checkpoints live in a temp dir so they never end up in the (downloaded) output folder.
     ckpt_dir = Path(tempfile.mkdtemp(prefix="imolara_ckpt_"))
     training_args = TrainingArguments(
@@ -175,6 +182,7 @@ def main(argv=None):
         report_to="none",
         disable_tqdm=True,  # keeps Kaggle logs readable; loss/metrics are still logged
         seed=args.seed,
+        **length_grouping,
     )
     trainer = WeightedTrainer(
         model=model,
