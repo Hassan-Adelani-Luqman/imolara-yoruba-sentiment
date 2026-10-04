@@ -1,5 +1,7 @@
 # Deploying Ìmọ̀lára
 
+**Live app:** https://imolara-yoruba-sentiment-oafn6nuzsde8db6a9fdahs.streamlit.app/
+
 ## What is deployed
 
 | Piece | Where | Built by |

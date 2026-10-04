@@ -366,14 +366,14 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 7 — Deployment (12 Oct) 🔄 built and tested (4 Oct); Streamlit Cloud deploy pending (user sign-in)
+## Phase 7 — Deployment (12 Oct) ✅ live (4 Oct): https://imolara-yoruba-sentiment-oafn6nuzsde8db6a9fdahs.streamlit.app/
 
 **What was built**
 - **Model repo:** [`Hassanadelani1/imolara-afriberta-mixed3`](https://huggingface.co/Hassanadelani1/imolara-afriberta-mixed3). Contains AfriBERTa-large mixed3 (seed 42; clean dev 0.723/0.716/0.708, consistent with E6a), the per-channel **int8 ONNX** export (127 MB), the TF-IDF mixed3 model (7.5 MB) and a model card.
 - **Hosting change:** Hugging Face refused free Gradio Spaces (ZeroGPU and CPU both need PRO), so the app is deployed on **Streamlit Community Cloud** (`streamlit_app/`). The Gradio version (`app/`) is kept for PRO or local use.
 - **ONNX validation** (`results/onnx_validation.md`): tokenizer ids identical; ONNX fp32 equals PyTorch (max |Δlogit| 3e-5); per-channel int8 agrees on 96.3–96.6% of clean-dev tweets, with macro-F1 within ±0.3 points (per-tensor int8: 94–95%, −1.1 points, rejected).
 - **App tests** (Streamlit `AppTest`, models fetched from the Hub): all examples work, no exceptions, cold start 54 s, **peak memory about 550 MB** (limit about 1 GB), about 0.05 s per prediction.
-- **Deploy steps:** `docs/DEPLOYMENT.md`. Sign in at share.streamlit.io with GitHub, set main file `streamlit_app/streamlit_app.py`, choose Python 3.12, deploy.
+- **Live app:** https://imolara-yoruba-sentiment-oafn6nuzsde8db6a9fdahs.streamlit.app/ (public; checked anonymously: HTTP 200 after Streamlit's cookie redirect; health endpoint ok). It sleeps after about 12 h idle, so open it before the demo and before grading. Steps: `docs/DEPLOYMENT.md`.
 
 <details><summary>Original Phase 7 plan</summary>
 
