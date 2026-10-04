@@ -151,7 +151,30 @@ Run locally on CPU.
 
 ---
 
-## Phase 3 — Word embeddings + RNN (5–6 Oct)
+## Phase 3 — Word embeddings + RNN (5–6 Oct) ✅ done
+
+**Results** (clean-dev macro-F1, mean ± std over 3 seeds; Kaggle T4, about 20–40 s per seed)
+
+| ID | Variant | macro-F1 | Δ no tone marks |
+|---|---|---|---|
+| E2a | BiLSTM+attn, fastText **frozen** | 0.590 ± 0.004 | −0.067 |
+| E2h | BiLSTM+attn, own Word2Vec **frozen** | 0.657 ± 0.010 | −0.090 |
+| E2e | BiLSTM+attn, **random** init | 0.676 ± 0.010 | −0.110 |
+| E2f | BiLSTM, fastText, **no attention** | 0.679 ± 0.008 | −0.103 |
+| E2c | **BiGRU**+attn, fastText | 0.684 ± 0.008 | −0.094 |
+| E2b | BiLSTM+attn, fastText fine-tuned | 0.687 ± 0.013 | −0.115 |
+| E2d | BiLSTM+attn, own **Word2Vec** fine-tuned | 0.694 ± 0.007 | −0.074 |
+| **E2g** | E2d + stronger regularisation (dropout 0.5, h=64, wd 1e-5) | **0.699 ± 0.012** | −0.080 |
+| E1c | TF-IDF word+char + LR (baseline) | **0.722** | −0.103 |
+
+**What we learned**
+1. **No RNN beats the TF-IDF baseline** (best 0.699 vs 0.722). Likely reasons: small data (8.5k tweets); a high rate of unseen words that word-level RNNs map to `<unk>` while character n-grams still match them; short texts where bag-of-n-grams already captures most of the signal; and fast overfitting (every run peaks at epoch 2–3). Stronger regularisation (E2g) helps only within noise.
+2. **Pretrained embeddings help modestly** (+1.1 to +1.8 over random), and **orthography-matched embeddings help most**. Our Word2Vec, trained on text normalised like ours, beats fastText and is the most robust to missing tone marks.
+3. **Frozen fastText fails (0.590). About 6.7 points of that come from orthography mismatch** (frozen Word2Vec scores 0.657), and freezing itself costs about 3.7 points relative to fine-tuning. The fastText vocabulary has no tone marks on under-dotted vowels (*wọ́n*, *jẹ́*); tiered lookup (exact → no tones → no diacritics) raises its token coverage from 80.8% to 92.2%.
+4. **Attention (+0.8) and LSTM vs GRU make differences within seed noise.** The attention weights are still interpretable: they land on *rere*, *ire*, *ẹ kú*, *ìrànlọ́wọ́* (`attention_dev.json`). A failure example: a news tweet about someone's *release* from prison gets attention on names and prison words, and is predicted negative.
+
+<details><summary>Original Phase 3 plan</summary>
+
 
 Run on CPU if feasible, otherwise on Kaggle (`python scripts/kaggle_run.py configs/e2a_bilstm_fasttext.yaml --module src.rnn --wait`).
 
@@ -179,6 +202,8 @@ Run on CPU if feasible, otherwise on Kaggle (`python scripts/kaggle_run.py confi
 - Save attention weights for 10 dev examples (for the video and error analysis).
 
 **Done when:** E2 rows are logged (mean ± std over 3 seeds), with notes on whether the RNNs beat TF-IDF and why.
+
+</details>
 
 ---
 

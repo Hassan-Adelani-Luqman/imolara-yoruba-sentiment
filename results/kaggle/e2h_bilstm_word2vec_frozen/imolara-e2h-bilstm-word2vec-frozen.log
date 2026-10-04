@@ -1,0 +1,59 @@
+[{"stream_name":"stderr","time":0.753548446,"data":"/kaggle/src/script.py:12: DeprecationWarning: Python 3.14 will, by default, filter extracted tar archives and reject files or modify their metadata. Use the filter argument to control this behavior.\n"}
+,{"stream_name":"stderr","time":0.753593645,"data":"  tarfile.open(fileobj=io.BytesIO(base64.b64decode(BUNDLE))).extractall(CODE)\n"}
+,{"stream_name":"stdout","time":13.716613497,"data":"GPU: Tesla T4 | torch 2.11.0+cu128\n"}
+,{"stream_name":"stdout","time":15.450228425,"data":"embeddings: /kaggle/input/datasets/luqmanhassanadelani/imolara-embeddings ['cc.yo.300.vec', 'w2v_yo_300.kv.vectors.npy', 'w2v_yo_300.kv']\n"}
+,{"stream_name":"stdout","time":15.450257586,"data":"=== configs/e2h_bilstm_word2vec_frozen.yaml seed 42 ===\n"}
+,{"stream_name":"stdout","time":51.312187072,"data":"epoch  1  loss 0.9007  clean-dev macro-F1 0.6040\n"}
+,{"stream_name":"stdout","time":53.179068046,"data":"epoch  2  loss 0.7796  clean-dev macro-F1 0.5490\n"}
+,{"stream_name":"stdout","time":55.05419361,"data":"epoch  3  loss 0.7437  clean-dev macro-F1 0.6464\n"}
+,{"stream_name":"stdout","time":56.918676182,"data":"epoch  4  loss 0.7220  clean-dev macro-F1 0.6453\n"}
+,{"stream_name":"stdout","time":58.758058859,"data":"epoch  5  loss 0.7051  clean-dev macro-F1 0.6431\n"}
+,{"stream_name":"stdout","time":60.61665823,"data":"epoch  6  loss 0.6747  clean-dev macro-F1 0.6460\n"}
+,{"stream_name":"stdout","time":61.038173318,"data":"[dev/original/all] macro-F1 0.6597\n"}
+,{"stream_name":"stdout","time":61.038207714,"data":"[dev/original/clean] macro-F1 0.6464\n"}
+,{"stream_name":"stdout","time":61.522015598,"data":"[dev/no_tones/all] macro-F1 0.5976\n"}
+,{"stream_name":"stdout","time":61.522045577,"data":"[dev/no_tones/clean] macro-F1 0.5857\n"}
+,{"stream_name":"stdout","time":61.948423045,"data":"[dev/no_diacritics/all] macro-F1 0.5876\n"}
+,{"stream_name":"stdout","time":61.948469079,"data":"[dev/no_diacritics/clean] macro-F1 0.5786\n"}
+,{"stream_name":"stdout","time":66.459565093,"data":"=== configs/e2h_bilstm_word2vec_frozen.yaml seed 43 ===\n"}
+,{"stream_name":"stdout","time":82.336652894,"data":"epoch  1  loss 0.8799  clean-dev macro-F1 0.6176\n"}
+,{"stream_name":"stdout","time":84.192378022,"data":"epoch  2  loss 0.7800  clean-dev macro-F1 0.6207\n"}
+,{"stream_name":"stdout","time":86.027768447,"data":"epoch  3  loss 0.7395  clean-dev macro-F1 0.6309\n"}
+,{"stream_name":"stdout","time":87.893023652,"data":"epoch  4  loss 0.7110  clean-dev macro-F1 0.6349\n"}
+,{"stream_name":"stdout","time":89.746526312,"data":"epoch  5  loss 0.6946  clean-dev macro-F1 0.6556\n"}
+,{"stream_name":"stdout","time":91.618956126,"data":"epoch  6  loss 0.6657  clean-dev macro-F1 0.6569\n"}
+,{"stream_name":"stdout","time":93.480845728,"data":"epoch  7  loss 0.6549  clean-dev macro-F1 0.6595\n"}
+,{"stream_name":"stdout","time":95.310046226,"data":"epoch  8  loss 0.6307  clean-dev macro-F1 0.6386\n"}
+,{"stream_name":"stdout","time":97.215093947,"data":"epoch  9  loss 0.6036  clean-dev macro-F1 0.6501\n"}
+,{"stream_name":"stdout","time":99.059060543,"data":"epoch 10  loss 0.5874  clean-dev macro-F1 0.6561\n"}
+,{"stream_name":"stdout","time":99.459946436,"data":"[dev/original/all] macro-F1 0.6764\n"}
+,{"stream_name":"stdout","time":99.459982086,"data":"[dev/original/clean] macro-F1 0.6595\n"}
+,{"stream_name":"stdout","time":99.883435477,"data":"[dev/no_tones/all] macro-F1 0.5754\n"}
+,{"stream_name":"stdout","time":99.883470109,"data":"[dev/no_tones/clean] macro-F1 0.5583\n"}
+,{"stream_name":"stdout","time":100.300978749,"data":"[dev/no_diacritics/all] macro-F1 0.5740\n"}
+,{"stream_name":"stdout","time":100.301030751,"data":"[dev/no_diacritics/clean] macro-F1 0.5591\n"}
+,{"stream_name":"stdout","time":102.138021941,"data":"=== configs/e2h_bilstm_word2vec_frozen.yaml seed 44 ===\n"}
+,{"stream_name":"stdout","time":117.783568529,"data":"epoch  1  loss 0.8838  clean-dev macro-F1 0.6105\n"}
+,{"stream_name":"stdout","time":119.640435036,"data":"epoch  2  loss 0.7852  clean-dev macro-F1 0.6142\n"}
+,{"stream_name":"stdout","time":121.529688921,"data":"epoch  3  loss 0.7459  clean-dev macro-F1 0.6283\n"}
+,{"stream_name":"stdout","time":123.401428431,"data":"epoch  4  loss 0.7162  clean-dev macro-F1 0.6424\n"}
+,{"stream_name":"stdout","time":125.26751995,"data":"epoch  5  loss 0.6961  clean-dev macro-F1 0.6544\n"}
+,{"stream_name":"stdout","time":127.140416692,"data":"epoch  6  loss 0.6757  clean-dev macro-F1 0.6340\n"}
+,{"stream_name":"stdout","time":128.991133946,"data":"epoch  7  loss 0.6447  clean-dev macro-F1 0.6418\n"}
+,{"stream_name":"stdout","time":130.824066434,"data":"epoch  8  loss 0.6343  clean-dev macro-F1 0.6655\n"}
+,{"stream_name":"stdout","time":132.747814481,"data":"epoch  9  loss 0.6094  clean-dev macro-F1 0.6649\n"}
+,{"stream_name":"stdout","time":134.605237584,"data":"epoch 10  loss 0.5861  clean-dev macro-F1 0.6601\n"}
+,{"stream_name":"stdout","time":136.447312078,"data":"epoch 11  loss 0.5618  clean-dev macro-F1 0.6483\n"}
+,{"stream_name":"stdout","time":136.839115504,"data":"[dev/original/all] macro-F1 0.6842\n"}
+,{"stream_name":"stdout","time":136.839149034,"data":"[dev/original/clean] macro-F1 0.6655\n"}
+,{"stream_name":"stdout","time":137.255615877,"data":"[dev/no_tones/all] macro-F1 0.5744\n"}
+,{"stream_name":"stdout","time":137.255652115,"data":"[dev/no_tones/clean] macro-F1 0.5577\n"}
+,{"stream_name":"stdout","time":137.684118752,"data":"[dev/no_diacritics/all] macro-F1 0.5637\n"}
+,{"stream_name":"stdout","time":137.684150021,"data":"[dev/no_diacritics/clean] macro-F1 0.5522\n"}
+,{"stream_name":"stderr","time":141.86905528,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":141.869079808,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":142.121260941,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":142.121285773,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":142.878286885,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":143.380522348,"data":"[NbConvertApp] Writing 314187 bytes to __results__.html\n"}
+]
