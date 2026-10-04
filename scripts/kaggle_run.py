@@ -225,7 +225,8 @@ def main():
     fetch(kernel, dest, a.with_model)
     if notebook:
         fetch_notebook(dest, exp)
-    subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
+    if not exp.startswith("smoke"):            # pipeline checks are not experiments
+        subprocess.run([sys.executable, "-m", "src.evaluate", "collect", str(dest)], cwd=ROOT, check=True)
 
 
 if __name__ == "__main__":
