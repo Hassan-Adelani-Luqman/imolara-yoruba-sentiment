@@ -393,7 +393,15 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 
 ---
 
-## Phase 8 — Research report (13–15 Oct)
+## Phase 8 — Research report (13–15 Oct) ✅ draft complete (4 Oct)
+
+- `report/main.tex` (ACL style, XeLaTeX via Tectonic) → `report/main.pdf`, **9 pages including references**, with all 10 required sections, a project-links block after the abstract (demo video link still to add) and a *Use of Existing Resources and Own Contributions* section.
+- 5 tables (data, encoders, dev results, test results with published comparison, error slices) and 3 figures (test-format mismatch, E6 diacritic matrix, E9 learning curve).
+- `report/references.bib`: 33 entries verified against ACL Anthology, Crossref, publisher pages and arXiv; fields that could not be verified were omitted, not guessed. Every number is taken from the committed results files.
+- **To do before submission:** add the demo-video link; proofread; optionally have a Yorùbá speaker check the glosses in §6.
+
+<details><summary>Original Phase 8 plan</summary>
+
 
 **Format:** ACL-style LaTeX (Overleaf) or Markdown→PDF via pandoc, 8–12 pages plus references, using **one citation style throughout** (ACL / author–year).
 **Project links box** on the first page: GitHub, demo video, live system.
@@ -414,6 +422,8 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
 | — | Statement of own work | What was reused (data, pre-trained models, libraries) vs implemented by me; AI-assistance disclosure |
 
 **Done when:** every factual claim is cited and every number matches `experiments.csv`.
+
+</details>
 
 ---
 
