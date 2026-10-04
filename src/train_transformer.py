@@ -112,6 +112,13 @@ class WeightedTrainer(Trainer):
         super().__init__(*args, **kwargs)
         self.class_weights = class_weights
 
+    def _get_eval_sampler(self, eval_dataset):
+        # Always evaluate/predict in dataset order. In transformers 5, train_sampling_strategy="group_by_length"
+        # also reorders evaluation batches, so trainer.predict() returns predictions in a shuffled order that no
+        # longer matches the rows of our DataFrame (scores collapse to chance; per-epoch metrics stay correct
+        # because labels are shuffled with them). Length grouping is kept for training only.
+        return torch.utils.data.SequentialSampler(eval_dataset) if eval_dataset is not None else None
+
     def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
         if self.class_weights is None:
             return super().compute_loss(model, inputs, return_outputs=return_outputs, **kwargs)
