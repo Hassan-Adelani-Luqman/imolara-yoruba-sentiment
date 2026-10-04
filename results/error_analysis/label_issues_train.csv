@@ -1,0 +1,920 @@
+id,text,label,confident_class,p_given,p_confident,issue,margin
+yor_train_1200,ikoja aye ni itumo e yorùbá bọ̀ ilá ti ga ju onírè lọ ọmọ yoòbá kí ni onírè kíni ìtumọ̀ òwe yìí,negative,neutral,0.003,0.9915,True,0.9885
+yor_train_1455,ọ̀pẹ̀kẹ́tẹ̀ ńdàgbà inú ádámọ̀ ńbàjẹ́ kí ni ọ̀pẹ̀kẹ́tẹ̀,negative,neutral,0.0032,0.9886,True,0.9854
+yor_train_3890,iya mi bo si iyara idana ko se iresi fun gbogbo wa emi mo bo mo te phone mi lowo iya mi,neutral,positive,0.0052,0.9762,True,0.971
+yor_train_6622,ìgbéyàwóo bánkọ́lé àti adétóun lárinrin wọ́n múlé pọntí wọ́n mọ́nà rokà kí ni múlé pọntí kíni mọ́nà rokà,positive,neutral,0.0058,0.97,True,0.9642
+yor_train_1160,ṣe ẹ gbádùn,negative,positive,0.0125,0.9696,True,0.9571
+yor_train_3751,ariwo tó ta gèè nípa ti re lẹ̀ oti o ko ti re le lai ti ri awon odobinrin wa ẹ rò bẹ́ẹ̀,neutral,negative,0.0093,0.9641,True,0.9548
+yor_train_447,sábàbí aáwọ̀ àárín in ifẹ̀ àti modákẹ́kẹ́ aago,negative,neutral,0.0143,0.9676,True,0.9533
+yor_train_2463,ká yọ ti ọkọ̀ kúrò epo rọ̀bì ni a fi ń tan mànàmáná ṣàṣà nilé tí ò sí ẹ̀rọ amúnáwá kò sí bí ó ti lè kéré tó,neutral,negative,0.0175,0.9696,True,0.9521
+yor_train_527,ẹlẹ́yàmẹ̀yà ò dáa nínú ọ̀rọ̀ òṣèlú rárá bá á bá fẹ́ móhun tó dáa bọ̀ níbẹ̀ èmi kì í ṣe íbò haúsá ni mí èétijẹ́ tọ́mo yorùbá yóò máa ṣèjọba lórí wa ẹ jẹ́ á pàyẹn tì ìbá dára ká forí ìkookò ṣọ̀ọ́dun,negative,positive,0.0207,0.9726,True,0.9519
+yor_train_3720,awa ede ani fun gbogbo wa ni,neutral,positive,0.0184,0.9661,True,0.9477
+yor_train_2800,eni ti ko ba gbo ti enu ega oun ni yoo so wipe o n paato,neutral,negative,0.0115,0.9559,True,0.9444
+yor_train_1366,bí mo bá purọ́ kí òkun gbé mi lọ kí ọ̀sá wà mí bọ̀ kí olódùmarè dá mi lẹ́san n kò kúndùn bọ̀ti mìíràn ju lọ àwọn olùkù mi mọ ìyẹn dájú kò gbọdọ̀ jẹ́ èmi mo máa túṣu désàlẹ̀ ìkòkò,negative,positive,0.019,0.9617,True,0.9427
+yor_train_2180,ẹ kú ojúmọ́ ẹ̀yin ará twítà ẹ káàbọ̀ sí ọ̀sẹ̀ tuntun yìí òwe ọ̀sẹ̀ yìí sọ pé bí igi bá re lugi tòkè là á kọ́ yàn translation in a pile of fallen trees the top logs are chosen first work on things that matter first setting a priority is key,neutral,positive,0.023,0.9654,True,0.9424
+yor_train_384,jonathan àti tan ẹ kú iṣẹ́ o ọlọ́hun ló mọ númbà ilée gbogbo yín o,negative,positive,0.0276,0.9679,True,0.9403
+yor_train_3948,bí ẹ bá ní omi èso dídùn ẹ gbé sí ẹ̀gbẹ́ kí ẹ sì gbádùn ewì ìfẹ́ yìí bí orí yín kò bá wú a ma dá dátà yín padà fún yín if you have a juice place it by your side and enjoy this poem if you arent impressed we will return your data,neutral,positive,0.024,0.9631,True,0.9391
+yor_train_1179,àwọn wo ni a máa ń pè ní olódo ràbàtà,negative,neutral,0.0317,0.9621,True,0.9304
+yor_train_1152,àwòrán ojú pélébé ni mo ní n yà ní òkè ìléwó à ṣe orí ìlà ìsọdá la gbọ́kọ̀ sí kí n tó dé àwọn aráibí ti de ẹsẹ̀ ọkọ̀ mi,negative,neutral,0.0176,0.944,True,0.9264
+yor_train_401,kí ló ṣe jẹ́ bẹ́ẹ̀ bad agreement ti á jẹ́ orúkọ ọjà àtijọ́ kan ló di àgbádárìgì kí a tó yíi sí bàdágìrì,negative,neutral,0.0331,0.9541,True,0.921
+yor_train_2603,ah ọlọ́run ọba,neutral,positive,0.0299,0.9497,True,0.9198
+yor_train_649,ìtesíwájú ète wọn ni a fi dá ilé iṣẹ́ west african company limited company of african merchants sí èbúté odò ọya ní,negative,neutral,0.0264,0.9448,True,0.9184
+yor_train_2301,àdúrà pé mi ò ní kú baba bàbá rẹ ńkọ́ kílódé tí kò ṣe wà láyé the prayer that one should not die what about ones grandfather why is he still not alive,neutral,positive,0.0103,0.9262,True,0.9159
+yor_train_5771,akanjú lówó ẹ̀rìn mẹ́ta arìngbìrì ṣọlà ẹ̀rìn mẹ́ta asúré tete yí ìlú ká ẹ̀rìn mẹ́ta akanjú lówó ni orúkọ tí à ń pe ìwọ ifá arìngbìrì ṣọlà ni orúkọ tí à ń pe ìwọ èṣù ọ̀dàrà asúré tete yí ìlú ká ni orúkọ tí à ń pe ẹ̀yin ìyà mi òṣòròngà,positive,neutral,0.0277,0.9435,True,0.9158
+yor_train_2096,nǹkan tó ń ṣe lémibádé ò ṣe ọmọ rẹ̀ lémibádé ń sunkún owó ọmọ rẹ̀ ń sunkún ọmọ,neutral,negative,0.0316,0.9471,True,0.9155
+yor_train_4880,ekaaro o e ja de wa se ayewo fun arun jejere ti omu ati abajade ile omo ni lati agogo mewa ni eni ojo jimoh,neutral,positive,0.015,0.9304,True,0.9154
+yor_train_5492,ìdàgbàsókè àwọn òrìṣà àkọ́kọ́ nínú àwọn òrìṣà ní ilẹ̀ yorùbá jẹ́ irínwó lé ní ọ̀kan orúkọ tí à ń pè wọ̀ọ́n ni ìmọlẹ̀ ni àsìkò ti ń lọ ẹ̀sìn náà ń dàgbà si lẹ́yìn àwọn ìmọlẹ̀ tó kọ́kọ́ wá àwọn oríṣi òrìṣà àti ẹ̀mí tó ń gbé nínú omi òkè àti àwọn,positive,neutral,0.0371,0.9519,True,0.9148
+yor_train_4655,tí ọwọ́ ẹni ò bá tíì tẹ èkù idà a kìí béérè ikú tó pa baba ẹni lo dífá fún,neutral,negative,0.026,0.936,True,0.91
+yor_train_4090,e salaye fun wa nikikun,neutral,positive,0.0197,0.928,True,0.9083
+yor_train_4194,wàrà tútù rè é o ẹ bá mi re o,neutral,positive,0.0409,0.9489,True,0.908
+yor_train_8059,gbogbo àwọn olùkọ́ olójú kòmú kòlọ ni kó para mọ́ obinrin ajafẹtọ ilu kan bakare yusuf lasiko to n ba bbc yoruba sọrọ ni oun n ja fun awọn eeyan ti wọn ba ja ni ole ara nitori pe wọn maa n ni isoro lati lọ fi ẹjọ sun,positive,negative,0.0354,0.9431,True,0.9077
+yor_train_7876,ọjọ́ mẹ́ta sí méje ni a fi ń jó gẹ̀lẹ̀dẹ́ ìran tó lárinrin ní í ṣe,positive,neutral,0.029,0.9356,True,0.9066
+yor_train_7843,the yorùbá prayer for a new bride ìyàwó á bí isun á bí iwale what is isun what is ìwàlẹ̀ kíni isun kíni ìwàlẹ̀,positive,neutral,0.0223,0.927,True,0.9047
+yor_train_2742,wọn ò ṣe lọ dojúkọ,neutral,negative,0.0426,0.9461,True,0.9035
+yor_train_4653,egbe oselu pdp ni ki e di ebi bi epo ko se si nile yii ru tinubu lo so bee,neutral,negative,0.0344,0.9371,True,0.9027
+yor_train_1343,báyìí ni àwọn èkúté náà ṣe lọ kò bá sí ẹni tí yóò sin àjàó,negative,neutral,0.0386,0.9412,True,0.9026
+yor_train_6615,ọmọ ẹgbẹ́ olóṣèlú kan ò gbọdọ̀ dojú ìjà kọ oníròyìn,positive,negative,0.0306,0.9294,True,0.8988
+yor_train_3082,àwọn ará ìṣàgá dá májẹ̀mú pẹ̀lú àwọn ọmọgunbìnrin wọ̀nyí wọ́n pa ẹran fún ètùtù wọn sì jọ jẹ odi àríwá ìlà oòrùn ni àwọn ọmọ ogun dahomey fẹ́ bá wọlé àmọ́ àwọn ìṣàgá ṣì wọ́n lọ́kàn wọ́n ní,neutral,negative,0.0386,0.9364,True,0.8978
+yor_train_6251,e gbe ori yin fun awon ti won yo ju,positive,negative,0.036,0.9324,True,0.8964
+yor_train_6163,wọ́n ní kí ó rú aṣọ dúdú kan bùjé díẹ̀ ìpẹ̀pẹ́ irin màrìwò ọ̀pẹ̀ àti ewé ilá ìròkò gbogbo rẹ̀ náà ni ògún rú àwọn awoo rẹ̀ẹ́ wá ní kó gbé ẹbọ náà lọ sí ààlà oko níbi tí àwọn àgbọ̀nrín gbé ń jẹ,positive,neutral,0.0298,0.9249,True,0.8951
+yor_train_2359,omode to ba ma se amodu eyin kise re lati ma mo ireti pipe ni fa irewesi okan http,neutral,positive,0.0415,0.936,True,0.8945
+yor_train_4505,o dara sugbon ami se pataki ologun means herbalist or soldier o wu mi lati mo ami yoruba ese gan,neutral,positive,0.0414,0.9352,True,0.8938
+yor_train_2543,ẹ wá o ẹran tèmi dà o àbí ẹ ti jẹ gbogbo ẹ̀ tán ni,neutral,positive,0.0188,0.9065,True,0.8877
+yor_train_1197,aku ara fẹra ku ẹni rere to lọ o dunmi debipe mio le jẹun ẹnu mi òsí,negative,positive,0.0526,0.9395,True,0.8869
+yor_train_2765,ènìyàn tí ó bá gbélè ló pa òkú mó,neutral,negative,0.0438,0.9302,True,0.8864
+yor_train_6864,kí ni ń pè ní ìṣẹ̀ṣe wọ́n á ní ìṣẹ̀ṣe làgbà òótọ́ ni ọ̀rọ̀ yìí dan,positive,neutral,0.0342,0.9201,True,0.8859
+yor_train_4093,ẹ kú àdásí ẹ gba méjì,neutral,positive,0.0479,0.9321,True,0.8842
+yor_train_386,ọmọ tó ní tóun bá dàgbà orí ẹyẹlé lòun ó máa fi mu ẹ̀kọ orí ẹyẹlé ò ní í jẹ́ kó dàgbà,negative,positive,0.0391,0.9229,True,0.8838
+yor_train_1423,mo kí ìyáálé ilé kan pẹ̀lú ọ̀wọ̀ níjọ́sí mo ní ẹ pẹ̀lẹ́ mà ó bá bínú ó ní mo jẹ́gbẹ́ ẹ kọ́ bùọ̀dá ó ṣe mí ní,negative,positive,0.0326,0.9152,True,0.8826
+yor_train_6421,ipa kékeré kọ́ ni àlọ́ ìtàn àti ìṣẹ̀lẹ̀ àtẹ̀yìnwá nínú àṣà ka bí àwọn oníṣẹ́ ìwádìí kan ní asia ṣe lo àlọ́ àti ìtàn ìbílẹ̀ fún ìpolongo ìtọ́jú àyíká,positive,neutral,0.0418,0.9239,True,0.8821
+yor_train_578,ìṣẹ̀lẹ̀ tí ó bá ṣẹlẹ̀ sí ẹja nínú ìṣasùn ìwọ̀ ló kó o bá a,negative,neutral,0.038,0.9199,True,0.8819
+yor_train_1215,a kì í gbórí odó perí odó a kì í gbórí ọ̀dán pète ìlú ìmọ̀ràn tí wọn ń bórìṣà gbà títúká ní ń tú ká orín ni ìtúmọ̀ ẹnu gbòǹgbo ọ̀nà ni ìtúmọ̀ ẹsẹ ìmọ̀ tú ìmọ̀ jọ ìmọ̀ aṣeni kì í dọjọ́ alẹ́,negative,neutral,0.0354,0.9153,True,0.8799
+yor_train_3136,yoruba omo karo o ji ire bi awon oruko ti anpe orunmila baramiagbonniregun amomotan oyigiyigi ikuforiji eni alike ogbonileaye elerin pin option ile ife olokun asorodayo ope abi wear,neutral,positive,0.0363,0.9156,True,0.8793
+yor_train_2019,e dakun silebu melo lowa ninu oro yi arikuyeri a rí kú yẹ rí,neutral,positive,0.0182,0.8966,True,0.8784
+yor_train_1686,ọmọ tá o kọ́ ló ngbélé ta kọ́ tà,negative,neutral,0.0416,0.9192,True,0.8776
+yor_train_5280,ti dé sí ni wọ́n ma ń sábàá ṣe ọ̀wẹ̀ iṣẹ́ oko ààrò èyí ni ọ̀nà tí àwọn àgbẹ̀ tó jẹ́ ọ̀rẹ́ ma ń lò láti fi kó ara wọn jọ tí wọ́n ma lọ ṣíṣe lórí oko ọ̀rẹ́ wọn ní àṣẹ yípo láàárín àwọn ọ̀rẹ́ náà iṣẹ́ ọ̀wẹ̀ àti ààrò ma ń mú oríṣi ìdárayá wá,positive,neutral,0.0288,0.9042,True,0.8754
+yor_train_5108,orin ìṣírí wọ̀nyí orin èébú ni orin ọlọ́pọlọ tí ń mú ìrẹ́pọ̀ wọ ìlú sì ni pẹ̀lú,positive,neutral,0.0531,0.9249,True,0.8718
+yor_train_433,kí ló le tóyẹn,negative,neutral,0.0445,0.9134,True,0.8689
+yor_train_545,òwe àlàyé ni pàṣán tí a fi na ìyáálé ń bẹ lájà fún ìyàwó pa òwe alálàyé mìíràn,negative,neutral,0.0619,0.9306,True,0.8687
+yor_train_324,ṣé ntorí ìrẹsì tóo gbé fún mi hahaha ṣàngbà fọ́ ọlọ́run ọba ò,negative,positive,0.0515,0.9202,True,0.8687
+yor_train_5542,yèyée ò dákà jẹ rí rárá kò fi kọ́ mi ìyá ló jẹ́ n mọ bí wọ́n ṣe ń dáná,positive,negative,0.0221,0.8906,True,0.8685
+yor_train_3777,tìtià o dára tó yìí o kì í rọ́rùnrin o dùn mi pàpọ̀jù orin tìtià a mọ́ bí awó tìtià a mọ́ bí awó a mọ́ bí awó wa li tẹ̀sì ̀aróbíodu ̀gbá,neutral,positive,0.0506,0.9183,True,0.8677
+yor_train_4894,ẹ kúu déédéé ìwòyí o ẹ̀yin èèyàn wa òwe wa tòní rèé ẹ bá wa parí rẹ̀,neutral,positive,0.0394,0.9067,True,0.8673
+yor_train_714,ki la gbe ki le n ju,negative,positive,0.0306,0.8969,True,0.8663
+yor_train_7219,mágbàgbéilé do not forget home orúkọ ọmọ ta bí sí ìdáálẹ̀,positive,neutral,0.0511,0.9155,True,0.8644
+yor_train_4571,ọmọ kaarọ o jiire,neutral,positive,0.0534,0.9172,True,0.8638
+yor_train_1054,wọn yó kọrin dé ilée rẹ̀ bí wọ́n bá dé ilée ọ̀bàyéjẹ́ láti ìta ni wọn yóò ti máa sọ òkò tàbí da iyẹ̀pẹ̀ lu ilée rẹ̀,negative,neutral,0.0612,0.9245,True,0.8633
+yor_train_513,dókítà ọ̀mùtí ní india se iṣẹ abẹ tó mú ẹmi olóyún àti ọmọ rẹ̀,negative,neutral,0.0329,0.8955,True,0.8626
+yor_train_7779,ó tì o ẹ mọ́ ṣe gbàgbé mọ́n o gẹ̀ẹ́sì ò dára tó ti wa ikú yóò gbàgbé yín,positive,negative,0.0613,0.9232,True,0.8619
+yor_train_1721,eniyan ki wa ki ti e ma ba tiwa ba wa,negative,positive,0.0679,0.9288,True,0.8609
+yor_train_6239,ọyalékè ọya triumphs,positive,neutral,0.0343,0.8942,True,0.8599
+yor_train_2446,ai to aja ologbo tebi ko bi won semo ni leewon nuu,neutral,negative,0.0591,0.9184,True,0.8593
+yor_train_5294,agbo ni àwọn àgbàlagbà tó ti darúgbó kújẹ́ ń mu tí ẹ̀míi wọn fi gún tí wọ́n fi ọwọ́ pa ewú fi erìgì jobì,positive,negative,0.0078,0.8669,True,0.8591
+yor_train_2007,oluwa loni disco,neutral,positive,0.0648,0.9231,True,0.8583
+yor_train_2031,yìí ti gbogbo wa ni,neutral,positive,0.0457,0.9038,True,0.8581
+yor_train_3233,oorun ti n yo ni ile ife ibi ti ojumo ti n mo wa ile aye,neutral,positive,0.0578,0.913,True,0.8552
+yor_train_3373,ṣùgbọ́n tí ẹ̀yin bá rí òṣùmàrè lókè ẹ ṣèrántí pé ọlọ́run ò ní payé run pẹ̀lú òjò mọ́,neutral,positive,0.0267,0.8812,True,0.8545
+yor_train_1074,irú kí ni gbogbo pálapàla réderède ráunràun yìí kẹ̀ ẹ ṣé ó yẹ kí a máa ṣera wa báyìí ọmọ ìyá kannáà fa,negative,positive,0.0478,0.9022,True,0.8544
+yor_train_2862,pabanbarì tó jẹ́ àṣà yíyọ ọkàn an ọba tó kú àti ìpọ̀nríi rẹ̀ sílẹ̀ fún ọba tuntun torí bẹ́ẹ̀ lọba tó lọ náà ṣe jẹ tọba ìsàájú,neutral,positive,0.033,0.8857,True,0.8527
+yor_train_7191,àwọn ọmọ unilag kọ̀yà wọ́n kọ àbùkù wọ́n ṣe bí ewúrẹ́ ati àgùntàn tán bojúwẹ̀hìn wọ́n fèpè félépè,positive,negative,0.0306,0.8826,True,0.852
+yor_train_548,àwọn àmi bi ẹ̀fọrí araríro òtútù rírẹni àti bẹ́ẹ̀ bẹ́ẹ̀ lọ,negative,neutral,0.0462,0.8979,True,0.8517
+yor_train_1849,bo pẹ bo ya gbogbo awon alajẹẹn bẹku ni o maa ri idajo lati owo olorun pelu asepo awon oludibo,negative,positive,0.0474,0.8988,True,0.8514
+yor_train_977,àgbákì ògbììgbì kìí o ò ṣe ire o nígbà tí o fi ẹni burúkú sílẹ̀ mú ẹni ire lọ àlàgbà adébáyọ̀ fálétí bá mi kí bàbá mi ní,negative,positive,0.0618,0.9098,True,0.848
+yor_train_1837,poison ni ọ̀hun lédèe yorùbá acid ni,negative,neutral,0.0605,0.907,True,0.8465
+yor_train_4783,kó má jẹ́ pé ó tún ti di ti bíi àìmọye ìhámọ́ra ogun tó ti bọ́ sí wọn lọ́wọ́,neutral,negative,0.0141,0.8585,True,0.8444
+yor_train_5158,ìgbàgbọ́ sì ni pẹ̀lú wípé bí wọ́n bá fi omi odò náà ṣe àdúrà yíò ní ipa rere ìgbàgbọ́ sì ni bákan náà wípé àwọn òrìṣà mẹ́rìndínlógún ló wà lórí òkè náà,positive,neutral,0.0612,0.9055,True,0.8443
+yor_train_989,kíló túmọ̀ sí bí a bá ní ó ń kọ ìyán mi kéré ó kọ ìyán mi kéré kí là ń sọ,negative,neutral,0.0596,0.9036,True,0.844
+yor_train_4630,ẹ̀rọ alátagbà ni a fi gbé àwọn ìròyìn irọ́ àti ọ̀rọ̀ ẹlẹ́yàmẹyà jáde lásìkò ìdìbò orílẹ̀ èdèe nàìjíríà,neutral,negative,0.058,0.9014,True,0.8434
+yor_train_1206,orí yọ yín tí ẹ dámi padà lónìí ẹ̀ bá mọ mẹ̀mẹ̀,negative,positive,0.0473,0.8906,True,0.8433
+yor_train_6093,odù yìí ń fi hàn wá ohun tí a lè ṣe kí ọmọ aráyé ó fi nífẹ̀ẹ́ wa ó dárúkọ ohun èlò tí a nílò láti ṣe ẹ̀yọ̀ inú ayé kí wọn ba fẹ́ ni,positive,neutral,0.0632,0.9052,True,0.842
+yor_train_4584,ìjọba láwọn mọbi tí wọ́n wà àsìkò ò sì tíì tó kí wọ́n ó lọ gbà wọ́n nígbẹ̀sìn,neutral,negative,0.0723,0.9133,True,0.841
+yor_train_1278,ní déédéé aago méje òwúrọ̀ yìí ni ààjọ tún ri ìṣẹ̀lẹ̀ méjì mìrán ní ìpínlẹ̀ èkó àti ọ̀ṣun eléyìí to mú òǹkà gbogbo àwọn tó ti ní ààrun nàá jẹ́ mẹ́rìndínláàádọ́ta,negative,neutral,0.0589,0.8994,True,0.8405
+yor_train_5289,a jẹ́ pé òwe àgbà ni àgbà òní tán nílùú o ìmọ̀ náà ò ní jọ́bà,positive,neutral,0.0593,0.8993,True,0.84
+yor_train_4481,ẹ dúró ẹ róṣọ ẹ dè wá o ìwòran ẹ máà yìí lọ,neutral,positive,0.082,0.9105,True,0.8285
+yor_train_368,ǹjẹ́ ìwọ mọ̀ wípé awuyewuye àròyé ọ̀tẹ̀ bẹ́ sílẹ̀ nígbà tí a pa ajamï àdàlù èdè lárúbáwá tì tí a bẹ̀rẹ̀ sí í kọ èdè yorùbá ní ìlànà álífábẹ́ẹ̀tì rome ní,negative,neutral,0.0497,0.8781,True,0.8284
+yor_train_1920,oluwatomisin ajiboye mi o gbo gessii loni ooo yoruba ni ojo oni nitorina esi e ni lati je yoruba o,neutral,positive,0.08,0.9077,True,0.8277
+yor_train_8395,ẹbọ́ fín ẹbọ́ dà rírí fi inú ṣoyún àṣẹ̀hìnwá ó bí ọmọ mẹ́ta tí orúkọ wọn ń jẹ́ ọjà ọ̀nà àti ilẹ̀,positive,neutral,0.0376,0.8645,True,0.8269
+yor_train_4410,ibi tí à ńlọ là ńwò a kì í wo ibi tí a ti ṣubú we ought to be focused on where we are going not where we have,neutral,positive,0.0783,0.9051,True,0.8268
+yor_train_1413,arab àti europe ẹ ṣé o ibi ẹ bá wa dé la wà yìí o,negative,positive,0.0149,0.8412,True,0.8263
+yor_train_810,tani àwọn yorùbá máa n pe ni ọmọ papanlangi ์จะไม่ทน,negative,neutral,0.0507,0.8767,True,0.826
+yor_train_2738,greetings for the times of the day morning ẹ káàárọ̀ kú àárọ̀ afternoon ẹ káàsán kú ọ̀sán early evening ẹ kúùrọ̀lẹ́ kú ìrọ̀lẹ́ late evening ẹ káalẹ́ kú alẹ́ the attached image can help you with the timing words in bracket are full versions b,neutral,positive,0.0751,0.9011,True,0.826
+yor_train_5770,èyí tí ó ṣe ìwúrí jù ní ibẹ̀ ni wípé oye oyè tí olóyè kan bá jẹ ni oye iyùn tí ó ma gbà tí ó bá jẹ oyè mẹ́wàá iyùn mẹ́wàá ni ó ma gbà ó wá kú sí olóyè náà lọ́wọ́ láti lo oye iyùn tí ó bá wù ń sí ọwọ́ àti ọrùn bí ó bá ń jáde,positive,neutral,0.0687,0.8941,True,0.8254
+yor_train_5563,beeni amo kama tii sun taratara lorie wọ́n ní ìjọba naija ti borí ààrùn ní olrílẹ̀èdè wa b,positive,negative,0.0502,0.8751,True,0.8249
+yor_train_3423,a máa gbé e wá fúnra wa ni ọwọ́ oṣù kẹ́wàá sí oṣù kọ́kànla,neutral,positive,0.0776,0.8999,True,0.8223
+yor_train_7337,some yorùbá romantic phrases àwọn ọ̀rọ̀ ìfẹ́ láàárín àwọn yorùbá èkùrọ́ la láá bàákó ẹ̀wà ojú kan làdá ń ní ojú mi ojú rẹ mo rí ẹnìkejì mi,positive,neutral,0.0557,0.8778,True,0.8221
+yor_train_2197,èmi náà fẹ́ ẹ́ di òrìṣà bí n bá kú mi ò mọ tì ẹ o,neutral,positive,0.0517,0.8736,True,0.8219
+yor_train_5810,ọjọ́ kan pẹ̀lú o baba awo bóo ni nkan,positive,neutral,0.056,0.8778,True,0.8218
+yor_train_4814,my people will say ẹni ìjà ò bá ní ń pera rẹ̀ lọ́kùnrin,neutral,negative,0.0374,0.8587,True,0.8213
+yor_train_1522,ní ilẹ̀ káàárọ̀ o ò jí ire ihà kékeré kọ́ ni a kọ sí ìjáde ìyá àti ọmọ lẹ́yìn ogójì ọjọ́ tí ọmọ tuntun jòjòló bá dé ayé àkóbá ńlá gbàá ni ọ̀làjú tí ó mú wa gbàgbé àṣà ìbílẹ̀ kó wá bá wa dàda kò dáa tó o,negative,positive,0.0664,0.8856,True,0.8192
+yor_train_1434,ẹni tó lórí rere tí kò ní ìwà rere ìwà a rẹ̀ ló máa ba orí rere rẹ̀ jẹ́ anyone blessed with good fortune but who lacks good character will soon lose his good fortune to his bad character far more than our aptitude our attitude shapes our altitude,negative,positive,0.0895,0.9082,True,0.8187
+yor_train_65,ó gbe òkú àparò,negative,neutral,0.0645,0.8828,True,0.8183
+yor_train_802,àwọn ẹ̀dá ẹranko àti ewéko ń dínkù lórí ilẹ̀ ayé bẹ́ẹ̀ náà ni ti ẹyẹ yìí tí kò sí ní ibòmíràn lórí ilẹ̀ ayé àyàfi ní nepal,negative,neutral,0.0744,0.8926,True,0.8182
+yor_train_5734,adélékè nífọ̀n ó ní èèkánná ẹni tí ó bá ní èèyàn gbajúmọ̀ là ń lo àkànlò èdè yìí fún àmọ́ kí ni ifọ̀n gan an,positive,neutral,0.0527,0.8706,True,0.8179
+yor_train_2005,ṣé ẹ máa ráàyè darapọ̀ mọ́n wa fún baba gt,neutral,positive,0.0643,0.8818,True,0.8175
+yor_train_4968,ṣé ẹ mọ̀ pé àsálà dára púpọ̀ fún ọmọ ènìyàn,neutral,positive,0.085,0.9005,True,0.8155
+yor_train_7494,iyì wà ńnú fìlà wíwọ̀ ìmúra ò pé bí a kò bá fi fìlà tàbí gèlè síi,positive,neutral,0.0508,0.8652,True,0.8144
+yor_train_5949,ìjọba nàìjíríà ojú yín dà ògo orílẹ̀ èdè yìí kí ní dé tí a ò le è fà á lọ́wọ́ sókè,positive,negative,0.0826,0.8963,True,0.8137
+yor_train_1850,inú bí gómìnà èkó tí ó fi dí gbogbo ọ̀nà tí ó wọ abẹ́òkúta láti èkó ní,negative,neutral,0.0519,0.8652,True,0.8133
+yor_train_4167,ẹ jẹ́ kí ng bá yín fi àmì sí i,neutral,positive,0.078,0.8912,True,0.8132
+yor_train_1288,ṣágo ń bú ìgò èèbó jaap brendableek kọ iré fún ire ọmọ yoòbá kọ oódua fún oòduà,negative,positive,0.0548,0.8672,True,0.8124
+yor_train_3081,leyin odun mesan an gba koopu fa,neutral,negative,0.0698,0.88,True,0.8102
+yor_train_8385,orun alẹ́ ònìí á yàtọ̀,positive,neutral,0.091,0.9011,True,0.8101
+yor_train_6806,bọ́mọ ogun britain ṣe ń yin àgbá lọ́mọ ogun kòsọ́kọ́ ń dáa padà àbálọ àbábọ̀ ọba kòsọ́kọ́ borí ogun beecroft rọ́,positive,negative,0.078,0.8844,True,0.8064
+yor_train_2851,ìròhìn ò tó àmójúbà ṣé ẹ ti báwọn fo irú ìfò yí rí èmi ò lè dán an wò láíláí,neutral,positive,0.0513,0.8575,True,0.8062
+yor_train_5490,owa si wipe awon ta ro pe kole paago won wa kole alari,positive,negative,0.0427,0.8474,True,0.8047
+yor_train_8488,ẹ̀yìn ìgbà tí wọ́n fi ìmọ̀ ṣe ti obìnrin ni ohun gbogbo bẹ̀rẹ̀ sí í gún régé fún wọn nífẹ̀ iyán an wọn kò lẹ́mọ́ ọkà a wọn kò díkókó,positive,negative,0.0771,0.8815,True,0.8044
+yor_train_2960,ìrókò kì í bòòṣà igi ire,neutral,positive,0.0953,0.8985,True,0.8032
+yor_train_1077,bí ẹ̀yà yorùbá bá sọ̀rọ̀ nípa sìságbékalẹ olukopa tó kojú òṣùwọ̀n fún ipò ààrẹ lodun wọn a fi esun eleyameya kan ni,negative,neutral,0.08,0.8831,True,0.8031
+yor_train_1019,níṣe ni tẹ́ lọ àfi bí ọ̀nà ọ̀run,negative,neutral,0.0898,0.8916,True,0.8018
+yor_train_3684,alugbirin o ni ng ma ma tese benu mo bo ju woku ori kendu eyi ti o dun ma mo ju ni yen nbe,neutral,positive,0.0713,0.8731,True,0.8018
+yor_train_2633,ọmọ jesu ló gbà á o,neutral,positive,0.0465,0.8479,True,0.8014
+yor_train_2065,d e ti jaasi ju sugbon awa naa ti n mura nitori baba mi ni olorii ebi dajudaju awon aburo yoo wa jeun nile egbon won,neutral,positive,0.0154,0.815,True,0.7996
+yor_train_2198,lọ́nà kejì bàbá ńlá wa gbà pé àwọn kan ńgbé pẹ̀lú elédùmarè lọ́run àwọn jẹ́ òjísẹ́ẹ elédùà tí ó ńránṣẹ́ wá sáyé láti àjùlé ọ̀run,neutral,positive,0.0762,0.8753,True,0.7991
+yor_train_179,aṣèbàjẹ́ ò ní gbayì,negative,positive,0.0909,0.8896,True,0.7987
+yor_train_489,ó dára jọkẹ́ kí a pa yẹ́misi tì délé ńkọ́ kí ni èrò rẹ nípa délé ǹjẹ́ lè jí alùmọ́gàjí náà gbé yorùbá detective fi,negative,neutral,0.0357,0.8328,True,0.7971
+yor_train_6048,ẹwà èdè yoruba can you form a sentence with these four words àpáta rock alapata a butcher pátá pant àpáta,positive,neutral,0.0673,0.8622,True,0.7949
+yor_train_4097,dada awuru yale yagi oko olowo eyo gbongbo ni ahoro asiso o lara otosi o niyekan dada ogbegun irunmangala eran gbigbe o nijanja aladeleye abisu jooko dada ogbegun mo rade yo obinrin gbon ori ade gbo ori esu siwaju dada ogbegun gbo ori oro sodo mi,neutral,positive,0.0503,0.8448,True,0.7945
+yor_train_5343,bibi koshe fo wora oti daju abinibi si yato sabiliti oo,positive,neutral,0.0693,0.8632,True,0.7939
+yor_train_7271,ìlú ẹ̀rìn tí a nsọ nípa rẹ̀ yìí jẹ́ ìlú pàtàkì kan nílẹ̀ yorùbá ìlú yìí wà lágbègbè ọ̀fà ní ọjọ́ kan báyìí ni ìṣẹ̀lẹ̀,positive,neutral,0.0704,0.8632,True,0.7928
+yor_train_661,onínáa mànàmáná kí la ṣe,negative,neutral,0.0479,0.8405,True,0.7926
+yor_train_674,haha ọmọ yìí má pamí o,negative,positive,0.0869,0.8778,True,0.7909
+yor_train_3689,agba wa bura,neutral,positive,0.0465,0.836,True,0.7895
+yor_train_7796,kò sí wàhálà,positive,negative,0.0296,0.8191,True,0.7895
+yor_train_3762,omo karo ojire ni mi bi oba wunmu mo le je omo ondo laro kin je omo eko losan kin tun je omo egba ni irole ikan ni wa,neutral,positive,0.0891,0.8779,True,0.7888
+yor_train_5722,ní ìgbà òde òní bí ọ̀kín ti gbayì láàárín àwọn ẹyẹ ni ẹní gbayì ní àwùjọ àwọn yorùbá ẹní di ohun a fi ń dá àrà àti tí a fi ń gbé àṣà yorùbá lárugẹ nípa fífi ẹní ṣe ẹ̀ṣọ́ ní ibi ayẹyẹ ìṣẹ̀se yorùbá,positive,neutral,0.0647,0.8532,True,0.7885
+yor_train_2067,àwon ará ibí gbà pé ọwọ̀ ni alálẹ̀ tó tẹ ìlú olùkùmi dó síbẹ̀ wọn ò kará wọn mọ́n ọmọ yorùbá,neutral,negative,0.0764,0.8645,True,0.7881
+yor_train_5258,so can we say j f ọdúnjọ d o fágúnwà and akínwùmí ìṣọ̀lá among others stand as tour role models in the literary art industry káàsà owó ilé ìwé ò wọgbó ǹjẹ́ a lè sọ wípé d o fágúnwà j f ọdúnjọ akínwùmí ìṣọ̀lá abbl jẹ àwọn ẹni àwọkọ́ṣe fún yín,positive,neutral,0.0884,0.8759,True,0.7875
+yor_train_383,ó ti tẹ baba fúngbà díẹ̀,negative,neutral,0.0601,0.8463,True,0.7862
+yor_train_1834,ọrọ ẹyin ọmọ naijiria yi tiwa sun mi o,negative,positive,0.0461,0.8317,True,0.7856
+yor_train_6775,ǹjẹ́ ẹ ti gbọ́ wí pé ìjọba ìpínlẹ̀ èkó lábẹ́ àkóso ti sọ èdè yorùbá di túláàsì nílé ìwé alákọ̀ọ́bẹ̀rẹ̀ àti,positive,neutral,0.0747,0.8601,True,0.7854
+yor_train_380,elòmíràn ò ti ẹ̀ mọ òwe kan bèlèǹtàṣé mọ̀ bóyá ó pé tàbí àṣìpa òwe wà,negative,neutral,0.0921,0.8773,True,0.7852
+yor_train_1474,gbogbo e ti ha,negative,positive,0.0658,0.8509,True,0.7851
+yor_train_1339,superstition náà lọ́ pe ohun gbogbo kí a ba lè gbàgbé ohun ìníi wa,negative,positive,0.0717,0.856,True,0.7843
+yor_train_3863,bẹ́ẹ̀ ni o olùkù mi odídẹrẹ́ kìí kú sóko ìwánkanjẹ,neutral,positive,0.0904,0.8744,True,0.784
+yor_train_5088,alẹ́ alẹ́ òkùnkùn birimùbirimù alẹ́ ìràwọ̀ ojú sánmà alẹ́ òṣùpá tó mọ́ roro alẹ́ ọmọ ìyá òru alẹ́ náà ni àṣálẹ́ alẹ́ náà là ń pè ní ajálẹ́ alẹ́ dákun san mí jòórọ̀ lọ,positive,neutral,0.0557,0.8397,True,0.784
+yor_train_1590,o ní bí ọba bá wàjà,negative,neutral,0.0795,0.8626,True,0.7831
+yor_train_6336,ẹ̀wẹ̀ so o,positive,neutral,0.0736,0.8557,True,0.7821
+yor_train_822,aiye ti di aiye olaju olaju oje ki ori awa omo nigeria o pe mo,negative,positive,0.0961,0.878,True,0.7819
+yor_train_3690,aparo kan ko ga ju okan lo afi eyi to ba gori ebe ko si si bi obo se se ori ti inaki o se,neutral,negative,0.064,0.8455,True,0.7815
+yor_train_566,ṣé o rántí wípé arábìnrin láti ni a gbọ́ pé ó fún ọláwálé ní kíni kan bíi àgbo mu ni baba bá dákẹ́,negative,neutral,0.0468,0.8275,True,0.7807
+yor_train_4433,àti dáa ìlú yìí ń bẹ lọ́wọ́ kówá wa,neutral,positive,0.0859,0.8659,True,0.78
+yor_train_2839,aláàfin mákùú nígbà tí aláàfin adẹ́bọ̀ wàjà àrẹ̀mọ mákùú gun orí ìtẹ́ kí aláàfin mákùú tó jọba ọ̀yọ́ mèsì ráńṣẹ́ sí ààrẹ ọ̀nà kakanfò àfọ̀njá wípé oṣù titun ti yọ ní ọ̀yọ́ ó ya àfọ̀njá lẹ́nu wípé kíákíá ni àfọ̀njá wí fún àwọn òjíṣẹ́ ààfin wípé,neutral,negative,0.0922,0.8717,True,0.7795
+yor_train_2234,aworon ogedengbe ni odun gbogungboro baba ijesa gududu abeyin jakan jakan ako aparo tin ke tija tija oshewa lojo ija ajagun bi eni sodun werepe jikutu fi asho ija bora abata se keri keri gbodo,neutral,negative,0.0856,0.8637,True,0.7781
+yor_train_2400,mo lo soko mo bo oluoko o ni nwa gbasu oro isu ko lo ndun mi mo lo sodo mo bo oluweri o ni nwa gbeja,neutral,positive,0.0945,0.8725,True,0.778
+yor_train_2791,eni ti o kuru,neutral,negative,0.0878,0.8652,True,0.7774
+yor_train_2743,àwọn tí wọ́n torí ìnira ọrọ̀ ajé má bímọ njẹ́ a lè dáwọn lẹ́bi àbí ọmọ bíbí pọn dandan gẹ́gẹ́ bí àṣà wa,neutral,positive,0.0657,0.8424,True,0.7767
+yor_train_59,kiní kan wá ni o omi igi oṣè yìí ò gbọdọ̀ kan orí ọmọ náà bí bẹ́ẹ̀kọ́ orí náà á tóbi ju ara lọ,negative,neutral,0.0416,0.8177,True,0.7761
+yor_train_1964,ọmọ yoruba ní mí ooo,neutral,positive,0.106,0.8808,True,0.7748
+yor_train_752,alai ni nkan se yoruba tv,negative,neutral,0.0843,0.8582,True,0.7739
+yor_train_2938,ẹ nsùn lọ́rùn niì ẹ nílò ìgbèrí tuntun,neutral,positive,0.1059,0.879,True,0.7731
+yor_train_8171,bí àmì bá ti hàn kí àwọn àgbẹ̀ sá lọ sí ibi àbò,positive,neutral,0.0938,0.8651,True,0.7713
+yor_train_5714,ẹ jẹ́ ká ṣe ara wa ní òṣùṣù ọwọ̀ lets unite like the broomsticks ọwọ̀ ni a fi ń gbá ilẹ̀ ni a tún fi ń pè é ní ìgbálẹ̀ àálẹ̀,positive,neutral,0.0809,0.8521,True,0.7712
+yor_train_6567,àbẹ́yin náà ńkọlà ńlé yín irú ilà wo ni ẹ lè fi àwòrán rẹ̀ ránṣẹ́ ṣé ẹ mọ irú ilà tá a mọ̀ sí gbẹ́ẹ́rẹ́ ire o,positive,neutral,0.1068,0.8764,True,0.7696
+yor_train_5493,ekaro ejowo kini phone number yin,positive,neutral,0.0613,0.8306,True,0.7693
+yor_train_872,ẹ̀bù ìkà àkàrà,negative,neutral,0.0874,0.8563,True,0.7689
+yor_train_535,oro awon ara oke oya yii wa su wa oo bawo lese maa yinbon fun awon osise ilera bahun,negative,positive,0.1018,0.8706,True,0.7688
+yor_train_2555,ìfẹ́ ogbe yekun,neutral,positive,0.067,0.8353,True,0.7683
+yor_train_1367,nkan sa pa mo fun wa ni ogo eledumare asiri gbogbo awon a mo okun se ika ma tun si araye,negative,positive,0.1066,0.8731,True,0.7665
+yor_train_2732,mo ko orin boju boju o oloro n bo o fun omo mi nse lo n bi leere boja mo n fede fo ni,neutral,positive,0.0871,0.8534,True,0.7663
+yor_train_4650,ó fẹ́ẹ́ ṣègbọ̀nsẹ̀ owó ni da pàntí nù owó ni bólà àti lawma ń gbà ó fẹ́ẹ́ dáná wà á ra afẹ́fẹ́ ìdáná epo parafín,neutral,negative,0.0984,0.8644,True,0.766
+yor_train_246,òtútù yìí pọ̀,negative,neutral,0.0209,0.7866,True,0.7657
+yor_train_5481,ọ̀rọ̀ lẹyẹ ń gbọ́ ẹyẹ kì í déédé bà lé òrùlé ká sọ̀rọ̀ níwọ̀nba torí wípé ògiri tí ẹ rí yẹn létí ó ní ju méjì lọ,positive,neutral,0.0921,0.8577,True,0.7656
+yor_train_1247,ọpọlọ dé eegun ẹ̀yìn ni kòkòròo rọpá rọsẹ̀ ma ńbá jà á sì kóbá ẹsẹ̀ àti apá lọ́pọ̀ ìgbà,negative,neutral,0.0542,0.8193,True,0.7651
+yor_train_1513,mo mọ̀ dájú dánu wípé àwọn tech gẹ́gẹ́ bí ẹ ti ṣe pè é yìí wà ìránṣẹ́ èṣú ni ẹ̀ ń pè é lóde òní ìṣòro ibẹ̀,negative,neutral,0.0576,0.8219,True,0.7643
+yor_train_1565,e maa wo omo yii o eni ti a fe sun je ti o fi epo rara to wa joko ti aaro mo n wa ona lati yera fun otun fi mi sako,negative,positive,0.1041,0.8682,True,0.7641
+yor_train_7374,emi ni omo ibadan ibadan mesi ogo nile oluyole ilu ogunmola olodogbo keri loju ogun ibadan omo ajorosun,positive,neutral,0.0998,0.8633,True,0.7635
+yor_train_6515,bí ọ̀kan nínú wọn kí òhun fi lè mú wọn lọ sí ọ̀yọ́ ní wọ́n bá gbà si lẹ́nu nígbà tí wọ́n dé ọ̀yọ́ inú aláàfin dùn láti rí àwọn ẹkùn òsì àti àwọn èèyàn wọn aláàfin bá bi adébẹṣin wípé níbo lo gbé kó yìí ní àti ìgbà náà ibi tí adébẹṣin ti pàdé àwọn,positive,neutral,0.0297,0.7931,True,0.7634
+yor_train_3155,óyá ẹ sọ fún wa o,neutral,positive,0.106,0.8675,True,0.7615
+yor_train_2110,ẹ̀yin gan an ni wazo ó wá ku bia báyìí o,neutral,positive,0.0332,0.7926,True,0.7594
+yor_train_118,èèyàn ò sunwọ̀n láàyè ọjọ́ a kú là ńdère,negative,positive,0.1048,0.864,True,0.7592
+yor_train_1639,ọ̀pẹ́lẹ́ngẹ́ ṣubú làwo,negative,neutral,0.043,0.802,True,0.759
+yor_train_579,àlàyé bí ọlọ́run olódùmarè ṣe dá ayé gẹ́gẹ́ bí ọjà tí ọmọ aráyé wá ná ni ẹsẹ̀ ifá yìí ń sọ fún wa wọ́n sì lá ò mọ ọlọ́run,negative,positive,0.06,0.8188,True,0.7588
+yor_train_1983,ẹ̀yin ọmọ alákétu ní bóo ni kétu o,neutral,positive,0.0651,0.8233,True,0.7582
+yor_train_864,èèwọ̀ ṣàngó kì í jẹ èṣù kọ ìkòyí ò gbọdọ̀ jẹ,negative,neutral,0.0899,0.8478,True,0.7579
+yor_train_3989,timothy study to shew thyself approved unto god a workman that needeth not to be ashamed rightly dividing the word of truth ṣãpọn lati fi ara rẹ hàn niwaju ọlọrun li ẹniti o yege aṣiṣẹ́ ti kò ni lati tiju ti o npín ọ̀rọ otitọ bi o ti yẹ,neutral,positive,0.0465,0.8037,True,0.7572
+yor_train_1086,ó mà ṣe o kò wá sí ìwé tuntun kankan tí wọ́n kọ ní èdèe yorùbá,negative,neutral,0.0641,0.8202,True,0.7561
+yor_train_517,mo ti pè pè pè títí síbẹ̀ kò sí àtúnṣe gbogbo ohun tí wọ́n ní ń ṣe ni mo ti ṣe,negative,neutral,0.0934,0.8482,True,0.7548
+yor_train_2828,awon omo sioni fiayokemi oluwa,neutral,positive,0.1021,0.8565,True,0.7544
+yor_train_3250,gbogbo wọn tò lọ lẹ́sẹẹsẹ wọ́n gba gwato bọ̀ ní benin èèbó ṣíwájú adú ń gbátìí lẹ́hìn wọ́n ń lọ,neutral,negative,0.1036,0.8578,True,0.7542
+yor_train_6200,lékèélékèé aláṣọ funfun aṣọ àlà mo wọ̀ aṣọ àlà mo ró káyé má mà ta epo sí i òòṣà àlà,positive,neutral,0.1006,0.8543,True,0.7537
+yor_train_264,is this it ordering soldiers to kill your own citizens unarmed protesters we will not forget history will never forget a ò ní ṣépè àmọ́ ẹnu wa ò ní gbófo ẹ̀yin náà kúkú bímọ,negative,positive,0.0641,0.8173,True,0.7532
+yor_train_7106,ó ní kí wọ́n ní ọbẹ̀ ọ̀rúnlá kí wọ́n fi bọ ikin wọ́n sì ṣe bí awo ṣe sọ ó sì jẹ́ fún wọn,positive,neutral,0.0204,0.773,True,0.7526
+yor_train_1132,obìrin sòwà nú óni òhun òrílé oko gbe sigh àsìrà ojà pómbélé shior cc,negative,neutral,0.0408,0.7933,True,0.7525
+yor_train_4739,nítorípé adáyé sinmi lọ́jọ́ kéje lẹ́yìn tí ó dá ayé tán ni sunday ṣe jẹ́ ọjọ́ ìsinmi,neutral,positive,0.0664,0.8183,True,0.7519
+yor_train_4436,ẹyin ará mi ẹ dákun máa ń ta lofinda tó dára ẹ lè yẹwon wò,neutral,positive,0.1147,0.8662,True,0.7515
+yor_train_1330,ìyá ṣiyanbọ́lá ròyìn ó ní ikun imúu mi ọ̀tún bọ́ sí tòsì ikun imúu mi ọ̀tún bá tòsì yọ kí ni ìtúmọ̀,negative,neutral,0.0312,0.779,True,0.7478
+yor_train_662,nígbàtí ìyáa ríyìíkẹ́ bíi léèrè pé ẹja n bákàn tí ríyìíkẹ́ sì ní ẹja ni o,negative,neutral,0.1044,0.8519,True,0.7475
+yor_train_7051,ni ìlú ọ̀yọ́ ilé ti ń fi ìkẹ́ àti àpọ́nlé fún ọmọ tuntun náà bákannáà ni ṣàngó fi orógbó ṣe ẹtù ìbọn àti àwọn àrà ọwọ́ọ rẹ̀ mìíràn,positive,neutral,0.0598,0.8065,True,0.7467
+yor_train_1827,gbólóhùn mìíràn fún òpònú ni akídanidání òmùgọ̀ èdì dàrẹ́ dàdańdìdì,negative,neutral,0.1103,0.8568,True,0.7465
+yor_train_939,ẹ kilọ fun google koma yimi lohun pada mọ o,negative,positive,0.0483,0.7947,True,0.7464
+yor_train_1878,ẹ jẹ́ ká para wa láyò,neutral,positive,0.1145,0.8597,True,0.7452
+yor_train_1381,olórí ní òun yóò ta àwọn ọmọdébìnrin tó wà ní àkàtà òun,negative,neutral,0.1135,0.8552,True,0.7417
+yor_train_5456,a kì í kó irin méjì bọná lẹ́ẹ̀kannáà,positive,neutral,0.0494,0.7909,True,0.7415
+yor_train_7453,ẹ̀rọ̀ pẹ̀sẹ̀ n tìgbín,positive,neutral,0.1162,0.8574,True,0.7412
+yor_train_3019,we were beaten we were punished we never died we learnt better báyìí la ṣe ń ṣe nílẹ̀ wa èèwọ̀bòmíì ni àwa máa fọwọ́ ọ̀tún bọ́mọ wí kí a tó fi tòsì fà á mọ́ra ni let each man be left alone with his child parenting can and will never be equal,neutral,positive,0.0494,0.7906,True,0.7412
+yor_train_791,ìbàdí ọmọge yín là ń wò lòfẹ́ lófò gbogbo ọmú rè é níta ẹ jọ̀wọ́ ẹ bòdíi yín o ó ti súu wá í wò,negative,positive,0.0994,0.8404,True,0.741
+yor_train_1841,kò sí bí àtùpà ṣe lè lágbára tó kò lè ríran rí ìdí ara rẹ̀ no matter how strong a lamp is it cannot light up its,negative,positive,0.0392,0.7778,True,0.7386
+yor_train_847,alatako agbe dina eniyan irú ènìyàn wo ni à ń pè ní elénìní,negative,neutral,0.1139,0.8524,True,0.7385
+yor_train_7669,náírà ò rẹwà lójú bí owó tuntun tí kò tíì lábàwọ́n ká yé é kọ bírò sóríi owóo náírà kò jọ ìwé,positive,neutral,0.081,0.8191,True,0.7381
+yor_train_4402,iṣẹ́ èwe bẹ àgbà kágbà má ṣe kọ̀ mọ́ gbogbo wa la níṣẹ́ a jọ ń bẹra wa,neutral,positive,0.1226,0.8598,True,0.7372
+yor_train_2571,ọmọdebinrin osere tiata nigbakan ọpẹmipọ bamgbọpa nibayii to pada sinu isẹ tiata bii ọlọmọge ni ọpọ awọn ọkunrin to wa nibẹ lo n sọ fun oun pe sebi ọwọ wa lo dagba si jẹ ka kuku maa tọju rẹ lọ,neutral,positive,0.0539,0.7898,True,0.7359
+yor_train_833,won ni ni baba iro tabi sugbon ni aremo e,negative,neutral,0.1116,0.8471,True,0.7355
+yor_train_3721,mmm die niyi ninu awon nkan ti o le sele ti a ba n fi idande won tafala,neutral,negative,0.1239,0.8592,True,0.7353
+yor_train_2258,ìyá àgbá ní má jẹ̀ẹ́ kí irú ẹ̀ ṣọmọ mọ́ ẹ lọ́wọ́ mọ́ kí ni ìtúmọ̀ àkànlò èdè yìí,neutral,positive,0.1072,0.8394,True,0.7322
+yor_train_1539,ní àná a gba ìhàlẹ̀ kan tí ó ń lérí mọ́ àwa àti àwọn àlejòo wa tí a bá tẹ̀síwajú pẹ̀lú ètò ìfọ̀rọ̀wọ́rọ̀ọ wa nípa lgbt mò ń fagi lé ètò náà,negative,neutral,0.1011,0.8333,True,0.7322
+yor_train_16,alárìnká ajẹlójú onílé náà ni à ń pe èkùté ilé,negative,neutral,0.0932,0.8254,True,0.7322
+yor_train_197,ní déédéé agogo méjì ọ̀sán òní ní ọdún un ni àwọn ọmọ ogun ya wọ ilẹ̀ ìbíní tí wọ́n sì falẹ̀ ya àwọn,negative,neutral,0.1266,0.8576,True,0.731
+yor_train_3452,eni to ba ni oyun,neutral,negative,0.1164,0.8448,True,0.7284
+yor_train_3147,ara yàtọ̀ sára ìlera wa ò jọra ohun tí táíyé jẹ lè gbòdì lára kẹ́hìndé,neutral,positive,0.0872,0.8151,True,0.7279
+yor_train_419,ọ̀ṣọ́ ọlọ́ṣọ̀ọ́ ò yẹni ṣòkòtò àgbàbọ̀ ò yẹ́ ọmọ èèyàn one never looks good in other peoples finery borrowed trousers do not fit the borrower,negative,positive,0.0949,0.8223,True,0.7274
+yor_train_2855,gba fun baba nle ni gba fun gbada loko ara oko to ba fee je buredi yoo fisu ranse sile,neutral,negative,0.0511,0.7781,True,0.727
+yor_train_5853,erin keke pelu baba elesho lori agbagba,positive,neutral,0.0672,0.7924,True,0.7252
+yor_train_7431,ni a fi ní láti máa se oúnjẹ dáadáa bí ìmọ̀ gbogbo bí a bá ṣe ń soúnjẹ sí la ó ṣe mọ̀ ọ́ sè sí,positive,neutral,0.1345,0.8592,True,0.7247
+yor_train_4991,ọlẹ̀ á sọ nínúu gbogbo obìnrin tó ń wọ́mọ bàbá ra ẹran abàmú ọmọ inú ọmọ ènìyàn ni ọlẹ̀ ọmọ inú ẹranko tàbí ọmọ ẹyẹ ni à ń pè ní àmú,positive,neutral,0.0544,0.7786,True,0.7242
+yor_train_843,ah ṣẹ́ẹ tiẹ̀ rí àwọn onípolówó ọjà tí wọ́n máa npèmí lórí ẹ̀rọ ìbánisọ̀rọ̀ yìí ṣaa,negative,neutral,0.1053,0.8265,True,0.7212
+yor_train_1293,o fe pada si ese aro,negative,positive,0.0828,0.8017,True,0.7189
+yor_train_5998,ọ̀pẹ̀ ni sir,positive,neutral,0.1052,0.8241,True,0.7189
+yor_train_1564,ẹni tí ó bá bá akúrí ṣe pọ̀ ìka àbámọ̀ ni yóò fi sẹ́nu nígbẹ̀yìn,negative,neutral,0.1004,0.8192,True,0.7188
+yor_train_6919,bẹ́ẹ̀ ni o kí olúwa rẹ̀ náà yáa fetí silẹ̀ sí oun tí nlọ níta,positive,neutral,0.1334,0.8505,True,0.7171
+yor_train_7791,oòrùn ti yọ kanbóro ọjọ́ mọ́kànlá sẹ́yìn ni oòrùn yọ kẹ́yìn adúpẹ́ ilẹ̀ yó gbẹ díẹ̀ wẹliwẹli n pọ̀,positive,neutral,0.1238,0.8407,True,0.7169
+yor_train_1148,ni mo fi fi ìlọ́kọ́ ṣe àkàwé ilé ayé níbi tí onírọ́ ti í pẹ́ títítí tí oní òtítọ́ ń kú pipìpi,negative,positive,0.0819,0.7988,True,0.7169
+yor_train_5646,ọ̀rọ̀ yìí ti gùn ju ẹ ṣeé ní ṣókí kí ìtumọ̀ rẹ̀ lè jáde dáada,positive,neutral,0.1099,0.8247,True,0.7148
+yor_train_1504,kí ni ipa tí ìfi ẹ̀tọ́ ẹni dun ni tí a ṣe fún ìlà àti ìwọ́ oòrùn africa tí a kó alágbára ènìyàn lẹ́rú,negative,neutral,0.018,0.7328,True,0.7148
+yor_train_4446,gistas mi ọ̀wọ́n kẹn tíì kẹ ṣe dede ẹ jọ̀,neutral,positive,0.1236,0.8383,True,0.7147
+yor_train_540,odò ló bàa jẹ́,negative,neutral,0.1133,0.8272,True,0.7139
+yor_train_4815,kí ni tí wọ́n fi ń pa ọwọ́ yìí mà n tà wàràwàrà kẹ̀ẹ sanitísà àbí kí lẹ̀ ń pè é ajé àwon ilé iṣẹ́ kiní ọ̀hún ti bugbá jẹ wàláhì,neutral,negative,0.1285,0.8406,True,0.7121
+yor_train_1439,òbu meaning rancid stale òbu ẹyin lo rà you bought a stale egg,negative,neutral,0.0682,0.7801,True,0.7119
+yor_train_633,yoruba omo oodua eni ba koju ote bo ile yoruba ti e tan oruko rere san ju wura ati fadaka lo oju ti yin,negative,positive,0.1075,0.8192,True,0.7117
+yor_train_4352,tori wipe omo bibi ko rorun ẹ kú ewu ọmọ la máa ńgbọ́ báláboyún bá sọ̀ láyọ̀ kí lewu níí ṣe pẹ̀lú ọmọ bíbí,neutral,positive,0.1393,0.8509,True,0.7116
+yor_train_947,niwon igba to awon ile ise amohun maworan so ede yooba di ewo ile iwe kogba ede yooba siso,negative,neutral,0.074,0.7854,True,0.7114
+yor_train_8215,lónìí mo di alábahun àjàpá ẹyẹkẹ́yẹ ò tó ó pa mí jẹ,positive,negative,0.0978,0.8083,True,0.7105
+yor_train_6785,òní ni àyájọ́ ọjọ́ ìtumọ̀ àgbáyé tí ó jẹ́ ọjọ́ ìmọrírì àti sààmì iṣẹ́ pọnti tí àwọn agbédègbẹyọ̀ àgbáyé ń ṣe láti tú ọ̀rọ̀,positive,neutral,0.1275,0.8378,True,0.7103
+yor_train_8172,mo fẹ́ bun ẹníkan ṣoṣo ní ẹgbẹ̀rún kan fún owó ìlò ẹ̀rọ ayélujára àmọ́ onítọ̀hún gbọdọ̀ gba ìbéèrè mẹ́wàá ṣé kí n,positive,neutral,0.1018,0.812,True,0.7102
+yor_train_795,mo ṣe bí ẹ ní èdè abínibí ni ẹ óò máa lò láyàájọ́ òní gẹ̀ẹ́sì ti ṣe há jẹ́ ká sọ̀rọ̀ ká bá a bẹ́ẹ̀ niyì ọmọlúwàbí,negative,positive,0.0197,0.7292,True,0.7095
+yor_train_1637,bóo ni o súnkẹrẹ fàkẹrẹ yìí pọ̀ o níṣe ló ń kan mí níṣan níṣe ni ó ń dùn mí lẹ́dọ̀ iwájú ibiṣẹ́ rẹ ni mo wà lọ́wọ́lọ́wọ́ ebi sì ń pa mí yára ní kí àwọn ìsọ̀ngbè rẹ ó gbé oúnjẹ alẹ́ wá fún mi kíá,negative,positive,0.1343,0.843,True,0.7087
+yor_train_2875,se won so fun iwo wi pe ede yoruba ni ki gbogbo omo kaaro ojiire fi ma dahun gbogbo nkan leni ni,neutral,positive,0.0774,0.786,True,0.7086
+yor_train_1296,kò sáàyè niì àti pé mò nkọ́ èdè méjì lọ́wọ́ lọ́wọ́ kí àtàrí olúwarẹ̀ má wa lọ gbiná,negative,positive,0.0283,0.7369,True,0.7086
+yor_train_1109,ẹ yéé gbé ọmọ ọbà fọ́ṣun ẹkùn kọ́ ni tiger ẹní bá dé ààfin ọba yóò rí ohun tí wọ́n ń pè ní ẹkùn ògìdán ìkòrikò ìkòo,negative,neutral,0.1365,0.8444,True,0.7079
+yor_train_2997,reposted from a ó máa retí àwọn ìbéèrè yín o,neutral,positive,0.114,0.8219,True,0.7079
+yor_train_502,òkèlè bàmbà a há ọmọ lọ́fun,negative,neutral,0.0928,0.7997,True,0.7069
+yor_train_3336,gbogbo àwọn tó nsọ ò ju iye àwọn tó ngbé ìlú èkó lọ,neutral,negative,0.083,0.789,True,0.706
+yor_train_5253,ẹ̀wẹ̀wẹ̀ bí èso orí igi kan bá so jìngbìnnì ìyẹn ni pé igi náà so ọmọ bẹẹrẹ tí àwọn yẹn sì ń tàn yòò lórí ìyáa wọn a óò so èso jìngbìnnì nínú ọdún tí a wà yìí ó di dandanàndan,positive,neutral,0.1027,0.8077,True,0.705
+yor_train_4826,a kú ojúmọ́ o òwe wa fún tòní rèé english one does not count orìṣàs house as part of the town do not list questionable items as part of your wealth source the ancient wisdom òwe yorùbá by ọlálékan fábílọlá,neutral,positive,0.121,0.8258,True,0.7048
+yor_train_3093,elédùwà god allah,neutral,positive,0.1278,0.8319,True,0.7041
+yor_train_1582,in my yorùbá mind ill translate this to ẹ má fata pa mí,negative,positive,0.1095,0.8136,True,0.7041
+yor_train_718,ṣé ẹ mọ̀ wípé àwọn èròjà tóyìnbó fi ńṣe ìpara àti ọṣẹ ìbóra wọ̀nyí ló ńfa jẹjẹrẹ orí àwọ̀,negative,neutral,0.1359,0.8396,True,0.7037
+yor_train_717,àtapa ni oyin yóò ta ẹni bá ru igi oyin,negative,neutral,0.1012,0.8034,True,0.7022
+yor_train_6153,njẹ o mọ pe olugbe nla yoruba wa ni ilu brazil ti wọn n sọ ede yoruba ti wọn si n ṣe aṣa yoruba eyin ọmọ yoruba akoko re lati fi aṣa ati ohun iní yin yangan,positive,neutral,0.1257,0.8275,True,0.7018
+yor_train_1035,àwọn iléèjọsìn ní greece àti àríwá macedonia kọ̀ láti yọwọ́ ìlànà ìsìn wọn padà kó ba má fàyè gba àjàkálẹ̀ àrùn tó ń ràn ká ọ̀rọ̀ òdì sí olúwa ni láti ní ìgbàgbọ́ wí pé ènìyàn lè tara jíjẹ ara àti mímu ẹ̀jẹ̀ olúwa kó ààrùn,negative,positive,0.0624,0.7632,True,0.7008
+yor_train_5298,emir ìlọrin shitta ọmọ alimi fi ìpè ráńṣẹ́ sí aláàfin olúẹ̀wù ní ọ̀yọ́ láti yọjú sí ìlọrin fún ìkíni ní ìbẹ̀rẹ̀ èrò ọkàn shitta ni láti sọ aláàfin di mùsùlùmí nítorí ọba mùsùlùmí ma ṣe àǹfààní àti ìgbéga fún islam ní ọ̀yọ́ ilé,positive,neutral,0.1272,0.8277,True,0.7005
+yor_train_7879,ìdọ̀bálẹ̀ àti ìkúnlẹ̀ ẹsẹ̀ méjèèjì ni ti ọmọlúwàbí,positive,neutral,0.0533,0.7534,True,0.7001
+yor_train_7936,action po bi ogogo kemi adeosun lori harvey serena rccg magu ankara,positive,neutral,0.0786,0.7786,True,0.7
+yor_train_8297,sunday igboho ṣe àbẹ̀wò sí ìpínlẹ̀ ògùn lana ọjọ́ ajé láti dẹ́kun aburú àwọn ajínigbé àti apànìyàn láàrín àwọn fúlàní,positive,negative,0.0776,0.7775,True,0.6999
+yor_train_7305,egbe agbabolu nijeria ti bori o wan ti ko si oko lati darapo mo agbaiye ni lo san owo oko fun ja,positive,negative,0.1384,0.8375,True,0.6991
+yor_train_301,igbó biribiri òkùnkùn birimù birimù,negative,neutral,0.0747,0.7737,True,0.699
+yor_train_5501,bi ogiri oba lanu sebi ohun lo da ifa fun egbe ni ipinle osun ti egbe fi bori ninu ibo asofin,positive,negative,0.0798,0.7787,True,0.6989
+yor_train_1238,bí a bá ṣe ìkà fún ẹni dúdú,negative,neutral,0.1079,0.8037,True,0.6958
+yor_train_480,ni òwúrọ̀ kùtùkùtù ọjọ́ kan ó tọ́ ìyá a rẹ̀ lọ láti ṣàlàyé ọ̀ràn náà tí ojú u rẹ̀ ń rí nílé ọkọ ó sọ fún ìyá a rẹ̀ wípé,negative,neutral,0.1036,0.7987,True,0.6951
+yor_train_4972,iya afin so wipe a won kole raye da awon ololufe won lohun leni nitori wipe won fe lo se oge ijade,neutral,negative,0.0874,0.7822,True,0.6948
+yor_train_4842,ẹ kẹ ká ṣe pàsí pààrọ̀,neutral,positive,0.1417,0.8363,True,0.6946
+yor_train_5177,ẹ yára tẹ̀lé láti gbádùn àwọn àwòrán ìlú ṣakí ní ìpínlẹ̀ ọ̀yọ́,positive,neutral,0.0994,0.7923,True,0.6929
+yor_train_2075,ẹ pin débí o,neutral,positive,0.1251,0.818,True,0.6929
+yor_train_441,bí omí bá yalé ikú ọ̀dọ́ àti lásìkò ìjàm̀bá ni a tún ń gbé gẹ̀lẹ̀dẹ́,negative,neutral,0.1111,0.8036,True,0.6925
+yor_train_1114,àwòrán tí bàsírá òpùrọ́ ń pín kiri rè é,negative,neutral,0.1429,0.8339,True,0.691
+yor_train_1529,àkànlò èdè ni gbé sàárà kọjáa mọ́ṣáláṣí ó sì túmọ̀ sí ìkọjá àyè kí wá ni ìtumọ̀ ta mí lólobo tàbí olobo kan ta mí,negative,neutral,0.0493,0.74,True,0.6907
+yor_train_4927,oro ti o ba ti koja ekun erin lo ku ti aa fi rin,neutral,negative,0.1071,0.7961,True,0.689
+yor_train_580,ewu ńlá ńbẹ nínú epo rọ̀bì,negative,neutral,0.1264,0.8133,True,0.6869
+yor_train_7483,ó di pààrọ̀ paarọ ikú fi yínlẹ̀ ó mú ewúrẹ́ lọ pààrọ̀ paarọ ààrùn fi yínlẹ̀ ó mú adìẹ lọ pààrọ̀ paarọ,positive,negative,0.0608,0.7475,True,0.6867
+yor_train_1753,cc alamoja yoruba tasẹ̀ àgẹ̀rẹ̀ to make a mistake,negative,neutral,0.0654,0.7521,True,0.6867
+yor_train_5906,proverbs máṣe yẹ̀ àla ilẹ igbàni ti awọn baba rẹ ti pa remove not the ancient landmark which thy fathers have set,positive,negative,0.0736,0.76,True,0.6864
+yor_train_6166,mo máa fẹ́ràn an a bì jà ńnú eré ó lórin inú eré kan tí a kọ fún un ta ń mọ̀ ọ́n ṣé kí n kọ ọ́,positive,neutral,0.1069,0.7929,True,0.686
+yor_train_5210,ìran eégún dunjú iwì ẹnu eégún dùn ún gbọ́ sétí ṣé ti tijó àjó tàkìtì tó bálù mu ni ká sọ àbí ti orin kíkọ tòun èyí ò jọ̀yìí àrà egúngún ló ni ká pidán ká jó àti ká pẹ̀ṣà,positive,neutral,0.1045,0.7905,True,0.686
+yor_train_6561,we are royal priesthood that is called ọmọ aládé in yorùbá,positive,neutral,0.1473,0.8324,True,0.6851
+yor_train_448,o ma se o mi ò ri losé tó kója e jé ka tun se lòjó mìí jooo,negative,positive,0.1341,0.8182,True,0.6841
+yor_train_559,aja toma sonu kin gboo fere olode,negative,positive,0.095,0.7789,True,0.6839
+yor_train_550,oga o o is dun ni gidigidi,negative,positive,0.1347,0.8165,True,0.6818
+yor_train_5635,alakikanju ọlọ́pọlọ pípé àti olódodo ọ̀dọ́mọdé ni yẹmí jẹ́ nínú ìtàn àròsọ yìí tí kọ́lá àkínlàdé kọ kíni ojú rẹ̀ rí nípa,positive,neutral,0.07,0.7507,True,0.6807
+yor_train_3344,hahaha kòfẹ́sọ̀ kẹ̀ òkè wo ló gùn tí kò fẹ́ sọ̀,neutral,negative,0.1405,0.821,True,0.6805
+yor_train_2427,ẹ̀yin lọmọ ajòrosùn ọmọ ajẹ̀gbínyó ẹ̀yin lọmọ afìkarahun fọ́ri mu,neutral,positive,0.1119,0.7924,True,0.6805
+yor_train_7675,ilé ìwòsàn first consultant tí bá wọ èkó rè é gbọingbọin ni ìlẹ̀kùn ọgbà wà wọ́n kó àwọn tìmùtìmù jáde,positive,neutral,0.0548,0.735,True,0.6802
+yor_train_7680,gbo gbo omo ni lati kawe,positive,neutral,0.1525,0.8322,True,0.6797
+yor_train_5347,bẹ́ẹ̀ ni orísun is also source orísun ayọ̀ source of joy,positive,neutral,0.1418,0.8212,True,0.6794
+yor_train_101,nínú ọ̀sẹ̀ kan náà ìròyìn ikú obìnrin kan ni ó jáde láti ilé iṣẹ́ amóhùn máwòrán gbogboògbò orílẹ̀ èdè angola tí ó ní wípé,negative,neutral,0.0799,0.7591,True,0.6792
+yor_train_2062,ọlọ́run ọba tó dá iná,neutral,positive,0.1201,0.7992,True,0.6791
+yor_train_976,lára ìṣekúṣe lati mú oníṣekúṣe ẹlẹ́yà ni a ti rí ẹlẹ́lẹ́yà ọ̀rọ̀ wo la yọ láti ara ìrégbè adúgbò ojúkòkòrò,negative,neutral,0.1291,0.8079,True,0.6788
+yor_train_7767,tọ̀sán tọ̀sán ní ń pọ́n ìtalẹ̀ lójú bílẹ̀ ẹ́ bá ṣú yó di olóuńjẹ sùúrù lère,positive,negative,0.1095,0.7882,True,0.6787
+yor_train_4136,olódùmarè ni ìṣẹ̀ṣe ọba atẹ́nílẹ́gẹ́lẹ́gẹ́ fi orí ṣe agbeji ẹni omi olókun,neutral,positive,0.1463,0.8245,True,0.6782
+yor_train_3567,àrokò kí ìjà parí láàárín àwọn tí wọ́n bá jọ ní áwù láàárín ara wọn tí ó dẹ̀ ti ń le jù ni olórí ẹbí ma ń pa nígbà tí ó bá fi fìlà rẹ̀ ráńṣẹ́ sí àwọn tí wọ́n ń jà nínú ilé ẹbí,neutral,negative,0.1553,0.8334,True,0.6781
+yor_train_6921,ọ̀pẹ̀kẹ́tẹ̀ tí a bá nà ní pàpá ẹni tó bá bà kó máà fi ṣèbínú kó tún bẹ̀ ṣe,positive,negative,0.0983,0.7756,True,0.6773
+yor_train_2775,se awari adun agbaayanu,neutral,positive,0.051,0.7279,True,0.6769
+yor_train_226,ẹni tó gbin òkúta sínú ebè tó pèé ni èbù iṣu ìgbà tóníyán bá ńjẹ iyán òun náà yóò máa jẹ ìka,negative,neutral,0.1296,0.8057,True,0.6761
+yor_train_8321,nínú ọ̀rọ̀ rẹ̀ agbẹnusọ mudasiru ọbásá ní bí a bá wo ìlú tí ó ń sọ èdè abínibí lágbàáyé a óò rí ìlọsíwájú tó ti bá wọn,positive,neutral,0.0937,0.7697,True,0.676
+yor_train_5854,ìyẹn ni pé kí a yé dúró de ìjọba àbí òṣèlú kankan kọ́kọ́rọ́ àyípadà nbẹ lọ́wọ́ èmi àti ìrẹ,positive,neutral,0.1083,0.7839,True,0.6756
+yor_train_2013,se nkan ti e feran ko niyen,neutral,negative,0.0639,0.738,True,0.6741
+yor_train_4016,ado ekıtı ın ora kete ara ule oo,neutral,positive,0.0726,0.7447,True,0.6721
+yor_train_8410,èmi kì í ṣe onímẹ̀ẹ́lẹ́ ni mo ṣe mú iṣẹ́ àgbẹ̀ mọ́ iṣẹ́ oṣù àgbàdo ewédú àti ẹ̀fọ́ ti ń gbéra ńlẹ̀,positive,neutral,0.1592,0.8304,True,0.6712
+yor_train_180,tèmi ò ṣòro tí kì í jẹ́ kí ọmọ alágbẹ̀dẹ ní idà mine is not an issue is how a blacksmith ends up not making a swo,negative,positive,0.0802,0.7505,True,0.6703
+yor_train_7677,ó rọrùn gidi kò kàn wùwá sọ ni ṣèbí òun lẹ ń sọ yìí tó dánmọ́rán lẹ́nu yín bí ẹ̀kọ mímu yìí,positive,negative,0.1214,0.7906,True,0.6692
+yor_train_576,breaking senator ajumobi is dead oda bo rip details later,negative,neutral,0.1068,0.7757,True,0.6689
+yor_train_5508,akuu ayajo awon iya,positive,negative,0.1371,0.8057,True,0.6686
+yor_train_4695,ọ̀dọ́ ní í di ọkọ aya olórí ilé olórí ebí olórí ìlú ipasẹ̀ ẹni tó ti jẹ́ ọ̀dọ́ rí nígbà kan sì lá á tọ́,neutral,negative,0.1148,0.7825,True,0.6677
+yor_train_1713,àjàntálá a problem child as described in the novel ògbójú ọdẹ nínú igbó irúnmalẹ̀,negative,neutral,0.1233,0.7904,True,0.6671
+yor_train_7803,bi awon olote fe bi won ko ama de ibi ti afe de efi ye wan pe bi awon olote fe bi won ko orilede a de i,positive,negative,0.0518,0.7184,True,0.6666
+yor_train_7765,gẹ́gẹ́ bí ẹni tí ó fẹ́ràn iṣẹ́ ẹwà ó gbìyànjú láti túmọ̀ àwọn àràmàǹdà ẹ̀sìn yorùbá pẹ̀lú iṣẹ́ ẹwà rẹ̀ nípa yíya àwọn àwòrán sí ara ògiri ère àwòrán àti gbígbẹ́ ère káàkiri inú igbó ọ̀sun pẹ̀lú ìsòwọ́pọ̀ àwọn oníṣẹ́ ẹwà ìbílẹ̀,positive,neutral,0.1246,0.7904,True,0.6658
+yor_train_4389,bí ewé bá pẹ́ lára ọṣẹ,neutral,positive,0.1629,0.8286,True,0.6657
+yor_train_3169,mi o saa le wo fila sori suitu je ki n ma de baseball hat mi kiri o,neutral,positive,0.0831,0.7488,True,0.6657
+yor_train_3667,doctor will be like ládúrú gbogbo ìpolongo mi,neutral,positive,0.1544,0.82,True,0.6656
+yor_train_295,mo kí olóṣèlú gbogbo àwọn ọlọ́wọ̀gbálẹ̀ àwọn ẹlẹ́ṣin ẹ rọra kó owó wa jẹ o ó kù lódò ni omi aṣiwèrè,negative,positive,0.1505,0.8159,True,0.6654
+yor_train_8037,ododo oro àbí báwo,positive,neutral,0.1407,0.8061,True,0.6654
+yor_train_3798,e lo tabi so gbogbo tuweeti yin ooo,neutral,positive,0.114,0.7792,True,0.6652
+yor_train_5768,ìròhìn ò tó àmójúbà ẹni bá débí ló lè mọ̀ àní bẹbẹ ńlọ níbí láàfin ọ̀yọ́ bẹbẹ ńbẹ níbí láyẹyẹ ọdún ṣàngó àgbáyé,positive,neutral,0.107,0.7719,True,0.6649
+yor_train_7034,gba ikilo ti opeye lori oro oba akiolu ilu eko wan ni ki ko ye fi enu wa rofu koma ba jeya via,positive,negative,0.1436,0.8083,True,0.6647
+yor_train_524,bẹ́ẹ̀ ni ẹnìkan tí mo fi orúkọ bò láṣìírí ṣe jí iṣẹ́ ọpọlọ mi láì kansárá sí mi,negative,neutral,0.0513,0.7151,True,0.6638
+yor_train_2366,if male baba ọkọ female iya ọkọ,neutral,negative,0.0986,0.7621,True,0.6635
+yor_train_2425,ẹ fẹ̀ẹ́ gbà á,neutral,positive,0.1009,0.7643,True,0.6634
+yor_train_1517,àìsanra tó ajá ológìnní kì í ṣe ti àìjẹun kánú bí ìran rẹ̀ ṣe mọ ni the smaller frame of cats relative to dogs isnt for want of food thats cats genetic makeup appearance can be deceptive often there is more than is immediately obvious,negative,positive,0.1267,0.7893,True,0.6626
+yor_train_293,lánàá ní orí ààrẹ ẹgbẹ́ ọmọ yorùbá new york alàgbà démọ́lá oyéfẹ̀sọ̀ ní kò bójú mu kí àwọn èwe má gbọ́ èdè,negative,positive,0.0907,0.7509,True,0.6602
+yor_train_1705,o se ni lanu pupo pe ko si aala larin science yoruba ati esin ibile bi be ko a ba ma padanu ijinle imo,negative,positive,0.0694,0.7281,True,0.6587
+yor_train_224,ǹjẹ́ o mọ̀ pé wèréwèré ni ó máa ṣé òbúkọ tó fi máà ń gun ìyá ẹ kìí se werewere,negative,neutral,0.0969,0.7555,True,0.6586
+yor_train_5411,ọmọ abulẹ̀ ṣowó kí ló ń ṣẹlẹ̀ bu ilẹ̀ fún èmi náà a,positive,neutral,0.0562,0.7119,True,0.6557
+yor_train_757,ẹ jẹ́ ká ka yorùbá apanilẹ́kún jayé episode kí ló fa àìbalẹ̀ ọkàn fún tèmídùn lẹ́yìn tí ọkọ rẹ̀ kú find out at someone said i interpreted the emotions well,negative,positive,0.1385,0.7938,True,0.6553
+yor_train_749,àwọn dìndìnrìn kan á ní a ò ní ìtàn àkọsílẹ̀ òwe oríkì ìjálá ìyèrè ifá ńkọ́ àwọn wọ̀nyí kún fún ìtàn an wa,negative,neutral,0.08,0.735,True,0.655
+yor_train_7960,ó ti tó mi ò fẹ́ bẹ́ẹ̀ mọ́ ṣé ẹni tí kò gbọ́ yorùbá ló kọ yorùbá dáadáa báyìí,positive,negative,0.037,0.6919,True,0.6549
+yor_train_2148,ẹ wá o ẹ̀yin ará ìlú èèbó òtútù yìí ò ní káwọ́ ńlẹ̀ ni ṣèbí a ti wọ oṣù kẹrin ọdún wàyí àbí bóo ni,neutral,positive,0.1233,0.777,True,0.6537
+yor_train_6114,ìbọ́sáfẹ́fẹ́ fún ìgbà àkọ́kọ́ ní ìdí tí wọ́n ṣe da sílẹ̀ ni láti jẹ́ ohun ẹ̀kọ́ fún àwọn ará agbègbè náà àti láti tan ìmọ́lẹ̀ sí àṣà láti gbọ́ ìròyìn òkè òkun àti láti lè mú ohun ìṣèjọba wá sí ìmọ̀ àwọn ará agbègbè náà àwọn eré òyìnbó bíi,positive,neutral,0.1588,0.8123,True,0.6535
+yor_train_1586,ẹ rántí irá tó dìbò fún yin ọlé ẹ se ure ooo ooo oo ẹ se ure,negative,positive,0.0928,0.7462,True,0.6534
+yor_train_120,àlùfáà samuel johnson lo ogún ọdún láti ṣe àkójọpọ̀ ìmọ̀ fún ìwé rẹ̀ the history of yorubas ní ọdún àlùfáà johnson kó àkójọpọ̀ iṣẹ́ yìí ló fún ọ̀gá ilé iṣẹ́ òǹtẹ̀wé gẹ̀ẹ́sì ṣùgbọ́n àlọ iṣẹ́ náà ló rí kò rí àbọ̀ rẹ́,negative,neutral,0.0887,0.7407,True,0.652
+yor_train_745,gbogbo aniyan ati ishaluwala ologbo ogbeni ko ju ati je eran dindin lo amo o,negative,positive,0.1242,0.7753,True,0.6511
+yor_train_336,òun rèé o tí ẹ bá máa fi yorùbá ṣe yẹ̀yẹ́ ẹ jẹ́ kó dájú pé gẹ̀ẹ́sì yín gún régé,negative,positive,0.1474,0.7978,True,0.6504
+yor_train_1543,ojo coward ojo ni òjó òjó is a coward,negative,neutral,0.0847,0.7348,True,0.6501
+yor_train_1418,ọbùn wẹ ọmọ pàṣà gbe pọ̀n inú èèrí lò ń gbé ìwọ yìí là ń rí ńgbogbo tí wà á ru gèlè yẹyẹ,negative,positive,0.1377,0.7877,True,0.65
+yor_train_6348,mo kọ àkọsílẹ̀ tuntun sí,positive,neutral,0.1677,0.8176,True,0.6499
+yor_train_851,ìkòkò dúdú kò yẹ á bù ṣán,negative,neutral,0.1287,0.7784,True,0.6497
+yor_train_3497,ìtumọ̀ amen níí èdè yorùbá níí àṣẹ kìí ṣe àmín as yorùbá we say àṣẹ not amen or àmín,neutral,positive,0.1652,0.8148,True,0.6496
+yor_train_8023,ọmọ ènìyàn dá yàtọ̀ gedegbe sí ọmọ ẹranko ẹni a yàn dá ni àwọn ọmọ ènìyàn,positive,neutral,0.1069,0.7563,True,0.6494
+yor_train_3367,àyájọ́ ònìí ọjọ́ kẹ́ta láyé múrítàlá a dá ìpínlẹ̀ ògùn ó pé ogójì ọdún tí a dáa ọmọ mo kíi yín,neutral,positive,0.1566,0.8053,True,0.6487
+yor_train_3108,you definitely can improve your by watching our fact check videos ema gbagbe lati share pelu awon tiyin o,neutral,positive,0.1304,0.7785,True,0.6481
+yor_train_4008,ṣe aṣawari isọkusọ coronavirus rẹ si se mu awọn ibeere re wa lati wa ṣe idanwo rẹ agbara lati ṣe iyatọ laarin otitọ lati aiṣiyeye wa ododo diẹ sii ni info finder,neutral,positive,0.1461,0.7926,True,0.6465
+yor_train_3878,ose meji lo ku si akotun eto yorùbá lákò̩tun opolopo eto lati la sile alagba ni alejo pataki e g,neutral,positive,0.1442,0.7907,True,0.6465
+yor_train_6810,àwọn obìrin lágbára ní ìkáwọ́ wọ́n lè ṣe bí ó ti wù wọ́n pẹ̀lú agbára náà,positive,neutral,0.1249,0.771,True,0.6461
+yor_train_5986,ọjọ́ márùn ùn gbáko ni ọọ̀ni fi ń ṣe ìwúre àti ìbọ fún ọ̀kànlénírinwó irúnmọlẹ̀,positive,neutral,0.1423,0.788,True,0.6457
+yor_train_5886,òjò tíó rò sí ìkòkò ní àgbàlá òwun na ló rò sí àpèrè tí kòdè kuń èbámi so fuń ìkòkò pé kómà yó mò àpèrè bò wá kérè tí òjò bá dá tań waka jeje inside life,positive,neutral,0.092,0.7376,True,0.6456
+yor_train_4384,àwa wá ń kọ́ o,neutral,positive,0.1103,0.7553,True,0.645
+yor_train_1532,dàda ò lè jà ó láàbúrò tó gbójú ni mo ṣe fi ọwọ́ àti gbogbo ara sí i kí ó pe àti ìkejìi rẹ̀ lẹ́jọ́,negative,positive,0.1194,0.7632,True,0.6438
+yor_train_902,kí ló lè fa là là ku ku fẹ fẹ,negative,neutral,0.1023,0.7437,True,0.6414
+yor_train_2931,ìwó odídẹrẹ́ where are the ìwó people on this street come and listen to your eulogy ẹ̀yin ọmọ ìwó orí àdúgbò yìí dá ẹ wá gbọ́ oríkì yin by láti ọwọ́,neutral,positive,0.1684,0.8092,True,0.6408
+yor_train_51,bótiẹ̀ jẹ́ pé wọ́n nparọ́ fún wa ojú ọlọ́run tó o agára ọlọ́run sì tó wòó sàn ó jù bẹ́ẹ̀ lọ,negative,positive,0.1652,0.806,True,0.6408
+yor_train_8431,àwọn tọ́n le fi omi pamọ́ sára bí igi ọ̀pẹ tó bá di ọ̀la n ó dé ibi tí wọ́n ń pè ní ilẹ̀ ẹlẹ́gbẹ̀rún igi ọ̀pẹ lágbára ọlọ́run,positive,neutral,0.1523,0.7925,True,0.6402
+yor_train_1410,ere idaraya akoni mogba fun realmadrid ancelotti ti so wipe kodara ki agbe gbogbo ebi fun balotelli nitori igbakugba lfc,negative,positive,0.1154,0.7549,True,0.6395
+yor_train_4327,mùsùlùmí tó bá jẹ oúnjẹ lọ́sàn án ààwẹ̀ ni wọ́n ń pè ní ajọ̀sán nítorí pé ó jẹ oúnjẹ ọ̀sán tí kò yẹ kí ó jẹ,neutral,negative,0.1282,0.7659,True,0.6377
+yor_train_359,ààbà ni a fi ń de ẹsẹ̀ ènìyàn mọ́lẹ̀ ààbà dà bíi mámu gaàrí ọlọ́pàá àmọ́ a máa ń fi de ènìyàn mọ́lẹ̀ sí ojú kan ni ṣẹ́kẹ́ṣẹkẹ kò yàtọ̀ sí ẹ̀wọ̀n tí a fi ń dé ènìyàn níbikíbi ní ara,negative,neutral,0.1366,0.7736,True,0.637
+yor_train_6753,orí tí yóò la ni kì í dẹ́rù pa ni,positive,neutral,0.0886,0.7254,True,0.6368
+yor_train_1799,ijakumo ki nrinde osan eni a biire ki rinru,negative,positive,0.1356,0.7723,True,0.6367
+yor_train_1910,fun mi ni nomba ero ibanisoro re tonlo fun wasaappuu,neutral,positive,0.1345,0.7702,True,0.6357
+yor_train_5896,kí ó tó di ọdún àkúrẹ́ ma ń fi ẹ̀bùn ráńṣẹ́ sí benin gẹ́gẹ́ bíi ọ̀nà láti fi ṣe ìkéde wípé àwọn tí jẹ dèjì titun ní àsìkò yìí àwọn olóyè àkúrẹ́ kọ̀ wọn kò fi ẹ̀bùn ráńṣẹ́ sí benin láti fi jẹ́ kí benin mọ̀ wípé àwọn ti yan ọba titun,positive,neutral,0.1313,0.7665,True,0.6352
+yor_train_1744,a gbọ́ wípé ẹyin kete ni ọ̀fọ̀ ń ṣẹ̀ ni kọ́lá ọláwuyì atọ́kùn nǹkan ńbẹ lò níjọ̀ọ́sì tí ayéfẹ́lẹ́ pàdánù ẹsẹ̀,negative,neutral,0.1686,0.8037,True,0.6351
+yor_train_1110,ajá mọ ọmọ tirẹ̀ í fún lọ́mú ó mọ ti odù ọ̀yà í kì mọ́lẹ̀ kíni odù ọ̀yà,negative,neutral,0.0945,0.7292,True,0.6347
+yor_train_1965,takada mi ati kalamu mi ise ya àsìkò ti tó wàyí,neutral,positive,0.1584,0.7923,True,0.6339
+yor_train_6194,kò bá dáa kí àwọn akọ̀wé ìwòyí náà lè kọ irú ìwé yìí ṣá o,positive,neutral,0.1536,0.7875,True,0.6339
+yor_train_5870,pa ẹ̀fọn kí ẹ̀fọn tóó pa ọ́,positive,negative,0.0945,0.7283,True,0.6338
+yor_train_7661,àyúnlọ àyúnbọ̀ lọwọ́ ń yún ẹnu a díá fún ẹiyẹ odídẹrẹ́ tí kìí kú sóko ìwánkajẹ,positive,neutral,0.142,0.775,True,0.633
+yor_train_187,àbẹ́ẹ̀ rí i pé nkan ti wá dojúrú báyìí,negative,neutral,0.1505,0.7834,True,0.6329
+yor_train_7706,awon ara eko ni won n jere ijoba aregbesola losun fatai diekola,positive,negative,0.0887,0.7214,True,0.6327
+yor_train_746,kaada fun osi yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.1146,0.7458,True,0.6312
+yor_train_434,aya chike akunyili rebi àgbà ńrè,negative,neutral,0.0705,0.7012,True,0.6307
+yor_train_1950,gba be bi ose wa niyen issa goal,neutral,positive,0.0992,0.7294,True,0.6302
+yor_train_7808,foto won ti ko iresi ibikunle amosun de lati china awon ara ipinle ogun ti bo saye,positive,negative,0.0973,0.7272,True,0.6299
+yor_train_7358,lánàá òde yìí ilé ìgbìmọ̀ aṣòfin ìpínlẹ̀ èkó rọ dede ẹni tí ó kàn gbọ̀ngbọ̀n láti ṣe ìgbélárugẹ èdè,positive,neutral,0.1368,0.7666,True,0.6298
+yor_train_900,ìsimi àpàpàndodo là ńgbà kàkà kí a parí lọ́dún nìí ó tún di ọdún tómbọ̀ háà ó mà ṣe o,negative,positive,0.149,0.7783,True,0.6293
+yor_train_2344,kí a tó bẹ̀rè oun kóun ẹ jẹ́ ká fi ti síwájú,neutral,positive,0.1054,0.7345,True,0.6291
+yor_train_1375,ní ìdá mẹ́ta ọkọ̀ ojú omi tó ńbẹ ní liverpool ní ń kó ẹrú,negative,neutral,0.1697,0.7987,True,0.629
+yor_train_6876,ọgbọ́n ò pín síbì kan kò sẹ́ni mọ̀ tán a ní ọgbọ́n níbi ó yẹ kí a múu ṣiṣẹ́ pọ̀ mọ́ ti ọ̀gá bí a ò bá fẹ́ lo ògede rẹ̀,positive,negative,0.0448,0.6738,True,0.629
+yor_train_7129,ipinle ondo e maa fura o awon gbomogbomo ti ya wolu gidigidi,positive,negative,0.1274,0.7557,True,0.6283
+yor_train_5346,àìsanra tó ajá ológìnní kì í ṣe ti àìjẹun kánú bíran rẹ̀ ṣe mọ ni cats relative smallness to dogs isnt for want of food thats how cats are appearance can be deceptive respect what at first sight is not clearly obvious,positive,negative,0.0984,0.7266,True,0.6282
+yor_train_5211,alágbẹ̀dẹ atagbòkun alágbàá ẹlẹ́tu ìbọn àti bẹ́ẹ̀ bẹ́ẹ̀ jantirẹrẹ ló rí jájẹ ńnúu okòwò ẹrúu nì,positive,neutral,0.0655,0.6932,True,0.6277
+yor_train_670,adìẹ kfc kò dùn mọ́n,negative,positive,0.1512,0.7777,True,0.6265
+yor_train_5,ọ̀rọ̀ wo ló wà lẹ́nu bàbá ìyábọ̀ gan àn kí ni ọbásanjọ́ ń wò o,negative,neutral,0.138,0.7632,True,0.6252
+yor_train_5666,ẹyìn tí yóò di epo yóò tọ́ iná wò a palm nut that wants to become palm oil will have a taste of fire theres,positive,neutral,0.1533,0.7775,True,0.6242
+yor_train_5971,ẹ̀rọ amátẹ́gùn tutù nílé alábàrá ta ló ní ará oko ò mọ ayé ìgboro jẹ,positive,neutral,0.0399,0.6632,True,0.6233
+yor_train_3151,ìwé tí o kà ò ní o má ṣeṣẹ́ àgbẹ̀ ọpọlọ ọ̀mọ̀wé yẹn gan an la nílò nínú iṣẹ́ àgbẹ̀,neutral,positive,0.1726,0.795,True,0.6224
+yor_train_591,ko ma ragba fun english legit,negative,neutral,0.0801,0.7023,True,0.6222
+yor_train_7032,bí wọ́n bá ṣèyí tán wọn yóò fi ilée rẹ̀ sílẹ̀ di ọjọ́ mìíràn láti fi ààyè ìrònùpìwàdà sílẹ̀ fún aṣèbàjẹ́,positive,negative,0.091,0.7122,True,0.6212
+yor_train_6744,likes e se gan o apapo omo yoruba yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,positive,neutral,0.1027,0.7237,True,0.621
+yor_train_6031,okunrin ti aye ti ko sile ti ri aanu gba lowo gomina mimiko sebi awon yoruba loni ori ti o gbeni ni i gbe ala,positive,negative,0.1365,0.7562,True,0.6197
+yor_train_5790,eba wa se alaye owe yoruba ti o so wipe omo eni ku o san ju omo eni nu lo fun aare ki wan se awon odomobirin ati ni awa ri oro ki ajini gbe pelu ipa ti wa di nkan nla bayi jake jado nijeria eyin adari eranti ikunle abiyamo o,positive,negative,0.1819,0.8016,True,0.6197
+yor_train_7428,kò sígi tó dà bí igi àṣórín ìrókò ni baba,positive,neutral,0.1262,0.7459,True,0.6197
+yor_train_5331,láti gúúsù áfríkà sí ìwọ̀ oorun áfríkà títí lọ dé ìlà oorun áfríkà ohun ayọ̀ kò ní jìnà sí wa o,positive,neutral,0.1678,0.7866,True,0.6188
+yor_train_1727,kí ló dé tí ẹ ń já mi lówó ìpè,negative,neutral,0.1617,0.7782,True,0.6165
+yor_train_6996,a ṣì ń mẹ́yẹ bọ̀ lápò ni ẹ ò tí ì rí nǹkan kan,positive,negative,0.0617,0.6774,True,0.6157
+yor_train_8458,àbá ìyá bàbá ló yẹ ó bá ọmọ wí ká jọ pẹnu apá òsì pọ̀ bá èwe wí bí wọ́n bá ṣàṣìṣe kí a sì jọ fọwọ́ ọ̀tún fà wọ́n mọ́ra,positive,neutral,0.0807,0.696,True,0.6153
+yor_train_245,imado iba se bi elede abalu je eru iba je oba eeyan o ni ku kan,negative,positive,0.1425,0.7562,True,0.6137
+yor_train_2591,mo pariwo fun etele won won o si tele yin pada,neutral,negative,0.1225,0.7358,True,0.6133
+yor_train_4244,alakowe e mu mi ranti igba ewe wa,neutral,positive,0.1748,0.7879,True,0.6131
+yor_train_1312,ẹ mọ́ ki èrú bọ̀ ọ́ o ẹ mọ́ gbé ọmọ ọbà fún ọ̀ṣun o bó bá ṣe rí gẹ́lẹ́ ni ẹ wí ẹ ò kí igbá kan bọ̀kan nínú,negative,positive,0.1136,0.7265,True,0.6129
+yor_train_1451,mọ́ṣààṣí useless etí mi kọ ọ̀rọ̀ mọ́ṣààṣí my eyes rejects useless talk,negative,neutral,0.0308,0.6435,True,0.6127
+yor_train_3764,orí burúkú kò wú túúlú ẹnì kan kò mọ ẹsẹ̀ aṣiwèrè lọnà a kì í mọ orí olóyè láwùjọ nítorí pé orí tí yóó jọba lọ́la ẹnì kan kò mọ,neutral,negative,0.1361,0.7487,True,0.6126
+yor_train_2328,e le ta recipe na fun awon ile ounje naija,neutral,negative,0.1047,0.7166,True,0.6119
+yor_train_6808,yorùbá saying ọ̀rọ̀ yorùbá bí adìyẹ bá kú a ò ní da ẹyin rẹ̀ nù if a hen dies we wont throw away its laid eggs ìtumọ̀ bí èèyàn bá kú a kò gbọdọ̀ ta ọmọ tó fi sílẹ̀ sáyé nù meaning the child ren left behind by a deceased person shouldnt be neglected,positive,negative,0.1799,0.7912,True,0.6113
+yor_train_2035,ise ni o se da se owo o see da na,neutral,positive,0.1313,0.7421,True,0.6108
+yor_train_3487,bi omode o ba ba itan a ba aroba aroba ni baba itan,neutral,negative,0.1129,0.7235,True,0.6106
+yor_train_8049,tiri gbosa fun ogbeni mccain,positive,neutral,0.064,0.6734,True,0.6094
+yor_train_4339,ti ya owo ele o gomina ti ya n billion larin ose merin to gun alefa ni ekiti awon asofin ekiti ti fi owo si owo ele na,neutral,negative,0.137,0.7464,True,0.6094
+yor_train_574,okanjua re o mose si mu ogogoro ku nitori egberun merin naira omokunrin,negative,positive,0.1254,0.7344,True,0.609
+yor_train_1318,asiri ti tu niyen ooo afefe ti fe a ti ri furo adiye,negative,neutral,0.1691,0.7777,True,0.6086
+yor_train_4065,october st naija stand up seems omoluabi are trending on uk twirrah omo ijebu ni mi ooo,neutral,positive,0.1434,0.752,True,0.6086
+yor_train_125,ọkọ náà kò rí ojú obìnrin náà kí ó tó fẹ́ ẹ ni aláìmọ̀kanmọ̀kàn ni ọkùnrin náà ki ní kan tí àwọn eléèbó ń pè ní melanin ni kò sí lẹ́yin ojú rísíká àtàwọn ọmọ rẹ̀ bákan náà ni ó rí fún àwọn èèbó tí ó ní irú ojú aláwọ̀ omi aró báyìí,negative,neutral,0.1622,0.7706,True,0.6084
+yor_train_308,tattoo lati inu orun apaadi sebi ti oge ba po lapoju ilà ńkọ́ o ṣé kì í ṣe lati ọ̀run àpáàdì,negative,neutral,0.1229,0.7313,True,0.6084
+yor_train_8451,ti pèsè ọkọ̀ ẹlẹ́rọ a yẹ omi wò tí yóò ma lọ kiri láti bẹ ilé iṣẹ́ olómi wò bóya omi wọn mọ fún mímu,positive,neutral,0.0989,0.7064,True,0.6075
+yor_train_1577,ẹranko wo ló nya dìgbòlugi,negative,neutral,0.1928,0.8003,True,0.6075
+yor_train_1431,ọ̀gbómọ̀ṣọ́ kakanfò àti ẹdun gbógun fi iṣẹ́ kan náà kàn sí olówu ti òwu bí olówu ti òwu tí ń jẹ́ iṣẹ́ wọ̀nyìí ọ̀pọ̀lọpọ̀ ìlú ni ó parun ìkòyí igbó apòmù ìkirè iràn ìsẹ́yìn gbàngán àti àwọn ìlú òmíràn bẹ́ẹ̀ ni òwu parun àwọn ikú wọ̀nyìí wà ní,negative,neutral,0.1732,0.7807,True,0.6075
+yor_train_33,the environment erupted with joy and a signal to the opposition with popular e re gbe wa bi x eyin te se gbe yin basu basu e re gbe wa bi,negative,positive,0.1743,0.7817,True,0.6074
+yor_train_933,ọ̀sun náà bínú lọ ó di odò ọ̀sun nílú oṣogbo bákannáà ni ọbà pòórá wọ nnú odò ọbà,negative,neutral,0.172,0.7794,True,0.6074
+yor_train_812,bákan náà tí alábaraméjì tí ó diwọ́ disẹ̀ sínú bá re ọ̀run dandan gbọ̀n ni a ó ṣe orò fún un,negative,neutral,0.1605,0.7655,True,0.605
+yor_train_4435,wọ́n ní kí ẹ wá gbe o,neutral,negative,0.0749,0.6797,True,0.6048
+yor_train_8464,láti pẹ̀tù sí àwọn olórí ogun wọ̀nyìí lọ́kàn láti jẹ́ kí ìsinmi jọba kí wọ́n sì fi ọkàn sin ọba wọn ọba kò lè wá sí ìpàdé náà ṣùgbọ́n ó rán ìlàrí rẹ̀ lọ sí ìpàdé náà lẹ́yìn ìfọ̀rọ̀jomiọ̀rọ̀ àwọn olórí ogun gbà láti dáwọ́ ìjà dúró tí wọ́n gbà láti,positive,neutral,0.1082,0.7127,True,0.6045
+yor_train_5697,ẹ máa wo èrò ní ilé káràkátà alájà mẹ́rin yìí kérésì yìí a lárinin,positive,neutral,0.185,0.7891,True,0.6041
+yor_train_7846,pariwo iro ni won n pa mi o so pe omisore ko le wole gbagbaagba ni mo wa leyin re alaroye,positive,negative,0.1806,0.7845,True,0.6039
+yor_train_6634,iṣẹ́ olódùmarè àwámârídìí àbí ẹ ò rí nǹkan ọba tó dá rájí elépo náà ló dá rájí aláta ó dá àwọn kan kúkúrú bente ẹlòmíì,positive,negative,0.132,0.7356,True,0.6036
+yor_train_4713,iyen naa da bee ki e ya lo sun ni o abi ki n wa po tii to gbona fun yin,neutral,negative,0.0639,0.6672,True,0.6033
+yor_train_3526,nílẹ̀ oòduà ẹlẹ́ṣẹ̀ yó sanwó ìtanràn bí kò bá lówó yó di ìwọ̀fà tí òmìnira wà fún bí ó bá ti ṣiṣẹ́ fún iye àkókò díẹ̀,neutral,negative,0.129,0.7318,True,0.6028
+yor_train_1374,akótilétà ìjọba nàìjíríà ṣé ẹ nwo àrà tí wọ́n ndá ní ẹ yé kó dúkìá ilẹ̀ wa tọọrọ fún gbogbo aráyé mọ́ o,negative,positive,0.1846,0.7872,True,0.6026
+yor_train_5269,ẹní bá fi iṣu tí kò jinná gúnyán o di dandan kó jẹ iyán tó lẹ́mọ whoever prepares pounded yam with yams that are not fully cooked will certainly eat lumpy pounded yam patience is it good things take time dont force issues before their time,positive,negative,0.1781,0.78,True,0.6019
+yor_train_988,emi ti o jata emi yepere ni says our elders in land,negative,neutral,0.0855,0.6869,True,0.6014
+yor_train_2532,will be referred to as ọmọ ọbàkan a rival wife is referred to as orogún or ọbàkan on a lighter tone children of the agbo ilé are referred to as ọmọ bàbá ìyá lágbájá son daughter of so so and so cousin related description ọmọ àbúrò ẹ̀gbọ́n bàbá ìyá mi,neutral,positive,0.1273,0.7281,True,0.6008
+yor_train_6999,ẹ̀yin ará north west london a ní ǹkan tuntun fun yín people of north west london we have something new for you yoru,positive,neutral,0.1798,0.7802,True,0.6004
+yor_train_338,a le pin ya rara ipinya ko ni isoro wa awa eniyan ni isoro ara wa,negative,positive,0.1694,0.7695,True,0.6001
+yor_train_7892,alakikanju ọlọ́pọlọ pípé àti olódodo ọ̀dọ́mọdé ni yẹmí jẹ́ nínú ìtàn àròsọ yìí tí kọ́lá àkínlàdé kọ kíni ojú rẹ̀ rí nípa ìsọdodo àti ìwà òtítọ́ tí ó ń hù kíni ìgbẹ̀yìn yẹmí ǹjẹ́ òdodo gbèé,positive,neutral,0.0908,0.6905,True,0.5997
+yor_train_121,à ní àwọn kan nínú ìjọba ló ba ìbáṣepọ̀ ìṣòwò orin láàárín fẹlá àti gbajúgbajà iléeṣẹ́ orin decca jẹ́ ni olúfẹlá fi kọrin i t t,negative,neutral,0.1232,0.7224,True,0.5992
+yor_train_3790,láyé àtijọ́ àwọn àwòràwọ̀ í ma á na ọ̀pá àṣẹ sí ọwọ́ ẹni wọ́n á ki ifá kedere sì ni ohun gbogbo nípa ẹnítọ̀hún yóò hàn,neutral,positive,0.1865,0.7855,True,0.599
+yor_train_4495,àṣọtẹ́lẹ̀ látẹnu alákọ̀wé yín tòótọ́ george ni wọ́n máa sọ ọmọ náà,neutral,positive,0.1369,0.7358,True,0.5989
+yor_train_1385,aifarabale olori aarun,negative,neutral,0.1159,0.7147,True,0.5988
+yor_train_2012,ejo ewo ninu awon ore mi ni ori tuita lo se ere baba ati iya ni kekere edahun ni shoki,neutral,negative,0.0817,0.6804,True,0.5987
+yor_train_459,ẹni táa fún lóbì tí kò ṣọpẹ́ báa fún un lọ́mọ kò ní ṣàna a person who gave no thanks when offered kolanut wouldnt pay his dues if given a bride whoever showed no appreciation for small favours is unlikely to reciprocate major acts of kindness,negative,positive,0.1951,0.7937,True,0.5986
+yor_train_2364,ẹ kú àtàárọ̀ àwọ̀n òwe yorùbá wa tòní ní wọ̀nyí ẹ parí wọn o a kìí du orí olórí a kìí wà lórí ẹsin,neutral,positive,0.1882,0.7863,True,0.5981
+yor_train_410,àṣìwí ò tó àṣìsọ ìyá ọba kan wà láyé àtijọ́ tó pera rẹ̀ ní ìyá ọ̀bọ,negative,neutral,0.1507,0.7485,True,0.5978
+yor_train_2090,kọ orin kọrin pa ẹnu panu nu ìdí nùdí ṣu ṣubú,neutral,negative,0.1842,0.7817,True,0.5975
+yor_train_5908,otun we osi osi we otun ni owo fi nmo,positive,neutral,0.1146,0.7117,True,0.5971
+yor_train_2199,kò sí ẹni tí ọlọ́run ò ṣe fún àfi ẹni tó bá ní tòun kò tó beeni o,neutral,negative,0.0818,0.6787,True,0.5969
+yor_train_962,awon were yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.1897,0.7857,True,0.596
+yor_train_4772,ìlú ẹgbàágbèje oníṣọ̀nà ìlú tí wọ́n ti ń gun kẹ̀kẹ́ kí wọ́n to gun ọkọ̀ ayọ́kẹ́lẹ́,neutral,negative,0.1778,0.7735,True,0.5957
+yor_train_6247,ipá ọ̀gbíni yìí pọ̀,positive,neutral,0.1319,0.7269,True,0.595
+yor_train_7542,orí àwòrán yìí wà ńbẹ̀ olympus gan an mọ̀ ọmọ nàìjá ni mi,positive,neutral,0.1466,0.7414,True,0.5948
+yor_train_3069,gbogbo àkàṣù kọ́ ló ń fojú kan ẹ̀fọ́ gbogbo ọmọ ọba kọ́ ló ń dádé translation not every morsel gets to meet the vegetable not all princes get crowned lesson it takes being extraordinary to be chosen,neutral,negative,0.1115,0.7061,True,0.5946
+yor_train_116,ìtákún episode a death in the family slide i ohun tó ṣe àkàlàmàgbò tó fi dẹ́kun ẹ̀rin rínrín tó bá ṣe igúnnugún á wokoko mọ́ orí ẹyin ni,negative,neutral,0.1394,0.7339,True,0.5945
+yor_train_1373,àyájọ́ ònìí john beecroft kó ọkọ̀ ogun àti jagunjagun orí omi wọ èkó láti ja ọba kòsọ́kọ́ lógun,negative,neutral,0.115,0.7093,True,0.5943
+yor_train_1295,alágbára ń ṣubú,negative,positive,0.1348,0.7281,True,0.5933
+yor_train_6086,òwe yorùbá ojú tó tí rí òkun kò lè bẹrù ọsa mọ yoruba proverb the eyes that have seen the seas can no longer be scared,positive,neutral,0.109,0.7023,True,0.5933
+yor_train_713,ojú á túnra rí òwe àkàlà,negative,neutral,0.1453,0.7385,True,0.5932
+yor_train_4810,awon eniyan kan wa ti won kii fi itan lukuru si oju ewe twitter won emi kii tele iru awon bee,neutral,negative,0.1336,0.7264,True,0.5928
+yor_train_5130,kò sí ohun tí eégún ùn mi ń ṣe tí ò fi òwúrọ̀ jó i am at your service anytime,positive,neutral,0.1711,0.7638,True,0.5927
+yor_train_7475,ni ṣe lẹnú mi da ṣàká ń kò pàko lana burọṣì oyinbo lasán ni mò lo ẹ kàààrọ o,positive,negative,0.1212,0.7138,True,0.5926
+yor_train_1635,ìlú gẹ̀ẹ́sì ìlú ọba nítorípé àwọn ni wọ́n múwa sìn kòsí ìjìnlẹ̀ yorùbá fún diamond,negative,neutral,0.126,0.7183,True,0.5923
+yor_train_4468,alapa je ogiri ti o ti wo ku,neutral,negative,0.169,0.7613,True,0.5923
+yor_train_15,àmodi illness ọdún méjì ni àmodi fi ṣe é s he was ill for years,negative,neutral,0.1619,0.7541,True,0.5922
+yor_train_6827,ta ló ma à ṣoríre èmi ni ma à ṣoríre,positive,neutral,0.1762,0.7683,True,0.5921
+yor_train_6534,ni ayajo ojo oni ni odun ni a fi ami eye nobel peace prize da omowe albert schweitzer ati ogagun george c marsh lola,positive,neutral,0.1718,0.7631,True,0.5913
+yor_train_6119,iléeṣẹ́ ètò ọ̀gbìn ìlú èkó rọ bàbá àti màmá ẹ̀kọ́ pé kí wọ́n ó lọ kọ́ iṣẹ́ àgbẹ̀ pé ilẹ̀ wà fẹ́ni fẹ́,positive,neutral,0.1601,0.751,True,0.5909
+yor_train_1523,o ma se o wasilatu omo wasiu ayinde ku lojiji asiko yii ko dara rara,negative,positive,0.1809,0.7715,True,0.5906
+yor_train_8286,nínú àtẹ̀jáde tí mo kà ní a ti borí ìjà ọ̀hún,positive,neutral,0.1216,0.7113,True,0.5897
+yor_train_4394,omo igbala ke halleluyah,neutral,positive,0.1626,0.752,True,0.5894
+yor_train_8228,àwọn àgbà ti ní ọ̀rọ̀ ṣeni wò ká lè mẹni tó fẹ́ni irọ́ ni wọ́n pa àfàìlà ọlọ́jọ́ bọ́jọ́ bá là ma là ojú ló pẹ́ sí,positive,negative,0.0634,0.6528,True,0.5894
+yor_train_7171,ajá tí ó gbó ojú ajá tó gbójú la mú de ilé it is a fierce dog that guard our house when away ajá ń gbó ojú ajáńgbójú,positive,neutral,0.0701,0.6588,True,0.5887
+yor_train_398,child abusers have done it again what a disheartening situation yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.1307,0.7178,True,0.5871
+yor_train_573,ori yin o pe sir,negative,positive,0.147,0.7337,True,0.5867
+yor_train_1818,ohun tí èèyàn ò mọ̀ ṣe àgbà èèyàn aláìmọ̀kan kan ọmọ yoòbá ní wípé irọ́ọ yorùbá ti pọ̀ jù,negative,neutral,0.1437,0.7303,True,0.5866
+yor_train_2999,kókó janbele kálukú ló mi ṣe ti ẹ ẹ̀ẹ̀mejì kí ẹ̀yin ṣe tẹ̀yin káwa ṣe tàwa kókó janbele kálukú ló mi ṣe ti ẹ,neutral,positive,0.1588,0.7436,True,0.5848
+yor_train_5414,mo bá wọn yọ̀ àmọ́ ṣá ìbẹ̀rẹ̀ eré ni mọ̀n ọ́n sá wọn kò lè sá a dópin àṣà wọn nìyẹn lọ́dọọdún,positive,neutral,0.1386,0.7233,True,0.5847
+yor_train_5459,yoòbá tún wípé ọmọdé gbón àgbà gbọ́n ni wọ́n fi dálẹ̀ ifẹ̀ dandan ni kí tọmọdé tàgbà kópa nínú àtúnṣe yìí,positive,neutral,0.1749,0.7577,True,0.5828
+yor_train_97,ta lo buru ju laarin sango ati ogun audio,negative,neutral,0.1801,0.7624,True,0.5823
+yor_train_5503,bí o bá ní agogoro ẹ̀yọ̀ wọ́n yóò dá ọ lóhùn pé mo yọ̀ fún ẹ mo yọ̀ fárà mi,positive,neutral,0.1896,0.7712,True,0.5816
+yor_train_765,níbo ni bìlísì ti wá bá wo ni ọ̀rọ̀ yìí ṣe wọ inú èdè yorùbá,negative,neutral,0.1933,0.7735,True,0.5802
+yor_train_5188,oke oke lan lo ni ile yoruba ati nijeria lapapo,positive,neutral,0.1218,0.7007,True,0.5789
+yor_train_1795,ẹja tí a fi ìwọ̀ mú ló jẹ́ kí gbajúmọ̀ ọ́ jẹ èkòló the fish caught with the fish hook typically using earthworm a,negative,neutral,0.1732,0.7521,True,0.5789
+yor_train_1097,àga tí ẹ̀ ń wò yìí ojúbọ olúorógbó ní ifẹ̀ ni wọ́n ti jí i ó ńbẹ nílé ọ̀nà britain báyìí báyìí,negative,neutral,0.1937,0.7722,True,0.5785
+yor_train_2273,ibi à gbé làá ṣe bí a bá dé ìlú adẹ́tẹ̀ a di ìkúùkù we adopt the way of life of where we live in the land of lepe,neutral,positive,0.1745,0.752,True,0.5775
+yor_train_4646,ebi npani olose nkoja tani ko mo wipe inu ni a koko n fo ka to fo ita,neutral,negative,0.1586,0.7349,True,0.5763
+yor_train_7477,adupue elegba ago,positive,neutral,0.1572,0.7328,True,0.5756
+yor_train_4737,àwọn ọ̀nà tuntun àti iṣẹ́ àtúnṣe tí mo ń rí ò jọ èyí tó lè tọ́jọ́ pípẹ́ mo rí ti lánàá lónìí,neutral,positive,0.1876,0.7627,True,0.5751
+yor_train_515,eléyìí ti sọ àdírẹ́sì nù òkúùgbẹ́ la pè é kì í ṣe,negative,neutral,0.1921,0.7669,True,0.5748
+yor_train_6869,ifá ní kí a ṣọ́ra fún àríyànjiyàn pẹ̀lú ẹnikẹ́ni,positive,neutral,0.1891,0.7638,True,0.5747
+yor_train_6252,ọ̀gbẹ́ni yìí pamí lẹ́rìn ín òyìnbó ará ilẹ̀ cameroon ṣàdédé yó bùbá ànkárá wọ̀ ó wá nbámi sọ píjìn,positive,negative,0.0871,0.6614,True,0.5743
+yor_train_1454,a kì í wo ìyẹ́ adìyẹ nílẹ̀ kí a wá fi ìrù àkèekèé rin etí,negative,neutral,0.1157,0.6898,True,0.5741
+yor_train_5776,ojú owó kì í pọ́n dàda owó ńlá àbùùbùtán owó tí í yẹ̀yẹ́ àgbàìná àpèkánukò tí í sọ arúgbó di ọ̀gọ̀ṣọ́ ò ní pọ́n mí láṣẹ olódùmarè,positive,negative,0.1546,0.7285,True,0.5739
+yor_train_6754,ọ̀rẹ́ lèmi àti júníọ̀ kí ó tóó kú ajọ́ ǹlọ báídeè ni kékeé ni ọ̀rẹ́ tímọ́ tímọ́ ni wá,positive,neutral,0.1892,0.7607,True,0.5715
+yor_train_6285,òrìṣà bí ìyá kòsí,positive,neutral,0.1613,0.7314,True,0.5701
+yor_train_7548,awa ani fans to da juwon lo stay winning,positive,negative,0.139,0.7078,True,0.5688
+yor_train_4756,baba olowo chelsea abramovich le gba mourinho pada lati odo real madrid ni ofe,neutral,positive,0.1867,0.755,True,0.5683
+yor_train_1739,òrìṣábùnmi ti di ẹni ẹbọra ń bá jẹun òṣèré ńlá mìíràn lọ àwa tí a ṣì wà láyé láàyè ẹ jẹ́ kí á pakítí mọ́lẹ̀ kí á tẹ̀ s,negative,positive,0.1731,0.7409,True,0.5678
+yor_train_2336,ọlọ́run rí àgbà nílẹ̀,neutral,positive,0.1831,0.7503,True,0.5672
+yor_train_2801,babalawo je eniyan to ma se ise onisegun ni awon abule wa e si le ri won ni gbogbo ilu omo yoba te ba de,neutral,negative,0.0591,0.6262,True,0.5671
+yor_train_7685,na lingui yo moni ifè rè in yiwan nouwé,positive,neutral,0.1439,0.7101,True,0.5662
+yor_train_7740,ara ń fẹ́ sinmi,positive,negative,0.1627,0.7289,True,0.5662
+yor_train_6834,general gbogbo ọ̀ṣun ń kí yín o wọn ò ṣe kúkú wá kọ yorùbá gan,positive,negative,0.1757,0.7411,True,0.5654
+yor_train_7295,ẹ jẹ́ kí a fún àwọn obìnrin láàyè àwọn náà ní ọpọlọ bí i ọkùnrin eegun mẹ́sàn án lọkùnrin ní méje ni ti obìnrin ṣe bí,positive,neutral,0.1754,0.74,True,0.5646
+yor_train_8197,èyí ni àwọn àgbà fi ni àtẹ́lẹwọ́ ẹni kìí tan ni jẹ́ torípé àtẹ́lẹ́ ọwọ́ kì í parọ́ òtítọ́ pọnbele ní í sọ,positive,neutral,0.1596,0.7239,True,0.5643
+yor_train_5262,gbogbo àwọn ilé tó wà níbẹ̀ ni wọ́n gún régé ìlú ọ̀hún wá mọ́n tóní tóní,positive,negative,0.1613,0.7253,True,0.564
+yor_train_7492,àwọn èròjà tí ń mú egun le koko tí sì ń fún ni lókun àti agbára tí amọ̀ sí fítámínì lédè èèbó,positive,neutral,0.0848,0.6488,True,0.564
+yor_train_1698,òkúu ṣàngó pòórá níbi tí ó so sí ó sì wọlẹ̀ lọ àwọn ọ̀táa ṣàngó tí ó ri níbi ó so sí bẹ̀rẹ̀ síní fọ̀ kiri pé,negative,neutral,0.1939,0.7564,True,0.5625
+yor_train_1766,kí wá ni o ẹ já wa sí hahahahaha o gbe gbagi danudanu,negative,positive,0.1801,0.7417,True,0.5616
+yor_train_490,wọn ma kìí mọ́lẹ̀ tí wọ́n ma lọ pá dànù ní ojúbọ ni,negative,neutral,0.194,0.7556,True,0.5616
+yor_train_3225,egberun medogun olopa ni ipinle jigawa yi o lo ni igba idibo ibile,neutral,negative,0.1411,0.7024,True,0.5613
+yor_train_7545,koríko tí erín bá tẹ̀ àtẹ̀pa ni mo ti tẹ ìbànújẹ́ mọ́lẹ̀ mo tẹ òṣì mọ́lẹ̀ mo tẹ àìlera mọ́lẹ̀ àìlówólọ́wọ́ ti di àtẹ̀pa àìsàn di àtẹ̀mọ́lẹ̀ jẹrà wọn ò tún gbérí mọ́ láé àti títí láé,positive,negative,0.1669,0.728,True,0.5611
+yor_train_1789,tí lágídò bá ńfò láti orí igi kan sí èkejì àwọn tó ńwòó ló rò pé eré ló ńṣe òun fúnra ra rẹ̀ mọ̀ pé akọ iṣẹ́ lòun ńṣe,negative,neutral,0.205,0.766,True,0.561
+yor_train_7587,lílo èdè abínibí ṣe pàtàkì púpọ̀ ṣé yorùbá ni wọ́n nsọ ní àjọ won àbí gẹ̀ẹ́sì,positive,neutral,0.1867,0.7475,True,0.5608
+yor_train_1668,orin jẹ́ ohun èlò pàtàkì tí àwọn orogún ma fi ń tan iná èébú sí ara wọn ní abẹ́lé tàbí láti fi dọ́gbọ́n bú ọkọ tí kò ṣe ìṣe ọkọ ní ilé yorùbá ma ń sọ wípé orin ló ń ṣíwájú ọ̀tẹ̀ orogún,negative,neutral,0.1588,0.7192,True,0.5604
+yor_train_1923,iforowanilenuwo awon ara biafura fe ki nijeria o pinya ki ni awon omo kaaro oji re fe fun ile oduduwa dibo,neutral,negative,0.0206,0.5806,True,0.56
+yor_train_6870,ìgbín ò lè sáré bí ajá ìyẹn ò ní kó máà de ibi tó ńlọ the snail is truly not as fast as the dog yet this wont st,positive,neutral,0.143,0.7024,True,0.5594
+yor_train_6053,omo ti iya bi to fi oja pon mo taka osi danu afi ki awon woli ati awon irunmole se etutu iwosan,positive,negative,0.1977,0.7567,True,0.559
+yor_train_4087,aago mejila nko ti roorun sun ibere oso ni eleyii o mikanle,neutral,negative,0.1403,0.6989,True,0.5586
+yor_train_5244,arẹwà rẹwà mean beautiful in yorùbá,positive,neutral,0.1693,0.7274,True,0.5581
+yor_train_2001,i jẹun tẹ́ ẹ wàwà sáyà ẹ se ure i rójú tẹ́ ẹ wálè rayè yìí lọ ẹ se ure ee ee ee ẹ se ure,neutral,negative,0.1525,0.7103,True,0.5578
+yor_train_2671,be ni o njẹ́ ojúmọ́ kan kìí mọ́ bí kìí ṣe agbára ọlọ́run,neutral,positive,0.2069,0.7647,True,0.5578
+yor_train_7383,bi ori oko o ba sunwon nko bí orí kan bá sunwọ̀n a ran igba bí orí ọkọ bá sunwọ̀n a ran ìyàwó,positive,neutral,0.0883,0.645,True,0.5567
+yor_train_6964,àyè máa ń wà nínú ilé tí a pèsè sílẹ̀ fún àjòjì láti dé sí tí ó jẹ́ ibi tí ènìyàn leè fi orí lélẹ̀ sùn sí àṣà yìí wà bẹ́ẹ̀ nítorí àwọn yorùbá fẹ́ láti máa gba ènìyàn mọ́ra ni a ṣe máa ń fi ilé èrò kan tàbí méjì sílẹ̀ lọ́ọ̀dẹ̀,positive,neutral,0.1688,0.7252,True,0.5564
+yor_train_2181,bí etí ń dunni ẹ wá ewé etí ẹ fún oje inú rẹ̀ ẹ po àdín mọ̀ ọ́n kí tétí ń dùn ó máa kán an sétí,neutral,positive,0.2131,0.7679,True,0.5548
+yor_train_4607,ilé awówọlọ̀ gbogbo wa la mọ bẹ̀ a ti lọ momi bẹ̀ a ti lọ jẹja ibẹ̀ bó bá fẹ́ kíra wọn wọ́n á ní,neutral,negative,0.189,0.7429,True,0.5539
+yor_train_5671,ìhòhò làgbàdo ńwọ ilẹ̀ tó bá jáde tán ló ńdi onígba aṣọ the maize seed really does go into the soil absolutely na,positive,negative,0.1499,0.7038,True,0.5539
+yor_train_1314,nígbàtí kò sí àbò ní bóo làbò ṣe fẹ́ wà ní ìlú,negative,neutral,0.1183,0.6715,True,0.5532
+yor_train_1213,ìyá máì gé e bàbá máì gé e ìyá máì gé e baba máì gé e o baba máì gé ooo aráyé ẹ gbọ́ o rìkíṣí ti dé o kò sáyọ̀ nílé o,negative,positive,0.1983,0.7515,True,0.5532
+yor_train_1118,ṣè bí wọ́n ní lálá tó ròkè ilẹ̀ ló ń bọ̀ hmm,negative,neutral,0.1925,0.745,True,0.5525
+yor_train_3532,òwe proverb ìlọrin ò lóòṣà ẹnu lòòṣà ìlọrin translation ìlọrin person has no deity his her mouth is his her deity ìtumọ̀ meaning ẹnu lásán ni ẹni báyìí gbójú lé the person in reference has no substance but only word of mouth,neutral,negative,0.2115,0.764,True,0.5525
+yor_train_7961,kí hò yẹ kí ó máa lọ bẹ́ẹ̀ ó yẹ kí ìtàkùrọ̀sọ àti ìbáṣepọ̀ tí ó dán mọ́rán ó wà ní àárín òǹtà àti òǹrajà fún ìtẹ̀síwájú okòwò,positive,neutral,0.2123,0.7631,True,0.5508
+yor_train_2416,o si po nio oke oya maa bayin mu alubosa naa dani,neutral,positive,0.1835,0.7335,True,0.55
+yor_train_4632,dádò tí wọ́n fi le kúrò ní ìlú tí wọ́n sì fi kúrunmí jẹ olórí wọn dádò fi ìjàyè sílẹ̀ tí ó ṣe àrìnká dé ìlú tí wọ́n ń pè ní tọbalógbọ́ àwọn baálẹ̀ àti ìjòyè tí wọ́n ti gbọ́ ìró dádò yára láti wá ki fúnra wọn dádò wo gbogbo wọn ó sì pàṣẹ wípé kí àwọn,neutral,negative,0.1516,0.6998,True,0.5482
+yor_train_5871,pópóọlá òpópónà pópó ni ọ̀nà tó tẹ́ gbalaja ọlá ni ohun ire bíi owó ọmọ òpópónà ọlá pópóọlá,positive,neutral,0.1726,0.7201,True,0.5475
+yor_train_8113,kosi oo kini a ma se lati fopin si awon isoro yi ni niajira,positive,negative,0.1445,0.687,True,0.5425
+yor_train_5905,ọmọ ọlọ́dún yẹra wò,positive,neutral,0.2199,0.7616,True,0.5417
+yor_train_3254,ẹni tó jẹ̀bi yóò san owó ìtanràn fún aláre àwọn ògbó yóò pa obì aláre yóò gba awẹ́ obì kan ẹlẹ́bi yóò gba awẹ́ kejì,neutral,negative,0.1924,0.7329,True,0.5405
+yor_train_1045,ikan o gbekan bi owu jango awon irun kan nkaun,negative,neutral,0.2134,0.7512,True,0.5378
+yor_train_5756,wo iwe alaye wa lati ni imọ siwaju sii nipa imọ ẹrọ alailowaya ka,positive,neutral,0.1448,0.682,True,0.5372
+yor_train_6019,e se pupo a ti gba owo ipe mtn ni ori aago mi,positive,neutral,0.184,0.7209,True,0.5369
+yor_train_6934,ọ̀rúnmìlà ni ajẹ́rìí ọ̀rọ̀ mímọ́ ọlọ́run gẹ́gẹ́ bí adéwálé mùọ́mọ́dù àti jésù ṣe jẹ́ ajẹ́rìí ẹ̀sìn ìgbàlódé lonígbà ń lò,positive,neutral,0.2045,0.7413,True,0.5368
+yor_train_625,èéfín epo rọ̀bì nínú afẹ́fẹ́ ẹran ìgbẹ́ tòun ẹja àpajù nínú ibú ló dá kún un tí ojú ọjọ́ fi ń yípada,negative,neutral,0.2119,0.7484,True,0.5365
+yor_train_3562,ṣé pé ti gba òmìnira ó sì ti yọ àwọn àwòrán ìṣẹ̀lẹ̀ ní ọjọ́sí kúrò,neutral,negative,0.0831,0.6189,True,0.5358
+yor_train_4081,spelling series ṣá spread run,neutral,negative,0.1854,0.7209,True,0.5355
+yor_train_5847,e ku agba nínú gbogbo àwọn tí a rán lọ àwọn ni wọ́ yege jù ìdí abájọ rèé tí mo fi kí wọ,positive,neutral,0.1796,0.714,True,0.5344
+yor_train_6189,tẹní bẹ́gi ló jù igi á rúwé,positive,neutral,0.1977,0.7303,True,0.5326
+yor_train_1464,a gbọ́ wípé èsì ìdánwò waec ọdún nìí ò ṣe é sọ ìdá àádọ́rin ló fìdí rẹmi,negative,neutral,0.1726,0.7047,True,0.5321
+yor_train_1802,kí ló ń jẹ́ ọ̀látòye kò nítumọ̀ ọlá tó oyè ọlátóyè,negative,neutral,0.1609,0.6924,True,0.5315
+yor_train_4444,ní ìgbà ẹrú ní ìbàdàn àwọn ẹrú ọkùnrin tó dáńgájíá nílẹ̀ ni wọn ma kọ́ ní ọ̀nà ogun jíjà kò sí gbọdọ̀ wáyé wípé ẹnikẹ́ni ma ta ọ̀kan nínú àwọn ẹrú ológun yìí báhú kó ti lé wù kó rí àwọn ẹrú ológun wọ̀nyìí yóò di ọmọ ilé pátápátá ni,neutral,negative,0.2098,0.7404,True,0.5306
+yor_train_1874,ìlú ẹ̀rìn tí a nsọ nípa rẹ̀ yìí jẹ́ ìlú pàtàkì kan nílẹ̀ yorùbá ìlú yìí wà lágbègbè ọ̀fà ní ọjọ́ kan báyìí ni ìṣẹ̀lẹ̀ kan ṣẹ ní ìlú ẹ̀rìn yìí kini ìṣẹ̀lẹ̀ náà ẹ kàn sí wa láti ra ìwé náà,neutral,positive,0.2034,0.7337,True,0.5303
+yor_train_5070,alààyè ni omi nítorí wípé ó ń mú ẹ̀dá alààyè wà láyé wà láàyè,positive,neutral,0.1777,0.7075,True,0.5298
+yor_train_3991,ẹ jẹ́ ká ṣe ohun tí a máa ń ṣe lọ́jọ́ ọjọ́ru,neutral,positive,0.2156,0.7453,True,0.5297
+yor_train_2218,mo wá ní okoò mi ní ẹlẹ́rẹ̀ àdùbí mo wáomi lódò fún ìwọ́nlẹ̀,neutral,positive,0.2026,0.7307,True,0.5281
+yor_train_4470,ní ọdún ó gbé àwọn ere kan jáde to ni awojiji òṣèlú nínú the tigers empire strike and hunger àti bread and bullet lásìkò ọdún,neutral,negative,0.0714,0.5991,True,0.5277
+yor_train_4590,kí a gé orúkọ sí kúkúrú ni ohun tí àwọn yorùbá kádùn jù ní púpọ̀ bíi àpẹẹrẹ tàbí akíntọ́lá akin tọ́lá òyebánjí òye bánjí adékọ́lá adé kọ́lá ọmọladùn adùn wúràọlá wúrà ayọ̀mídé ayọ̀ midé abbl,neutral,positive,0.2324,0.7594,True,0.527
+yor_train_1235,bọ́tà butter kì í ṣe oúnjẹ ọ̀bọ ta ló kọ́kọ́ pòwe ìgbàlódée nì gan an mo mọ́ ọn ń rò kílonítọ̀hún rí tí ó fi pa á,negative,neutral,0.2267,0.7515,True,0.5248
+yor_train_2658,òjò náà wá yàgò fún oòrùn,neutral,positive,0.2219,0.7467,True,0.5248
+yor_train_1094,àwọn yoòbá ní orúkọ tí wọ́n ń pe ọjọ́ kí àyípadà ìgbàlódé tóó fọ́ gbogbo rẹ̀ lójú poo,negative,neutral,0.1938,0.718,True,0.5242
+yor_train_3392,òmìnira ni kí a dúró gedegbe kí a má gbẹ́kẹ̀lé ìlú kankan,neutral,positive,0.224,0.7477,True,0.5237
+yor_train_1638,wípé ọmọbìnrin ọgọ́ta tún ti di àwátì ní o,negative,neutral,0.1527,0.6764,True,0.5237
+yor_train_1562,èṣù wá ìyáa rẹ̀ kiri títí tí wọ́n fi ta á lólobó pé ìyáa rẹ̀ ti kú sọ́nà ọjà àjánrérémi àti pé ọ̀rúnmìlà ló ṣètò ìsìnkú rẹ̀,negative,neutral,0.211,0.734,True,0.523
+yor_train_3520,òpòlopò ènìyàn ò mò pó òpòló lópolo olópolo lómò pó òpòló lópolo,neutral,negative,0.1724,0.695,True,0.5226
+yor_train_5489,àmì ìdúpẹ́ fún ìdílé ìyàwó nípa iṣẹ́ ribiribi àti gudugudu méje lórí ọmọ wọn tí ọkọ rẹ̀ fi bá a ní odidi ni ẹmu ilé ìṣáná,positive,neutral,0.1632,0.6846,True,0.5214
+yor_train_4279,kí ẹni náà má kú mọ́ jẹ́ ọ̀kan núu àwọn ajàgbara fún ìjọba àwa ara wa ní ìlú nàìjíríà,neutral,negative,0.0188,0.5396,True,0.5208
+yor_train_239,ta lẹ̀ ń kó wá bá àdìgún ọmọ́jọmọ lọ tírin bá kan irin ìkan a tẹ̀ fún ùn kàn,negative,neutral,0.1972,0.7173,True,0.5201
+yor_train_1269,baṣọ̀run gáà ṣawo ṣọ̀gbẹ̀rì he died in university college hospital in ìbàdàn on the rd of july,negative,neutral,0.1795,0.6989,True,0.5194
+yor_train_1651,pàṣán ni a fi ń na ẹlẹ́ṣẹ̀ mìíràn a ó fi ṣẹkẹ́ṣẹkẹ̀ dè é a ó jáa lọ́rẹ́ gidi,negative,neutral,0.2057,0.7245,True,0.5188
+yor_train_1006,ẹ óò pà míì baba,negative,neutral,0.1741,0.6927,True,0.5186
+yor_train_287,ní idán kejì ìran kẹ́ta àrẹ̀mú sọ nípa ikú ó ní kí la ò rí rí ẹṣín ta ta ta ẹṣín kú ènìà rìn ó rìn sọnù wọ́n bímọ ọmọ́ kú,negative,neutral,0.2266,0.7449,True,0.5183
+yor_train_302,ancestors in trouble nigerian army need some slap for all the abuse yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.1927,0.7104,True,0.5177
+yor_train_5872,aró gángán ni à ń pe aláfínjú ènìà ẹni tí ó ní ìmọ́tótó,positive,neutral,0.1631,0.6794,True,0.5163
+yor_train_960,o ti yí orúkọ gidi sí nǹkan míì ojú tì ọ́,negative,neutral,0.2034,0.7188,True,0.5154
+yor_train_7909,nígbà tó ṣe ọọ̀ni abewéilá fún àwọn ará ọ̀yọ́ ilé lóko kan táwọn ẹyẹ àkọ̀ pọ̀ sí ó yọ̀ǹda àyèe agbègbè ti wọn fún wọn,positive,neutral,0.172,0.6853,True,0.5133
+yor_train_8067,beeni o ìwọ̀ oòrù afirika fi àgbà han àwọn yókù lọ́tẹ̀ yìí o àbí k,positive,neutral,0.1834,0.6963,True,0.5129
+yor_train_5669,yewájobí ṣe bí àwọn awo ti wí ó sì bẹ̀rẹ̀ sí í bímọ ó bẹ̀rẹ̀ sí ní gbé ọmọ ṣeré ó finú ṣoyún ó fẹ̀yìn gbọ́mọ pọ̀n,positive,neutral,0.154,0.6667,True,0.5127
+yor_train_584,oniregbe olojukokoro lára ìṣekúṣe lati mú oníṣekúṣe ẹlẹ́yà ni a ti rí ẹlẹ́lẹ́yà ọ̀rọ̀ wo la yọ láti ara ìr,negative,neutral,0.205,0.7169,True,0.5119
+yor_train_248,se chenji no re awa oni ki ema ja o amo efun wa lepo iya nje eyan,negative,positive,0.2414,0.753,True,0.5116
+yor_train_4586,ogun ní iṣẹ́ láti dáàbò bo ìlú náà tí ó wá fi àyè gbà wọ̀ọ́n láti ní ọmọ ogun àdáni wọn àwọn ẹrú ọmọ ogun náà ṣe tán láti jà níwọ̀n ba ìgbà tí wọ́n bá ti fún wọn ní aṣọ oúnjẹ ilé tí wọ́n ma gbé àti ohun èlò ogun,neutral,negative,0.2024,0.7132,True,0.5108
+yor_train_1154,ní ígílándì mà ni o àmọ́ bí wọn ṣe ń wúkọ́ káàkiri úróòpù náà nìyẹn o,negative,neutral,0.2094,0.7202,True,0.5108
+yor_train_8470,fi ìṣẹ́ rẹ yangàn nínú jọ́nà lítírésọ̀ yorùbá àkọ́kọ́ irú ẹ̀ ní nàìjíríà wo línkì yín àlàyé ní ẹ̀kúnrẹ́rẹ́,positive,neutral,0.1886,0.6987,True,0.5101
+yor_train_3763,àwọn obìnrin kò gbọdọ̀ wé gèlè ìlù tàbí ìbọn kò gbọdọ̀ ró bí wọ́n bá ń wọ́de sàárà ni ẹranko ọ̀sìn tí wọ́n bá ṣe sábàbíi rẹ̀ jẹ́ oúnjẹ wọn ni ẹran ògún lajá ń ṣe,neutral,negative,0.2401,0.7502,True,0.5101
+yor_train_6059,lóòótọ́ ìjọba dá igbó àìro sílẹ̀ tí wọ́n sì ṣòfin láti dáàbò bo àwọn igi àtàtà wọ̀nyí kí àwọn tí ó ń gé igi má baà gé wọn ní ìgékúgèé kí irú wọn ó máa ba à run tán nígbó àti kí ilé ayé ó ba wà bí ó ti yẹ ó wà,positive,negative,0.2169,0.7269,True,0.51
+yor_train_7736,aare sugbon ebi okin wo inu ki oro imi wo ese nkan si oro epo ino ati oro aje nijeria asiko un lo,positive,negative,0.1792,0.6887,True,0.5095
+yor_train_1832,kété tí baáálé rẹ̀ ọdẹ ọ̀dàlẹ̀ gánánní ẹfọ̀n mẹ́ta ọkàn an rẹ̀ sọ pé ṣàǹgbá fọ́,negative,neutral,0.2097,0.7187,True,0.509
+yor_train_2047,láti lè tètè gun orí ìtẹ́ bí ọba bá pẹ́ jù kí ó tó wàjà wọ́n ṣe òfin wípé bí ọba bá wàjà wọ́n ma sin àrẹ̀mọ rẹ̀ mọ ni òfin yìí wà láti dẹ́kun pípa ọba láti ọwọ́ àrẹ̀mọ òfin yìí wà títí di ọdún nígbà tí ọba àtìbà fi fagile kí ọmọ rẹ̀ adélu,neutral,negative,0.2043,0.7123,True,0.508
+yor_train_4558,ebi kan fẹ́ máa pa mí fẹ́ẹ́rẹ́fẹ́ kíni n ó wa jẹ,neutral,negative,0.1925,0.6995,True,0.507
+yor_train_5553,mo gbádun àbá òjògbón yi lati òní lo arinletikun ni a o maa pe penguin ni yooba o,positive,neutral,0.2177,0.7238,True,0.5061
+yor_train_938,ọmọ ọba ìlú ni ajénifújà jẹ́ kí ogun tó kó ìlú wọn tí ó rán baba rẹ lọ sọ̀run tí ó sì sọ dí ẹrú kí ó tó gba ibẹ̀ dé oko,negative,neutral,0.2132,0.7192,True,0.506
+yor_train_3347,bí ẹrú olórí ogun kan bá ṣe pọ̀ sìí ni iyì tí wọ́n ma fun ṣe ma pọ̀ tòó ìgbéga nínú ipò ìṣèlú àti ipò ológun jẹ́ ohun tí ó dá lé oye ẹrú tí ẹni náà bá ní ẹrú níní jẹ́ ohun tí wọ́n fi ń wo ọlá mọ́ èèyàn lára láàárín ìbàdàn ní àwọn olórí ogun bíi,neutral,negative,0.207,0.7122,True,0.5052
+yor_train_6904,iiṣẹ rẹ̀ yàtọ̀ niṣe làwòrán rẹ̀ máa n rí kedere,positive,neutral,0.2409,0.7458,True,0.5049
+yor_train_8218,iwosan ofe ni ti aisan ba se eniyan ko ma joko sile tabi ma gbawe ati adura,positive,negative,0.2057,0.7098,True,0.5041
+yor_train_3692,oriki ota area ota iganmode afele ja igan aiku omo area modi omo adikuta megbe sun kori oun sinkuro lori,neutral,negative,0.1749,0.6776,True,0.5027
+yor_train_5313,àjọ̀dún àṣà wa ní gt,positive,neutral,0.2316,0.7332,True,0.5016
+yor_train_7766,ọyọ́ aláàfin òjò pa ṣẹ̀kẹ̀rẹ̀ ọmọ àtìbà ẹ̀sọ̀ pẹ̀lẹ́ o,positive,neutral,0.2088,0.7092,True,0.5004
+yor_train_2600,ẹiyẹ mélòó tolongo wáiyé tolongo okan dudu aro tolongo okan rere osun lakuli ori mi si dide g,neutral,positive,0.2371,0.7374,True,0.5003
+yor_train_3435,kí á tan iná pa agbọ́nrán ká fọ̀pá gbọọrọ pejò ká dìtùfù ká fi gbọ̀wẹ̀ lọ́wọ́ ọ ṣàngó ní ìṣojú u mádiyàn lagara á ṣe ńdáni,neutral,negative,0.1468,0.6465,True,0.4997
+yor_train_237,ole to ji kakaaki oba o ku ibi ti yoo ti fun,negative,positive,0.2453,0.7446,True,0.4993
+yor_train_6659,ọdún ni ó pé igba ọdún ìfòpìnsí òwò ẹrú ní,positive,neutral,0.164,0.6623,True,0.4983
+yor_train_1905,bi o ba ti le wa si ilu saki wa je a sun e níbo ni olúwarẹ̀ ti lé wá rí ẹran iléyá jẹ báyìí o,neutral,negative,0.2168,0.7151,True,0.4983
+yor_train_1263,bí ẹni fi apẹ̀rẹ̀ pọnmi ni ọ̀rọ̀ wa rí ní,negative,neutral,0.1793,0.6769,True,0.4976
+yor_train_3867,emi nlo mi,neutral,positive,0.2462,0.743,True,0.4968
+yor_train_3361,dádò ológun alárìnkàá ẹni tó yan iṣẹ́ ogun jíjà láàyò ni dádò jẹ́ tí ń ṣe ọmọ bíbí inú ọ̀yọ́ ó ṣe ọkàn lára àwọn tó kọjú ìjà ti ìlọrin kí wọ́n má bàa borí ọ̀yọ́ ṣùgbọ́n omi pọ̀ ju ọkà lọ àwọn tí orí yọ nínú ogun ìlọrin náà ya lọ sí ìlú kan tí ó,neutral,negative,0.2019,0.6975,True,0.4956
+yor_train_8439,mo kí dede ọmọ ẹ̀gbá mọlíṣàbí,positive,neutral,0.2356,0.7309,True,0.4953
+yor_train_2734,ní ìgbẹ́jọ́ kò gbọdọ̀ sí ariwo gbogbo agbègbè yó pa lọ́lọ́ kẹ́kẹ́ á pa mọ́ wọn lẹ́nu a óò gbọ́ ká gbóhùn,neutral,negative,0.1114,0.6062,True,0.4948
+yor_train_4714,rara o ko ribe ilu ikeja ti wa ki awon oyinbo to de a le toka ikeja si awon ara awori lati ilu ota,neutral,negative,0.1653,0.6601,True,0.4948
+yor_train_6704,what is mighty counsellor in yoruba language alagbawi to tobi ju,positive,neutral,0.19,0.6842,True,0.4942
+yor_train_3105,ayé ò lè pa kádàrá dà wọ́n kàn lè fa owó aago sẹ́yìn,neutral,negative,0.2278,0.7202,True,0.4924
+yor_train_7676,ooo ma dupe pe won so ro é leyin eni i aiye ba i pa i bi aso to gbo nkan imi i wo ni yen ooo,positive,negative,0.2144,0.706,True,0.4916
+yor_train_8300,ẹ jẹ́ kí a pa èèwọ̀ mọ́ kó ba júṣe fún wa ká gbà pé èèwọ̀ ni ohunkóhun tí a pè léèwọ̀ èèwọ̀ ní í ṣe,positive,negative,0.182,0.6731,True,0.4911
+yor_train_6846,tówó bá dé má pe pàdí ẹ lọlẹ́ òní la rí kò sẹ́da tó mòla any translators on the tl team google avoid me o,positive,negative,0.2214,0.7121,True,0.4907
+yor_train_7241,dídùn dídùn là á sọ̀rọ̀ oyin dídùn là á sọ̀rọ̀ iyọ̀ dídùn ni kí ayé máa sọ̀rọ̀ mi eré là á fi ọmọ ayò ṣe,positive,neutral,0.2417,0.7321,True,0.4904
+yor_train_5312,dapada chelsea fc dapada fun won lool,positive,negative,0.0688,0.5591,True,0.4903
+yor_train_5176,ope o abenugan ile asofin tilu oyinbo de lo ba n pin gala ati tii,positive,negative,0.072,0.5622,True,0.4902
+yor_train_3479,se o ti so fun ogbeni wenger pe o ni le gba boolu ni ojo aiku,neutral,negative,0.1265,0.6163,True,0.4898
+yor_train_6132,d e ti jaasi ju sugbon awa naa ti n mura nitori baba mi ni olorii ebi dajudaju awon aburo yoo wa,positive,neutral,0.1646,0.6543,True,0.4897
+yor_train_2347,ọmọ ni mi o,neutral,positive,0.2508,0.7399,True,0.4891
+yor_train_1233,iyen ni yoruba se ma npe awon tonse ojusaju ni sobodiyesa igba to ya ni a bere si pe didir,negative,neutral,0.2313,0.7203,True,0.489
+yor_train_4996,lóké lóké lẹyẹ àdàbà ń fò,positive,neutral,0.2115,0.6999,True,0.4884
+yor_train_7215,àjùmọ̀bí ò kan ti àrùn kí alápá mú apá a rẹ̀ kó le bí nǹkan bá ń ṣe ọ́ lára tètè káràmásìkí ọmọlẹ́bí ò ní bá ọ jẹ̀rora,positive,negative,0.2294,0.7173,True,0.4879
+yor_train_1611,ọ̀yẹ̀kú mo bá ọ mulẹ̀ mọ́ mọ̀ ṣe dà mí inú bíbí ẹrú ní í pẹrú ẹ̀dọ̀ fùfù ìwọ̀fà ní í pàwọ̀fà a díá fún oofúà,negative,neutral,0.2117,0.6983,True,0.4866
+yor_train_7318,lọ́wọ́lọ́wọ́ báyìí èdè yorùbá èdè tí ó tayọ ní ìwọ̀ oòrùn ilẹ̀ adúláwọ̀ pàtàkì jù lọ ní nàìjíríà ni ó ṣìkejìi,positive,neutral,0.2109,0.6974,True,0.4865
+yor_train_3300,yorùbá gbàgbó pé enikeni tó gbón sásá sùgbón tó n fi nú òkan pàtàkì nirú eni bé è láàrín àwon ègò,neutral,negative,0.145,0.6313,True,0.4863
+yor_train_2008,new post bi ọdẹ bá ro ìṣẹ́ ro ìyà inú igbó ti ó bá pa ẹran kòní fẹ́nì kan jẹ if the hunter thinks of,neutral,negative,0.1624,0.6466,True,0.4842
+yor_train_6811,ó di ọjọ́ kan ọ̀rúnmìlà ń ṣe ọdún ifá láti fi ìtẹríba hàn ọ̀kọ̀ọ̀kan làwọn ọmọ rẹ̀ ń kí bàbá wọ́n pé àbọrúbọyè bọ ṣíṣẹ o,positive,neutral,0.2265,0.7103,True,0.4838
+yor_train_6728,hahaha ayẹyẹ nlá máa ṣẹlẹ̀ ní gbogbo naija ṣé ẹ ti ṣẹtán,positive,negative,0.145,0.6278,True,0.4828
+yor_train_1913,ibi ti emi dari wa si laaro yii niyen d hmmm o se owo wasiu ayinde lowuro yii,neutral,negative,0.094,0.576,True,0.482
+yor_train_3241,àwọn awo yóò mú èèrún ara aláìsàn aṣọ tí aláìsàn wọ̀ wọ́n á kó o sínú ìkòkò dúdú kan,neutral,negative,0.2337,0.7154,True,0.4817
+yor_train_145,à rí ìgbọdọ̀ wí baálé ilé sú ápẹ,negative,neutral,0.1852,0.6669,True,0.4817
+yor_train_2183,akíka aáka lorúkọ rẹ̀ kò lápọn rárá jẹ́jẹ́ ní í ṣe bí a da iyẹ̀pẹ̀ lù ú yóò ba síbẹ̀ kò ní lọ títí a ó fi pa á ẹranko onítìjú ni,neutral,negative,0.2436,0.7247,True,0.4811
+yor_train_5092,olubadan of ibadan land oba saliu adetunji aje ogunguniso showers blessing on me,positive,neutral,0.1857,0.6665,True,0.4808
+yor_train_5344,okere gun ori iroko oju ode ti da awa ti gun oke agba oju won ti da agbado inu igo ti di awojumon fun adiye,positive,negative,0.177,0.6578,True,0.4808
+yor_train_498,oníṣẹ́ ìròyìn ní nàìjíríà agbébọnrìn pa lawrence okojie ń benin ńnú oṣù agẹmọ ọmọẹgbẹ́ ọkùnrin dìgbòlu oníròyìn,negative,neutral,0.2018,0.6805,True,0.4787
+yor_train_6855,iṣẹ́ ọnà iṣẹ́ àwọn ti a ni iṣẹ́ olówó ni kò sí àrà tí a ò le è fi igi dá bí o bá wò ó fínnífínní ó lè di ọlọ́lá nípa bẹ́ẹ̀,positive,neutral,0.1899,0.6678,True,0.4779
+yor_train_575,ìwo àti gbogbo ènìyàn lo ni ètó láti gbé ìlé àyé o si lòdì sí òfin láti kpa ènìkéni,negative,neutral,0.1731,0.6502,True,0.4771
+yor_train_5641,music the yorùbá way bí orin bá jẹ́ oúnjẹ ìfẹ́,positive,neutral,0.254,0.7272,True,0.4732
+yor_train_1725,ẹnu ìloro ìyẹn àbáwọlé ẹnu ọ̀nà ni a ó fi ọwọ̀ ìgbálẹ̀ méjìi nì kọ́ sí bí ọlọ́ṣà bá wọlé pẹ́rẹ́n ó kẹ́ran nù un,negative,neutral,0.2178,0.6908,True,0.473
+yor_train_2179,ẹ yéé gbé ọmọ ọbà fọ́ṣun ẹkùn kọ́ ni tiger ẹní bá dé ààfin ọba yóò rí ohun tí wọ́n ń pè ní ẹkùn ògìdán ìkòrikò ìkòokò ni hyena,neutral,negative,0.2571,0.7284,True,0.4713
+yor_train_138,ìpèníjà àti ìtanijí ńlá rèé fún ìran yorùbá ọ̀jọ̀gbọ́n karin judith barber ọmọ ilẹ̀ gẹ̀ẹ́sì àti oníṣẹ́ ìwádìí nípa à,negative,neutral,0.2425,0.7128,True,0.4703
+yor_train_1846,tí ó fi jẹ́ pé ọ̀tẹ̀ náà mú kí ṣàngó fílú sílẹ̀,negative,neutral,0.2234,0.6934,True,0.47
+yor_train_6875,ẹ̀yin ìyáa wa ẹ dẹ́kun àṣàa à ń fi owó sínúu brècíà ẹlẹ́ran alápatà ẹlẹ́ja elépo àti gbogboo wa kan ọlọ́pàá agbèrò ojúu títì,positive,negative,0.1808,0.648,True,0.4672
+yor_train_5328,afisuru loro awon eyan wa akuku da lojokan awa na a di influencer iyen da ju,positive,negative,0.217,0.6841,True,0.4671
+yor_train_7161,àgùnmu rọrùn ń lílò ní òwe fi ní ìrànlọ́wọ́ ni àgúnmu jẹ́ fún ẹ̀kọ ọmọ ìyá àgùnmu ni ẹ̀gúnjẹ àgbo tí a gún fún jíjẹ lẹ́nu,positive,neutral,0.2073,0.6738,True,0.4665
+yor_train_4602,lérí ihun kì í fẹ́ jẹ ẹ se ure oo koo oo ooo ẹ se ure,neutral,negative,0.1613,0.6275,True,0.4662
+yor_train_4492,wọ́n ní ibi tó bá wu ẹ̀fúfùlẹ̀lẹ̀ nii darí ìgbẹ́ sí ibi ó bá wu olówó ẹni nii ráni lọ gbàrà tíṣẹ́ tán lónìí ó di búkà,neutral,negative,0.234,0.6992,True,0.4652
+yor_train_8368,òjò ni wá a ò bẹ́nìkan ṣọ̀tá o,positive,negative,0.2036,0.6678,True,0.4642
+yor_train_3059,ẹ̀yin ti yanki kò tíì tán ooo ilẹ̀ ò wulẹ̀ tíì ṣú níhà ibẹ̀un ẹ̀yin ti kúbà àti brasil bákannan ó tún kù ni ìbọn ń ró,neutral,negative,0.1793,0.6424,True,0.4631
+yor_train_1652,àfi bíi ẹni pé ilé iṣẹ́ èlùbọ́ làwọn ọmọ elòmíràn ti ń ṣíṣe ni ara wọn á funfun kinkin wọ́n á bá ìkúùkú dọ́gba,negative,neutral,0.2503,0.7132,True,0.4629
+yor_train_1029,ìdọ̀tí àti ìtìjú ni fún ẹbí ìyàwó bí ọkọ bá fi lè bá ojú awẹ́ abẹ́ aya rẹ̀ ní lílà láì jẹ́ pé olówó orí rẹ̀ ló ṣíi,negative,neutral,0.2135,0.6762,True,0.4627
+yor_train_5826,májẹ̀mú ẹgbẹ́ sì ni láti mọ rírìi ẹ̀mí ọmọ ènìyàn gẹ́gẹ́ bí ọ̀gáa náà ṣe sọ,positive,neutral,0.2395,0.7011,True,0.4616
+yor_train_8417,yorùbá ní ọmọ tí ó bá ṣípá ni ìyá ẹ̀ ń gbé níwọ̀n ìgbà tí ẹ bá ti pinu pé ẹ fẹ́ kọ́ ọ kò séwu lóko àfi gìrì àparò mo ṣe tán,positive,negative,0.1581,0.6196,True,0.4615
+yor_train_920,òṣì lẹ̀ ń ṣe bí ẹran tó ṣẹ́ ńwo,negative,neutral,0.2514,0.7129,True,0.4615
+yor_train_4504,èsì àbájáde àwọn ìfẹsẹ̀wọnsè ti ìdíje ti orílẹ̀ èdè nàìjíríà ṣé ìwọ náà ní ìfẹ́ sí eré bọ́ọ̀lù aláfẹsẹ̀gbá,neutral,negative,0.08,0.5414,True,0.4614
+yor_train_7257,kò síyàtọ̀ irúkanǹbọ̀n àwọn tí a ti mọ̀ bí ẹní mọwó tó ti ṣèlú tẹ́lẹ̀ rí náà tún ni ẹ ṣá ṣé ire kó dára,positive,neutral,0.2119,0.6732,True,0.4613
+yor_train_710,what animal is knows to be very cunning in yorùbá folktale ẹranko wo ni ó ní ọgbọ́n ète láàárín àwọn ẹranko nínú àwọn ìtàn yorùbá,negative,neutral,0.2452,0.7065,True,0.4613
+yor_train_5235,jọ̀wọ́ gbìyànjú láti fi àmì sí ohun tí o ń kọ nítorí pé ọkọ yàtò sí ọkọ̀ ọ́ sì yàtò sí ọkọ́ ẹ̀rín kẹẹ́kẹ̀,positive,neutral,0.245,0.7062,True,0.4612
+yor_train_6881,a le dibo fun yin sugbon kiise nitori owo ti e fe pin sugbon nitori ti e ba le bawa se atun to naijiria,positive,negative,0.2013,0.6616,True,0.4603
+yor_train_300,ó tìtorì ogún inheritance dá ogun war sile ogun war dé o n la òógùn sweat ó lo sí ògùn state lo gba òògùn medicine lódò ògún god of iron ogún twenty ojo lo fi lo òògùn medicine òógùn sweat isnt this beautiful,negative,neutral,0.2171,0.6767,True,0.4596
+yor_train_6478,ọ̀pá ò lè pa agogo ayé ò ní pa kádàráa mi dà,positive,neutral,0.2014,0.6603,True,0.4589
+yor_train_5647,àkàndá ènìyàn ni ó you are specially amp uniquely made,positive,neutral,0.2081,0.6657,True,0.4576
+yor_train_5652,òpómúléró mọ́jà lekàn òpó róṣọ òpó gbàjá tag someone from òpómúléró family that you know to enjoy their eulogy ẹ pé ọmọ ẹbí òpómúléró tí ẹ mọ̀ kí ó wá gbádùn oríkì ilé wọn òpómúléró is a family in ọ̀yọ́ ìlọrin ìjẹ̀ṣà òkè ògùn òsogbo etc by,positive,neutral,0.2358,0.6912,True,0.4554
+yor_train_439,èèyàn nìkan kọ́ ni kò gbọdọ̀ ta félefèle ewúrẹ́ àgbò àti ẹran ọ̀sìn tó ba rín sọwọ́ olórò di sàárà,negative,neutral,0.2624,0.7168,True,0.4544
+yor_train_525,wọ́n pín wa yẹ́bẹyẹ̀bẹ wọ́n fi orúkọ mìíràn ró wa láṣọ titun,negative,neutral,0.2513,0.7051,True,0.4538
+yor_train_7977,orúko mi ni tolulope ọmọ ogunleti ọmọ bíbí ìlú lanlate ni ìpínlè ọ̀yọ́ ojúlówó ọmọ yorùbá ni mo je mo nifẹ si dodo lọpọlọpọ,positive,neutral,0.2655,0.7186,True,0.4531
+yor_train_601,ọmọ yorùbá oní ìsọkúsọ yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.2639,0.7169,True,0.453
+yor_train_491,ilú tí ọmọ ológì ò mọ ẹ̀kọ pọ́n,negative,neutral,0.2436,0.6947,True,0.4511
+yor_train_7264,ìdánilẹ́kọ lẹ́yìn isẹ́ òòjọ́ dara igbákejì gómìnà èkìtì,positive,neutral,0.2138,0.6641,True,0.4503
+yor_train_8140,bójú ò bá tèkó ojú ò le è tẹ̀yìn ìgbẹ̀tì,positive,negative,0.1254,0.5752,True,0.4498
+yor_train_5137,ranti omo eni ti iwo nse yoruba nimi ikate ni surulere lati bimi ilishan ni baba mi tiwa gbagura ni iya mi tiwa,positive,neutral,0.1999,0.646,True,0.4461
+yor_train_7473,ìránraẹni létí àwọn nǹkan pẹ́pẹ̀ẹ̀pẹ́ tí a ò bá gbàgbé ni nípasẹ̀ẹ bẹ́ẹ̀ à ń tọ́jú èdè àṣà ìbílẹ̀ wa,positive,negative,0.1743,0.6201,True,0.4458
+yor_train_7418,iyawo to ba moriri oko aritowo oko gba ti mo ba puro oo ti mo ba puro eja mi ooo eee kayode fashola,positive,negative,0.1835,0.6274,True,0.4439
+yor_train_4536,ṣé ni fulani fulani ju ti buhari lọ buhari ó lè sọ èdè fulfude atiku gan an ni ojúlówó fulani segun showumi atiku agbenuso fún ìpolongo,neutral,negative,0.2146,0.6575,True,0.4429
+yor_train_6518,hmmm olubobotiribo awo enu hmmm enu mi ma koba mi o mbe nu eni na laa fi ko meeje,positive,negative,0.0996,0.5412,True,0.4416
+yor_train_4083,ti e ba ni eniyan nibadan won le lo si lawal and sons ni alekuso o daju won o ri nibe,neutral,negative,0.1719,0.6129,True,0.441
+yor_train_530,àwọn pípù yìí kàn án mú wa nígànán ni irúkan náà ni gbogbo wọn àti apc pdp aids hiv àrùn kan náà ni,negative,neutral,0.2467,0.6864,True,0.4397
+yor_train_7255,tí omi bá pọ̀ ju okà lọ ọkà a máa dí kókó excessive water makes the yam flour meal lumpy moderation is crucial too much of even a good thing can be detrimental,positive,negative,0.2256,0.665,True,0.4394
+yor_train_3826,a lè gbé e mì bí a dì í sọ́fun kí a ṣe bẹ́ẹ̀ fọ́sẹ̀ méjì kó ba tì í wọlẹ̀ tán tí ò tún jẹ́ gbérí mọ́ èmi gan an ṣì ń lo tèmi,neutral,negative,0.1159,0.5539,True,0.438
+yor_train_2949,èèyàn án ní òun ó bà ọ́ jẹ́ o ní kò tó bẹ́ẹ̀ bí ó bá ní o ò nùdí ẹni mélòó lo máa fẹ fùrọ̀ hàn,neutral,negative,0.206,0.6437,True,0.4377
+yor_train_5030,fi ara dà to endure àpẹẹrẹ ó fi ara da ìrora abẹ́rẹ́ náà he endured the injection pain,positive,negative,0.1442,0.5815,True,0.4373
+yor_train_1137,a tún gbọ́ pé wọ́n ti bẹ̀rẹ̀ sí í kó àwọn jàgídíjàgọn jọ ní ìlú èkó láti ṣe àwọn ará amẹrika àti isirẹli lọ́ṣẹ́,negative,neutral,0.2579,0.6941,True,0.4362
+yor_train_1900,ni odun ni awon omo egbe oselu whig ko ara won jo lati da egbe oselu republican sile ni ilu wisconsin ni ile amerika,neutral,negative,0.2722,0.7055,True,0.4333
+yor_train_178,ogún tó ja ìran yoòbá lọ salau ọ̀tọ̀ ni ogun fọkọ̀ fàdá fidà fi gbètugbètu jà kí ó tó di fìbọn àti àgbá jagun,negative,neutral,0.2636,0.6968,True,0.4332
+yor_train_7200,ábísọ ni orúkọ yoruba mi oluwadamilola ó ṣe pàtàkì láti mọ àṣírí orúkọ wá,positive,neutral,0.2774,0.7097,True,0.4323
+yor_train_6916,agbani lagba tan awi mayehun,positive,negative,0.1546,0.5859,True,0.4313
+yor_train_6271,ode roko ode pa eran eran kini ode pa ode pa eran okete iku a re wa kete aisan a re wa ke te a re wa kete aa,positive,negative,0.1593,0.5899,True,0.4306
+yor_train_2634,daju osi ma wa ni awon shobu ti e daruko yi amo ni ilu eko ijoba ni won pese awon iwe yi fun l,neutral,negative,0.1712,0.6017,True,0.4305
+yor_train_1274,torí eyí ni a fi ma ń nípé ènìyàn ń ṣomi lójú bíi ebòlò bí ó bá n sun ẹkún,negative,neutral,0.2644,0.6943,True,0.4299
+yor_train_3158,tun ti gbe de,neutral,negative,0.2044,0.6334,True,0.429
+yor_train_2210,a àwọn ẹlẹ́ṣin ìgbàgbọ́ máa ń wàásù pẹ́ni tí kò bá ní jésù kò ní déjọba ọ̀run àwọn ẹlẹ́ṣin islam náà léèyàn kò gbọdọ̀ kú láì jẹ́ ìmàle ṣùgbọ́n ẹ̀yin kò ṣọ̀kankan ńnú àwọn ẹ̀sìn yìí báyìí kí lẹ rò nípa ọ̀run àpáàdì táwọn ẹlẹ́sìn méjèèjì ńkéde kiri,neutral,negative,0.238,0.6668,True,0.4288
+yor_train_150,ilé tí a fitọ́ mọ ìrì ni yóò wó o báwo ni ilé tí a fi itọ́ ẹnu mọ ṣe fẹ́ dúró sánsán bí ìrí bá ṣẹ̀ ó di gbàgà,negative,neutral,0.2424,0.6691,True,0.4267
+yor_train_5749,ọba tó jẹ tí ìlú tòrò oruko koni pare ninu iwe itan laiyelaiye,positive,negative,0.1081,0.5325,True,0.4244
+yor_train_4218,ogbeni gbenro akiika gbogbo re wa lowo awon olori wa ti won yan esin kan ni posin won gbe esin,neutral,negative,0.1081,0.5321,True,0.424
+yor_train_5093,àánú àwọn tó ṣe mí ní ni àwọn tí ò mọwọ́ mẹsẹ̀ ọlọ́run ọba gba àkóso,positive,negative,0.1816,0.605,True,0.4234
+yor_train_3096,ogun àmọ̀tẹ́lẹ̀ kìí pa arọ,neutral,negative,0.2644,0.6878,True,0.4234
+yor_train_3308,tí óunjẹ bá dékùn ikùn a fa ẹ̀jẹ̀ ara mọ́ra láti taari oúnjẹ sínú ẹ̀jẹ̀ a jẹ́ pé ẹ̀jẹ̀ á dínkù lẹ́bàá ọpọlọ ìyẹn ló nmúni tòògbé,neutral,negative,0.2621,0.6852,True,0.4231
+yor_train_8233,ṣé yoòbá ní ìbànújẹ́ ò sí fún ẹni eyín rẹ̀ ta síta ẹ̀rin ni ní gbogbo ìgbà,positive,negative,0.1368,0.5597,True,0.4229
+yor_train_2254,itumo owe ni wipe a ko gbodo je afara si nkan ti a ba se not to procrastinate,neutral,negative,0.1911,0.6124,True,0.4213
+yor_train_3537,èmi ò mọ nípa togo ṣùgọ́n mo gbọ́ pé wọ́n pọ̀ níbẹ̀,neutral,negative,0.2512,0.6723,True,0.4211
+yor_train_4210,ọmọ yìí ti tójú bọ́ ó sọ sí ìyá ẹkùn pé ọmọ náà níláti bá èèyàn gbé látorí èèyàn ní í ṣe,neutral,negative,0.146,0.5658,True,0.4198
+yor_train_5683,eseun fun itoso na yii ewé ròkó ni à ń pè ní yoòbá èdè e édè nii ugwu,positive,neutral,0.283,0.7027,True,0.4197
+yor_train_18,idibo osun awon agbogunro ya wo ile sinator bayo salami ti o hun se asofin olorunda ni ile asofin ni abuja,negative,neutral,0.2695,0.6874,True,0.4179
+yor_train_7347,hmm àwọn àgbà yoòbá lákìíyèsí púpọ̀,positive,neutral,0.2639,0.6816,True,0.4177
+yor_train_6476,nítorí wípé mo fi ọṣẹ ewé oríjì wẹ̀ lọmọ ènìyàn fi gbọ́dọ̀ foríjì mí,positive,neutral,0.2731,0.6897,True,0.4166
+yor_train_1845,iná tí a bá dá sílẹ̀ fún gúnnugún ẹyẹkẹ́yẹ ní í pa ọfọ̀ ni pa ọfọ̀ mìíràn tí o mọ̀,negative,neutral,0.2756,0.6919,True,0.4163
+yor_train_127,kò sẹ́ni tí òṣùbá sàńdákátà tọ́ sí lónìí a ò rẹ́ni tó gba ìbéèrè márùn ún àyàfi fọlá onílé eré ní tó gba mẹ́ta,negative,neutral,0.2589,0.6751,True,0.4162
+yor_train_2323,a kì í pa ohùn mọ́ agogo lẹ́nu,neutral,negative,0.1481,0.5639,True,0.4158
+yor_train_2055,no it is not kukkuruku in yorùbá instead it is kèkekére a folk song goes thus kèkekéke àkùkọ ń kọ àwọn bèbí wà níkalẹ̀ wọ́n ń mújó jó kèkekére,neutral,negative,0.2231,0.6382,True,0.4151
+yor_train_4443,bẹ́ẹ̀ ni kò sí irọ́ ńbẹ̀ ọ̀rọ̀ tuntun wọ̀ ọ́ lóòótọ́ àmọ́ irú àyípadà báhun kọ́ ni ń wí nípa odù ni,neutral,negative,0.1623,0.5773,True,0.415
+yor_train_4898,aworan alaafin ilu o yoô o ba lamidi adeyemi ti wa di akoda fun aare jonathan ori ade fi oyo sile lati pade ebele,neutral,negative,0.114,0.5272,True,0.4132
+yor_train_3729,òrugànjọ́ náà ni ààjìn nítorí wípé òkùnkùn máa ń bolẹ̀ birimùbirimù tí ohun gbogbo á pa lọ́lọ́ ni a fi períi rẹ̀ bẹ́ẹ̀ kò sì sí ohun tí í jẹ́ afejumo àfẹ̀mọ́jú ló wà,neutral,negative,0.1727,0.584,True,0.4113
+yor_train_6204,o jo jumo oga ni oga o ma je baba ke pe o,positive,negative,0.2128,0.6232,True,0.4104
+yor_train_6223,àníjó fujì lá rinrin ẹ lè bẹ̀rẹ̀ mọlẹ̀ kẹ ma rá ẹ lè wà upstanding kẹ ma jo,positive,neutral,0.2514,0.6584,True,0.407
+yor_train_5335,gbogbo ọmọ yorùbá ìgbà ọ̀tun wọlé dé pẹ̀lú bbc yorùbá omidan je ikan ninu awon atokun bbc yoruba,positive,neutral,0.2554,0.6619,True,0.4065
+yor_train_4538,ojo ko tura se odo tiwa nibi o níse lo kan won díé ti o si tún da waí,neutral,negative,0.1685,0.5746,True,0.4061
+yor_train_907,kábíyèsí ẹni a fẹ́ la mọ̀ a kò mọ ẹni tó fẹ́ ni ng kò bá ẹnikẹ́ni ṣọ̀tá síbẹ̀ ẹnìkan ṣáà gbé òkú sínú ṣọ́ọ̀bù náà kò,negative,neutral,0.2773,0.683,True,0.4057
+yor_train_1380,èwo ni ká so ago tí ò ṣiṣẹ́ mọ́ ọrùn ọwọ́ kíni aago wà fún,negative,neutral,0.2436,0.6484,True,0.4048
+yor_train_5499,bí epo ni wọ́n ń kọ́ ń ta sílẹ̀ n ò mọ̀ ìṣòrò ọ̀run wá bá wa gbé orò yìí ṣe,positive,negative,0.1268,0.5311,True,0.4043
+yor_train_7057,ẹ ṣe hàá èyí yà yín lẹ́nu ẹ ò gbọ rí bẹ́ẹ̀ ni kò sírọ́ tó kéré báyìí ń bẹ̀ òtítọ́ panbele ni,positive,negative,0.2694,0.6734,True,0.404
+yor_train_6325,jọ̀wọ́ tẹ̀lé mi padà pls follow back,positive,neutral,0.2807,0.6819,True,0.4012
+yor_train_5248,ó ní láti fi ìmoore hàn kí èjì ogbè ó kọ́lé fún òun ní ìtaa rẹ̀ kí òun ó máa gbé ó ní mo bímọ méjì mo dẹyẹ ilé,positive,neutral,0.2873,0.688,True,0.4007
+yor_train_6967,ẹ ti gbàá tán,positive,negative,0.1812,0.5815,True,0.4003
+yor_train_4304,fún ìjọba wa titun,neutral,negative,0.1777,0.5773,True,0.3996
+yor_train_2311,arúgbó ò fẹ́ gbà,neutral,negative,0.2552,0.6533,True,0.3981
+yor_train_7904,ewé atapàrà ló ní kí ibi ó ta nù lóríì mi,positive,neutral,0.263,0.6603,True,0.3973
+yor_train_1801,koje tuntun olopa naijeria fe fi ipa gba n ni ikeja owa lori ayalujara,negative,neutral,0.2493,0.6461,True,0.3968
+yor_train_8169,my father will say àti kekere ní imole tí ń kòmòré làsò,positive,neutral,0.2637,0.659,True,0.3953
+yor_train_6963,bí ẹyẹ oko ò mọ bíntín lọ eré e kó kọ́lé ló máa máa bá kiri no matter how tiny a bird is its attention will be riveted on building its home or nest focus on tangibles not trivialities dont major on minor things,positive,negative,0.1829,0.577,True,0.3941
+yor_train_4619,da ile mosuu obìnrin tó kúrò nílé ọkọ padà sílé baba wọ́n a ló ṣe kíni,neutral,negative,0.2817,0.6751,True,0.3934
+yor_train_3894,ṣé pé ni owóo epo rọ̀bìi wa wà,neutral,negative,0.1389,0.5319,True,0.393
+yor_train_3456,sí ibẹ̀ kí ó kú lẹ́hìn tí wọ́n ti gé ara rẹ̀ bàjẹ́ ṣùgbọ́n ó yè ó sì wọ́ lọ sí inú igbó ó tiraka láti wà láyé tí ó sì yè lórí jíjẹ èso nínú igbó lẹ́hìn ti ara rẹ̀ ṣe gírí ó di àgbẹ̀ àyè ṣí sílẹ̀ fún láti pàdé àwọn èèyàn kan nínú abúlé kan gẹ́gẹ́ bíi,neutral,negative,0.186,0.5789,True,0.3929
+yor_train_4589,swan osun kede ojo idibo won tolulope emmanuel osogbo egbe akoroyin ere,neutral,negative,0.2593,0.65,True,0.3907
+yor_train_999,ọmọ ilẹ̀ ni wọ́n tí,negative,neutral,0.2981,0.6881,True,0.39
+yor_train_712,akaba yìí kan náà ni ó jágbọ́n idà tí ó mú tó láti bẹ́ orí ọ̀tá péú lọ́wọ́ kan bí èlé ṣe ń bẹ ajá ògún,negative,neutral,0.2843,0.6739,True,0.3896
+yor_train_6952,a fún wọ́n nílẹ̀ àṣà wa ni a mọ́ ọn fún ará ìta nílẹ̀ èyí jẹ́ àmì ìgbàlejò mọ́ra tí ọmọ adú ní,positive,negative,0.135,0.5227,True,0.3877
+yor_train_4323,olórí ẹgbẹ́ òṣèlú pdp ni ìjọba ìbílẹ̀ ìbàràpá central olóyè matthew fọ́lọ́runṣọ́ tí gbogbo ènìyàn mọ́ s,neutral,negative,0.2373,0.6239,True,0.3866
+yor_train_1261,tí ó sì ń yọ́rẹ̀ ta ẹrú láti gba ìbọn lọ́wọ́ àwọn oníṣòwò portugal àti brazil kí ìsinmi baà lè wà ní ìlú ọba akítóyé ní kí ẹfúnroyè fi ìlú sílẹ̀ nígbà tí ìjà ṣẹlẹ̀ láàárín ẹfúnroyè àti àwọn olówò ẹrú yòókù ní ìgbà tí ọba akítóyé wàjà,negative,neutral,0.2649,0.6514,True,0.3865
+yor_train_112,tí a bá ń sunkún,negative,neutral,0.29,0.6758,True,0.3858
+yor_train_8232,ife lakoja ofin,positive,neutral,0.2696,0.6554,True,0.3858
+yor_train_4532,ẹranko ń bá ara sọ̀rọ̀ igi àti àwọn ẹ̀dá àrígbéwọ̀n bẹ́ẹ̀ bẹ́ẹ̀ ní í bá ara tàkùrọ̀sọ,neutral,negative,0.2712,0.6536,True,0.3824
+yor_train_3964,òtútù yìí ga o,neutral,negative,0.2636,0.6459,True,0.3823
+yor_train_6007,bírúu owó kan bíi i t f bá wà nǹkan á ṣẹ́pẹ́rẹ́ àwọn ọ̀dọ́ tí ò ríṣẹ́ tó sì fẹ́ bẹ̀rẹ̀ okòwò á rí nǹkan jókòó tì,positive,negative,0.2221,0.6042,True,0.3821
+yor_train_2209,lotito ni oro awon agba to ni ebi kii wonu ki oro mii wo asiko ti to lati je eba bayii d,neutral,negative,0.1421,0.5228,True,0.3807
+yor_train_4335,hahaha awon efon igbalode ni wonwonyi,neutral,negative,0.2841,0.6639,True,0.3798
+yor_train_5319,má sunkún nítorí ó ti dópin rẹ́rìn ín nítorí ó ṣẹlẹ̀ dr seuss,positive,negative,0.2525,0.6314,True,0.3789
+yor_train_8048,àwọn àgbẹ̀ nínú ètò ìtajà tí ìjọba gbé kalẹ̀ ẹgbẹ́ action group gbéra láti wá ojútùú sí gbogbo ìkérara àwọn ara agbègbè náà ètò ẹ̀kọ́ dàgbà sókè ọ̀nà tó wọ àwọn abúlé wọn di ṣíṣe wọ́n gbé owó sínú ẹgbẹ́ àjẹṣẹ́kù àgbẹ̀ mímú tí wọ́n mú ọ̀báfẹ́mi,positive,negative,0.2109,0.5895,True,0.3786
+yor_train_32,oorun jọ ikú ikú jọ oorun bẹ́ẹ̀ ìkan sunwọ̀n jù kan oorun ìyè àti oorun ikú ni oorun méjèèjì ń jẹ́,negative,neutral,0.2731,0.651,True,0.3779
+yor_train_5505,jókòó jókòó ti adé jókòó ti ọlá jókòótọ́lá orúkọ ọmọ tí a bí á gba ipòo babaa rẹ̀ ọlá tàbí adé lọ́jọ́ ọ̀la,positive,neutral,0.2765,0.6543,True,0.3778
+yor_train_3441,ka sise bi eru ko da nkan oluwa nikan lo le gbeni ga kìràkìtà ò dọlà ile aye yii o gba giragira,neutral,negative,0.2041,0.5813,True,0.3772
+yor_train_2458,orò baba ò,neutral,negative,0.1957,0.5717,True,0.376
+yor_train_2378,ise ti awon ara ilu ran mi ti bere ni perewu gomina ti o wole leekeji losun ni o so be,neutral,negative,0.139,0.5136,True,0.3746
+yor_train_7109,oruko mi ni babatunde omo ilu onigbongbo ni ipinle eko inumi dun pe mo je omo yoruba,positive,neutral,0.3016,0.676,True,0.3744
+yor_train_173,èèmọ̀ pẹlẹbẹ rèé o àfi bíi òkú àkúfà ẹbí ọ̀rẹ́ àti àwọn ẹniẹlẹ́ni agbóòkú ló tún forí kóo ó di gbére,negative,neutral,0.2818,0.6557,True,0.3739
+yor_train_880,obìnrin tó kúrò nílé ọkọ padà sílé baba wọ́n a ló ṣe kíni,negative,neutral,0.3028,0.6764,True,0.3736
+yor_train_8498,gbogbo ohun ti o to nbo wa seku fija folorun ja ko fowo leran o ku di e,positive,negative,0.3085,0.6817,True,0.3732
+yor_train_2904,wọ́n á ní òyìnbó tó ṣe pẹ́nsù ló ṣèrèsà àwọn kan náà tó ṣe ẹ̀rọ irinṣẹ́ oko irúgbìn gmo náà ló ṣe ajílẹ̀,neutral,negative,0.2866,0.6592,True,0.3726
+yor_train_5007,toò gbogbo ọmọ oòduà ẹ tẹpá mọ́nṣẹ́ ọjọ́ ń lọ àkókò ń yí birbiri lọ ni kò dúró de ẹnìkankan,positive,neutral,0.2953,0.6675,True,0.3722
+yor_train_6780,ẹ kú ìrọ̀lẹ́ o ẹ̀yin ọmọ yoòbá àtàtà ó tó ọjọ́ mẹ́ta tí a ṣe ìdánwò oníbèérè ní báyìí ìbéèrè yá ta ló tó gbangba sùn lọ́yẹ,positive,neutral,0.305,0.6772,True,0.3722
+yor_train_4899,bọ́lọ́pàá bá dé wọn ò báà pé mẹ́wàá ń kojú ọlọ́pàá sójà nìkan àti ámì nìkan ni n lè kojú ti se ọmọ yìí jiná lálẹ́ àná,neutral,negative,0.2826,0.6539,True,0.3713
+yor_train_1050,ọ̀kanòjọ̀kan nǹkan tó ṣẹ̀ láti òkèèrè ni a máa ń yàn láàyó dípò ti ìbílẹ̀ ti wa,negative,neutral,0.3055,0.6768,True,0.3713
+yor_train_5451,lónìí ni kò ní dọ̀la ó ti tó gẹ́ kò sẹ́ni tó lé pa ohùn mọ́ agogo lẹ́nu ẹ kò leè pa ohùn mọ́ òmìnira lẹ́nu ìwé ìfisùn tí èèyàn fọwọ́ bọ̀ yóò tẹ àwọn ìgbìmọ̀ aṣòfin lọ́wọ́,positive,negative,0.138,0.5087,True,0.3707
+yor_train_3654,bí àjànàkú kò ba gbẹkẹlẹ fùrọ̀ kì í mi odu àgbọn if an elephant is not sure of its anus it does not swallow whole coconuts,neutral,negative,0.2006,0.5707,True,0.3701
+yor_train_8139,ojú tó ríbi tí kò fọ́ ó npadà bọ̀ wá ríre,positive,negative,0.207,0.5761,True,0.3691
+yor_train_1569,ọmọ yorùbá kan ní ṣebí wọ́n ní ọ̀run ni ògún ti sọ̀ kalẹ̀ sílé ayé ni kílódé tí wọ́n tún ní ọmọba ọ̀yọ́ ni ìtàn irọ́ ni jọ̀ọ́,negative,neutral,0.2852,0.6533,True,0.3681
+yor_train_2334,asa igbeyawo ile yoruba ifojusode alarina isihun itoro idana ipalemo igbeyawo how person go just dey ifojusode for ages,neutral,negative,0.2544,0.6218,True,0.3674
+yor_train_7528,ti sún mọ́lé báyìí ara akitiyan an àwọn ìjọ ọba wa ní gbogbo ohun à ń rí yìí kọ́lọ́mọ kílọ̀ fọ́mọ rẹ̀ ká lajúu wa,positive,negative,0.2433,0.6102,True,0.3669
+yor_train_4204,lóòótọ́ owó bébà àti owó onírin kọ́ìnsì ni ọmọ aráyé ń ná lóde òní níná owó ẹyọ ti di ohun ìgbàgbé àmọ́ ipa rẹ̀ sì ńbẹ,neutral,negative,0.2764,0.6423,True,0.3659
+yor_train_5081,wọ́n ní káa máa lo èdè abínibí wa lójoojúmọ́ ká máa sọ ọ́ sírawa láwùjọ gt cc,positive,neutral,0.2917,0.6555,True,0.3638
+yor_train_511,afárá kìíní ìkejì àti ìkẹta tí erékùṣù èkó ni ìdíwọ́ wà àwọn kan ní kẹ̀kẹ́ alùpùpù ọ̀kadà tí ìjọba fòfin dè ló fa sábàbí,negative,neutral,0.3064,0.6693,True,0.3629
+yor_train_7043,koko lara ọta ń le she will be strong,positive,negative,0.1875,0.5483,True,0.3608
+yor_train_1892,otutu ke sebi iyawo yin wa ni tosi ale ebere de ago márùn péré ló lù àmọ́ ilẹ̀ ti yáa sáré ṣú òtútù,neutral,negative,0.257,0.6154,True,0.3584
+yor_train_3100,emi ti se tan sugbon emi month ti awon elemiran,neutral,negative,0.2223,0.5802,True,0.3579
+yor_train_7059,ikilo pataki fun eyin ti eba fe gbe iyawo aloku si ile,positive,negative,0.2312,0.5855,True,0.3543
+yor_train_1978,bópé títí akólòlò yó pe baba lodifa fun akede ijoba nigeria lai mohammed oni ki a gba kamu wipe un se ise ninu iyewu,neutral,negative,0.1549,0.508,True,0.3531
+yor_train_2951,bí ẹkún ò bá ṣe é sun ẹ̀rín làá rín,neutral,negative,0.2159,0.5661,True,0.3502
+yor_train_4971,gbogbo nǹkan ni ó lẹ́wà ṣùgbọ́n kìí ṣe gbogbo èèyàn ni ó lè rí i confucius,neutral,negative,0.2614,0.6115,True,0.3501
+yor_train_6240,iyin lo yẹ ọba awọn ọba,positive,neutral,0.3049,0.6546,True,0.3497
+yor_train_1392,oga o naijeriya yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,negative,neutral,0.2937,0.6433,True,0.3496
+yor_train_5086,àwa tí a rí ọjọ́ kìníní oṣù ọ̀pẹ la óò rí ìparí rẹ̀ december ò ní dì wá mẹ́rù lọ o tẹbí tará tojúlùmọ̀,positive,neutral,0.2987,0.6471,True,0.3484
+yor_train_7745,ọ̀kàndínlógún tó lóun ò bá oókan ṣe à ti di ogun rẹ̀ á nira the number that refused to be added to will find it tough to become build bridges and foster collaboration we need one another together each achieves more,positive,negative,0.2944,0.6426,True,0.3482
+yor_train_63,ìgbà wo ni ọwọ́ pálábá alọkólóhunkígbe yóò gbàgbéra sí isà ejò nílẹ̀ yí ìgbà wo ni igbà akọ̀pẹ kò ní di ohun àwátì níl,negative,neutral,0.3099,0.6578,True,0.3479
+yor_train_2105,ọ̀nà wo la wá fẹ́ gbé e gbà,neutral,negative,0.1518,0.4979,True,0.3461
+yor_train_8198,asa yoruba gelede je gegebi aseye ti afi un pon awon iya wa le obirin ni ile yoruba fun akitiyan agbara ati ife wan,positive,negative,0.2936,0.6368,True,0.3432
+yor_train_345,ó ní òun àtọkọ àfẹ́sọ́nà òun láwọn jọ ńlọ àmọ́ òun kò rọ́kọ òun òun mọ ibi tó sa gbà ẹ̀rọ ìbánisọ̀rọ̀ sì wá ńnú àpò tí wọ́n gbà,negative,neutral,0.3165,0.6551,True,0.3386
+yor_train_7181,ó ní iṣẹ́ gbogbo wa ni láti tún ìlú ṣe,positive,neutral,0.3089,0.6472,True,0.3383
+yor_train_3007,gẹ́gẹ́ bí àṣà ara ọ̀wọ̀ tí ìyàwó ilé ń fún ọkọ baálé tó jẹ́ ẹ̀tọ́ ni ẹ̀sẹ̀ ẹran bójẹ́ tàgbò ewúrẹ́ kìbáà ṣe ẹdìẹ la bá pa,neutral,negative,0.2557,0.5925,True,0.3368
+yor_train_8105,a lè fi ewé arère òbéṣè fún aró aláwọ̀ oríṣi mẹ́ta ọ̀tọ̀ọ̀tọ̀ ìtàkùn àti ewé arère sì ní èròjà agbógunti aàrùn lágọ̀ọ́ ara,positive,neutral,0.3211,0.6569,True,0.3358
+yor_train_5077,kí a yéé bu ẹnu àtẹ́ lu ayárabíàṣá pé òhun ló ń fà á tọ́mọlé ìwé ò fi kàwé mọ́,positive,negative,0.2046,0.5383,True,0.3337
+yor_train_5859,o ni ètó fún òwò àti àpónlé ara eni tí kò sí ènìkéni tí yi o so e dí erú,positive,negative,0.2466,0.5751,True,0.3285
+yor_train_2542,ní ọ̀pọ̀lọpọ̀ ìsọ̀ káàkiri ilẹ̀ yorùbá àwọn ọlọ́jà ò ní ta ọjà fún ẹni tí ó bá ní òhun fẹ́ ra abẹ́rẹ́ ní àárọ̀ kùtùkùtù àyàfi tí ó bá ní òhun fẹ́ ra okini ni wọ́n ma tó tà á fun ṣùgbọ́n wọ́n lè ta abẹ́rẹ́ ní ọ̀sán tàbí ìrọ̀lẹ́,neutral,negative,0.3019,0.6297,True,0.3278
+yor_train_6891,ìlú mi tí ó lóhun ti bọ́ lọ́wọ́ èèbó alọ́ni lọ́wọ́ gba tọwọ́ ẹni ìlú mi tí ń sààmi àádọ́ta ọdún ó lé méje tí ó kúrò lóko ẹrú,positive,negative,0.2027,0.5302,True,0.3275
+yor_train_4135,gbogbo ìlú ilẹ̀ yoòbá kọ́ ní kó ẹrú èkìtì a máa mú ìlú mìíràn mọ́ ti rẹ̀ lẹ́yìn ogun,neutral,negative,0.2466,0.5727,True,0.3261
+yor_train_4106,kí ló ń ṣẹlẹ̀ ẹ bọ̀dá,neutral,negative,0.2697,0.5929,True,0.3232
+yor_train_1966,a fún irúgbìn lẹni tó gbin nǹkan,neutral,negative,0.1731,0.494,True,0.3209
+yor_train_5121,maki u teli dem or jus dey looku an lafu dem wey no ear àbí bẹ́ẹ̀ kọ́ ni fẹlá wí káre ọmọ ọkọ ori bàbá rẹ á tì ọ́ lẹ́hìn,positive,negative,0.2191,0.5397,True,0.3206
+yor_train_4322,egbò ò ṣàì déédéé gbajúmọ̀ ọlá eṣinṣin ló ń jẹ,neutral,negative,0.3035,0.6236,True,0.3201
+yor_train_2267,wọ́n á tó tan ìtùfù tí í ṣíde àjọ̀dùn òrìṣà greece kan tórúkọ rẹ̀ ń jẹ́ zeus tí ó fi òkè olympia ṣebùgbé ìdíje tí ó tara,neutral,negative,0.2982,0.6178,True,0.3196
+yor_train_4471,ìsì oyè ẹni tí ó wùsì wuyì lórí oyè onígbìńdé oní ìgbìn ti dé kújẹḿrá,neutral,negative,0.285,0.6037,True,0.3187
+yor_train_7664,ogbe orí àkùkọ kì í ṣe mímọ̀ ọ́n ṣe àkùkọ elédùà ló dá àkùkọ lọ́lá the cock did not acquire its comb by dint of i,positive,neutral,0.3272,0.6441,True,0.3169
+yor_train_5550,imoran feni to ba wole ti o ba joba tan ma fade hu ibi enikan ti waja ki o to kan e o kan e tan ranti pe aderopo mbo,positive,negative,0.2585,0.5736,True,0.3151
+yor_train_5965,torí a ò fàjòjì tó lè pani lára kún un bí a ti ṣe bá a ni à ń lò ó àti pé bá ò gbé ara wa lárugẹ ta ni yóò ṣe é,positive,negative,0.3013,0.6143,True,0.313
+yor_train_7465,wọ́n ni àgbájọ ọwọ́ lá fi nsọ̀yà mo ti di ọmọ lẹ́hìn yín báyìí o,positive,negative,0.2056,0.5157,True,0.3101
+yor_train_364,ní sáà tí a wà yìí àwọn ọdẹ ìgbèríko ti ń ráhùn wípé àwọn kò fi bẹ́ẹ̀ rí ẹran pa nígbẹ̀ẹ́ mọ́ bíi ti àtijọ́ kò sì sí ohun tí ó fà á bíkòṣe ti ìgbẹ́ tí a ti ń ṣọ gbogbo rẹ̀ di ìletò a ti pa ìgbẹ́ títí ẹran igbó ti sá lọ sónà réré lọ ba sí,negative,neutral,0.3402,0.6476,True,0.3074
+yor_train_2627,agbẹ́jẹ́ gbà wọ́n là á ní kí á pa á ní pánsá,neutral,negative,0.3314,0.6375,True,0.3061
+yor_train_3723,òbò ní ìtìjú ló mú òun sápamọ́ sábẹ́ inú sùgbọ́n bí okó bá dé òun a ṣínà fún un the vagina says its coyness that caused it to hide below the belly but if a penis shows up it will open the way for it,neutral,negative,0.3201,0.6251,True,0.305
+yor_train_5100,bi asoju egbe dokita se fi lakaye gba ekiti lowo ati asoju egbe eleka re o,positive,negative,0.3158,0.6199,True,0.3041
+yor_train_5470,ẹ wo àwòkọ́ṣe rere látàrí àwọn iléeṣẹ́ ẹ̀rọ ìbánisọ̀rọ̀ ṣe ìpolongo àǹfààní ìrànwọ́ mb ẹgbẹ̀rún láti mú kí àwọn ará ìlú cape verde ó jókòó kalé kí òfin kónílégbélé ó ba fẹsẹ̀rinlẹ̀,positive,negative,0.296,0.5994,True,0.3034
+yor_train_5721,ẹ ṣeun fún ìṣípayá yìí ọ̀nà mìíràn lelę gbé e gbà poo àmọ́ ó tún kù ni ìbọn ń ró àwọn tí wọ́n gbé ọgbọ́n ìyàsọ́tọ̀ọ̀tọ̀ dúdú àti funfun wà náà ló pèrò ète ọmọ ádámọ̀ àwọn ará ibí náà ló ń bẹ ńbẹ̀ ọ̀rọ̀ mi lóyún sínú n ó bí i láìpẹ́,positive,negative,0.2439,0.5464,True,0.3025
+yor_train_2036,ògbóǹtarìgì oníṣòwò ẹrú nù un obìrin ogun,neutral,negative,0.325,0.6274,True,0.3024
+yor_train_6725,mo fi ewé ahun mo fi se ahun jẹ ohun burúkú kì yóó le è hun mí ewé ọrẹ̀ wọn kì í hunlẹ̀,positive,negative,0.2121,0.5141,True,0.302
+yor_train_4903,bí àgbẹ̀ bá jí á mọ́kọ́ bí alágbẹ̀dẹ bá jí á rọ àdá akọ̀pẹ jí tòun ti igbàa rẹ̀ iṣẹ́ ló ń ṣe fún ni jẹ iṣẹ́ ti yá,neutral,negative,0.2009,0.4983,True,0.2974
+yor_train_2438,kí ló lè fa làlàkúkúfẹfẹ kí ló le kí ló le kí ló le kí ló le o,neutral,negative,0.3278,0.6214,True,0.2936
+yor_train_6720,apekoto jeun koni je ibaje rara,positive,negative,0.3045,0.5926,True,0.2881
+yor_train_7901,awon yiii lo lee see daradara,positive,negative,0.2288,0.5154,True,0.2866
+yor_train_4049,ọ̀sìn náà bá kọ́kọ́ bí pa ẹni tí ó ni ẹran náà ló ma kó gbogbo rẹ̀ èyí tó bá pa bí leyin ti àkọ́kọ́ àti alágbàsìn àti olówó ohun ọ̀sìn náà ní wọ́n ma jọ pín ọmọ wọn dọ́gba ọ̀nà àgbàsìn yìí fún àwọn ọlọ́rọ̀ láti ní oríṣi ohun ọ̀sìn káàkiri ọ̀dọ̀,neutral,negative,0.2988,0.5853,True,0.2865
+yor_train_2909,àwọn ohun tí àwọn yorùbá gbàgbọ́ wípé kò da kí olóyún má rìn nínu ọrùn ọ̀sán gangan kí ẹ̀mí burúkú má bà á ta mọ́ oyún náà ki èèyàn má wo jígí tí àrá bá ń sán ó lè fọ́ jígí tí ó lè ṣe ẹni tí ó ń wò ó léṣe,neutral,negative,0.3162,0.6013,True,0.2851
+yor_train_3283,ẹṣin ọ̀rọ́ ní o ò tó gèlètè ó ń mí fìn kíni gèlètè,neutral,negative,0.3141,0.5983,True,0.2842
+yor_train_5238,ẹ mámà ṣe é o ìkà ò sunwọ̀n ẹ má mà ṣe é o ìkà ò dáa,positive,negative,0.3504,0.6335,True,0.2831
+yor_train_3469,bí ò sílẹ̀ kí la ò bá pè nílé ayé ṣebí ìgbà ilé dé la délé ayé àbí a ti délé ayé kílẹ̀ tó dé ni,neutral,negative,0.3113,0.5892,True,0.2779
+yor_train_5947,ojo ayo ojo itura ni o n ro bayii nise ni o dabi eni wipe ki n pada loo sun,positive,negative,0.2735,0.5503,True,0.2768
+yor_train_6156,a o gbero pe afe yan se lodi ooo egbe awon oludari ile epo ipman lo so,positive,negative,0.2699,0.5417,True,0.2718
+yor_train_8116,sora fun ifa o ma n fani lapo ya ni ohun ti a ko jiya fun kii pe lowo rara gbogbo ohun to n dan ko ni wura,positive,negative,0.3111,0.5804,True,0.2693
+yor_train_7214,ko si wahala rara onakona to e be ri wipe mo tile wulo e ma siyemeji lati me ki n gbo,positive,negative,0.2961,0.5626,True,0.2665
+yor_train_3837,àwòrán gómìnà ìpínlẹ̀ cross river ọ̀jọ̀gbọ́n ben ayade àti àwọn gómìnà ẹgbẹ́ òṣèlú apc,neutral,negative,0.3341,0.6004,True,0.2663
+yor_train_3660,ewure gbopon lori ewure n dafa a difa fun agogo sekete tii se elegbe leyin ope ebo ni won ni ko waa se o gbebo o rubo orunmila yoo selegbe leyin mi agogo sekete nii selegbe leyin ope,neutral,negative,0.2623,0.5254,True,0.2631
+yor_train_2361,bí aláàfin bá wàjà àwọn òṣìṣẹ́ àfin méje nínú ìṣèlú ẹ̀sìn àti àwọn ọmọ ọ̀dọ̀ aláàfin ma ṣe akin ọkàn tí wọ́n gbọ́dọ̀ gba ẹ̀mí ara wọn ìdí èyí ni láti máà jẹ́ kí àwọn tó súnmọ́ ọba gba ẹ̀bọ̀dè láti ṣe ikú pa ọba titun lórí oyè,neutral,negative,0.2869,0.5482,True,0.2613
+yor_train_8266,má pa irọ́ sọ ọ́ bí ó ṣe jẹ́ òtítọ́ ló yẹ,positive,negative,0.3276,0.5848,True,0.2572
+yor_train_5059,eni eegun ba nle ko maa roju tori boti n re ara aiye ni n re ara orun translatio,positive,negative,0.3579,0.615,True,0.2571
+yor_train_4164,ikú kì í pa ẹtà lójú ran kí ni ẹtà,neutral,negative,0.3556,0.6122,True,0.2566
+yor_train_2700,iru e ko le sai ma waye nigba ti o je wipe idije oloresore ni won gba,neutral,negative,0.2711,0.5272,True,0.2561
+yor_train_2929,haba kansu renti ile lowoo oloye obasanjo e wo iye ti baba fee maa gba,neutral,negative,0.2401,0.4962,True,0.2561
+yor_train_4117,ejò ni ejòlá ejò ni ọká ẹja ni epìyà ẹja ni àkódó ni ọ̀gànwo ni apépe,neutral,negative,0.3577,0.6137,True,0.256
+yor_train_7518,ti olori ba wuwa omoluabi eje ki a so oto goodluck jonathan un se gudu gudu meje yaya mefa si opopono ibadan eko,positive,negative,0.2888,0.5427,True,0.2539
+yor_train_8229,orí bíbẹ́ kọ́ ni òògùn orí fífọ́ translation cutting off the head will not cure headache,positive,negative,0.2615,0.5083,True,0.2468
+yor_train_4358,bí ènìyàn bá ń wo eré gẹ̀lẹ̀dẹ́ onítọ̀hún ò ní mọ̀gbà tí yóò ná gbogbo owó rẹ̀ tán fún onígẹ̀lẹ̀dẹ́dẹ́,neutral,negative,0.2674,0.5134,True,0.246
+yor_train_4834,se o mo pe ofin apapo ile naijiria nikan ko ni ofin ti a ni sugbon ohun ni ofin ti o ga julo ti awon ofin yoku wa labe,neutral,negative,0.3203,0.5648,True,0.2445
+yor_train_7735,ǹjẹ́ ó yẹ kédè mìíràn bíkòṣe èdè ìbílẹ̀ ó wà lórí owóo wa a kò gbòmìnira bí èdèe gẹ̀ẹ́sì àti lárúbáwá bá ṣì ń bẹ lóríi owó ilẹ̀ẹ wa kò yẹ kí àwọn èdè wọ̀nyí ó ṣì wà lórí owóo wa ṣebí lugard ló mú àbá un wá lugard ti kó àáṣáa rẹ̀ lọ ṣé kò yẹ á ṣàtúnṣe,positive,negative,0.2863,0.5293,True,0.243
+yor_train_6586,nigba ogun abele awon agba ni ko buru to bayi ki eledumare ko wa yo ase,positive,negative,0.3708,0.6104,True,0.2396
+yor_train_3871,aago yìí nílòo àtúnṣe aago márùn ún ku aago márùún kù,neutral,negative,0.2718,0.5094,True,0.2376
+yor_train_2020,mo fẹ́ lọ yà mọ́n mò ń bọ̀,neutral,negative,0.353,0.5906,True,0.2376
+yor_train_2514,ṣé o mọ̀ pé kótó di ọdún un a ti fi ìyẹ̀ ṣe owó rí nílúu nàìjíríà,neutral,negative,0.3702,0.6048,True,0.2346
+yor_train_8454,bo bi o ba nidi obinrin ki je ikumolu madam no go control our family,positive,negative,0.3367,0.5679,True,0.2312
+yor_train_4668,àlejò tó wọ̀ nílé e pọ́ngilá pọ́ngilá ní ìwọ ta ni àlejò ó ní òun bugijẹ pọ́ngilá ni tòò lọ́ dájú igi i tìrẹ lọ́t,neutral,negative,0.3231,0.5527,True,0.2296
+yor_train_3596,agreed to an extent that sh is old fashioned but there is no sh in yorùbá alphabet àṣà ni wọ́n kọ́ tí wọ́n fi ń lo sh ohun ni àwọn ọ̀jọ̀gbọ́n àti olùkọ́ yorùbá dìde láti ṣe àtúnṣe rẹ̀ wípé ṣ ni álífábẹ́ẹ́tì tí ó tọ́ láti lò,neutral,negative,0.2877,0.5158,True,0.2281
+yor_train_7811,onigba lo pegba lekufo ki araye to baa fi ko idoti ti a ko ba gbe ede wa ga tani yoo bawa gbeega,positive,negative,0.3552,0.5801,True,0.2249
+yor_train_7320,béèni ìwà lewà,positive,negative,0.3434,0.5673,True,0.2239
+yor_train_3272,àwòkọ́ṣe irun ìbílẹ̀ wa ni èèbó fi ṣe irun atọọ́dá kan bíi kànkàn àlọ̀ tí a pa láró weave on,neutral,negative,0.347,0.5699,True,0.2229
+yor_train_2619,e lo wo fiimu naa ke le ri funra yin,neutral,negative,0.3384,0.5593,True,0.2209
+yor_train_2214,ọ̀dá omi wà nílé ifẹ̀ wọ́n ṣe bí wọ́n ti í ṣe é àmọ́ ọjọ́ kò rọ̀,neutral,negative,0.3515,0.5717,True,0.2202
+yor_train_6533,kì í bọ́ lọ́wọ́ èèyàn kó bọ́ sílẹ̀ ọwọ́ ẹlòmíràn ní ń bọ́ sí translation if opportunity slips out of a persons hand it lands in anothers lesson dont let opportunities slip off your hand,positive,negative,0.3102,0.5293,True,0.2191
+yor_train_4277,ila orogun iperin ward unit jagun,neutral,negative,0.3211,0.5391,True,0.218
+yor_train_2206,wọ́n ní kò sí báa ti wo ìbàdàn tó apá kan là á rí àbí,neutral,negative,0.3697,0.5876,True,0.2179
+yor_train_4727,ìka ò dọ́gba,neutral,negative,0.3328,0.5505,True,0.2177
+yor_train_4744,nínúu èèyàn tó wà ní bẹ̀nẹ̀ ló ń fọ yorùbá,neutral,negative,0.379,0.5923,True,0.2133
+yor_train_3898,èyí làwọn bàbáa wa rí tí wọ́n fi ṣàpèjúwe pé wọ́n ń kí ọ̀run ọlọ́run àwọn tó ń kí ìrun kírun,neutral,negative,0.3205,0.5311,True,0.2106
+yor_train_3282,ìran yorùbá ní ìpínlẹ̀ kogi ni àwọn ará ọkùn wọ́n tàn kiri ní yagba west yagba east mapomuro kabba bunu ijimu àti ní àwọn àgbègbè lokoja wọ́n ń sọ ẹ̀ka èdè bíi ìyàgbà òwe ìjímù búnù àti owowo ṣùgbọ́n ọkùn ni ojúlówó èdè wọn,neutral,negative,0.3407,0.5505,True,0.2098
+yor_train_2908,báwo ni ti ìran ogiso ti ṣe jẹ́ a gbọ́ pé wọ́n rọ̀ wá sílé ayé ni ó fẹ́ fara jọ ìtàn kan tí a mọ̀,neutral,negative,0.3818,0.5816,True,0.1998
+yor_train_6732,e e ni binu ni ejo won ko won n ran oloun leti ni gbogbo laala wa a kuku ja sope ni oruko jesu,positive,negative,0.3637,0.561,True,0.1973
+yor_train_2455,àfi bí wọn bá lè ya àwọn òkúu wọn,neutral,negative,0.4005,0.5916,True,0.1911
+yor_train_3772,ara wọn aláàfin òfiràn gba ìlú tí wọ́n ń pè ní kúsù ìlú tó wà ní bíi àádọ́ta máílì sí ìwọ̀ oòrùn ọ̀yọ́ ilé níbi tó gbé fi ṣe ibùgbé aláàfin òfiràn wàjà ní kúsù ọmọ rẹ̀ egúnojú ló jẹ aláàfin titun aláàfin egúnojú ṣí ìtẹ́ ọ̀yọ́ lọ sí ṣakí fún ìgbà díẹ̀,neutral,negative,0.3662,0.5497,True,0.1835
+yor_train_6844,idekun akatakiti are jonathan pe fun itesiwaju iranlowo awon ijoba ile okere,positive,negative,0.3162,0.4989,True,0.1827
+yor_train_6100,egbe ke owo ero ni won ma n se faaji irole e jeki a toju egbe fun sayii,positive,negative,0.3404,0.5229,True,0.1825
+yor_train_3284,bí a bá ní orí ẹlẹ́dàá ṣá à dá èèyàn ó túmọ̀ sí wípé ẹnítọ̀hún jẹ́ àkàndá ènìyàn,neutral,negative,0.3233,0.5043,True,0.181
+yor_train_2567,ẹ̀kún omi ni ilé ayé jẹ́ nígbàtí àwọn ọmọ mẹ́tẹ̀ẹ̀ta dé àárín agbalalúgbú omi ayé yìí,neutral,negative,0.3228,0.4985,True,0.1757
+yor_train_3476,busa bí ètò ìgbéyàwó ààrẹ buhari kò bá ṣe lọ rèé àwọn ènìyàn nàíjíríà,neutral,negative,0.4048,0.5775,True,0.1727
+yor_train_4993,ko si iwure miran to ju iwa lo iwa loba awure,positive,negative,0.3733,0.5454,True,0.1721
+yor_train_2287,femi felix teti kogbo lyrics naijapals,neutral,negative,0.3546,0.5267,True,0.1721
+yor_train_5334,eyin odo ori ti en so oko oro fun ara yin se eti ri bi olowo se un se ore olowo eje ki ori yin pe ki eye fi epe ranse si ara yin nitori ati be be lo ti oloselu ba ti ri ara wan ni koko abuse buse ariya de le,positive,negative,0.3977,0.5644,True,0.1667
+yor_train_6524,ara nǹkan tó ṣe kókó tí ọmọdé ilẹ̀ adúláwọ̀ fẹ́ ni ẹ̀kọ́ tó yè kooro ètò ìlera tó pójú,positive,negative,0.3712,0.5372,True,0.166
+yor_train_2239,ọmọ ló ń sin òbí ẹ̀ àmọ́ kò sí ẹni tí ò lè ra pósí àna lè rà á ṣebí ènìkan ló ń sin ẹni tí ò lárá,neutral,negative,0.403,0.5678,True,0.1648
+yor_train_6495,tí ó o bá féràn ọ̀nà tí ò ń gbà lọ́wọ́ lọ́wọ́ nínú ìrìn àjò ìgbésí ayé ó yá gbéra bí ajá,positive,negative,0.3355,0.4996,True,0.1641
+yor_train_2989,owó kò níran à fẹni tí kò bá ṣiṣẹ́ translation money does not have a specific lineage it visit,neutral,negative,0.3799,0.5425,True,0.1626
+yor_train_2437,ẹrú ń bẹ ìwọ̀fà sì wà àmọ́ bí ìwọ̀fà bá san ọ̀fà rẹ̀ tán ó di òminira bẹ́ẹ̀ ló rí tẹ́lẹ̀,neutral,negative,0.3846,0.5462,True,0.1616
+yor_train_6036,ọba o ṣé o àwọn kan ò jí mọ́ wọn ò mín mọ́ o ṣé e tèmi o,positive,negative,0.3597,0.519,True,0.1593
+yor_train_2829,was pls tell it in your own word like my folks dey talk am iroyin koto afoju ba,neutral,negative,0.3524,0.5116,True,0.1592
+yor_train_5713,i dont pay attention to sienna drivers too igi ewédú ò ní wó pa wá,positive,negative,0.3669,0.5249,True,0.158
+yor_train_3438,ìgbàgbọ́ kan wà láàárín àwọn oníṣòwò yorùbá wọn kìí ta abẹ́rẹ́ fún èèyàn gẹ́gẹ́ bíi ọjà àkọ̀ọ́tà wọn lójúmọ́ bí wọ́n bá tiẹ̀ ma ta abẹ́rẹ́ fún èèyàn èèyàn kò nìí pèé ní abẹ́rẹ́ fún ẹni tó fẹ́ ta ọjà náà okini ni èèyàn gbọ́dọ̀ ní wípé òhun fẹ́ rà,neutral,negative,0.4042,0.5613,True,0.1571
+yor_train_4808,bí ẹ kò bá mọ̀ èròjà amúni dàgbà inú kòkòrò ju ti ẹrankẹ́ran ẹjakẹ́ja láyé lọ,neutral,negative,0.3467,0.5028,True,0.1561
+yor_train_2341,àfẹ́ẹ̀rí kan ò ju ká rí igbó ńlá kan bọ́ sí lọ ẹbọ kan kò ju ọ̀pọ̀ ènìyàn lọ òrìṣá gbé mi lé àtète kan ò ju orí ẹṣin lọ,neutral,negative,0.3607,0.5106,True,0.1499
+yor_train_8039,eyin ọdọ naijiria nigbati a ba sọrọ pẹlu ohun kan ti fi imo ṣọkan a le koju ohunkohun ni ọna wa a le fi opin si ebi a le pari ainiṣẹ osi ati ipanilaya,positive,negative,0.3561,0.5049,True,0.1488
+yor_train_2670,obìnrin ẹfọ̀n sì fún un lésì pé àwọ̀ òun tó òun gbé pamọ́ lòun ń wá,neutral,negative,0.363,0.5118,True,0.1488
+yor_train_6650,tojú tìyẹ́ ni àparò fi ń ríran ojú sì ni alákàn fi ń ṣọ́rí ẹ̀yin tí ẹ wà nígboro fún ìfẹ̀hónúhàn ẹ jìnà sí àwọn ará ibí wọ́n ti ń mú àwọn èèyàn ní ọjọ́ta etí ẹ mélòó,positive,negative,0.3523,0.4971,True,0.1448
+yor_train_3110,oju to ti ri eegun to ti ri oro bi o ba tiiri geleje kotii ri inkankan,neutral,negative,0.3635,0.5072,True,0.1437
+yor_train_2647,bí bàtá ṣe jẹ́ ìlù ni ó ní irú ijó tí à ń jó sí i oníjóo bàtá yóò máa jan ẹsẹ̀ mọ́lẹ̀ láìmoye ìgbà bó ti ń jansẹ̀ mọ́lẹ̀ ló ń ṣánpa ìgbà mìíràn oníjó yóò tàkìtì gbókìtì àwọn olófìn íntótó níjó bàtá ló di ijó ìgbàlódé kan,neutral,negative,0.4152,0.5523,True,0.1371
+yor_train_3377,ó dìgbà tí ètò ẹ̀kọ́ orílẹ̀ èdè bá gbé pẹ́ẹ́lí ju tìsẹ̀hín lọ tí a ò nílò àti sọdá òkun tàbí ọ̀sà lọ kẹ́kọ̀ọ́,neutral,negative,0.3771,0.5123,True,0.1352
+yor_train_6330,ìkaàrún fi owóò rẹ bá a lò má sì ṣe bínú tí ó bá kọ̀ láti ná owó o rẹ̀ fún ọ ìkẹfà máà ṣe gbó o lẹ́nu nígbà kankan rí i wípé ò ń wàásù ìfẹ́ àti àlàáfíà nígbà tí aáwọ̀ bádé kí àwọn èèyàn máà lọ máa fura sí ọ nígbà tó bá ti kú,positive,negative,0.3942,0.5269,True,0.1327
+yor_train_2187,enikan ooni tan layishe pe won tan ina fun,neutral,negative,0.4035,0.5296,True,0.1261
+yor_train_4449,ó ga jù,neutral,negative,0.3943,0.5145,True,0.1202
+yor_train_4362,bí kò bá sí ẹ̀sìn ìlú kí wá lódé tí a ò fi dá ọdún ìbílẹ̀ mọ̀n bí ẹ̀sìn àtọ̀húnrìnwá méjèèjì,neutral,negative,0.397,0.5149,True,0.1179
+yor_train_4954,àwọn kan ò níná àwọn kan tanná sílẹ̀ yan yan ìka ò dọ́gba,neutral,negative,0.3945,0.512,True,0.1175
+yor_train_4923,ará ẹ wo ìgàn tí ó tóbi jù tí ń kò rí irúu rẹ̀ rí àwọn oníṣẹ́ ìwádìí ìjìnlẹ̀ àti àwọn apa ohun àlùmọ́nì mọ́ kan ni ó ṣe àtúnríi rẹ̀ ní indonesia ọdún un ni ẹnikẹ́ni fi ojú bà á gbẹ́yìn,neutral,negative,0.3822,0.4984,True,0.1162
+yor_train_2018,ooto ni e rii so eni tio ba fi isu yam ran se si ni ni ile house o ye ka fi iyo ran se si ni oko farm,neutral,negative,0.3834,0.4989,True,0.1155
+yor_train_7728,nitori arigisegi to segi ori ara re ni yoo fi ruu owo ti ogede ba gbe o fi n ω̴ą ara re ni awa la o leke abinu eni,positive,negative,0.4224,0.5281,True,0.1057
+yor_train_6352,ohun tó máa ṣẹlẹ̀ séyàn máa ńgbọ́n ju èyàn lọ ni béeni òfo eni kìí se elòmíràn kí oba òkè sàánú wa ah ayé yìí,positive,negative,0.3943,0.4952,True,0.1009
+yor_train_4522,ṣé kò sí irú rẹ̀ ní naija ni ṣebí irú ọgbà yìí wà ní ibadan,neutral,negative,0.4023,0.5026,True,0.1003
+yor_train_3739,sebi won maun din ninu ororo ni díndín kọ́ o,neutral,negative,0.432,0.5311,True,0.0991
+yor_train_7738,tí ọdẹ bá ro ìṣẹ́ tó bá ro ìyà tó bá pa ẹran kò ní fún ẹnìkan jẹ if a hunter were to consider the hardship of his hunting expedition he wont share his games with anyone any kind of giving is tough and quite often sacrificial be appreciative,positive,negative,0.4024,0.4966,True,0.0942
+yor_train_2803,wọ́n láwọn ọ̀gá kọ́ wa ní kíkọ kíkà wọ́n gbàgbé wípé kéwú àti ẹ̀kọ́ bíbélì nìkan ni wọ́n ń kọ́ wa,neutral,negative,0.4097,0.4985,True,0.0888
+yor_train_3079,ẹni tí a fẹ̀sùn kàn yóò sanwóo ti rẹ̀ bí olùfisùn ti ṣe san níṣàájú kí wọ́n ó tó bẹ̀rẹ̀ ẹjọ́,neutral,negative,0.422,0.5045,True,0.0825
+yor_train_1938,beeni sabon gari ni kaa kiri ilu yooba lati ri agbegbe ti awon tedo si abi ti won po si lo ma ng,neutral,negative,0.4456,0.5264,True,0.0808
+yor_train_2073,ẹja nìkan kọ́ ló ti ọ̀run wá ṣáyé àti imọlẹ̀ àtòòṣà to fi kan ọmọ ènìyàn adárí hi irun ọ̀run ni a ti wá sílé ayé,neutral,negative,0.4338,0.5135,True,0.0797
+yor_train_3664,kò sí ọṣẹ ìwẹ̀ náà láyé ń bí ọ̀rọ̀ ẹnu kọ́ torí pé ara nǹkan ìṣẹ̀dá ni ọṣẹ dúdú ti wá,neutral,negative,0.4472,0.5203,True,0.0731
+yor_train_4933,sandra ra ìfọn trumpet fún ó fún un níwèé ìtàn ó la ojú rẹ̀ sí àìmọ̀ kódà wọ́n jọ kọrin orí nísàlẹ̀ ni,neutral,negative,0.4257,0.4988,True,0.0731
+yor_train_3940,ní fẹlá fi america sílẹ̀ ó padà sílé ó bẹ̀rẹ̀ sí í fi èdè àdàlù mọ́ gẹ̀ẹ́sì kọrin kí àwọn ọmọ ilẹ̀ áfríkà ba gbọ́hun tí òun ń sọ,neutral,negative,0.4376,0.5058,True,0.0682
+yor_train_5252,ará kangúdù o bí o délé o kílé o ó di gbére ẹ̀yin ti ẹ kú àṣèìndè sikiru adéṣínà tó lọ,positive,negative,0.4572,0.515,True,0.0578
+yor_train_7718,amin pelu awon ti won fe wa denu àmìn àṣẹ,positive,negative,0.4425,0.4984,True,0.0559
+yor_train_4388,bí bá pa iná há à lẹ óò gbọ́,neutral,negative,0.4521,0.5067,True,0.0546
+yor_train_4059,ilẹ̀ ibi tí ohun gbogbo láyé ti sú jáde ilẹ̀ ni eléèbó ń pè ní,neutral,negative,0.4447,0.4939,True,0.0492
+yor_train_4285,pa òwe kan tí ó dá lóríi ẹranko fún àpẹẹrẹ ọ̀rọ̀ tó ń pa olóko lẹ́kún ni àparò fi ń ṣe ẹ̀rín rín nínú igbó,neutral,negative,0.4731,0.5136,True,0.0405
+yor_train_7682,oye to kan ara iwo yoo kuku kan ara ede ohun gbogbo ti eda ba n se laye ko fi suuru si nitori suuru ni baba iwa,positive,negative,0.4654,0.4984,True,0.033
+yor_train_7908,ìbínú ò da nǹkan sùúrù ni baba ìwà àgbà tó ní sùúrù ohun gbogbo ló ní anger yields nothing patience is the epitome of good character an elder who has patience as a virtue already has all things patience is superior to anger and more effective by far,positive,negative,0.4813,0.5068,True,0.0255
+yor_train_2038,wọ́n ńrìn gẹ̀rẹ́ gẹ̀rẹ́ lọ nínú igbó wọ́n ń sun ìjálá lọ iyè ológìní sọ ó ràntí ìgèrè tí ó dẹ sí kátá lánàá ó ní ká wọn yà síbẹ̀ lọ wòó,neutral,negative,0.4893,0.5053,True,0.016

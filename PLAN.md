@@ -332,7 +332,9 @@ All ablations use the best model from Phase 4. If GPU time is short, run them on
    - **64% of AfriBERTa's errors are shared with TF-IDF** (a hard core of 651 tweets); each model fixes about 360 of the other's errors, so the two are complementary.
    - AfriBERTa is **over-confident**: 94% of its predictions have p > 0.9, but those are 77% accurate.
    - Confusions are spread out; positive → neutral is the most common (219).
-   - **Pending:** manual tagging of 100 sampled errors (`results/error_analysis/errors_to_tag.csv`) by a Yoruba reader, then `notebooks/03_error_analysis.ipynb`.
+   - **Meaning-based tags** (`errors_tagged.csv`, 100 errors): model-assisted by Claude, with confidence and gloss per row; **unverified**. Top categories: proverb/idiom 28, news/factual 24, missing diacritics 22, too short 20, neutral-negative boundary 19, likely label noise 16, religious/greeting 11, code-switching 8, sarcasm 7.
+   - **Reliability plan:** (a) native-speaker verification of 50 rows (`verification_sheet.csv` + `CODEBOOK.md`; `python -m src.tag_agreement` gives per-category Cohen's κ); (b) **statistical label-noise estimate by confident learning** (Northcutt et al., 2021; `src/label_noise.py`): **10.8% of training tweets** (negative 14.0%, neutral 10.6%, positive 9.3%), 10.0% of dev and 9.4% of test are flagged as likely label issues. That fits κ = 0.65 and implies an accuracy ceiling of roughly 90%. Reading-based "label noise" tags did **not** match the statistical flags (31% vs 31%), so noise claims rest on the statistical estimate.
+   - **Pending:** native-speaker verification (50 rows), then `notebooks/03_error_analysis.ipynb`.
 
 <details><summary>Original Phase 6 plan</summary>
 

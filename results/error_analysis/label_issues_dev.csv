@@ -1,0 +1,209 @@
+id,text,label,confident_class,p_given,p_confident,issue,margin,overlap_train
+yor_dev_1192,olorun lo da mi emi ki mo da ara mi,neutral,positive,0.0037,0.9938,True,0.9901,False
+yor_dev_1491,ẹ kú àti o,neutral,positive,0.0139,0.9844,True,0.9705,False
+yor_dev_1143,ẹni tí kò ì kú ò mọ irú ikú tí yó pa òun,neutral,negative,0.0074,0.9707,True,0.9633,False
+yor_dev_1630,bẹ́ẹ̀ ni o ẹ wí ire àgbà ìnàkí ọmọ tó bá ṣípá ni ìyá á kúkú gbé mo fi àtẹ̀jíṣẹ́ kan ṣọwọ́ sí yín lórí ínsítágíráàmù ẹ dákun ẹ yẹ̀ ẹ́ wò ikanni mi níbẹ̀ ni,neutral,positive,0.017,0.9721,True,0.9551,False
+yor_dev_1681,ǹjẹ́ ìwọ́ mọ̀ wípé bí ẹni ń forin kíkọ ṣe agbe tọrọ owó ni ọ̀ràn náà rí ni a fi pe àwọn òǹkọrin olórin ni alágbe àṣàa wọn ni lílọ sóde ijó láti kọrin fún owó,negative,neutral,0.0255,0.9501,True,0.9246,True
+yor_dev_221,ǹjẹ́ o mọ̀ pé méjì méjì ni ẹyẹ ilé ń bí nígbàogbo àgbà ní tọ̀tún tòsì lẹyẹlé fi í kó re wọlé,positive,neutral,0.023,0.9374,True,0.9144,False
+yor_dev_798,what do you call this awesome meal in your local dialect and what does it go best with comment below kíni ẹ̀ ń pe oúnjẹ aládùn yìí ní ẹ̀ka èdè yín àti wípé kíni ẹ fẹ́ràn láti fi tẹ̀ẹ́ lọ sí ìsàlẹ̀ ikùn ẹ fi èsì sì ìsàlẹ̀,positive,neutral,0.036,0.9495,True,0.9135,False
+yor_dev_1263,ni akoko igbiyanju yii mo paṣẹ fun gbogbo eniyan lati duro lailewu tọju si awọn ofin covid jẹ ohun irira ti gbogbo wa tọju ọdọmọkunrin ti ara wa eyi jẹ akoko ironu lori awọn nkan ti o yẹ ki a ṣe pataki si o ṣeun,neutral,positive,0.0284,0.9338,True,0.9054,False
+yor_dev_1704,bí a bá wò ó à á rí pé ó ní ìdí tí a fi ka èèwọ̀ yìí lákọ̀ọ́kọ́,negative,neutral,0.02,0.9167,True,0.8967,False
+yor_dev_1935,a wá wòó loni ẹ jọ̀wọ́ kini nkan to yàtò láti bíi ọdún mẹ́ta ààbò sì asiko yii ọ̀pọ̀ nínú je á wọn afowofa eda ni ti èmi mo ti kàa mo rí pé amuwa otun,negative,positive,0.0308,0.919,True,0.8882,False
+yor_dev_1122,ti a ba ni ki a di oju ki eni buruku koja,neutral,negative,0.0421,0.9274,True,0.8853,False
+yor_dev_1693,bùkọ́lá tọ́sìn o lẹ́sẹ̀ tínínrín sììstá jẹ́nífà ẹlẹ́sẹ̀ pàlàbà fásílá o lẹ́sẹ̀ ẹdìẹe àfi kí ẹ tọ́jú ki e tọ́tè máa gbọ̀ndí kiri àdúgbò,negative,positive,0.0414,0.9218,True,0.8804,False
+yor_dev_1894,àti pé a ti ń kófìrí wọn ni ìsàlẹ̀ ọya díẹ̀ díẹ̀ igi gogoro ń gún wa lójú bọ̀ kọ́un,negative,neutral,0.0518,0.93,True,0.8782,False
+yor_dev_1989,orúkọ ọmọ tó ń sunkún ni awẹ́ àti òní àmọ́ kí ni ìyàtọ̀ ẹkún un wọn,negative,neutral,0.0542,0.9301,True,0.8759,False
+yor_dev_1481,kì í ṣe torí pé ó dùn jù,neutral,positive,0.0447,0.9163,True,0.8716,False
+yor_dev_1135,nǹkan ṣe níjù a ò gbọ́ nílé ara ilé kú ń gbọ́ wọ́n ń mú u mọ́ra ni,neutral,negative,0.0402,0.9117,True,0.8715,False
+yor_dev_980,èsìn ò pé ká má ṣe bí ẹ̀dá ẹlẹ́ran ara a ò lè dàbí ọlọ́run ẹ̀mí mímọ́ a kàn ń gbìyànjú ni,neutral,positive,0.0186,0.8876,True,0.869,False
+yor_dev_1362,first off it is àmì not amin gbogbo wa la máa jẹ breakfast,neutral,positive,0.0623,0.927,True,0.8647,False
+yor_dev_1341,ààbò iṣẹ́ẹ wa lórí ayélujára,neutral,positive,0.0574,0.9192,True,0.8618,False
+yor_dev_906,ẹ jọ̀wó ẹ̀yin ọ̀jọ̀gbọ́n ẹ bá wa dá síi ṣé tòótọ́ ni pé láwọn ìṣe wa kọ̀ọ̀kan,neutral,positive,0.0483,0.9089,True,0.8606,False
+yor_dev_1748,mo ti n gbe adugbo fun bi odun kan bayii sibe nko ni ore kankan oga lara mi gaan ni o mikanle,negative,positive,0.0245,0.8736,True,0.8491,False
+yor_dev_1036,e duro na eyin eeyan wa se ti kásè nle ni e se w,neutral,positive,0.0427,0.8903,True,0.8476,False
+yor_dev_1720,exit of a music legend bàbá victor ọláìyá a kú iléde bàbá a wa onífèrè,negative,positive,0.0347,0.8791,True,0.8444,False
+yor_dev_125,akànṣẹ́ kù bí òjò ní òun ń sọ yorùbá díẹ̀ díẹ̀ òun sì fẹ́ràn ẹ̀bà pẹ̀lú ọbẹ̀ ẹ̀gúsí,positive,neutral,0.0703,0.9083,True,0.838,False
+yor_dev_94,a ò kí ń ṣe ẹni burúkú nítorí a jẹ́ oníṣẹ̀ṣe,positive,negative,0.07,0.9057,True,0.8357,False
+yor_dev_1623,ah olorun month number ileyi yin o adanwo re o,neutral,positive,0.0456,0.8773,True,0.8317,False
+yor_dev_2020,àroòdákẹ́ ka ṣá máa wòran ni báyìí ẹ̀yin lẹ dìbò yan ṣéǹjì ẹ yáa máa gba ṣéǹjì yín ǹṣó,negative,positive,0.0377,0.8649,True,0.8272,False
+yor_dev_1947,ìtàn asínrín àti òkéré eto koje ka rohun wi,negative,neutral,0.0629,0.8884,True,0.8255,False
+yor_dev_1373,pa sile pa soko laka aiye ogun ko laso moriwo laso ogun ire kii se ile ogun emu lo ya mu nibe,neutral,negative,0.0371,0.8569,True,0.8198,False
+yor_dev_1582,ìwí ire ìwúre ojú eegun ojúgun eyínmẹ́nugún balógun,neutral,positive,0.0465,0.8637,True,0.8172,False
+yor_dev_1176,ẹ ò pa á tán,neutral,negative,0.0235,0.8371,True,0.8136,False
+yor_dev_1308,awa niyen o jare ise ni ko fun mi laaye lati ma wa sibi deedee,neutral,positive,0.0832,0.886,True,0.8028,False
+yor_dev_1358,abala ke̟è̟é̟dógún e̟nì kò̟ò̟kan ló ní è̟tó̟ láti jé̟ o̟mo̟ orílè̟ èdè kan a kò lè s̟àdédé gba è̟tó̟ jíjé̟ o̟mo̟ orílè̟ èdè e̟ni ló̟wó̟ e̟nìké̟ni láìnídìí tàbí kí a kò̟ fún e̟nìké̟ni láti yàn láti jé̟ o̟mo̟ orílè̟ èdè mìíràn,neutral,positive,0.095,0.8951,True,0.8001,False
+yor_dev_1083,ajímọ̀bi ò kọ ti àánú ẹni orí bá rán síni ló ń ṣe ni lóore,neutral,negative,0.073,0.8719,True,0.7989,False
+yor_dev_1832,mio ranti oruko re sugbon mo mo wipe moti jeri lewe nigbati mo wa ni ijebu mio feran oorun e rara,negative,neutral,0.0193,0.8099,True,0.7906,False
+yor_dev_2055,kọ̀rọ̀ làá tí gba rìbá gbangba làá tí gba ìdájọ́,negative,neutral,0.0462,0.8325,True,0.7863,False
+yor_dev_1520,bi o se wu oluwa ni nse ola,neutral,positive,0.1022,0.8831,True,0.7809,False
+yor_dev_366,in yorùbá iyì means worth value,positive,neutral,0.0771,0.855,True,0.7779,False
+yor_dev_206,ile ni ati nko eso lo si ode,positive,neutral,0.0951,0.8718,True,0.7767,False
+yor_dev_2031,mi ò lè wá kú kan kò lè joyè ilé baba rẹ,negative,positive,0.0535,0.8298,True,0.7763,False
+yor_dev_408,a kìí wo ago aláago ṣiṣẹ́,positive,neutral,0.064,0.8395,True,0.7755,False
+yor_dev_1787,àkéréke àkééke ni ìyàwó náà tí a gbé tí ó ní kí a máà fọwọ́ kan ìdí òun oró òjógan máa ń ta ni pa h,negative,neutral,0.0935,0.8626,True,0.7691,False
+yor_dev_851,kosi ohun to soro se fun eni to ba ni ipinu,positive,negative,0.0588,0.8251,True,0.7663,False
+yor_dev_1988,a lè ní ma ń tèlé gbogbo obìnrin bíi ajá tàbí kí a gbọ́ yé é jẹun bíi ajá,negative,neutral,0.0317,0.796,True,0.7643,False
+yor_dev_1394,mi o ro wipe riba ni oba maa n gba o isakole ni oba ngba,neutral,positive,0.0681,0.8276,True,0.7595,False
+yor_dev_1027,awon geesi ti won je oga ilewe abi ilese ti won ba fe peyan won a kigbe somebody isong,neutral,negative,0.1071,0.862,True,0.7549,False
+yor_dev_1744,láti ìgbà náà a ò rí ètọ́ kan pàto rí dì mú ọdún mẹ́rìnlá tí a ti ń ṣe ìjọba tiwa ẹ duò náà ẹ jọ́ kíni á ńpè ní ìdàgbàsókè gan an,negative,positive,0.1145,0.8592,True,0.7447,False
+yor_dev_1962,gidi àgbẹ̀ kan ò roko kó gbàgbé ilé dádò bá padà sí ilé ní ìjàyè níbẹ̀ ni kúrunmí ti pàṣẹ wípé kí wọ́n gbé dádò tí ó sì dájọ́ ikú fun orísun ìmọ̀ yìí adebanji akítóyè a history of the yoruba people amalion publishing dakar abala,negative,neutral,0.08,0.822,True,0.742,False
+yor_dev_296,ìjẹta ni ọjọ́ tí ìgbìmọ̀ aṣòfin ṣòfin pẹ́nikẹ́ni ò gbọdọ̀ kó ẹrú mọ́,positive,neutral,0.0668,0.8083,True,0.7415,False
+yor_dev_1439,à kì í du orí olórí kí àwòdì gbé tẹni lọ translation you shouldnt save someone elses head and lose yours in the p,neutral,positive,0.1028,0.8442,True,0.7414,True
+yor_dev_1649,ó ga jù alàgbà tẹju ẹ̀yin náà báwọn wọṣọ àlà ó mà dùn mí pé n kò sí níbẹ̀ o,negative,positive,0.1248,0.8565,True,0.7317,False
+yor_dev_1578,rẹpẹtẹ ni èmi ò lè wá kú o,neutral,positive,0.1213,0.852,True,0.7307,False
+yor_dev_821,e wo awon osise ijoba mokanla ti gomina aregbesola fun lawoodu tolulope,positive,negative,0.0964,0.8269,True,0.7305,False
+yor_dev_916,awa omo kaaro ojire éso è tag all speaking tweeps on your tl like,neutral,positive,0.1252,0.8467,True,0.7215,False
+yor_dev_661,wonderful life yorùbátv ẹgbẹ ọmọ olúwa bí gbogbo àgbáyé ojú òpó ìkànsíraẹni yoruba tv,positive,neutral,0.0901,0.8115,True,0.7214,False
+yor_dev_1783,ajinrĕrĕ ebenezer obey øba sunny ade kwam abbl ę wa gba ĕĕbu yin ooo,negative,neutral,0.0709,0.7909,True,0.72,False
+yor_dev_1119,aláfẹ́ ayé ẹ mí a bọ̀ ẹ wá jó aláfẹ́ ayé ẹ mí a bọ̀ ẹ wá jó oníbàtá lọ̀rẹ́ oní ṣàngó ṣé ẹ gbọ́,neutral,positive,0.0925,0.8078,True,0.7153,False
+yor_dev_741,ọ̀gúntìmẹ́yìn ògún supports me,positive,neutral,0.0677,0.7826,True,0.7149,False
+yor_dev_708,iṣu mẹri rè é o a máa ń lò ó fi wo àrùn bíi ikọ́ ikọ́ ilẹ̀ tútù ó sì tún dáa fún ọmọ bíbí,positive,neutral,0.1061,0.8174,True,0.7113,False
+yor_dev_1400,ènìyàn ni ọ̀rúnmìlà baba ifá kí ó tó di ò rì ṣà ìwọ gan an alára lè di òrìṣà bí o bá tẹpá mọ́ṣẹ́ ọwọ́ ẹ kí ọmọ aráyé fi mọ̀ ọ́,neutral,positive,0.1248,0.8353,True,0.7105,False
+yor_dev_598,ikú má pawo mọ́ o ikú ti yẹ̀ lórí awo ọ̀tọ̀ ni à á ya oofúà obìí sí ikú mọ́ pawo mọ́ o ikú yẹ̀ lórí awo,positive,negative,0.0891,0.7987,True,0.7096,False
+yor_dev_5,ti bo lewon o wan ti tu ogbeni adeyinka sile kuro ni ogba ewon category a woodhill ni milton keynes ilu oba ingilandi,positive,negative,0.03,0.7387,True,0.7087,False
+yor_dev_427,ekaaro oruko mi ni oluwabunmi won bi mi si lu eko sugbon omo ekiti kwara ni mi iyen tumo si pe omo yooba gidi ni mi ese,positive,neutral,0.1429,0.8397,True,0.6968,False
+yor_dev_414,wọn ò ṣe kúkú darapọ̀ mọ́nra wọn kí wọ́n di orílẹ̀ kannáà,positive,negative,0.0895,0.7856,True,0.6961,False
+yor_dev_1638,freaky ladies ejo ibo le wa mo fe ba gbogbo yin soro,neutral,negative,0.0261,0.72,True,0.6939,False
+yor_dev_1750,àkànnàmọ̀gbò kì í pa ọdún jẹ àkàlàmàgbò kì í pa ọdún jẹ àṣìpa òwe ni àkàlàmàgbò kì í pa ọdún jẹ àkànnàmọ̀gbò kì í,negative,neutral,0.1099,0.801,True,0.6911,True
+yor_dev_1318,orí ni alákàn fi ń ṣọ́rí iṣẹ́ kékeré kọ́ ni kí ọmọ aráyé ṣèfẹ́ ẹni ó ní bí ọ̀rúnmìlà ṣe kọ́ wa kí ọmọ aráyé ó ba fẹ́ ni,neutral,positive,0.124,0.8119,True,0.6879,False
+yor_dev_1961,ànàá òde yìí ni ọjọ́ oúnjẹ àgbáyé ó ṣeni láàánú pé a ní ilẹ̀ onírúurú èso ọ̀gbìn kí wá ló dé tí a ò lè fi ṣe oúnjẹ,negative,neutral,0.0779,0.7649,True,0.687,False
+yor_dev_1254,akéréfinúṣọgbọ́n akọ́nilọ́ràn bí ìyekan ẹni ọ̀rúnmìlà ló ń jẹ́ bẹ́ẹ̀ okitiripì a jí pa ọjọ́ ikú dà,neutral,negative,0.0832,0.7701,True,0.6869,False
+yor_dev_1680,ó tojú sú mi o ẹ̀yin ìjọ ọba wa ẹ yẹ̀ra yín wò o,negative,positive,0.1365,0.8163,True,0.6798,False
+yor_dev_671,yay he did it jẹ́ ń lọ gbàlù kí n jó,positive,neutral,0.0942,0.7722,True,0.678,False
+yor_dev_964,iṣẹ́ àbáláyé ìkíni àti ìdáhùn traditional occupation greetings and responses a kọ ọ̀pẹ palm wine tapper greetings ìgbá á ró o response àṣẹ amọ̀kọkò potter àmọ̀yè o ìyámọ̀pé á gbè ọ́ o babaláwo àbọ̀rúbọ yè o àbọyè bọ ṣíṣẹ,neutral,positive,0.1519,0.8296,True,0.6777,False
+yor_dev_237,àyájọ́ òní ní ni sámúẹ́lì àjàyí crowther di bíṣọ̀ọ̀bù àkọ́kọ́ nílẹ̀ adúláwọ̀,positive,neutral,0.0455,0.7216,True,0.6761,False
+yor_dev_962,lótìítọ́ àti lódodo a ti kọjá àsìkò tí ó yẹ kí èèyàn kàn máa kọ ọ̀rọ̀ yorùbá lásán láìfi àmì ohùn si ẹ jẹ́ a dẹ́kun àti máa ṣi àwọn òǹkàwé lọ́nà you can add the new feather yorùbá tonal mark activist to my cap,neutral,positive,0.1443,0.8191,True,0.6748,True
+yor_dev_1153,ibikíbi o bá wà tatí wéré ntẹdá máa gbọ́ mi ọmọ yobá ní ń períì rẹ baba zenani makgatho thembekile zindziswa,neutral,positive,0.1277,0.8002,True,0.6725,False
+yor_dev_1011,ife ooye lagbo omo olodo kan oteere omo olodo kan otaara odo to san wereke to san wereke to dehinkunle oshinle to dabata,neutral,positive,0.1135,0.7854,True,0.6719,False
+yor_dev_132,jọwọ dariji mi yoruba mi ko dara nwa fun awọn onijo lati jo crypto crawl fun aye lati win fi fidio ranṣẹ si ati taagi lati gba ipenija fidio ti o dara julọ pari ni oṣu kẹwa ọjọ,positive,neutral,0.1447,0.8146,True,0.6699,False
+yor_dev_2051,nkan ti fela ri to fi ko suffering amp smilling niyen,negative,neutral,0.1445,0.8086,True,0.6641,False
+yor_dev_662,ẹnìkan ní kí n tú u palẹ̀ fún òun lónìí a óò tú oǹkà wẹ́lẹ́wẹ́lẹ́ kí ó ba yé ni yékéyéké,positive,neutral,0.111,0.7751,True,0.6641,False
+yor_dev_1672,àwọn aiyé gbé àpótí jókòó lòrí ọ̀rọ̀ bùhárí fẹ́mi adéṣínà ló sọ bẹ́ẹ̀,negative,neutral,0.1201,0.7817,True,0.6616,False
+yor_dev_338,fún ìwádìí náà a ṣe àyálò ètò oúnjẹ sísè láti ìlú america fún ọmọìlú brazil tí a pè ní ìṣaralóore àti oúnjẹ sísè nílé ìdáná,positive,neutral,0.1338,0.792,True,0.6582,False
+yor_dev_1948,àbàwọ́n stain blemish aṣọ funfun ti ní àbàwọ́n white cloth has been stained,negative,neutral,0.1412,0.7979,True,0.6567,False
+yor_dev_1350,oúnjẹ kì í pẹ́ yán olóúnjẹ lójú ni ọ̀bọ ṣe fi oúnjẹ tí wọ́n fún un gbolẹ̀ á ní kiní burúkú yi tún lè fẹ́ gbàá padà,neutral,negative,0.1323,0.7883,True,0.656,False
+yor_dev_586,ìlọsíwájú nàìjíríà ló jẹ́ wá lógún ẹni tí ọ̀ràn bá kàn,positive,negative,0.1396,0.7931,True,0.6535,False
+yor_dev_1551,tani alejo wa pe ni awokose won ni ori eto ojumo ire ni ojo aje to koja,neutral,positive,0.1175,0.7698,True,0.6523,False
+yor_dev_213,èèbó europe ti dé sí wa láàárín a ti jọ ń ṣe káràkátà ìṣòwò ń gbòrò,positive,neutral,0.0313,0.6818,True,0.6505,False
+yor_dev_1951,mo ti fẹ́ sọ wípé ẹ gba phd nínúu jíjí túwíìtì onítúwíìtì ṣùgbọ́n mo gbé e mì n kò sọ bẹ́ẹ̀ mọ́ bí ẹ bá fẹ́ràn an ìṣàmúlòo púpọ̀ lóòótọ́ bí ẹ ti ṣe wí ó yẹ kí ẹ gbóríyìn fún òǹnitúwíìtì tàbí kí ẹ ṣíra tẹ retweet tàbí like ni,negative,positive,0.1017,0.7441,True,0.6424,False
+yor_dev_1919,ife ijesa wahala nla be sile laarin aregbesola ati wale bolorunduro,negative,positive,0.1573,0.794,True,0.6367,False
+yor_dev_1528,awon onimo nipa oju ojo kilo wipe sandy yoo si tun ja fun bii wakati merinlelogun sii,neutral,negative,0.1575,0.7913,True,0.6338,False
+yor_dev_1372,ẹ̀rẹ̀kẹ́ yín yọ o,neutral,positive,0.0984,0.7316,True,0.6332,False
+yor_dev_1288,sùúrù lere tàbí ọlọhun ṣògo lagos nigeria,neutral,positive,0.1456,0.7757,True,0.6301,False
+yor_dev_1505,who read this before in depth yoruba phonology and grammar ìwé pàtàkì fún ẹni tí ó fẹ́ kọ́ gírámà èdè yorùbá fún sí,neutral,positive,0.1557,0.785,True,0.6293,True
+yor_dev_2033,à rí ìgbọdọ̀ wí,negative,neutral,0.0994,0.7273,True,0.6279,False
+yor_dev_620,dáhùn ìbéèrè méjì mẹ́rin mẹ́jọ mẹ́wàá méjìlá mọ́kànlá tàbí gbogbo mẹ́rẹ̀ẹ̀rìndínlógún kí o gba ẹ̀bun káre ọmọ ọ̀dọ̀ àgbà,positive,neutral,0.1852,0.8033,True,0.6181,False
+yor_dev_1557,haha èmi ni mo yàá o ọmọ ìyá,neutral,positive,0.1622,0.7734,True,0.6112,False
+yor_dev_2083,a jẹ́ wípé ọ̀hún ò rọgbọ tàbí iṣẹ́ náà ò mú èsì rere bọ̀,negative,positive,0.1268,0.7372,True,0.6104,False
+yor_dev_634,ani ri ogun ekun ooo erin na ni a ma rin ooo wọ́n ti ní ọ̀rọ̀ tó bá kojá ẹkún ẹ̀rín là ńrín,positive,negative,0.0286,0.6383,True,0.6097,False
+yor_dev_1795,àjọ elétò ìdìbò ò ṣé e re lékòó o àwọn ọmọ èkó ò rí káàdì ìdìbò gbà fún ọjọ́ mẹ́ta ṣé a ò ní dìbò lékòó ní ni,negative,positive,0.1515,0.7524,True,0.6009,False
+yor_dev_391,human rights watch sọ wípé lábẹ́ ìṣàkóso ìjọba ààrẹ john magufuli ti rí ìrésílẹ̀ ìbọ̀wọ̀ fún òmìnira ọ̀rọ̀ sí,positive,neutral,0.1089,0.7065,True,0.5976,False
+yor_dev_1383,ewé ọlá rè é a máa ń lò ó láti fi wo àrùn àtọ̀sí ẹ̀fọ́rí àti fún ikọ́ ó sì ń mú ọgbẹ́ sàn kíá,neutral,positive,0.1799,0.777,True,0.5971,True
+yor_dev_174,àyájọ́ ònìí ọjọ́ kẹ́ta láyé múrítàlá a dá ìpínlẹ̀ ògùn ó pé ogójì ọdún tí a dá a ọmọ mo kíi yín,positive,neutral,0.1848,0.7809,True,0.5961,False
+yor_dev_880,bíi ti àná ifá gba àwọn ọmọ méjèèjì ní mọ̀ran ó ní kí wọn ó ṣe bí ìyá wọn ti ṣe lọ́jọ́ kìnínní àná,positive,neutral,0.0756,0.6691,True,0.5935,False
+yor_dev_1275,oriki ijebu ijebu omo alare omo awujale omo arojo joye omo alagemo ogun woyowoyo omo aladiye ogogomoga omo adiye balokun omilili ara orokun ara o radiye omo ohun seni oyoyonyo oyoyo mayomo ohun seni olepani,neutral,negative,0.0423,0.6333,True,0.591,False
+yor_dev_900,oríṣìíríṣìí itú làwon jagunjagun ń pa lójú ogun wọ́n a yírapadà wọ́n lè di ẹranko ọmọdé àti obìnrin ọlọ́mọge,neutral,negative,0.1863,0.777,True,0.5907,False
+yor_dev_2059,alagemo ti bimo re naa aimo jo o ku sowo re cc,negative,positive,0.1848,0.7704,True,0.5856,False
+yor_dev_382,ori kerinlelogoji igba nkan ini eni ni dan dan o ni ètó lati gba owo gba ma binu,positive,neutral,0.1782,0.7613,True,0.5831,False
+yor_dev_1654,tẹ gàba jẹ gàba àwọn fúlàní ti ń tẹ gàba lórí wa ọjọ́ ti pẹ́ kì í ṣe òní,negative,positive,0.155,0.7365,True,0.5815,False
+yor_dev_1618,aami idani mo tuntun,neutral,positive,0.2051,0.7864,True,0.5813,False
+yor_dev_1568,ọ pẹ́ díẹ̀ tí mo kọ ǹkan lórí ẹ̀yin tèmi tèmi ẹ má bínú sími omi ló pọ̀ jọkà lọ,neutral,positive,0.182,0.761,True,0.579,False
+yor_dev_42,aka ni yooba a ni o tiju ju aka lo,positive,neutral,0.1025,0.6724,True,0.5699,False
+yor_dev_1726,a sọmọ ni șódé ọmọ lọ sí àjò ó dé a sọmọ ni șóbọ̀ ọmọ tàjòbọ̀ a wá sọmọ ni șórìnlọ ọmọ rìnlọ kòdé mọ tani kò ṣàìmọ̀ p,negative,neutral,0.1751,0.7449,True,0.5698,False
+yor_dev_1097,bàtà fún ìfẹ̀hónúhàn àti ẹ kàn sí lórí kí ẹ ra tiyín ẹ sọ̀rọ̀ sókè,neutral,positive,0.1988,0.7666,True,0.5678,False
+yor_dev_1010,íjọba ìpínlẹ̀ kaduna ti kéde kónílé ó gbélé lórí ìjà,neutral,negative,0.1321,0.6988,True,0.5667,False
+yor_dev_2042,irú èyí kìí ṣe àkọ́kọ́ ti ṣe bẹ́ẹ̀ rí tí wọ́n wọ́ owó mi láì lò ó rárá,negative,neutral,0.2047,0.7662,True,0.5615,False
+yor_dev_862,obìnrin tí a bá féràn kì í ní àléébu bee ìyàwó tí a bá féràn ni omo rè í wu ni,positive,neutral,0.1597,0.7143,True,0.5546,False
+yor_dev_1736,iru petineesi wo wa leleyi ati ogbeni ati alagba,negative,neutral,0.1259,0.6793,True,0.5534,False
+yor_dev_857,oríkì ma ń mú orí ẹni wú,positive,neutral,0.2031,0.7511,True,0.548,False
+yor_dev_1702,mo ṣe bí èèyàn ọlọ́run ni à ṣé è bojú bojú ni ẹ̀yìn ń kí òṣìṣẹ́ tí ò gbowó oṣù kú àyájọ́ ọjọ́ òṣìṣẹ́ èké ni yín,negative,positive,0.2005,0.7471,True,0.5466,False
+yor_dev_1412,ọmọ ìyá mi da,neutral,positive,0.2052,0.7518,True,0.5466,False
+yor_dev_651,sebi eniyan mi ni won awon ti mo soro won fun yin awon wonyii gan angan ni mo n so nipa won eniyan laso mi,positive,negative,0.1908,0.7373,True,0.5465,False
+yor_dev_2089,ewu ń bẹ lóko longe fún ọ jọ̀wọ́ ṣe ìwọde ìfẹ̀hónúhàn oniroworose èyí a máa mú ìtìjú bá àwọn aninilára ni,negative,positive,0.2028,0.7415,True,0.5387,False
+yor_dev_1243,njẹ́ ẹ gbọ nipa iwé kan edidi rí mi ja mi lòri ẹ o di àárọ̀,neutral,positive,0.2133,0.7421,True,0.5288,False
+yor_dev_1694,àwọn òbí nì kábáwí èwo ni kọ́mọ yoòbá máa fèèbó bí ọ̀pẹ́ẹ̀rẹ̀ láì mọ àṣà ilẹ̀ wa kan kan,negative,neutral,0.1449,0.6733,True,0.5284,False
+yor_dev_2017,proverbs of the day gbogbo ohun tó ndan kọ́ni wúrà not all that glitters is gold ile la ti n ko eso re ode,negative,positive,0.2041,0.7266,True,0.5225,False
+yor_dev_1682,eyin odo ori ti en so oko oro fun ara yin se eti ri bi olowo se un se ore olowo eje ki ori yin pe ki eye fi epe ranse si ara yin nitori ati be be lo ti oloselu ba ti ri ara wan ni koko abuse buse ariya de le,negative,positive,0.2271,0.7496,True,0.5225,True
+yor_dev_37,ọjọ́ titun ohun tuntun,positive,neutral,0.2353,0.7566,True,0.5213,False
+yor_dev_1053,ìkíni ayẹyẹ ọ̀fọ̀ yàtọ̀ sí ìkíni ojú ọjọ́ ati ìgbà àtàkókò ìyálẹ̀ta la wà yìí bí mo fẹ́ kíi yín máa ní ẹ kú ìyálẹ̀ta o,neutral,positive,0.2361,0.7515,True,0.5154,False
+yor_dev_1981,àwọn òmùgọ̀ kan ò mọ̀ wípé kàlẹ́ndà tí ń bẹ níbí kí calendar ti wọn tó máa bẹ,negative,neutral,0.2233,0.7372,True,0.5139,False
+yor_dev_1945,ẹni a ṣe lóore tí kò dúpẹ́ bí ìgbà tí ọlọ́ṣa ko ni lẹ́rù lọ ni to be kind to a person who isnt thankful is akin to being robbed by a thief attitude of gratitude is it be ever thankful,negative,positive,0.2307,0.736,True,0.5053,False
+yor_dev_1930,se won bi sorin mo eja ni edakun kini sorin cc àṣìpa òwe,negative,neutral,0.2101,0.7142,True,0.5041,False
+yor_dev_295,lol kii se eyin ni mo n baa wi ohun ti mo n so ni wipe idije boolu ni ile africa ti laju ju atijo lo ni,positive,negative,0.1601,0.6607,True,0.5006,False
+yor_dev_577,orí lẹja fi ń labú já orí làkèré fi ń wẹ̀ lódò oríi mi à pere oríi mi àpésìn orí lagbeji ẹni ǹjẹ́ kí la à bá bọ̀,positive,neutral,0.2086,0.7087,True,0.5001,False
+yor_dev_207,obama mọ ọ̀rọ̀ ọ́ sọ kí orí ènìyàn wú ọ̀gá ńlá sọ̀rọ̀ sọ̀rọ̀ ni o ti ṣe ìwọ̀n tí o lè ṣe ó ti wọ àkọsílẹ̀ ó dìgbòóṣe,positive,neutral,0.1649,0.6631,True,0.4982,False
+yor_dev_1813,ẹṣin ọ̀rọ̀ àwọn aláṣetì kan ló sọ wípé ohun tí wọ́n ní kí òkóbó ẹ̀ ó bọ̀ kò bọ̀ ọ́ ó ní òhún lè bọ igba abẹ́rẹ́ ǹjẹ́ o lè sọ ojú abẹ níkòó kí o dárúkọ ní pàtó ohun tí ó ní kí òkóbó ó bọ̀ tí ò lè bọ̀,negative,neutral,0.2412,0.7386,True,0.4974,False
+yor_dev_762,ǹjẹ́ ẹ mọ̀ pé ọ̀rúnmìlà bàbá àgbọnìrègún ma ń ran gbogbo àgbáyé lọ́wọ́ lọ́jọ́ ayée ẹ̀,positive,neutral,0.2419,0.7367,True,0.4948,False
+yor_dev_41,ko si soro oplolopo jije mimu wa ni repete loni erin muse,positive,negative,0.1291,0.6235,True,0.4944,False
+yor_dev_128,èkó kẹ̀ ẹ ò rí bí iná ṣe tàn sílẹ̀ ni,positive,neutral,0.1588,0.6525,True,0.4937,False
+yor_dev_1742,shangba fo ogun idile ni ile yoruba ewo bi oba rilwan akiolu se wuwa bi omo odun mejo ni waku ooni ile ife oba adeyeye enitan ogunwusi,negative,neutral,0.1703,0.664,True,0.4937,False
+yor_dev_1584,mo ti gbagbe pe yoruba ni afi ma tweet loni,neutral,positive,0.2421,0.7351,True,0.493,False
+yor_dev_689,laarin opolopo awuyewuye omooba secondus di alaga apapo egbe oselu pdp,positive,negative,0.1133,0.6001,True,0.4868,False
+yor_dev_2041,kò yé rárá wọn ò da mọ̀,negative,neutral,0.249,0.7302,True,0.4812,False
+yor_dev_554,sánbẹ sùn fapó rọrí ìwà ẹni ní mú ni sòkígbé,positive,negative,0.188,0.6683,True,0.4803,False
+yor_dev_997,àwọn ohun àmúsọ nípa ṣàǹgó ṣàǹgó lọ jà gba ẹ̀gbọ́n rẹ̀ àjàká sílẹ̀ nígbà tí àwọn ọmọ ogun òwu mu lábẹ́ àṣẹ ọba òwu orógbó ni ṣàǹgó ma ń jẹ ṣàǹgó ma ń mú oṣé lọ́wọ́ ó ma ń ṣíwájú àwọn ọmọ ogun rẹ̀ lọ sójú ogun,neutral,negative,0.2281,0.7034,True,0.4753,False
+yor_dev_909,omodè òni agba ni bo dola nitori obiri laye yiyi lo n yi kani asiko ni pelu ko si eni ti aye ko ni yi de odo re,neutral,negative,0.0991,0.5689,True,0.4698,False
+yor_dev_1887,kokoro ti je efo idi efo lowa ohun to jew,negative,neutral,0.2283,0.6938,True,0.4655,False
+yor_dev_1077,jẹ́ kí n rí bí ilà ọwọ́ ẹ ṣe rí ká rí yàtọ̀ tèmi tún rè,neutral,positive,0.267,0.7308,True,0.4638,False
+yor_dev_1851,àwọn mélòó ló ka ilé ifẹ̀ kún mọ́n pàápàá lóde òní tó ṣe pé mùsùlùmí àti kìrìstẹ́nì ni olúkálukú,negative,neutral,0.2422,0.704,True,0.4618,False
+yor_dev_461,awu kọ ìwé sí ìjọba èèbó láti wá wọ̀rọ̀kọ̀ fi ṣàdá nípa àfikún owó orí àti fífúnará ìlú láyè obìnrin nínú ìjọba,positive,negative,0.0805,0.5417,True,0.4612,False
+yor_dev_3,mélòó la fẹ́ kà léyín adípèlé mélòó la fẹ́ kà nínú ore tí ọlọ́run ọba ti ṣe láyé èmi alákọ̀wé,positive,neutral,0.2571,0.7182,True,0.4611,False
+yor_dev_431,njẹ́ ojúmọ́ kan kìí mọ́ bí kìí ṣe agbára ọlọ́run,positive,neutral,0.2581,0.7169,True,0.4588,False
+yor_dev_1891,eni bi ahun lo n ri ahun he,negative,neutral,0.2459,0.7019,True,0.456,False
+yor_dev_1777,adie funfun ko mo ra re algba bo se wuni la nse imale eni o,negative,neutral,0.2121,0.6679,True,0.4558,False
+yor_dev_1256,wọn kì í gbé wọọ́n sin,neutral,negative,0.2397,0.6826,True,0.4429,True
+yor_dev_1644,olooto ti mbe laye o pogun sikasika ibe won o mon niwon egbefa ojo esan o lo titi ko je ki oro ko dunni,neutral,negative,0.0852,0.5233,True,0.4381,False
+yor_dev_852,arabiring ejo ema ya eke ebu si eba wa da si oro to hun lo gegebi omoluabi,positive,negative,0.22,0.6521,True,0.4321,False
+yor_dev_1805,àmọ́ ìyáa tọ́ba nírọ́ pátápátá ni pé nígbàtí òun àti ṣe ìwádìí àti lọ́wọ́ sí ikúu tọ́ba,negative,neutral,0.2362,0.668,True,0.4318,False
+yor_dev_85,ìwà lẹwà ènìyàn ló dífá fún tacha lọ́jọ́ tón tìkọ̀lé instagram lọsí wọ́n ní kó rúbọ ìwà tacha kọ̀ kàkàbẹ́ẹ̀ ófi ọmún ya tattoo ó nfi perfume wẹ bí omi àsẹ̀yìnwa àsẹ̀yìnbọ̀ ẹlẹgbọn àgbà lé kúrò ni bí ẹní lé ajà tún ìwà rẹ ṣe ọ̀rẹ́ mi,positive,negative,0.2207,0.6518,True,0.4311,False
+yor_dev_386,kí a pa ti ọṣẹ dúdú gbètugbètu tì ohun tí mò ń sọ ò ju pé ọṣẹ dúdú dára fún àwọ̀ ara wa ju kílatińpèé ọṣẹ tó kúnta lọ,positive,negative,0.1459,0.5755,True,0.4296,False
+yor_dev_2009,kí á tan iná pa agbọ́nrán ká fọ̀pá gbọọrọ pejò ká dìtùfù ká fi gbọ̀wẹ̀ lọ́wọ́ ọ ṣàngó ní ìṣojú u mádiyàn lagara á ṣe ńdáni,negative,neutral,0.2252,0.6522,True,0.427,True
+yor_dev_1713,a gbọ́ nípa ìṣẹ̀lẹ̀ ní lánàá ọmọ bọ́ lẹ́hìn abiamọ pupa kan kíá ni ó bọ́ra sí ìwòrìwò tí ń sá yí ọjà,negative,neutral,0.2679,0.6936,True,0.4257,False
+yor_dev_822,jamini ṣe dáradára ipò kẹrin,positive,neutral,0.2498,0.6687,True,0.4189,False
+yor_dev_56,ìgbésáfẹ́fẹ́ ètò òṣèlú gbogbo sọ̀rọ̀sọ̀rọ̀ agbóhùnsáfẹ́fẹ́ gbọdọ̀ ṣe ojúṣe wọn fún ìlú nípa gbígbé gbogbo ìlanilọ́yẹ ọ̀ràn ètò òṣèlú sí orí afẹ́fẹ́ àjọ elétò ìgbóhùnsáfẹ́fẹ́ orílẹ̀ èdè nàìjíríà,positive,negative,0.1764,0.5906,True,0.4142,False
+yor_dev_1212,egbe oselu acn cpc apga ati anpp darapo egbe tun tun ti wan gbe kale ni egbe all progressive congress apc,neutral,negative,0.1617,0.5756,True,0.4139,False
+yor_dev_941,a fìyẹ́ ìko borí ẹrù mọ́ńlẹ̀ aṣọdẹ jíhìn ara rẹ̀,neutral,negative,0.0914,0.5049,True,0.4135,False
+yor_dev_1445,ọtí ọ̀pẹ ẹmu ti ìko ògùrọ̀ àti ògógóró tó tara wọn jáde jẹ́ ẹlẹ́gbẹ́ẹ ọtí èèbó kọ́ kí lọtí èèbó ń ṣe lára,neutral,negative,0.2823,0.68,True,0.3977,False
+yor_dev_1322,ẹyin lohùn bó jábọ́ sílẹ̀ á fọ́ yányán kò dẹ̀ ní ṣe é kó ọ̀rọ̀ ẹnu lágbára ọ̀rọ̀ ni àdúà ọ̀rọ̀ ni èpè,neutral,negative,0.1055,0.503,True,0.3975,False
+yor_dev_1866,suaib sábà ma ń kó èèyàn jọ lóòrèkóòrè yó ka ki ní kan sí etí ìgbọ́ wọn pàbo lèyí jásí kò sí ẹní gba ẹ̀sìn rẹ̀ gbọ́,negative,neutral,0.2762,0.6628,True,0.3866,False
+yor_dev_1039,ìfínràn ẹ̀gbá àti ìkòròdú ní ọdún tí ogun ìjàyè àti ẹ̀gbá ń ró bíi agogo àwọn ọmọ ogun ìjẹ̀bú gbà láti darapọ̀ mọ́ ẹ̀gbá láti kọjú ti ìjàyè ẹ̀gbá ráńṣẹ́ sí àwọn ará ìkòròdú fún ìdarapọ̀ mọ́ ọmọ ogun wọn àwọn ará ìkòròdú ba takú láti bá ẹ̀gbá pé,neutral,negative,0.2831,0.6618,True,0.3787,False
+yor_dev_1098,fun iyera wo nipa arun korona ni orile ede naijiria city gate abuja,neutral,negative,0.2225,0.5921,True,0.3696,False
+yor_dev_784,ha e pele o e ya tete doju ija ko pelu ogun oyinbo to gbamuse,positive,negative,0.2613,0.628,True,0.3667,False
+yor_dev_496,kí a dẹ́kun à ń da pàntí sómi ẹ̀gbin ìwọ̀sí omi ni kò bójú mu ìlo wa kẹ̀dẹ̀ ló wà fún ẹní bá dalẹ̀ á bálẹ̀ lọ,positive,negative,0.2217,0.5853,True,0.3636,False
+yor_dev_1716,èèyàn tó wọ ọjà níhòhò tó wá ńná yẹtí ṣé ìbotí lọ̀rọ̀ ẹ̀ kàn ni tàbí ìbòdí translation gt gt,negative,neutral,0.29,0.6515,True,0.3615,False
+yor_dev_1431,rara ko si o,neutral,negative,0.2798,0.6394,True,0.3596,False
+yor_dev_286,sugbọn bí eya igbó bá soro nípa gbígbé oludije tó yanranti kalè lọ́dún wọn a rí bí ohun tó tọ́ kí gbogbo ènìyàn gbé igbá ìbò kí àwọn ọmọ nàìjíríà yàn ẹni tí wọn ba fẹ́ a ó lè fi ipá mú ẹnikẹ́ni láti dìbò fún ní,positive,negative,0.2092,0.5681,True,0.3589,False
+yor_dev_1852,ayé ò lè pa kádàrá dà wọ́n kàn lè fa owó aago sẹ́yìn,negative,neutral,0.2951,0.6533,True,0.3582,True
+yor_dev_324,ipinle kwara be awon omo egbe okuku ati alajosepo ki won towo won bo aso,positive,negative,0.2379,0.5926,True,0.3547,False
+yor_dev_1407,ka sun ka se bi eni ku ka wo eniti o daro eni,neutral,negative,0.2707,0.6218,True,0.3511,False
+yor_dev_1448,pàápàá lábúlé ṣàṣà lọ̀dọ́ nílẹ̀ẹ yoòbá tó sì fẹ́ siṣẹ́ àgbé ó wọ́pọ̀ ìgboro ni gbogboo wọ́n ń sá wá,neutral,negative,0.2574,0.6043,True,0.3469,False
+yor_dev_423,ile iba to jo ewa lo bukun,positive,negative,0.1703,0.5159,True,0.3456,False
+yor_dev_323,ooni di babaasale caldev lo ba seleri atileyin fun idaabobo eto awon ewe,positive,negative,0.2111,0.5506,True,0.3395,False
+yor_dev_551,odo ni awon mejeeji jeki won gbadun ara won,positive,negative,0.2027,0.5376,True,0.3349,False
+yor_dev_285,oruko mi ni emmanuel opeyemi omo oke a bi mi si ilu idogo ni ipinle ogun omoluabi nimi mo le ko mo sile ka lede yoruba,positive,neutral,0.3197,0.6515,True,0.3318,False
+yor_dev_439,ooru tí igi dà síta ni ọmọ ènìyàn ń fà símú ò sì ń ṣara lóore,positive,negative,0.1959,0.5049,True,0.309,False
+yor_dev_572,ọ̀ṣọ́ olọ́ṣọ̀ọ́ ò yẹni ṣòkòtò àgbàbọ̀ ò yẹ ọmọ èèyàn jẹ́ kí nǹkan tí ẹ ó tó ọ ojúkokojú ò yẹ ọmọ ènìyàn má wo aago aláago ṣiṣẹ́,positive,negative,0.3191,0.6241,True,0.305,False
+yor_dev_189,e je bo si igboro ko ni ibo wa o ti wo inu igboro eko agege alimosho agbajandi eti be be lo awon ara bi lon gbo wa zo bia ibo wan o le gbeyin de ori alefa e ma se asise ti e se ni ti e da awon yoruba nu lo darapo mo awon ore wa ni alaba,positive,negative,0.3412,0.6254,True,0.2842,False
+yor_dev_1286,kò pẹ́ àwọn aráàdúgbò tó tọ̀ wọ́n wá sí igbó rí tẹ̀gbọ́ntàbúrò ó dilé,neutral,negative,0.3126,0.5888,True,0.2762,False
+yor_dev_352,ase wa lola awon to ni ile aye awon iyami opake olake,positive,negative,0.3384,0.6111,True,0.2727,False
+yor_dev_193,wọ́n á yá àwọn ohun ìní wa lò wọ́n á rí iṣẹ́ ìyanu inúu rẹ̀ wọ́n yí ìtàn kọ wọ́n á pa òtítọ́ rẹ́,positive,negative,0.2745,0.533,True,0.2585,False
+yor_dev_255,wọ́n ní ibi pẹlẹbẹ la ti ń mọ́ọ̀lẹ̀ jẹ ọkọ̀ ojúrin yìí rọrùn o jàre,positive,negative,0.2822,0.5311,True,0.2489,False
+yor_dev_872,abi o iwo naa ni won osi ni fi elo miran se o eiye meji ki je asa iwaju iwaju ni opa ebiti re yio ma r,positive,negative,0.3328,0.574,True,0.2412,False
+yor_dev_1417,àfikún owóorí tí ọba adémọ́lá kejì aláké ti ìlú ẹ̀gbá ní kí obìnrin máa san ló fa ìyíde ìfẹ̀hónú hàn ọ̀hún,neutral,negative,0.2805,0.5105,True,0.23,False
+yor_dev_1636,fun iyera wo nipa arun korona ni orile ede naijiria,neutral,negative,0.2648,0.4933,True,0.2285,False
+yor_dev_720,ẹ jẹ́ ká rántí ikú nínú gbogbo ohun a bá ń rò lọ́kàn ẹ̀ẹ̀méjì ọjọ́ọjọ́kan ńbẹ̀ tẹ́nu ó kọ mímu,positive,negative,0.269,0.4947,True,0.2257,False
+yor_dev_1514,ọ̀fà kò ju ọ̀je lọ,neutral,negative,0.3543,0.58,True,0.2257,False
+yor_dev_1249,emi ọmọ yoruba ni mí nàìjíríà ni wọ́n ti bí mi,neutral,negative,0.3234,0.5467,True,0.2233,False
+yor_dev_1266,ọ̀nà àti pawó náà kúkú ni àyájọ́ yìí ti dà o ẹ wo adúrú owó tí wọ́n gbé lórí àwọn òdòdó,neutral,negative,0.3389,0.5561,True,0.2172,False
+yor_dev_982,nígbà láìláì rí wọn kì í pe ẹyẹlé ní ẹyẹlé ẹyẹko ni wọ́n ń pè é nítorí pé oko ní í gbé,neutral,negative,0.3698,0.5814,True,0.2116,False
+yor_dev_1570,kí á di ìdí kó kún bámúbámú a díá fún ataare tí kì í di ẹrùu tiẹ̀ láìkún ọ̀kẹ́ ǹjẹ́ igba orógbó igba ataare igba ẹyọọ rééré igba ọkàa bàbà ta ló pé òdí ò lówó lọ́wọ́,neutral,negative,0.3385,0.5142,True,0.1757,False
+yor_dev_728,ẹ má lajú sílẹ̀ kí tàlùbọ̀ kó wọ̀ ọ́ ẹ rí i dájú wí pé ẹ dá àwọn ọmọlọ́mọ tí ó wà ní àhámọ́ ọlọ́pàá sílẹ̀ kí wọ́n máa lọ sílé wọn tàràrà wọn kò jalè wọn kò hu ìwà láabi ẹ̀tọ́ wọn ni wọ́n ń jà fún,positive,negative,0.3785,0.5522,True,0.1737,False
+yor_dev_625,ano awon ara ibi eku alejo awon ibeta emi gigun fun won o,positive,negative,0.3815,0.5514,True,0.1699,False
+yor_dev_1069,epo ní ìwúlò tó pọ̀ jọjọ lẹ́yìn in káfi se oúnjẹ nílé ìdáná nǹkan tí à ń fi epo ṣe kò lóǹkà,neutral,negative,0.3738,0.4967,True,0.1229,False
+yor_dev_122,speaking to mugabe ikú tó fẹ́ pani bó bá sini ni fìlà ọpẹ́ ló yẹ ká dá,positive,negative,0.3815,0.4982,True,0.1167,False
+yor_dev_932,yoòbá ní bí a ò bá rí àdán àá fi òòbè ṣe ẹbọ ló dífá fún wọ́n ní tí wọ́n fi rọ́pò iyán àfodógún,neutral,negative,0.443,0.5375,True,0.0945,False
+yor_dev_846,koju maribi gbogbo ara logun e,positive,negative,0.424,0.5165,True,0.0925,False
+yor_dev_675,ope o ara babaasala ti ya o e wo foto ti baba ya lana tolulope,positive,negative,0.4368,0.5145,True,0.0777,False
+yor_dev_1079,òjò ń wọ níbi ṣé bẹ́ẹ̀ náà ló ń ṣe lékòó,neutral,negative,0.438,0.5053,True,0.0673,False
+yor_dev_344,a kò ní gba ojú orunrun di ẹni ẹbọra ń bá jẹun láṣẹ elédùà àsùnjí o,positive,negative,0.4387,0.5026,True,0.0639,False
+yor_dev_362,yorùbá wúre a ò ní bá olóríburukú pàdé olóṣì ò ní kóṣì bá wa ẹni àìjírí ẹni àìjíkò ò ní kò wá,positive,negative,0.4895,0.5026,True,0.0131,False
